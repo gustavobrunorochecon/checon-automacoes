@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CHECON_DW"
+  DTS:DTSID="{BE64CA15-FC6A-4D25-A7CE-4E47F71835BE}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=.\CHECON;Initial Catalog=CHECON_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-CARGA_CLIENTES-{BE64CA15-FC6A-4D25-A7CE-4E47F71835BE}.\CHECON.CHECON;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

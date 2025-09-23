@@ -1,0 +1,1073 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/10/2024 4:24:42 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-3G838JT"
+  DTS:CreatorName="DESKTOP-3G838JT\Checon"
+  DTS:DTSID="{332A3793-1F31-4B1C-9BBB-73FE8D084923}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="CARGA_FATO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="134"
+  DTS:VersionGUID="{158667B7-1072-4E57-BC15-9AA1FA5841D0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CARGA BW"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{E11828CE-BBBC-44B7-ADBA-1E77EB64160F}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGA BW">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CARGA BW\Tarefa Executar SQL"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{28D95A61-8963-4542-AC30-E9023745BB73}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarefa Executar SQL"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BE64CA15-FC6A-4D25-A7CE-4E47F71835BE}"
+              SQLTask:SqlStatementSource="EXEC dbo.CARGA_FATO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CARGA STAGE"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{9AFC7C21-C658-44BA-B9DA-D64A5147956E}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGA STAGE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CARGA STAGE\STAGE FATO"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{6E6DBE91-7E3A-4B65-A93C-BF383C637F51}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="STAGE FATO"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Conversão de Dados;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Conversão de Dados"
+                  name="Conversão de Dados"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+                      name="Entrada de Conversão de Dados">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[IDNOTA]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="IDNOTA"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDNOTA]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Outputs[Saída de Conversão de Dados]"
+                      exclusionGroup="1"
+                      name="Saída de Conversão de Dados"
+                      synchronousInputId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[IDNOTA]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          length="64"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[IDNOTA]"
+                          name="IDNOTA"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                              name="SourceInputColumnLineageID">#{Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDNOTA]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Conversão de Dados"
+                      synchronousInputId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="Destino OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[ST_FATO]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{54C269BB-EEAB-4197-9210-9148527AA270}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CHECON_STAGE]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[IDCLIENTE]"
+                          cachedDataType="i8"
+                          cachedName="IDCLIENTE"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDCLIENTE]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDCLIENTE]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[IDVENDEDOR]"
+                          cachedDataType="i8"
+                          cachedName="IDVENDEDOR"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDVENDEDOR]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDVENDEDOR]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[IDPRODUTO]"
+                          cachedDataType="i8"
+                          cachedName="IDPRODUTO"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDPRODUTO]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDPRODUTO]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[valor_unitario]"
+                          cachedDataType="numeric"
+                          cachedName="valor_unitario"
+                          cachedPrecision="11"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_unitario]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[valor_unitario]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[valor_adicional]"
+                          cachedDataType="numeric"
+                          cachedName="valor_adicional"
+                          cachedPrecision="11"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_adicional]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[valor_adicional]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[valor_retorno]"
+                          cachedDataType="numeric"
+                          cachedName="valor_retorno"
+                          cachedPrecision="11"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_retorno]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[valor_retorno]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[valor_total]"
+                          cachedDataType="numeric"
+                          cachedName="valor_total"
+                          cachedPrecision="11"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_total]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[valor_total]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[quantidade_emissao]"
+                          cachedDataType="numeric"
+                          cachedName="quantidade_emissao"
+                          cachedPrecision="11"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[quantidade_emissao]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[quantidade_emissao]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[quantidade_retorno]"
+                          cachedDataType="numeric"
+                          cachedName="quantidade_retorno"
+                          cachedPrecision="11"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[quantidade_retorno]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[quantidade_retorno]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[vol_umb]"
+                          cachedDataType="numeric"
+                          cachedName="vol_umb"
+                          cachedPrecision="35"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[vol_umb]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[vol_umb]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[vol_hl]"
+                          cachedDataType="numeric"
+                          cachedName="vol_hl"
+                          cachedPrecision="38"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[vol_hl]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[vol_hl]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[data_pedido]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="data_pedido"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[data_pedido]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[data_pedido]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[codigo_origem_heishop]"
+                          cachedDataType="i4"
+                          cachedName="codigo_origem_heishop"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[codigo_origem_heishop]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[codigo_origem_heishop]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[IDNOTA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="64"
+                          cachedName="IDNOTA"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDNOTA]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[IDNOTA]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDCLIENTE]"
+                          dataType="i4"
+                          name="IDCLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDVENDEDOR]"
+                          dataType="i8"
+                          name="IDVENDEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDPRODUTO]"
+                          dataType="i8"
+                          name="IDPRODUTO" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_unitario]"
+                          dataType="numeric"
+                          name="valor_unitario"
+                          precision="11"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_adicional]"
+                          dataType="numeric"
+                          name="valor_adicional"
+                          precision="11"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_retorno]"
+                          dataType="numeric"
+                          name="valor_retorno"
+                          precision="11"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_total]"
+                          dataType="numeric"
+                          name="valor_total"
+                          precision="11"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[quantidade_emissao]"
+                          dataType="numeric"
+                          name="quantidade_emissao"
+                          precision="11"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[quantidade_retorno]"
+                          dataType="numeric"
+                          name="quantidade_retorno"
+                          precision="11"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[vol_umb]"
+                          dataType="numeric"
+                          name="vol_umb"
+                          precision="11"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[vol_hl]"
+                          dataType="numeric"
+                          name="vol_hl"
+                          precision="11"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[data_pedido]"
+                          dataType="dbTimeStamp"
+                          name="data_pedido" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[codigo_origem_heishop]"
+                          dataType="i4"
+                          name="codigo_origem_heishop" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDNOTA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="IDNOTA" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Consome dados do SQL Server, OLE DB, ODBC ou Oracle usando o provedor de dados .NET Framework correspondente. Use uma instrução Transact-SQL para definir o conjunto de resultados. Por exemplo, extraia dados do SQL Server com o provedor de dados .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Consome dados do SQL Server, OLE DB, ODBC ou Oracle usando o provedor de dados .NET Framework correspondente. Use uma instrução Transact-SQL para definir o conjunto de resultados. Por exemplo, extraia dados do SQL Server com o provedor de dados .NET Framework para SQL Server."
+                  name="Origem do ADO NET"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a instrução SQL usada pelo componente para extrair os dados."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  CONCAT(pd.pedido, '-', pr.id) AS IDNOTA
+          , cl.id AS IDCLIENTE
+          , vd.id AS IDVENDEDOR
+          , pr.id AS IDPRODUTO
+          , data_pedido
+          , IFNULL( pd.codigo_origem_heishop, 0) as codigo_origem_heishop
+          , IFNULL( pd.valor_unitario, 0) AS valor_unitario
+          , IFNULL( pd.valor_adicional, 0) AS valor_adicional
+          , IFNULL( pd.valor_retorno, 0) AS valor_retorno
+          , IFNULL( pd.valor_total, 0) AS valor_total
+          , IFNULL( pd.quantidade_emissao, 0) AS quantidade_emissao
+          , IFNULL( pd.quantidade_retorno , 0) AS quantidade_retorno    
+          , ROUND(IFNULL( SUM((pd.quantidade_emissao - pd.quantidade_retorno) / pr.qnt_un ), 0),3) AS vol_umb
+          , ROUND(IFNULL( SUM((pd.quantidade_emissao - pd.quantidade_retorno) / pr.qnt_un ) * pr.fat_conv, 0),3) AS  vol_hl          
+FROM	  vw_pedidos pd
+		  INNER JOIN tbl_produtos pr ON pd.cod_produto = pr.cod_produto
+							             AND pd.cod_revenda = pr.cod_revenda
+		  INNER JOIN tbl_clientes cl ON pd.cod_cliente = cl.cod_cliente
+		                            AND pd.cod_revenda = cl.cod_revenda
+		  INNER JOIN tbl_vendedores vd ON cl.vd = vd.vd 
+		                             AND  cl.cod_revenda = vd.cod_revenda
+ WHERE   YEAR(DATE_FORMAT(pd.data_pedido, '%Y%m%d')) =2024
+                 AND MONTH(DATE_FORMAT(pd.data_pedido, '%Y%m%d')) = 10
+GROUP BY    pd.pedido
+          , pr.id
+          , cl.id
+          , vd.id
+          , pr.id
+          , data_pedido
+          , codigo_origem_heishop
+          , pd.valor_unitario
+          , pd.valor_adicional
+          , pd.valor_retorno
+          , pd.valor_total
+          , pd.quantidade_emissao
+          , pd.quantidade_retorno</property>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica a permissão para que as colunas externas que não são de cadeias de caracteres sejam convertidas implicitamente em cadeias de caracteres nas colunas de saída."
+                      name="AllowImplicitStringConversion">true</property>
+                    <property
+                      dataType="System.String"
+                      description="O nome da tabela de banco de dados de Origem."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifique o modo para recuperar informações da coluna externa"
+                      name="AccessMode"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Connections[IDbConnection]"
+                      connectionManagerID="{26D897B7-C5D0-445A-9B86-AF326E9E49CB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[PRODUCAO]"
+                      description="Gerenciador de conexões gerenciadas"
+                      name="IDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET]"
+                      name="Saída do de Origem do ADO NET">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDNOTA]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[IDNOTA]"
+                          length="64"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDNOTA]"
+                          name="IDNOTA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDCLIENTE]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[IDCLIENTE]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDCLIENTE]"
+                          name="IDCLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDVENDEDOR]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[IDVENDEDOR]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDVENDEDOR]"
+                          name="IDVENDEDOR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDPRODUTO]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[IDPRODUTO]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[IDPRODUTO]"
+                          name="IDPRODUTO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[data_pedido]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[data_pedido]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[data_pedido]"
+                          name="data_pedido"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[codigo_origem_heishop]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[codigo_origem_heishop]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[codigo_origem_heishop]"
+                          name="codigo_origem_heishop"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[valor_unitario]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[valor_unitario]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[valor_unitario]"
+                          name="valor_unitario"
+                          precision="11"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[valor_adicional]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[valor_adicional]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[valor_adicional]"
+                          name="valor_adicional"
+                          precision="11"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[valor_retorno]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[valor_retorno]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[valor_retorno]"
+                          name="valor_retorno"
+                          precision="11"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[valor_total]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[valor_total]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[valor_total]"
+                          name="valor_total"
+                          precision="11"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[quantidade_emissao]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[quantidade_emissao]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[quantidade_emissao]"
+                          name="quantidade_emissao"
+                          precision="11"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[quantidade_retorno]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[quantidade_retorno]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[quantidade_retorno]"
+                          name="quantidade_retorno"
+                          precision="11"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[vol_umb]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[vol_umb]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[vol_umb]"
+                          name="vol_umb"
+                          precision="35"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[vol_hl]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[vol_hl]"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[vol_hl]"
+                          name="vol_hl"
+                          precision="38"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[IDNOTA]"
+                          dataType="wstr"
+                          length="64"
+                          name="IDNOTA" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[IDCLIENTE]"
+                          dataType="i8"
+                          name="IDCLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[IDVENDEDOR]"
+                          dataType="i8"
+                          name="IDVENDEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[IDPRODUTO]"
+                          dataType="i8"
+                          name="IDPRODUTO" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[data_pedido]"
+                          dataType="dbTimeStamp"
+                          name="data_pedido" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[codigo_origem_heishop]"
+                          dataType="i4"
+                          name="codigo_origem_heishop" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[valor_unitario]"
+                          dataType="numeric"
+                          name="valor_unitario"
+                          precision="11"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[valor_adicional]"
+                          dataType="numeric"
+                          name="valor_adicional"
+                          precision="11"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[valor_retorno]"
+                          dataType="numeric"
+                          name="valor_retorno"
+                          precision="11"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[valor_total]"
+                          dataType="numeric"
+                          name="valor_total"
+                          precision="11"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[quantidade_emissao]"
+                          dataType="numeric"
+                          name="quantidade_emissao"
+                          precision="11"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[quantidade_retorno]"
+                          dataType="numeric"
+                          name="quantidade_retorno"
+                          precision="11"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[vol_umb]"
+                          dataType="numeric"
+                          name="vol_umb"
+                          precision="35"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[vol_hl]"
+                          dataType="numeric"
+                          name="vol_hl"
+                          precision="38"
+                          scale="3" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem do ADO NET">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[IDNOTA]"
+                          dataType="wstr"
+                          length="64"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[IDNOTA]"
+                          name="IDNOTA" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[IDCLIENTE]"
+                          dataType="i8"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[IDCLIENTE]"
+                          name="IDCLIENTE" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[IDVENDEDOR]"
+                          dataType="i8"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[IDVENDEDOR]"
+                          name="IDVENDEDOR" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[IDPRODUTO]"
+                          dataType="i8"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[IDPRODUTO]"
+                          name="IDPRODUTO" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[data_pedido]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[data_pedido]"
+                          name="data_pedido" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[codigo_origem_heishop]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[codigo_origem_heishop]"
+                          name="codigo_origem_heishop" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[valor_unitario]"
+                          dataType="numeric"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[valor_unitario]"
+                          name="valor_unitario"
+                          precision="11"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[valor_adicional]"
+                          dataType="numeric"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[valor_adicional]"
+                          name="valor_adicional"
+                          precision="11"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[valor_retorno]"
+                          dataType="numeric"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[valor_retorno]"
+                          name="valor_retorno"
+                          precision="11"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[valor_total]"
+                          dataType="numeric"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[valor_total]"
+                          name="valor_total"
+                          precision="11"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[quantidade_emissao]"
+                          dataType="numeric"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[quantidade_emissao]"
+                          name="quantidade_emissao"
+                          precision="11"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[quantidade_retorno]"
+                          dataType="numeric"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[quantidade_retorno]"
+                          name="quantidade_retorno"
+                          precision="11"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[vol_umb]"
+                          dataType="numeric"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[vol_umb]"
+                          name="vol_umb"
+                          precision="35"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[vol_hl]"
+                          dataType="numeric"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[vol_hl]"
+                          name="vol_hl"
+                          precision="38"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CARGA STAGE\STAGE FATO.Paths[Saída de Conversão de Dados]"
+                  endId="Package\CARGA STAGE\STAGE FATO\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Conversão de Dados"
+                  startId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Outputs[Saída de Conversão de Dados]" />
+                <path
+                  refId="Package\CARGA STAGE\STAGE FATO.Paths[Saída do de Origem do ADO NET]"
+                  endId="Package\CARGA STAGE\STAGE FATO\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+                  name="Saída do de Origem do ADO NET"
+                  startId="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CARGA STAGE\TRUNCATE ST_STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{9BD7DF56-4C54-47A9-9F4D-AD571892A903}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE ST_STAGE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{54C269BB-EEAB-4197-9210-9148527AA270}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.ST_FATO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\CARGA STAGE.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:DTSID="{AA39660A-B2B7-4DC6-B04D-5E92E9286380}"
+          DTS:From="Package\CARGA STAGE\TRUNCATE ST_STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\CARGA STAGE\STAGE FATO" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{B0E0B121-E71D-499C-8242-FA43E813DB63}"
+      DTS:From="Package\CARGA STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\CARGA BW" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\CARGA BW\Tarefa Executar SQL"
+          TopLeft="77,62" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="332,224.8"
+          Size="332,268"
+          Id="Package\CARGA BW"
+          TopLeft="523,35.5" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\CARGA STAGE\STAGE FATO"
+          TopLeft="55,128" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\CARGA STAGE\TRUNCATE ST_STAGE"
+          TopLeft="55,26.5" />
+        <EdgeLayout
+          Id="Package\CARGA STAGE.PrecedenceConstraints[Restrição]"
+          TopLeft="147,68.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.5"
+              Start="0,0"
+              End="0,52">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="332,224.8"
+          Size="332,268"
+          Id="Package\CARGA STAGE"
+          TopLeft="95,35.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="427,169.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96,0"
+              Start="0,0"
+              End="88.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="88.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CARGA STAGE\STAGE FATO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\CARGA STAGE\STAGE FATO\Destino OLE DB"
+          TopLeft="166.444444643126,239.9411764049" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\CARGA STAGE\STAGE FATO\Conversão de Dados"
+          TopLeft="166.444444643126,149.02941170639" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET"
+          TopLeft="166.444444643126,58.1176470078811" />
+        <EdgeLayout
+          Id="Package\CARGA STAGE\STAGE FATO.Paths[Saída de Conversão de Dados]"
+          TopLeft="254.044444643126,190.62941170639">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.3117646985093"
+              Start="0,0"
+              End="0,41.8117646985093">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.8117646985093" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA STAGE\STAGE FATO.Paths[Saída do de Origem do ADO NET]"
+          TopLeft="254.044444643126,99.7176470078811">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.3117646985094"
+              Start="0,0"
+              End="0,41.8117646985094">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.8117646985094" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA STAGE\STAGE FATO\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA STAGE\STAGE FATO\Origem do ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

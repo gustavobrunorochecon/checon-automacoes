@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CHECON_STAGE"
+  DTS:DTSID="{54C269BB-EEAB-4197-9210-9148527AA270}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=.\CHECON;User ID=sa;Initial Catalog=CHECON_STAGE;Provider=SQLNCLI11.1;Auto Translate=False;Application Name=SSIS-CARGA_CLIENTES-{54C269BB-EEAB-4197-9210-9148527AA270}.\CHECON.CHECON_STAGE;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAUs3z4mQCV0u3+9/z3mSW2QAAAAACAAAAAAAQZgAAAAEAACAAAAAskrfPtx4QWGBjY4WmBOoVdRsFZ2XrHXr72bB6YGb79gAAAAAOgAAAAAIAACAAAABRHB4ArEDGOiKMrIUrJZ0csU651MmK2tazEh46yIqLG4AAAADv74hCr1AYW3nO99I+4REjivoLRDXMo0P+UsoVmL2HxBPm3gYMavcOQlZTA09HHeAmArnafMaeZk5UHNEFwvprAVCc/tf2GxDGVln7IlW/CS0NVBLtjy5j3O32RK/GriWNqiio4iX7aJJiqEXq3Zh7je+nFpSCKrAvGnp4PRjg6kAAAABblVVlJTWTtHP5Wug182gEr1ZNWXF49zr33TH4EYvzwxCor/L095KhDqxC+Fc4sRaBAj2syeNc0S1r4nghi6a0</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

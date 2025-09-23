@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="PRODUCAO"
+  DTS:DTSID="{26D897B7-C5D0-445A-9B86-AF326E9E49CB}"
+  DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=etl;Dsn=Producao;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9H51j9uQikazdaNG1Nck0AAAAAACAAAAAAAQZgAAAAEAACAAAADH8ZCnhOogKAvTzXOBNdbWye6G018Ipvu71qngLrRp8gAAAAAOgAAAAAIAACAAAADWxVVVCijfzYfr774Lm3kAHo7srtPE8DDm94vRg/wminAAAACk83ATUWkGypH1xXa22+MSaiULyTLuAcQe7BF3InCYz28npnCV9lnWMI3+54OSfFnoW86mbcLXLVsIKKHyiNeNhLmguQ4+V/9BitUBxuyT1NCgvtXyiEzOlAT+lDlom71BXqAs8KWZZG6824agqoR0QAAAAGiu3zdD0HdtRnqrtMXoAuDVfCYewUPjujYZtsYIrKOl0zz6f1zZOjoGYu6XXaGmmiQ8F2iZtnyUj/9BytUK4/8=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

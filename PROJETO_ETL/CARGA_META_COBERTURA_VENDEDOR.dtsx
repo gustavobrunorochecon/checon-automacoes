@@ -1,0 +1,2179 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/10/2024 4:24:42 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-3G838JT"
+  DTS:CreatorName="DESKTOP-3G838JT\Checon"
+  DTS:DTSID="{EC966821-C06F-4DD8-97B5-9BEF693323D3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="CARGA_META_COBERTURA_VENDEDOR"
+  DTS:PackageType="5"
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{116B1C80-AD1B-4858-AE0B-078B251ED594}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CARGA BW"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{701B429B-395E-4A92-8F15-A88A9E89C99B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGA BW">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CARGA BW\Tarefa Fluxo de Dados"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{1F692774-CD3B-4BDB-8AAB-C3F519BDED80}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarefa Fluxo de Dados"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              defaultBufferMaxRows="50000"
+              defaultBufferSize="99485760"
+              version="1">
+              <components>
+                <component
+                  refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="Comando OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;2"
+                  description="Executa uma instrução SQL para cada linha em um fluxo de dados. Por exemplo, chame um procedimento armazenado 'new employee setup' para cada linha da tabela 'new employees'. Observação: a execução de uma instrução SQL para cada linha de um fluxo de dados grande pode demorar."
+                  name="Comando OLE DB"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DIM_META_COBERTURA_VENDEDOR] SET [agregador] = ?,[cod_agregador] = ?,[cod_revenda] = ?,[gv] = ?,[IDVENDEDOR] = ?,[meta] = ?,[revenda] = ?,[sv] = ?,[validade] = ?,[vd] = ? WHERE [IDMETA_COBERTURA_VENDEDOR] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{BE64CA15-FC6A-4D25-A7CE-4E47F71835BE}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CHECON_DW]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB]"
+                      errorOrTruncationOperation="Execução de Comando"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Comando OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[agregador]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="agregador"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[agregador]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[cod_agregador]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="cod_agregador"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_agregador]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[cod_revenda]"
+                          cachedDataType="i4"
+                          cachedName="cod_revenda"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_revenda]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[gv]"
+                          cachedDataType="i4"
+                          cachedName="gv"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_3]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[gv]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]"
+                          cachedDataType="i8"
+                          cachedName="IDMETA_COBERTURA_VENDEDOR"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_10]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[IDVENDEDOR]"
+                          cachedDataType="i8"
+                          cachedName="IDVENDEDOR"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_4]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDVENDEDOR]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[meta]"
+                          cachedDataType="i8"
+                          cachedName="meta"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_5]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[meta]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[revenda]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="revenda"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_6]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[revenda]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[sv]"
+                          cachedDataType="i4"
+                          cachedName="sv"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_7]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[sv]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[validade]"
+                          cachedDataType="dbDate"
+                          cachedName="validade"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_8]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[validade]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[vd]"
+                          cachedDataType="i4"
+                          cachedName="vd"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_9]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[vd]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                          dataType="i4"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_3]"
+                          dataType="i4"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_4]"
+                          dataType="i8"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_5]"
+                          dataType="i8"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_6]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_7]"
+                          dataType="i4"
+                          name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_8]"
+                          dataType="dbDate"
+                          name="Param_8">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_9]"
+                          dataType="i4"
+                          name="Param_9">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_10]"
+                          dataType="i8"
+                          name="Param_10">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Outputs[Saída de Comando OLE DB]"
+                      exclusionGroup="1"
+                      name="Saída de Comando OLE DB"
+                      synchronousInputId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Comando OLE DB"
+                      synchronousInputId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta"
+                  componentClassID="Microsoft.SCD"
+                  contactInfo="Dimensão de Alteração Lenta;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;3"
+                  description="Atualiza uma dimensão de data warehouse do SQL Server Analysis Services. Atualize registros da dimensão que já estejam presentes e insira os registros que não estão. Por exemplo, atualize a tabela DimProduct do banco de dados OLAP AdventureWorksDW com dados da tabela Products do banco de dados OLTP AdventureWorks."
+                  name="Dimensão de Alteração Lenta"
+                  version="3">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a instrução SELECT usada para criar um conjunto de linhas de esquema."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [agregador], [cod_agregador], [cod_revenda], [gv], [IDMETA_COBERTURA_VENDEDOR], [IDVENDEDOR], [meta], [revenda], [sv], [validade], [vd] FROM [dbo].[DIM_META_COBERTURA_VENDEDOR]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a cláusula WHERE na instrução SELECT que seleciona a linha atual entre as linhas com chaves de negócios idênticas."
+                      name="CurrentRowWhere"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as atualizações de atributo de histórico são direcionadas para a saída de transformação para atualizações de atributo de alteração."
+                      name="UpdateChangingAttributeHistory">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se a transformação falhará quando as colunas com atributos fixos contiverem alterações."
+                      name="FailOnFixedAttributeChange">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome da coluna para o membro inferido."
+                      name="InferredMemberIndicator"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as atualizações de membro inferido são detectadas."
+                      name="EnableInferredMember">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se a transformação falhará quando uma pesquisa de registro existente falhar."
+                      name="FailOnLookupFailure">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica que todas as linhas na entrada são novas ou a transformação detecta o tipo de alteração."
+                      name="IncomingRowChangeType"
+                      typeConverter="IncomingRowChangeType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Connections[LookupConnection]"
+                      connectionManagerID="{BE64CA15-FC6A-4D25-A7CE-4E47F71835BE}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CHECON_DW]"
+                      description="Define a conexão a ser usada para pesquisas na tabela de dimensão"
+                      name="LookupConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]"
+                      name="Entrada de Dimensão de Alteração Lenta">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[agregador]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="agregador"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[agregador]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[agregador]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[cod_agregador]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="cod_agregador"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[cod_agregador]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_agregador]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[cod_revenda]"
+                          cachedDataType="i4"
+                          cachedName="cod_revenda"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[cod_revenda]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_revenda]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[gv]"
+                          cachedDataType="i4"
+                          cachedName="gv"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[gv]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[gv]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[IDMETA_COBERTURA_VENDEDOR]"
+                          cachedDataType="i8"
+                          cachedName="IDMETA_COBERTURA_VENDEDOR"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[IDMETA_COBERTURA_VENDEDOR]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[IDVENDEDOR]"
+                          cachedDataType="i8"
+                          cachedName="IDVENDEDOR"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[IDVENDEDOR]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDVENDEDOR]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[meta]"
+                          cachedDataType="i8"
+                          cachedName="meta"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[meta]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[meta]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[revenda]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="revenda"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[revenda]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[revenda]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[sv]"
+                          cachedDataType="i4"
+                          cachedName="sv"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[sv]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[sv]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[validade]"
+                          cachedDataType="dbDate"
+                          cachedName="validade"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[validade]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[validade]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[vd]"
+                          cachedDataType="i4"
+                          cachedName="vd"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[vd]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[vd]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="agregador" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[cod_agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="cod_agregador" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[cod_revenda]"
+                          dataType="i4"
+                          name="cod_revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[gv]"
+                          dataType="i4"
+                          name="gv" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[IDMETA_COBERTURA_VENDEDOR]"
+                          dataType="i8"
+                          name="IDMETA_COBERTURA_VENDEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[IDVENDEDOR]"
+                          dataType="i8"
+                          name="IDVENDEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[meta]"
+                          dataType="i8"
+                          name="meta" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[revenda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[sv]"
+                          dataType="i4"
+                          name="sv" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[validade]"
+                          dataType="dbDate"
+                          name="validade" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[vd]"
+                          dataType="i4"
+                          name="vd" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Outputs[Saída Inalterada]"
+                      description="Linhas inalteradas"
+                      exclusionGroup="1"
+                      name="Saída Inalterada"
+                      synchronousInputId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Outputs[Nova Saída]"
+                      description="Novas linhas"
+                      exclusionGroup="1"
+                      name="Nova Saída"
+                      synchronousInputId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Outputs[Saída de Atributo Fixo]"
+                      description="Linhas com alterações em colunas marcadas com FixedAttribute"
+                      exclusionGroup="1"
+                      name="Saída de Atributo Fixo"
+                      synchronousInputId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Outputs[Saída de Atualizações de Atributo de Alteração]"
+                      description="Essas linhas contêm novas informações para as alterações da coluna ChangingAttribute (Type 1)"
+                      exclusionGroup="1"
+                      name="Saída de Atualizações de Atributo de Alteração"
+                      synchronousInputId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Outputs[Saída de Inserções de Atributo de Histórico]"
+                      description="O resultado de alterações de HistoricalAttribute (Type 2) nessas novas linhas"
+                      exclusionGroup="2"
+                      name="Saída de Inserções de Atributo de Histórico"
+                      synchronousInputId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Outputs[Saída de Atualizações de Membro Inferido]"
+                      description="Informações para atualizar a linha de dimensão inicial sem preenchimento"
+                      exclusionGroup="1"
+                      name="Saída de Atualizações de Membro Inferido"
+                      synchronousInputId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="Inserir Destino"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[DIM_META_COBERTURA_VENDEDOR]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Connections[OleDbConnection]"
+                      connectionManagerID="{BE64CA15-FC6A-4D25-A7CE-4E47F71835BE}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CHECON_DW]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]"
+                          cachedDataType="i8"
+                          cachedName="IDMETA_COBERTURA_VENDEDOR"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDMETA_COBERTURA_VENDEDOR]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[IDVENDEDOR]"
+                          cachedDataType="i8"
+                          cachedName="IDVENDEDOR"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDVENDEDOR]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDVENDEDOR]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[gv]"
+                          cachedDataType="i4"
+                          cachedName="gv"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[gv]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[gv]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[sv]"
+                          cachedDataType="i4"
+                          cachedName="sv"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[sv]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[sv]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[vd]"
+                          cachedDataType="i4"
+                          cachedName="vd"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[vd]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[vd]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[validade]"
+                          cachedDataType="dbDate"
+                          cachedName="validade"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[validade]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[validade]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[cod_agregador]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="cod_agregador"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[cod_agregador]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_agregador]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[agregador]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="agregador"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[agregador]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[agregador]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[meta]"
+                          cachedDataType="i8"
+                          cachedName="meta"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[meta]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[meta]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[cod_revenda]"
+                          cachedDataType="i4"
+                          cachedName="cod_revenda"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[cod_revenda]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_revenda]" />
+                        <inputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[revenda]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="revenda"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[revenda]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[revenda]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDSK]"
+                          dataType="i4"
+                          name="IDSK" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDMETA_COBERTURA_VENDEDOR]"
+                          dataType="i8"
+                          name="IDMETA_COBERTURA_VENDEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDVENDEDOR]"
+                          dataType="i8"
+                          name="IDVENDEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[gv]"
+                          dataType="i4"
+                          name="gv" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[sv]"
+                          dataType="i4"
+                          name="sv" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[vd]"
+                          dataType="i4"
+                          name="vd" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[validade]"
+                          dataType="dbDate"
+                          name="validade" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[cod_agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="cod_agregador" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="agregador" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[meta]"
+                          dataType="i8"
+                          name="meta" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[cod_revenda]"
+                          dataType="i4"
+                          name="cod_revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[revenda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="revenda" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="Origem OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[ST_META_COBERTURA_VENDEDOR]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{54C269BB-EEAB-4197-9210-9148527AA270}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CHECON_STAGE]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB]"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[validade]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[validade]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[validade]"
+                          name="validade"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_revenda]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[cod_revenda]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_revenda]"
+                          name="cod_revenda"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[revenda]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[revenda]"
+                          length="20"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[revenda]"
+                          name="revenda"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[cod_agregador]"
+                          length="10"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_agregador]"
+                          name="cod_agregador"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[agregador]"
+                          length="200"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[agregador]"
+                          name="agregador"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[meta]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[meta]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[meta]"
+                          name="meta"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[IDMETA_COBERTURA_VENDEDOR]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]"
+                          name="IDMETA_COBERTURA_VENDEDOR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDVENDEDOR]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[IDVENDEDOR]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDVENDEDOR]"
+                          name="IDVENDEDOR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[gv]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[gv]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[gv]"
+                          name="gv"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[sv]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[sv]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[sv]"
+                          name="sv"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[vd]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[vd]"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[vd]"
+                          name="vd"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[validade]"
+                          dataType="dbDate"
+                          name="validade" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[cod_revenda]"
+                          dataType="i4"
+                          name="cod_revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[revenda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[cod_agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="cod_agregador" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="agregador" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[meta]"
+                          dataType="i8"
+                          name="meta" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[IDMETA_COBERTURA_VENDEDOR]"
+                          dataType="i8"
+                          name="IDMETA_COBERTURA_VENDEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[IDVENDEDOR]"
+                          dataType="i8"
+                          name="IDVENDEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[gv]"
+                          dataType="i4"
+                          name="gv" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[sv]"
+                          dataType="i4"
+                          name="sv" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[vd]"
+                          dataType="i4"
+                          name="vd" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]"
+                          dataType="i8"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]"
+                          name="IDMETA_COBERTURA_VENDEDOR" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[IDVENDEDOR]"
+                          dataType="i8"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[IDVENDEDOR]"
+                          name="IDVENDEDOR" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[gv]"
+                          dataType="i4"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[gv]"
+                          name="gv" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[sv]"
+                          dataType="i4"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[sv]"
+                          name="sv" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[vd]"
+                          dataType="i4"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[vd]"
+                          name="vd" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[validade]"
+                          dataType="dbDate"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[validade]"
+                          name="validade" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[cod_agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[cod_agregador]"
+                          name="cod_agregador" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[agregador]"
+                          name="agregador" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[meta]"
+                          dataType="i8"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[meta]"
+                          name="meta" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[cod_revenda]"
+                          dataType="i4"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[cod_revenda]"
+                          name="cod_revenda" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[revenda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[revenda]"
+                          name="revenda" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CARGA BW\Tarefa Fluxo de Dados.Paths[Nova Saída]"
+                  endId="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino.Inputs[Entrada de Destino OLE DB]"
+                  name="Nova Saída"
+                  startId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Outputs[Nova Saída]" />
+                <path
+                  refId="Package\CARGA BW\Tarefa Fluxo de Dados.Paths[Saída de Atualizações de Atributo de Alteração]"
+                  endId="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB.Inputs[Entrada de Comando OLE DB]"
+                  name="Saída de Atualizações de Atributo de Alteração"
+                  startId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Outputs[Saída de Atualizações de Atributo de Alteração]" />
+                <path
+                  refId="Package\CARGA BW\Tarefa Fluxo de Dados.Paths[Saída de Origem OLE DB]"
+                  endId="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB.Outputs[Saída de Origem OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CARGA STAGE"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{19AB1478-E142-4AFB-9423-78B4529306AE}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGA STAGE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CARGA STAGE\STAGE AGREGADORES"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{4E82597B-E2A9-4A42-A644-572FAC9C4C94}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="STAGE AGREGADORES"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="Destino OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[ST_META_COBERTURA_VENDEDOR]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{54C269BB-EEAB-4197-9210-9148527AA270}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CHECON_STAGE]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[validade]"
+                          cachedDataType="dbDate"
+                          cachedName="validade"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[validade]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[validade]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[cod_revenda]"
+                          cachedDataType="i4"
+                          cachedName="cod_revenda"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[cod_revenda]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_revenda]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[revenda]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="revenda"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[revenda]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[revenda]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[cod_agregador]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="cod_agregador"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[cod_agregador]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_agregador]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[agregador]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="agregador"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[agregador]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[agregador]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[meta]"
+                          cachedDataType="i8"
+                          cachedName="meta"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[meta]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[meta]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]"
+                          cachedDataType="i8"
+                          cachedName="IDMETA_COBERTURA_VENDEDOR"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDMETA_COBERTURA_VENDEDOR]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[IDVENDEDOR]"
+                          cachedDataType="i8"
+                          cachedName="IDVENDEDOR"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDVENDEDOR]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDVENDEDOR]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[gv]"
+                          cachedDataType="i4"
+                          cachedName="gv"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[gv]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[gv]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[sv]"
+                          cachedDataType="i4"
+                          cachedName="sv"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[sv]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[sv]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[vd]"
+                          cachedDataType="i4"
+                          cachedName="vd"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[vd]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[vd]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[validade]"
+                          dataType="dbDate"
+                          name="validade" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[cod_revenda]"
+                          dataType="i4"
+                          name="cod_revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[revenda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[cod_agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="cod_agregador" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="agregador" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[meta]"
+                          dataType="i8"
+                          name="meta" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDMETA_COBERTURA_VENDEDOR]"
+                          dataType="i8"
+                          name="IDMETA_COBERTURA_VENDEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[IDVENDEDOR]"
+                          dataType="i4"
+                          name="IDVENDEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[gv]"
+                          dataType="i4"
+                          name="gv" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[sv]"
+                          dataType="i4"
+                          name="sv" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[vd]"
+                          dataType="i4"
+                          name="vd" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="Origem OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[vwMeta_Cobertura_Vendedor]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{54C269BB-EEAB-4197-9210-9148527AA270}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CHECON_STAGE]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB]"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[validade]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[validade]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[validade]"
+                          name="validade"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[vd]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[vd]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[vd]"
+                          name="vd"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[sv]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[sv]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[sv]"
+                          name="sv"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[gv]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[gv]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[gv]"
+                          name="gv"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_revenda]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[cod_revenda]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_revenda]"
+                          name="cod_revenda"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[revenda]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[revenda]"
+                          length="20"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[revenda]"
+                          name="revenda"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[cod_agregador]"
+                          length="10"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[cod_agregador]"
+                          name="cod_agregador"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[agregador]"
+                          length="200"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[agregador]"
+                          name="agregador"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[meta]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[meta]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[meta]"
+                          name="meta"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[IDMETA_COBERTURA_VENDEDOR]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]"
+                          name="IDMETA_COBERTURA_VENDEDOR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDVENDEDOR]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[IDVENDEDOR]"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[IDVENDEDOR]"
+                          name="IDVENDEDOR"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[validade]"
+                          dataType="dbDate"
+                          name="validade" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[vd]"
+                          dataType="i4"
+                          name="vd" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[sv]"
+                          dataType="i4"
+                          name="sv" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[gv]"
+                          dataType="i4"
+                          name="gv" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[cod_revenda]"
+                          dataType="i4"
+                          name="cod_revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[revenda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[cod_agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="cod_agregador" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="agregador" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[meta]"
+                          dataType="i8"
+                          name="meta" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[IDMETA_COBERTURA_VENDEDOR]"
+                          dataType="i8"
+                          name="IDMETA_COBERTURA_VENDEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[IDVENDEDOR]"
+                          dataType="i8"
+                          name="IDVENDEDOR" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]"
+                          dataType="i8"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[IDMETA_COBERTURA_VENDEDOR]"
+                          name="IDMETA_COBERTURA_VENDEDOR" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[IDVENDEDOR]"
+                          dataType="i8"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[IDVENDEDOR]"
+                          name="IDVENDEDOR" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[validade]"
+                          dataType="dbDate"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[validade]"
+                          name="validade" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[vd]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[vd]"
+                          name="vd" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[sv]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[sv]"
+                          name="sv" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[gv]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[gv]"
+                          name="gv" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[cod_agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[cod_agregador]"
+                          name="cod_agregador" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[agregador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[agregador]"
+                          name="agregador" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[meta]"
+                          dataType="i8"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[meta]"
+                          name="meta" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[cod_revenda]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[cod_revenda]"
+                          name="cod_revenda" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[revenda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[revenda]"
+                          name="revenda" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CARGA STAGE\STAGE AGREGADORES.Paths[Saída de Origem OLE DB]"
+                  endId="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB.Outputs[Saída de Origem OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CARGA STAGE\TRUNCATE ST_STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{BEADA860-253B-4860-A734-5DEDF303A9BB}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE ST_STAGE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{54C269BB-EEAB-4197-9210-9148527AA270}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.ST_META_COBERTURA_VENDEDOR" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\CARGA STAGE.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:DTSID="{D58B53B0-27CD-412D-89C4-85A154F8BFF4}"
+          DTS:From="Package\CARGA STAGE\TRUNCATE ST_STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\CARGA STAGE\STAGE AGREGADORES" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{1FABB182-E5AC-4081-B72A-32FBCDFB4AF8}"
+      DTS:From="Package\CARGA STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\CARGA BW" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="185,42"
+          Id="Package\CARGA BW\Tarefa Fluxo de Dados"
+          TopLeft="51,71" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="332,225"
+          Size="332,268"
+          Id="Package\CARGA BW"
+          TopLeft="523,35.5" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\CARGA STAGE\STAGE AGREGADORES"
+          TopLeft="55,128" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\CARGA STAGE\TRUNCATE ST_STAGE"
+          TopLeft="55,26.5" />
+        <EdgeLayout
+          Id="Package\CARGA STAGE.PrecedenceConstraints[Restrição]"
+          TopLeft="147,68.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.5"
+              Start="0,0"
+              End="0,52">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="332,225"
+          Size="332,268"
+          Id="Package\CARGA STAGE"
+          TopLeft="95,35.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="427,169.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96,0"
+              Start="0,0"
+              End="88.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="88.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CARGA BW\Tarefa Fluxo de Dados">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB"
+          TopLeft="219.5,5.5" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta"
+          TopLeft="187,107.5" />
+        <EdgeLayout
+          Id="Package\CARGA BW\Tarefa Fluxo de Dados.Paths[Saída de Origem OLE DB]"
+          TopLeft="295.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="148,42"
+          Id="Package\CARGA BW\Tarefa Fluxo de Dados\Inserir Destino"
+          TopLeft="5.50000000000006,209.5" />
+        <EdgeLayout
+          Id="Package\CARGA BW\Tarefa Fluxo de Dados.Paths[Nova Saída]"
+          TopLeft="260.666666666667,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-181.166666666667,60"
+              Start="0,0"
+              End="-181.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.263494967978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.263494967978"
+                    Point2="0,24.263494967978"
+                    Point3="-4,24.263494967978" />
+                  <mssgle:LineSegment
+                    End="-177.166666666667,24.263494967978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-177.166666666667,24.263494967978"
+                    Point2="-181.166666666667,24.263494967978"
+                    Point3="-181.166666666667,28.263494967978" />
+                  <mssgle:LineSegment
+                    End="-181.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-115.576692708333,29.263494967978,49.98671875,10.3349609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162,42"
+          Id="Package\CARGA BW\Tarefa Fluxo de Dados\Comando OLE DB"
+          TopLeft="214.5,209.5" />
+        <EdgeLayout
+          Id="Package\CARGA BW\Tarefa Fluxo de Dados.Paths[Saída de Atualizações de Atributo de Alteração]"
+          TopLeft="330.333333333333,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-34.8333333333333,60"
+              Start="0,0"
+              End="-34.8333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.263494967978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.263494967978"
+                    Point2="0,24.263494967978"
+                    Point3="-4,24.263494967978" />
+                  <mssgle:LineSegment
+                    End="-30.8333333333333,24.263494967978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.8333333333333,24.263494967978"
+                    Point2="-34.8333333333333,24.263494967978"
+                    Point3="-34.8333333333333,28.263494967978" />
+                  <mssgle:LineSegment
+                    End="-34.8333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-120.779361979167,29.263494967978,206.725390625,12.2490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA BW\Tarefa Fluxo de Dados\Origem OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\CARGA STAGE\STAGE AGREGADORES">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB"
+          TopLeft="175.5,38" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB"
+          TopLeft="175,182.5" />
+        <EdgeLayout
+          Id="Package\CARGA STAGE\STAGE AGREGADORES.Paths[Saída de Origem OLE DB]"
+          TopLeft="251.5,80">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,102.5"
+              Start="0,0"
+              End="0,95">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,95" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA STAGE\STAGE AGREGADORES\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA STAGE\STAGE AGREGADORES\Origem OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA BW\Tarefa Fluxo de Dados\Dimensão de Alteração Lenta">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{BE64CA15-FC6A-4D25-A7CE-4E47F71835BE}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[DIM_META_COBERTURA_VENDEDOR]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origem OLE DB.Saídas[Saída de Origem OLE DB].Colunas[agregador]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;agregador&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origem OLE DB.Saídas[Saída de Origem OLE DB].Colunas[cod_agregador]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;cod_agregador&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origem OLE DB.Saídas[Saída de Origem OLE DB].Colunas[cod_revenda]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;cod_revenda&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origem OLE DB.Saídas[Saída de Origem OLE DB].Colunas[gv]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;gv&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origem OLE DB.Saídas[Saída de Origem OLE DB].Colunas[IDMETA_COBERTURA_VENDEDOR]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;IDMETA_COBERTURA_VENDEDOR&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origem OLE DB.Saídas[Saída de Origem OLE DB].Colunas[IDVENDEDOR]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;IDVENDEDOR&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origem OLE DB.Saídas[Saída de Origem OLE DB].Colunas[meta]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;meta&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origem OLE DB.Saídas[Saída de Origem OLE DB].Colunas[revenda]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;revenda&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origem OLE DB.Saídas[Saída de Origem OLE DB].Colunas[sv]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;sv&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origem OLE DB.Saídas[Saída de Origem OLE DB].Colunas[validade]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;validade&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origem OLE DB.Saídas[Saída de Origem OLE DB].Colunas[vd]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;vd&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Inserir Destino&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

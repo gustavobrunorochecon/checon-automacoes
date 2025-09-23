@@ -1,0 +1,1374 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/19/2025 4:50:56 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-E5VCQOO"
+  DTS:CreatorName="AzureAD\GustavoBrunoro"
+  DTS:DTSID="{8199FF9F-D581-4FBF-8267-9C639E6975DC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="ASSESSMENT"
+  DTS:PackageType="5"
+  DTS:VersionBuild="128"
+  DTS:VersionGUID="{0CC3079B-BB1D-4508-B57D-8C5294D60091}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7CCA0A2B-3F62-42B0-AAF4-DE6E234C76A3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Ano">
+      <DTS:VariableValue
+        DTS:DataType="3">2025</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1CFE9E02-1B01-444D-B8B3-A3409EF127BB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Email">
+      <DTS:VariableValue
+        DTS:DataType="8">P</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{91A2354A-10FB-469E-BFFA-CF059E4B2731}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Mes">
+      <DTS:VariableValue
+        DTS:DataType="3">8</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\1º Semana"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Relatorios da 1º semana do mes "
+      DTS:DTSID="{9F5B4AA6-8954-48BF-9EE1-D362BE09CF27}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="1º Semana">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM10"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="10 MAIORES QUEDAS"
+          DTS:DTSID="{af51b7ae-4e1e-46e7-8fa2-a587b35c1664}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM10"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM10.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM11"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="10 MAIORES POTENCIAIS RGB"
+          DTS:DTSID="{5e312cc5-e684-491e-9c0a-4504d9f137ef}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM11"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM11.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM18"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Plano estratégico (Base COMPASS)"
+          DTS:DTSID="{6b533be7-f219-41df-9e95-91e63c1b3487}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM18"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM18.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM22"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Pesquisa Censitária"
+          DTS:DTSID="{7414c296-3a8e-4833-8c21-31e233c97814}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM22"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM22.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM23"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Cobertura Total"
+          DTS:DTSID="{46AB95D2-956A-4FD4-95A2-DA2EC7D09F43}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM23"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM23.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM24"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Cobertura RGB + CHOPP"
+          DTS:DTSID="{d9a1da84-ef28-423c-bf05-38f17f4d77ab}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM24"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM24.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM25"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Cobertura Craft"
+          DTS:DTSID="{84c277de-54e2-4d08-9198-994f9df171d2}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM25"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM25.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM26"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Cobertura Premium"
+          DTS:DTSID="{31c22216-ab97-49da-9fb9-9fdadf9d51e6}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM26"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM26.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM27"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Cobertura Mainstream"
+          DTS:DTSID="{505a2b12-aa77-45ea-bd0f-2182cb798855}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM27"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM27.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM28"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Gestão de performance do Ranking"
+          DTS:DTSID="{dacf88dd-e2ec-4819-958a-5be8ba6f493e}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM28"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM28.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM29"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Mapa Termico"
+          DTS:DTSID="{f9b494c9-d290-4e0b-b5a2-ad7a100b131d}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM29"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM29.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM30"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Ação de Mercado"
+          DTS:DTSID="{cf0ba648-6b68-459b-826a-7f726f528883}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM30"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM30.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM31"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Gestão Heishop"
+          DTS:DTSID="{f857548e-3f06-4845-9226-82e14c81e64e}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM31"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM31.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\RH02"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Remuneração Variavel"
+          DTS:DTSID="{8bec45bb-f289-4a1f-bfab-390e151d443a}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="RH02"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>RH02.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\TRD01"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Fotografia de Sucesso - Presença"
+          DTS:DTSID="{0d521aef-1db1-493a-8925-d1a4a4727396}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRD01"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>TRD01.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\TRD02"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Fotografia de Sucesso - Presença"
+          DTS:DTSID="{47ea56ab-c117-4ad2-bdc1-f81e24c28c74}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRD02"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>TRD02.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\TRD04"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Estrutura Funcional Trade Marketing"
+          DTS:DTSID="{c251d879-e068-4c16-a1e7-8962eb0d66d9}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRD04"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>TRD04.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\TRD08"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Gestão do FDS"
+          DTS:DTSID="{f0be17cf-970e-46cc-888e-5679320a8f20}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRD08"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>TRD08.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:DTSID="{084B8A86-75F6-49D7-805A-E2C53A881BB1}"
+          DTS:From="Package\1º Semana\COM23"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\1º Semana\COM24" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{51E1A36C-F68F-4EEC-9CB3-06A30D5370FF}"
+          DTS:From="Package\1º Semana\COM24"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 1"
+          DTS:To="Package\1º Semana\COM25" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 10]"
+          DTS:CreationName=""
+          DTS:DTSID="{667C2123-B18B-4806-88E0-38F946F28C26}"
+          DTS:From="Package\1º Semana\COM10"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 10"
+          DTS:To="Package\1º Semana\COM11" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 11]"
+          DTS:CreationName=""
+          DTS:DTSID="{060597E0-0DDF-41E2-A28E-980AC6D7103F}"
+          DTS:From="Package\1º Semana\COM29"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 11"
+          DTS:To="Package\1º Semana\COM30" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 12]"
+          DTS:CreationName=""
+          DTS:DTSID="{189C1DBE-A489-4228-B639-93B2D0AD05C1}"
+          DTS:From="Package\1º Semana\COM31"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 12"
+          DTS:To="Package\1º Semana\RH02" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 13]"
+          DTS:CreationName=""
+          DTS:DTSID="{3432DF8D-DD1C-480C-9D28-45BB8A9672F0}"
+          DTS:From="Package\1º Semana\RH02"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 13"
+          DTS:To="Package\1º Semana\TRD01" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 14]"
+          DTS:CreationName=""
+          DTS:DTSID="{9CDE27D4-28B0-4AB4-A0E8-08019A114429}"
+          DTS:From="Package\1º Semana\COM30"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 14"
+          DTS:To="Package\1º Semana\COM31" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 15]"
+          DTS:CreationName=""
+          DTS:DTSID="{C66BF0FC-A504-40C5-9FB7-75F4B70BDF28}"
+          DTS:From="Package\1º Semana\COM22"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 15"
+          DTS:To="Package\1º Semana\COM23" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 16]"
+          DTS:CreationName=""
+          DTS:DTSID="{E5864599-D8CE-478B-87BA-327DDFF3FC68}"
+          DTS:From="Package\1º Semana\TRD01"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 16"
+          DTS:To="Package\1º Semana\TRD02" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{9DB732D5-5C1E-4019-B4C1-049FC3F322C8}"
+          DTS:From="Package\1º Semana\COM25"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 2"
+          DTS:To="Package\1º Semana\COM26" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{430EA3D6-540E-42F3-A2CD-8E83BDF178EC}"
+          DTS:From="Package\1º Semana\COM26"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 3"
+          DTS:To="Package\1º Semana\COM27" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{6B3E54BF-8213-4113-A94B-45625B98F52B}"
+          DTS:From="Package\1º Semana\COM11"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 4"
+          DTS:To="Package\1º Semana\COM18" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{A339D438-44C3-48D2-8FFF-BD0E78839CD1}"
+          DTS:From="Package\1º Semana\TRD02"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 5"
+          DTS:To="Package\1º Semana\TRD04" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{0F77971C-99E4-456A-B990-EB0B6203E595}"
+          DTS:From="Package\1º Semana\COM18"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 6"
+          DTS:To="Package\1º Semana\COM22" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{574F2A1B-F957-4E7E-B1FA-A72B095DEAB6}"
+          DTS:From="Package\1º Semana\COM27"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 7"
+          DTS:To="Package\1º Semana\COM28" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{74528D17-50CC-419A-BD53-C017E1600295}"
+          DTS:From="Package\1º Semana\COM28"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 8"
+          DTS:To="Package\1º Semana\COM29" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 9]"
+          DTS:CreationName=""
+          DTS:DTSID="{15F1160C-93F5-4E40-933C-A1FDE920E2B1}"
+          DTS:From="Package\1º Semana\TRD04"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 9"
+          DTS:To="Package\1º Semana\TRD08" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\4º Semana"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Relatorios da 4º semana do mes "
+      DTS:Disabled="True"
+      DTS:DTSID="{c9dbc9ec-55fd-421a-ac7f-518638623964}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="4º Semana">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\4º Semana\COM15"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Dados cadastrais - Base PDVs"
+          DTS:Disabled="True"
+          DTS:DTSID="{5ac5ba62-605f-4c1b-b9f3-89cea4fbd0d1}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM15"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM15.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\4º Semana\COM16"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Planner Comercial"
+          DTS:Disabled="True"
+          DTS:DTSID="{2c03fe25-c808-48de-b88d-01d73901cc5d}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM16"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM16.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\4º Semana\COM17"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tabela de preço"
+          DTS:Disabled="True"
+          DTS:DTSID="{a3065969-9986-4313-afee-d3e95c1f66a5}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM17"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM17.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\4º Semana.PrecedenceConstraints[Restrição 10]"
+          DTS:CreationName=""
+          DTS:DTSID="{731fa85b-0512-4a77-a4ef-cd0068aa5255}"
+          DTS:From="Package\4º Semana\COM16"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 10"
+          DTS:To="Package\4º Semana\COM17" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\4º Semana.PrecedenceConstraints[Restrição 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{7349eb49-8538-4a48-9ea3-1bb7ef680488}"
+          DTS:From="Package\4º Semana\COM15"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 4"
+          DTS:To="Package\4º Semana\COM16" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM10"
+          TopLeft="129.878764363473,15.601121011529" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM11"
+          TopLeft="129.878764363473,81.2895908898223" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM18"
+          TopLeft="129.878764363473,146.978060768116" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM22"
+          TopLeft="129.878764363473,212.666530646409" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM23"
+          TopLeft="129.878764363473,278.355000524702" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM24"
+          TopLeft="129.878764363473,344.043470402995" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM25"
+          TopLeft="129.878764363473,409.731940281289" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM26"
+          TopLeft="129.878764363473,475.420410159582" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM27"
+          TopLeft="129.878764363473,541.108880037875" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM28"
+          TopLeft="129.878764363473,606.797349916169" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM29"
+          TopLeft="129.878764363473,672.485819794462" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM30"
+          TopLeft="129.878764363473,738.174289672755" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\COM31"
+          TopLeft="129.878764363473,803.862759551048" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\RH02"
+          TopLeft="129.878764363473,869.551229429342" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\TRD02"
+          TopLeft="129.878764363473,1000.92816918593" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\TRD04"
+          TopLeft="129.878764363473,1066.61663906422" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\TRD08"
+          TopLeft="129.878764363473,1132.30510894251" />
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição]"
+          TopLeft="223.478764363473,319.955000524702">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 1]"
+          TopLeft="223.478764363473,385.643470402995">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 10]"
+          TopLeft="223.478764363473,57.201121011529">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 11]"
+          TopLeft="223.478764363473,714.085819794462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 12]"
+          TopLeft="223.478764363473,845.462759551048">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 14]"
+          TopLeft="223.478764363473,779.774289672755">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 15]"
+          TopLeft="223.478764363473,254.266530646409">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 2]"
+          TopLeft="223.478764363473,451.331940281289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 3]"
+          TopLeft="223.478764363473,517.020410159582">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 4]"
+          TopLeft="223.478764363473,122.889590889822">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 5]"
+          TopLeft="223.478764363473,1042.52816918593">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782934"
+              Start="0,0"
+              End="0,16.5884698782934">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782934" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 6]"
+          TopLeft="223.478764363473,188.578060768116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 7]"
+          TopLeft="223.478764363473,582.708880037875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 8]"
+          TopLeft="223.478764363473,648.397349916169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 9]"
+          TopLeft="223.478764363473,1108.21663906422">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782934"
+              Start="0,0"
+              End="0,16.5884698782934">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782934" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\TRD01"
+          TopLeft="129.878764363473,935.239699307635" />
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 13]"
+          TopLeft="223.478764363473,911.151229429342">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 16]"
+          TopLeft="223.478764363473,976.839699307635">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="436.8,1330.4"
+          Size="436.8,1373.6"
+          Id="Package\1º Semana"
+          TopLeft="140.142857429476,772.63431351027" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\4º Semana\COM15"
+          TopLeft="128.59030172458,24.5167747085807" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\4º Semana\COM16"
+          TopLeft="128.59030172458,92.076731663554" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\4º Semana\COM17"
+          TopLeft="128.59030172458,159.636688618527" />
+        <EdgeLayout
+          Id="Package\4º Semana.PrecedenceConstraints[Restrição 10]"
+          TopLeft="222.19030172458,133.676731663554">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.9599569549733"
+              Start="0,0"
+              End="0,18.4599569549733">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4599569549733" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\4º Semana.PrecedenceConstraints[Restrição 4]"
+          TopLeft="222.19030172458,66.1167747085807">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.9599569549734"
+              Start="0,0"
+              End="0,18.4599569549734">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4599569549734" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="436.8,240.8"
+          Size="436.8,284"
+          Id="Package\4º Semana"
+          TopLeft="672.185715694481,774.641175943402" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
