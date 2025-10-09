@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="COM15"
   DTS:PackageType="5"
-  DTS:VersionBuild="212"
-  DTS:VersionGUID="{D0059287-2617-4DB2-AC08-5527DF57EBEE}">
+  DTS:VersionBuild="214"
+  DTS:VersionGUID="{3F4811B2-9025-4523-B676-41C1A6C5C37D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -35,7 +35,7 @@
       DTS:ObjectName="Ano">
       <DTS:Property
         DTS:DataType="3"
-        DTS:Name="ParameterValue">0</DTS:Property>
+        DTS:Name="ParameterValue">2025</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -44,8 +44,7 @@
       DTS:ObjectName="Email">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue"
-        xml:space="preserve"></DTS:Property>
+        DTS:Name="ParameterValue">P</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -54,7 +53,7 @@
       DTS:ObjectName="Mes">
       <DTS:Property
         DTS:DataType="3"
-        DTS:Name="ParameterValue">0</DTS:Property>
+        DTS:Name="ParameterValue">9</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -130,6 +129,15 @@
                   Language="CSharp"
                   ReadOnlyVariables="System::PackageName,$Package::Ano,$Package::Email,$Package::Mes"
                   ReadWriteVariables="User::Revenda">
+                  <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="ST_051717c4acac47e7a21e4ecb9cdb439d.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -294,109 +302,6 @@
   </ProjectExtensions>
 </Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="AccessDataMySql.cs"
-                    Encoding="UTF8"><![CDATA[//using MySql.Data.MySqlClient;
-using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ST_1d5348b3f62c4fa29edf085caff84d1d
-{
-    internal class AccessDataMySql
-    {
-        private MySqlConnection createConnection()
-        {
-            try
-            {
-                var connString = "Server=192.168.0.8;Database=producao;Uid=etl;Pwd=etl";
-
-                var connection = new MySqlConnection(connString);
-
-                return connection;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro na conexão com o Banco de dados. Detalhes:" + ex.Message);
-            }
-        }
-
-        private MySqlParameterCollection sqlParameterCollection = new MySqlCommand().Parameters;
-
-        /// <summary>
-        /// Método responsável por limpar os dados referentes aos parametros
-        /// </summary>
-        public void parameterClear()
-        {
-            sqlParameterCollection.Clear();
-        }
-
-        /// <summary>
-        /// Método responsável por atribuir valores aos parametros
-        /// </summary>
-        /// <param name="nameParameter">Nome do parametro que vai ser usado na query sql ("@valor")</param>
-        /// <param name="valueParameter">Valor que é atribuído ao parametro que vai ser usado na query sql (objeto.valor)</param>
-        public void addParameters(string nameParameter, object valueParameter)
-        {
-            sqlParameterCollection.Add(new MySqlParameter(nameParameter, valueParameter));
-        }
-
-        /// <summary>
-        /// Método responsável pelas consultas na base de dados
-        /// param sqlText uma query sql em forma de string
-        /// return  SqlDataReader
-        /// </summary>
-        /// <param name="sqlTexto">Parametro (sqlText) uma string contendo uma query sql</param>
-        /// <returns>SqlDataReader</returns>
-        public MySqlDataReader executeSelect(string sqlTexto)
-        {
-            try
-            {
-
-                // criar conexao
-                MySqlConnection sqlConnection = createConnection();
-
-                // abrir
-                sqlConnection.Open();
-                // criar o comando
-                using (MySqlCommand sqlCommand = sqlConnection.CreateCommand())
-                {
-
-
-
-                    //sqlCommand.CommandType = commandType;
-                    sqlCommand.CommandText = sqlTexto;
-                    sqlCommand.CommandTimeout = 900;
-                    sqlCommand.Connection = sqlConnection;
-
-
-                    // adicionar os parametros
-
-                    foreach (MySqlParameter sqlParameter in sqlParameterCollection)
-                    {
-                        sqlCommand.Parameters.Add(new MySqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
-                    }
-
-
-                    // buscar os dados
-                    MySqlDataReader data = sqlCommand.ExecuteReader();
-                    return data;
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro no select. Detalhes:" + ex.Message);
-            }
-        }
-
-    }
-}]]></ProjectItem>
-                  <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -516,34 +421,11 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Settings.get_Default():ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Sett" +
-    "ings")]
-
-namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+                    Name="packages.config"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="BouncyCastle.Cryptography" version="2.2.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -846,12 +728,6 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
   </runtime>
 </configuration>]]></ProjectItem>
                   <ProjectItem
-                    Name="packages.config"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="BouncyCastle.Cryptography" version="2.2.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
-                  <ProjectItem
                     Name="Project"
                     Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
@@ -874,6 +750,138 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
     <msb:File Include="ScriptMain.cs" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
+                  <ProjectItem
+                    Name="AccessDataMySql.cs"
+                    Encoding="UTF8"><![CDATA[//using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ST_1d5348b3f62c4fa29edf085caff84d1d
+{
+    internal class AccessDataMySql
+    {
+        private MySqlConnection createConnection()
+        {
+            try
+            {
+                var connString = "Server=192.168.0.8;Database=producao;Uid=etl;Pwd=etl";
+
+                var connection = new MySqlConnection(connString);
+
+                return connection;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro na conexão com o Banco de dados. Detalhes:" + ex.Message);
+            }
+        }
+
+        private MySqlParameterCollection sqlParameterCollection = new MySqlCommand().Parameters;
+
+        /// <summary>
+        /// Método responsável por limpar os dados referentes aos parametros
+        /// </summary>
+        public void parameterClear()
+        {
+            sqlParameterCollection.Clear();
+        }
+
+        /// <summary>
+        /// Método responsável por atribuir valores aos parametros
+        /// </summary>
+        /// <param name="nameParameter">Nome do parametro que vai ser usado na query sql ("@valor")</param>
+        /// <param name="valueParameter">Valor que é atribuído ao parametro que vai ser usado na query sql (objeto.valor)</param>
+        public void addParameters(string nameParameter, object valueParameter)
+        {
+            sqlParameterCollection.Add(new MySqlParameter(nameParameter, valueParameter));
+        }
+
+        /// <summary>
+        /// Método responsável pelas consultas na base de dados
+        /// param sqlText uma query sql em forma de string
+        /// return  SqlDataReader
+        /// </summary>
+        /// <param name="sqlTexto">Parametro (sqlText) uma string contendo uma query sql</param>
+        /// <returns>SqlDataReader</returns>
+        public MySqlDataReader executeSelect(string sqlTexto)
+        {
+            try
+            {
+
+                // criar conexao
+                MySqlConnection sqlConnection = createConnection();
+
+                // abrir
+                sqlConnection.Open();
+                // criar o comando
+                using (MySqlCommand sqlCommand = sqlConnection.CreateCommand())
+                {
+
+
+
+                    //sqlCommand.CommandType = commandType;
+                    sqlCommand.CommandText = sqlTexto;
+                    sqlCommand.CommandTimeout = 900;
+                    sqlCommand.Connection = sqlConnection;
+
+
+                    // adicionar os parametros
+
+                    foreach (MySqlParameter sqlParameter in sqlParameterCollection)
+                    {
+                        sqlCommand.Parameters.Add(new MySqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
+                    }
+
+
+                    // buscar os dados
+                    MySqlDataReader data = sqlCommand.ExecuteReader();
+                    return data;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro no select. Detalhes:" + ex.Message);
+            }
+        }
+
+    }
+}]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Settings.get_Default():ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Sett" +
+    "ings")]
+
+namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\AssemblyInfo.cs"
                     Encoding="UTF8"><![CDATA[using System.Reflection;
@@ -904,15 +912,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1707,6 +1706,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
+                    Name="packages.config"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
+                  <ProjectItem
                     Name="Properties\Settings.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -1852,7 +1857,7 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
                                                      "Rosimaria.bomfim@checon.com.br"                                                    
                                                   };
 
-                    string[] destinatariosCc = {                                            
+                    string[] destinatariosCc = {
                                               "maicon.costa@checon.com.br",
                                               "ednelson.pinto@checon.com.br"
                                            };
@@ -2141,7 +2146,7 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
     <msb:CodeName>ST_bc3962b41cde43a09fb413840d83814a</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_bc3962b41cde43a09fb413840d83814a</msb:DisplayName>
-    <msb:ProjectId>{A2DC5CA9-4F5E-4EDF-A633-6D3BAEE92D57}</msb:ProjectId>
+    <msb:ProjectId>{A09C69C4-4404-4AB0-9727-726378EC4087}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_bc3962b41cde43a09fb413840d83814a.csproj" />
@@ -2155,12 +2160,6 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
     <msb:File Include="ScriptMain.cs" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
-                  <ProjectItem
-                    Name="packages.config"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\AssemblyInfo.cs"
                     Encoding="UTF8"><![CDATA[using System.Reflection;
@@ -2271,7 +2270,7 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71.Properties {
                   <BinaryItem
                     Name="ST_bc3962b41cde43a09fb413840d83814a.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAH2bsGgAAAAAAAAAAOAAIiALATAAADAAAAAIAAAAAAAADk8A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDACm952gAAAAAAAAAAOAAIiALATAAADAAAAAIAAAAAAAADk8A
 AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAALxOAABPAAAAAGAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2329,7 +2328,7 @@ BgAJAd0HAQAJAYIH8QAxAdQI9wChAcUF+gB5AEgICAF5AFAIDQGpAcwBEwGpARkEGgGpAS8EGgGp
 AbwEGgFxAM8FBgDRAM8FBgCxAQ4BJAGxAYIILQHZAM8FMwH5AM8FBgAIABQAXwEIABgAZAEpAHMA
 zAEuAAsApAEuABMArQEuABsAzAEuACMA1QEuACsA/gEuADMA/gEuADsA/gEuAEMA1QEuAEsABAIu
 AFMA/gEuAFsAGwJDAGMAZAFJAHMAzAFhAHsAZAFjAGsAZAEbAAMBAwABAAQAAwAAAJkFlQEAAIgB
-mgEAANUHnwECAAYAAwACAAcABQABAAgABQACAAkABwAEgAAAAQAAAJskpmoAAAAAAABdAAAABAAA
+mgEAANUHnwECAAYAAwACAAcABQABAAgABQACAAkABwAEgAAAAQAAAMUk/EsAAAAAAABdAAAABAAA
 AAAAAAAAAAAAOwGMAAAAAAAQAAAAAAAAAAAAAABEAdEDAAAAAAQABgAAAAAAAAAAAE0BwQcAAAAA
 BAAGAAAAAAAAAAAAVgHJBwAAAAAEAAAAAAAAAAAAAAA7Ae4GAAAAAAQAAAAAAAAAAAAAADsBmwQA
 AAAAEAAAAAAAAAAAAAAARAE2AAAAAAAAAAAAAQAAADQGAAAFAAIAAAAAU1RfMDAzODdkZGZhNTNm
@@ -2473,7 +2472,7 @@ AAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
 IAAgACAAIAAgACAAIAA8AGkAbQBnACAAcwByAGMAPQAiAGMAaQBkADoAbABvAGcAbwAuAHAAbgBn
 ACIAIABhAGwAdAA9ACIATABvAGcAbwAiACAALwA+AAFxUwBUAF8AMAAwADMAOAA3AGQAZABmAGEA
 NQAzAGYANABhADYAMQBhADYANwAzADAANQA3ADMAOABhAGYAOQBhAGQANwAxAC4AUAByAG8AcABl
-AHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAB33sStrGVbQY7XpBvQ2yo1AAQgAQEIAyAA
+AHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAADd26Qwgi96RIRLwX3ys2pvAAQgAQEIAyAA
 AQUgAQEREQQgAQEOBSABARF1JAcXCAgIDg4RPQ4ODg4SQRJFEkkdDhFNHQ4dDggODhJRElUSVQUg
 ABKAhQUgABKAiQYgARKAjRwDIAAcBAABCBwDIAAOBiADAQgICAcgAg4OEoCVBQACDg4cBQABDh0O
 BgADDg4ODgUgABKAoQcgAhJFDhFNBSAAEoClBSACAQ4OBiABARKArQYgAQERgLEFIAASgLUFAAIC
@@ -2496,14 +2495,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAABgAAIAA
 AAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgAAABYYAAAGgQAAAAA
 AAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAAAL0E7/4AAAEAAAAB
-AKZqmyQAAAEApmqbJD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBWAGEAcgBGAGkA
+APxLxSQAAAEA/EvFJD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBWAGEAcgBGAGkA
 bABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAAAAAAAACwBHoDAAAB
 AFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAABADAAMAAwADAAMAA0AGIAMAAAABoA
 AQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEAbgB5AE4AYQBtAGUAAAAA
 AAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAAUwBUAF8AMAAwADMA
 OAA3AGQAZABmAGEANQAzAGYANABhADYAMQBhADYANwAzADAANQA3ADMAOABhAGYAOQBhAGQANwAx
-AAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADkAMwA3ADEALgAyADcA
-MwAwADIAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBUAF8AYgBjADMAOQA2
+AAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADkANAAxADMALgAxADkA
+NAA1ADIAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBUAF8AYgBjADMAOQA2
 ADIAYgA0ADEAYwBkAGUANAAzAGEAMAA5AGYAYgA0ADEAMwA4ADQAMABkADgAMwA4ADEANABhAC4A
 ZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBn
 AGgAdAAgAEAAIAAgADIAMAAyADQAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsA
@@ -2511,9 +2510,9 @@ cwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAFQAXwBi
 AGMAMwA5ADYAMgBiADQAMQBjAGQAZQA0ADMAYQAwADkAZgBiADQAMQAzADgANAAwAGQAOAAzADgA
 MQA0AGEALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBUAF8AMAAw
 ADMAOAA3AGQAZABmAGEANQAzAGYANABhADYAMQBhADYANwAzADAANQA3ADMAOABhAGYAOQBhAGQA
-NwAxAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA5ADMANwAx
-AC4AMgA3ADMAMAAyAAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAA
-MQAuADAALgA5ADMANwAxAC4AMgA3ADMAMAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+NwAxAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA5ADQAMQAz
+AC4AMQA5ADQANQAyAAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAA
+MQAuADAALgA5ADQAMQAzAC4AMQA5ADQANQAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2552,14 +2551,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                   ReadOnlyVariables="System::PackageName,$Package::Ano,$Package::Email,$Package::Mes"
                   ReadWriteVariables="User::Revenda">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6ca83c88e7a5405793a4ed3e4c0b18c8")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_6ca83c88e7a5405793a4ed3e4c0b18c8")]
+[assembly: AssemblyCopyright("Copyright @  2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2906,35 +2926,14 @@ namespace ST_6ca83c88e7a5405793a4ed3e4c0b18c8.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6ca83c88e7a5405793a4ed3e4c0b18c8")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_6ca83c88e7a5405793a4ed3e4c0b18c8")]
-[assembly: AssemblyCopyright("Copyright @  2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------

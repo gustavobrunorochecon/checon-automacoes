@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="ASSESSMENT"
   DTS:PackageType="5"
-  DTS:VersionBuild="128"
-  DTS:VersionGUID="{0CC3079B-BB1D-4508-B57D-8C5294D60091}">
+  DTS:VersionBuild="133"
+  DTS:VersionGUID="{077E37AC-E1AF-40E3-A188-B2596C025865}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -41,7 +41,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Mes">
       <DTS:VariableValue
-        DTS:DataType="3">8</DTS:VariableValue>
+        DTS:DataType="3">9</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -898,15 +898,19 @@
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\1º Semana\COM30"
-          TopLeft="129.878764363473,738.174289672755" />
+          TopLeft="129.22941371274,738.174289672755" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\1º Semana\COM31"
-          TopLeft="129.878764363473,803.862759551048" />
+          TopLeft="129.22941371274,803.862759551048" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\1º Semana\RH02"
-          TopLeft="129.878764363473,869.551229429342" />
+          TopLeft="129.22941371274,869.551229429342" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\TRD01"
+          TopLeft="129.878764363473,935.239699307635" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\1º Semana\TRD02"
@@ -987,7 +991,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição 11]"
-          TopLeft="223.478764363473,714.085819794462">
+          TopLeft="223.154089038107,714.085819794462">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1009,18 +1013,40 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição 12]"
-          TopLeft="223.478764363473,845.462759551048">
+          TopLeft="222.82941371274,845.462759551048">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24.0884698782933"
+              EndConnector="0,24.0884698782942"
               Start="0,0"
-              End="0,16.5884698782933">
+              End="0,16.5884698782942">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5884698782933" />
+                    End="0,16.5884698782942" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 13]"
+          TopLeft="223.154089038107,911.151229429342">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782926"
+              Start="0,0"
+              End="0,16.5884698782926">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782926" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1031,18 +1057,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição 14]"
-          TopLeft="223.478764363473,779.774289672755">
+          TopLeft="222.82941371274,779.774289672755">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24.0884698782933"
+              EndConnector="0,24.0884698782928"
               Start="0,0"
-              End="0,16.5884698782933">
+              End="0,16.5884698782928">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5884698782933" />
+                    End="0,16.5884698782928" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1054,6 +1080,28 @@
         <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição 15]"
           TopLeft="223.478764363473,254.266530646409">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0884698782933"
+              Start="0,0"
+              End="0,16.5884698782933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5884698782933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 16]"
+          TopLeft="223.478764363473,976.839699307635">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1249,61 +1297,13 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\1º Semana\TRD01"
-          TopLeft="129.878764363473,935.239699307635" />
-        <EdgeLayout
-          Id="Package\1º Semana.PrecedenceConstraints[Restrição 13]"
-          TopLeft="223.478764363473,911.151229429342">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24.0884698782933"
-              Start="0,0"
-              End="0,16.5884698782933">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5884698782933" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\1º Semana.PrecedenceConstraints[Restrição 16]"
-          TopLeft="223.478764363473,976.839699307635">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24.0884698782933"
-              Start="0,0"
-              End="0,16.5884698782933">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5884698782933" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="436.8,1330.4"
           Size="436.8,1373.6"
           Id="Package\1º Semana"
-          TopLeft="140.142857429476,772.63431351027" />
+          TopLeft="483.714286732278,772.63431351027" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\4º Semana\COM15"
@@ -1366,7 +1366,7 @@
           PanelSize="436.8,240.8"
           Size="436.8,284"
           Id="Package\4º Semana"
-          TopLeft="672.185715694481,774.641175943402" />
+          TopLeft="1015.75714499728,774.641175943402" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
