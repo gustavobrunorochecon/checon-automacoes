@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-AR5HLAH</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRtd3yU4KECgvilFB+xz+AAAAAACAAAAAAAQZgAAAAEAACAAAADsZi16TKP4ek73p09T5N+ImBjGjwiQGHNJpbvZW77cGgAAAAAOgAAAAAIAACAAAACf1EL5Pk+/d/OCxylQKlMXGNCXtlyZUCoXGz9OEl9c8pAAAAC1wiF6mB2Gna8PfeAeaI5gHSoNWVWfhIza9YKyY0+pM6SX3xy6mGfPrVL35miOyiSkukPPaQ4SwVhNkdB2BDnIlJY7PJYzPp3IpFjloF7/MTeZncVPnUl6FSxHnfSpDE5o1u7Y7YdCH+7/Zqm/sMi8cTyR13YQXnTxleMVeRd9WjiEefLQwGb6Hw3ZQaAf7AZAAAAAhyjMGM3Pk+C13z9aCfVVCEPByhcNq+/Dh4ZrA/ezVV++C6j3b3OiV0he8e6E2/JbmNlkIIbJ+RFvxH3E9OzE1Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRtd3yU4KECgvilFB+xz+AAAAAACAAAAAAAQZgAAAAEAACAAAAC9fl4BW1XowiniAM7CyX3aJ5NxvK4XyzVCm7ihB9YaUAAAAAAOgAAAAAIAACAAAABXigrVdI5lqg4Ue7k02IhpbcgMNMXIc79nEEu9OQGqSJAAAADLcamTU76ZFBnhV2yeosM52TNQtxsPlmMcJPVsdooM3pjAimchnCCPn6aX9rg6qv+YOxj4noJqum/Qx46SGZ5M5ioGCvjvM/K6QRq1MQQ0sogr6EWrKbsEF76cT0L98KccxR+NXzhY2J866uyGy1Mld/xtek4ZATwz+VC7JqCuDDQyTxDF9eHSqH7NhAjxTV1AAAAAnEkV/UCHm70x7M8nHHbt/tOhNrIbVFSMbW5VXTg+PRp+7fOF+rsTZ2zaFgdt/tZcX2kQt4D15qFiJ0P82zIOdA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -35,8 +35,8 @@
           <SSIS:Package SSIS:Name="GESTAO PERFORMANCE DIARIA.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="EMAIL_CONFIR_ROTA.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="BASE DE CLIENTES.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="ATUALIZAR METAS NO POSTGREE.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="PRODUTOS_SEM_AGREGADORES.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ATUALIZA NOME VENDEDOR.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
         <SSIS:DeploymentInfo>
@@ -48,10 +48,10 @@
                 <SSIS:Property SSIS:Name="Name">BASE_REDRIGERADORES_ATIVOS</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">118</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">124</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{78D3ED7A-9D5B-471A-8469-B1645F8848EA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{46B9439B-739E-4CC9-8898-ACF848087574}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -213,10 +213,10 @@
                 <SSIS:Property SSIS:Name="Name">PESQUISA COMPASS</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">353</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">367</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{7BD07B06-4179-4168-AD8E-F9B0FA2E873E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9D66893C-9C24-453A-A280-7BB5E1DDA56A}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -689,23 +689,6 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="ATUALIZAR METAS NO POSTGREE.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{BEA006A7-3B62-462E-BA3F-F0905A2D8FF9}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">METAS</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">154</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{990A83C4-A25D-4307-94D1-D736C5C0ADBE}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="PRODUTOS_SEM_AGREGADORES.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{DA0AF2AF-E24A-4976-A6A4-EEC3FD620A17}</SSIS:Property>
@@ -840,6 +823,23 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ATUALIZA NOME VENDEDOR.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{97DA83BE-737B-4907-9BB3-CDAB0EAE1A0D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ATUALIZA NOME VENDEDOR</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">377</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{261F2515-329C-40F7-9440-D24F9C8559E7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
