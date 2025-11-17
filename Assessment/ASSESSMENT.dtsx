@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="ASSESSMENT"
   DTS:PackageType="5"
-  DTS:VersionBuild="133"
-  DTS:VersionGUID="{077E37AC-E1AF-40E3-A188-B2596C025865}">
+  DTS:VersionBuild="142"
+  DTS:VersionGUID="{48E66B42-D8DB-4C2A-9723-5CC7ABBAEE75}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -41,7 +41,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Mes">
       <DTS:VariableValue
-        DTS:DataType="3">9</DTS:VariableValue>
+        DTS:DataType="3">10</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -732,7 +732,6 @@
           DTS:refId="Package\4º Semana\COM15"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Dados cadastrais - Base PDVs"
-          DTS:Disabled="True"
           DTS:DTSID="{5ac5ba62-605f-4c1b-b9f3-89cea4fbd0d1}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -762,7 +761,6 @@
           DTS:refId="Package\4º Semana\COM16"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Planner Comercial"
-          DTS:Disabled="True"
           DTS:DTSID="{2c03fe25-c808-48de-b88d-01d73901cc5d}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -792,7 +790,6 @@
           DTS:refId="Package\4º Semana\COM17"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Tabela de preço"
-          DTS:Disabled="True"
           DTS:DTSID="{a3065969-9986-4313-afee-d3e95c1f66a5}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -1303,7 +1300,7 @@
           PanelSize="436.8,1330.4"
           Size="436.8,1373.6"
           Id="Package\1º Semana"
-          TopLeft="483.714286732278,772.63431351027" />
+          TopLeft="483.000001016472,771.869607628587" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\4º Semana\COM15"
