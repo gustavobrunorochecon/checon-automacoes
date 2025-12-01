@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-AR5HLAH</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRtd3yU4KECgvilFB+xz+AAAAAACAAAAAAAQZgAAAAEAACAAAAC9fl4BW1XowiniAM7CyX3aJ5NxvK4XyzVCm7ihB9YaUAAAAAAOgAAAAAIAACAAAABXigrVdI5lqg4Ue7k02IhpbcgMNMXIc79nEEu9OQGqSJAAAADLcamTU76ZFBnhV2yeosM52TNQtxsPlmMcJPVsdooM3pjAimchnCCPn6aX9rg6qv+YOxj4noJqum/Qx46SGZ5M5ioGCvjvM/K6QRq1MQQ0sogr6EWrKbsEF76cT0L98KccxR+NXzhY2J866uyGy1Mld/xtek4ZATwz+VC7JqCuDDQyTxDF9eHSqH7NhAjxTV1AAAAAnEkV/UCHm70x7M8nHHbt/tOhNrIbVFSMbW5VXTg+PRp+7fOF+rsTZ2zaFgdt/tZcX2kQt4D15qFiJ0P82zIOdA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAh0y0ZBubXE6zo11RtJgrNQAAAAACAAAAAAAQZgAAAAEAACAAAABXJQaK0s4Pr9A3RAk89UZbzv6L52FiPhbyRp8gPyAySQAAAAAOgAAAAAIAACAAAABpdERdw0W2kMxNmr9taPKT0eMCB7j53HNotxz6cL8j8ZAAAAAHaO23lANr0Cn1tCUS0Mf71UApHeKQOv1Ijgz+xUiUbgq50HeUtb6Y3B+FnBLduzvoRExpisZQcTiC0gQQ8U8/KaYxZRrc010X1cPVAVgqA/ATEmr2l2Czc1aAu68wA+RMJzMee/QAzIGyObwY+SDeHXHzzFtdSinTHtNtKzYKsh00LW8qe3gIwdWI8U+7bcVAAAAA7TLtXF/8WCBgcd4jhXFJdgkgDmU+DUJhWt5agZWVEY/IO1oyHJND02ikS9CUW37tlu43savgTV+U3BzJjQGedQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -36,7 +36,6 @@
           <SSIS:Package SSIS:Name="EMAIL_CONFIR_ROTA.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="BASE DE CLIENTES.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="PRODUTOS_SEM_AGREGADORES.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="ATUALIZA NOME VENDEDOR.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
         <SSIS:DeploymentInfo>
@@ -823,23 +822,6 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="ATUALIZA NOME VENDEDOR.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{97DA83BE-737B-4907-9BB3-CDAB0EAE1A0D}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">ATUALIZA NOME VENDEDOR</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">377</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{261F2515-329C-40F7-9440-D24F9C8559E7}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
