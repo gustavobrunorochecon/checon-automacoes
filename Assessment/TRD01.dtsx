@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="TRD01"
   DTS:PackageType="5"
-  DTS:VersionBuild="298"
-  DTS:VersionGUID="{0A6E099E-86AF-4488-8C03-D04BB7DC1EA0}">
+  DTS:VersionBuild="299"
+  DTS:VersionGUID="{770BD50D-9E64-454C-ACD8-5B9D90F30856}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -131,14 +131,35 @@
                   ReadOnlyVariables="System::PackageName,$Package::Ano,$Package::Email,$Package::Mes"
                   ReadWriteVariables="User::Revenda">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_1d5348b3f62c4fa29edf085caff84d1d")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_1d5348b3f62c4fa29edf085caff84d1d")]
+[assembly: AssemblyCopyright("Copyright @  2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="ST_051717c4acac47e7a21e4ecb9cdb439d.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -423,6 +444,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+                  <ProjectItem
+                    Name="packages.config"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="BouncyCastle.Cryptography" version="2.2.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -870,6 +897,46 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
 	}
 }]]></ProjectItem>
                   <ProjectItem
+                    Name="app.config"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Memory" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.1.2" newVersion="4.0.1.2" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Project"
+                    Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_051717c4acac47e7a21e4ecb9cdb439d</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_051717c4acac47e7a21e4ecb9cdb439d</msb:DisplayName>
+    <msb:ProjectId>{9198E0D9-DA72-44ED-B25A-49B73058F896}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_051717c4acac47e7a21e4ecb9cdb439d.csproj" />
+    <msb:File Include="AccessDataMySql.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="packages.config" />
+    <msb:File Include="app.config" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+                  <ProjectItem
                     Name="AccessDataMySql.cs"
                     Encoding="UTF8"><![CDATA[//using MySql.Data.MySqlClient;
 using MySql.Data.MySqlClient;
@@ -973,52 +1040,6 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="app.config"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <runtime>
-    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
-      <dependentAssembly>
-        <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
-      </dependentAssembly>
-      <dependentAssembly>
-        <assemblyIdentity name="System.Memory" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-4.0.1.2" newVersion="4.0.1.2" />
-      </dependentAssembly>
-    </assemblyBinding>
-  </runtime>
-</configuration>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Project"
-                    Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_051717c4acac47e7a21e4ecb9cdb439d</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_051717c4acac47e7a21e4ecb9cdb439d</msb:DisplayName>
-    <msb:ProjectId>{9198E0D9-DA72-44ED-B25A-49B73058F896}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_051717c4acac47e7a21e4ecb9cdb439d.csproj" />
-    <msb:File Include="AccessDataMySql.cs" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:File Include="packages.config" />
-    <msb:File Include="app.config" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="ScriptMain.cs" />
-  </msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-                  <ProjectItem
-                    Name="packages.config"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="BouncyCastle.Cryptography" version="2.2.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
-                  <ProjectItem
                     Name="Properties\Settings.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -1048,35 +1069,14 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_1d5348b3f62c4fa29edf085caff84d1d")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_1d5348b3f62c4fa29edf085caff84d1d")]
-[assembly: AssemblyCopyright("Copyright @  2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2106,36 +2106,6 @@ AAAAAAAAAAAAAA==</BinaryItem>
                   ReadOnlyVariables="System::PackageName,$Package::Ano,$Package::Email,$Package::Mes"
                   ReadWriteVariables="User::Revenda">
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_1d5348b3f62c4fa29edf085caff84d1d")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_1d5348b3f62c4fa29edf085caff84d1d")]
-[assembly: AssemblyCopyright("Copyright @  2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -2254,6 +2224,41 @@ using System.Runtime.CompilerServices;
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+                  <ProjectItem
+                    Name="packages.config"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="BouncyCastle.Cryptography" version="2.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Settings.get_Default():ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Sett" +
+    "ings")]
+
+namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="ST_e49a9bbdce6942e1bc07a90eb9307df7.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2902,40 +2907,35 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="packages.config"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="BouncyCastle.Cryptography" version="2.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_1d5348b3f62c4fa29edf085caff84d1d")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_1d5348b3f62c4fa29edf085caff84d1d")]
+[assembly: AssemblyCopyright("Copyright @  2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Settings.get_Default():ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Sett" +
-    "ings")]
-
-namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -3737,36 +3737,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   ReadOnlyVariables="System::PackageName,$Package::Ano,$Package::Email,$Package::Mes"
                   ReadWriteVariables="User::Revenda">
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_00387ddfa53f4a61a67305738af9ad71")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_00387ddfa53f4a61a67305738af9ad71")]
-[assembly: AssemblyCopyright("Copyright @  2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -3886,11 +3856,34 @@ using System.Runtime.CompilerServices;
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
-                    Name="packages.config"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_00387ddfa53f4a61a67305738af9ad71.Properties.Settings.get_Default():ST_00387ddfa53f4a61a67305738af9ad71.Properties.Sett" +
+    "ings")]
+
+namespace ST_00387ddfa53f4a61a67305738af9ad71.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -4120,19 +4113,6 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="app.config"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <runtime>
-    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
-      <dependentAssembly>
-        <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
-      </dependentAssembly>
-    </assemblyBinding>
-  </runtime>
-</configuration>]]></ProjectItem>
-                  <ProjectItem
                     Name="ST_38fc918b02664c3885bb73fc51fd0b35.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -4296,6 +4276,19 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
   </ProjectExtensions>
 </Project>]]></ProjectItem>
                   <ProjectItem
+                    Name="app.config"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>]]></ProjectItem>
+                  <ProjectItem
                     Name="Project"
                     Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
@@ -4318,34 +4311,41 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="packages.config"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_00387ddfa53f4a61a67305738af9ad71")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_00387ddfa53f4a61a67305738af9ad71")]
+[assembly: AssemblyCopyright("Copyright @  2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_00387ddfa53f4a61a67305738af9ad71.Properties.Settings.get_Default():ST_00387ddfa53f4a61a67305738af9ad71.Properties.Sett" +
-    "ings")]
-
-namespace ST_00387ddfa53f4a61a67305738af9ad71.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -4707,15 +4707,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                   ReadOnlyVariables="System::PackageName,$Package::Ano,$Package::Email,$Package::Mes"
                   ReadWriteVariables="User::Revenda">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
-                  <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -4835,6 +4826,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_6ca83c88e7a5405793a4ed3e4c0b18c8.Properties.Settings.get_Default():ST_6ca83c88e7a5405793a4ed3e4c0b18c8.Properties.Sett" +
+    "ings")]
+
+namespace ST_6ca83c88e7a5405793a4ed3e4c0b18c8.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -4921,7 +4941,7 @@ namespace ST_6ca83c88e7a5405793a4ed3e4c0b18c8
                     {
                         File.Copy(origem, destinoArquivo, true);
 
-                        compactaRAR($@"Y:\PUBLICO\ANALISTAS\06 ASSESSMENT\2025\{mesFormatado}\{packageName}", revenda + packageName);
+                        compactaRAR($@"Y:\PUBLICO\ANALISTAS\06 ASSESSMENT\{ano}\{mesFormatado}\{packageName}", revenda + packageName);
                     }
                     else
                     {
@@ -5097,7 +5117,7 @@ namespace ST_6ca83c88e7a5405793a4ed3e4c0b18c8
     <msb:CodeName>ST_b4123d70eed74b60bb301023cc5600f6</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_b4123d70eed74b60bb301023cc5600f6</msb:DisplayName>
-    <msb:ProjectId>{AA4948D5-FCAC-48A2-A82B-683115492A38}</msb:ProjectId>
+    <msb:ProjectId>{DBF04DB7-DB82-4ECF-A194-4CF1C00BA38F}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_b4123d70eed74b60bb301023cc5600f6.csproj" />
@@ -5109,35 +5129,6 @@ namespace ST_6ca83c88e7a5405793a4ed3e4c0b18c8
     <msb:File Include="ScriptMain.cs" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_6ca83c88e7a5405793a4ed3e4c0b18c8.Properties.Settings.get_Default():ST_6ca83c88e7a5405793a4ed3e4c0b18c8.Properties.Sett" +
-    "ings")]
-
-namespace ST_6ca83c88e7a5405793a4ed3e4c0b18c8.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\AssemblyInfo.cs"
                     Encoding="UTF8"><![CDATA[using System.Reflection;
@@ -5168,6 +5159,15 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -5239,149 +5239,149 @@ namespace ST_6ca83c88e7a5405793a4ed3e4c0b18c8.Properties {
                   <BinaryItem
                     Name="ST_b4123d70eed74b60bb301023cc5600f6.dll">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
-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
+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
-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
+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
-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
+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
-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
+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
-LAwRBhEIFygiAAAKKxECKBAAAAoXbyMAAArdYgEAAHK/AQBwAigQAAAKbxEAAApynwAAcG8SAAAK
-bxMAAApvFQAACnJHAQBwKB0AAAoTBnJwAgBwEQVy4AIAcBEGKCQAAApyJgMAcBofICglAAAKHEDj
+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
-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
+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
-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
+AAEAAAAQAIMF3wVRAAEABAAAARAAHAbfBWUAAwAIAAMBAABkBgAASQAEAAsAEQBxBBMBEQBuARcB
+EQCgABsBBgaPAB8BVoBMBiIBVoBOASIBUCAAAAAAhgCDBAYAAQBoIwAAAACBAGQAJgEBAEgkAAAA
+AIYYPAUGAAMAUCQAAAAAgxg8BQYAAwBYJAAAAACTCCAFLAEDAIQkAAAAAJMIVgExAQMAiyQAAAAA
+kwhiATYBAwCTJAAAAACWCKgGPAEEAJokAAAAAIYYPAUGAAQAoiQAAAAAkRhCBUEBBAAAAAEAVQQA
 AAIACAUAAAEAjwMJADwFAQARADwFBgAZADwFCgApADwFEAAxADwFEAA5ADwFEABBADwFEABJADwF
 EABRADwFEABZADwFEABhADwFEABpADwFBgCZADwFBgDBADwFFQDRADwFBgBxAFwGLgDZAA4GMwDh
 AFwEOADpAIUDPgDxAAEAQgChAK8DRwB5ADwFSwCxADwFEAB5AK8DUgABATQFRwABAV0HWQABAYcG
 XwABAY4GZQABAYcGbAARAUEBcwAZAYAGeQAZATgHfgApAYAGeQApATMHhQDZAMEGAQABAYcGjAAx
-AQwHlAApARABogB5ALoBqAB5ABwHrQB5AF0HsgABAYcGcwAxAQwHugCBALAARwBRATwFBgBRAfoA
-EABRAXIGEABRAUgHEABRAd4GywBRAXEDywBRAfkGywCJANAG0ACJAJwGBgBZAbIBBgBxADwFBgCh
-ADwFBgBhAeMA2ABhASYH4QCpADwF5wDJADwFBgAIABQAAQEIABgABgEpAHMAdAEuAAsATAEuABMA
-VQEuABsAdAEuACMAfQEuACsApgEuADMApgEuADsApgEuAEMAfQEuAEsArAEuAFMApgEuAFsAwwFD
-AGMABgFJAHMAdAFhAHsABgFjAGsABgEbAMEAAwABAAQAAwAAACQFPQEAAHYBQgEAAKwGRwECAAUA
-AwACAAYABQABAAcABQACAAgABwAEgAAAAQAAAKMkFHgAAAAAAAAJAAAABAAAAAAAAAAAAAAA7wCX
-AAAAAAAQAAAAAAAAAAAAAAD4AL0DAAAAAAQAAAAAAAAAAAAAAO8AZQQAAAAAEAAAAAAAAAAAAAAA
-+ABwAAAAAAAEAAAAAAAAAAAAAADvACUGAAAAAAAAAAABAAAAjQUAAAUAAgAAAABUb0ludDMyAFNU
-X2I0MTIzZDcwZWVkNzRiNjBiYjMwMTAyM2NjNTYwMGY2AFNUXzZjYTgzYzg4ZTdhNTQwNTc5M2E0
-ZWQzZTRjMGIxOGM4ADxNb2R1bGU+AFN5c3RlbS5JTwBjb21wYWN0YVJBUgBNaWNyb3NvZnQuU3Fs
-U2VydmVyLk1hbmFnZWREVFMAdmFsdWVfXwBtc2NvcmxpYgBkZWZhdWx0SW5zdGFuY2UAZ2V0X01l
-c3NhZ2UAVmFyaWFibGUASURpc3Bvc2FibGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21I
-YW5kbGUARmlsZQBzZXRfRmlsZU5hbWUARGF0ZVRpbWUAR2V0TGFzdFdyaXRlVGltZQBNaWNyb3Nv
-ZnQuU3FsU2VydmVyLkR0cy5SdW50aW1lAENvbWJpbmUAVHlwZQBGYWlsdXJlAGdldF9DdWx0dXJl
-AHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBWU1RBUlRTY3JpcHRPYmplY3RNb2RlbEJhc2UA
-QXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARGlzcG9zZQBnZXRfRGF0ZQBFZGl0b3JCcm93c2FibGVT
-dGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmli
-dXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5
-VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3Jr
-QXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0
-aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9k
-dWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50
-cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGli
-aWxpdHlBdHRyaWJ1dGUAc2V0X1VzZVNoZWxsRXhlY3V0ZQBnZXRfVmFsdWUAdmFsdWUAU3lzdGVt
-LlJ1bnRpbWUuVmVyc2lvbmluZwBUb1N0cmluZwBQYXRoAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuU2Ny
-aXB0VGFzawBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5TY3JpcHRUYXNrAFNjcmlwdE9i
-amVjdE1vZGVsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTVF9iNDEyM2Q3MGVlZDc0YjYwYmIzMDEw
-MjNjYzU2MDBmNi5kbGwAb3JpZ2VtAGdldF9JdGVtAFN5c3RlbQBFbnVtAHJlc291cmNlTWFuAFNj
-cmlwdE1haW4ATWVzc2FnZUJveEljb24AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2Jh
-bGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ARXhjZXB0aW9uAEN1bHR1cmVJbmZvAFByb2Nlc3NT
-dGFydEluZm8ARGlyZWN0b3J5SW5mbwBkZXN0aW5vAElGb3JtYXRQcm92aWRlcgBnZXRfUmVzb3Vy
-Y2VNYW5hZ2VyAFRvVXBwZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0u
-UnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfNmNhODNjODhlN2E1
-NDA1NzkzYTRlZDNlNGMwYjE4YzguUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERlYnVn
-Z2luZ01vZGVzAFNUXzZjYTgzYzg4ZTdhNTQwNTc5M2E0ZWQzZTRjMGIxOGM4LlByb3BlcnRpZXMA
-Z2V0X1ZhcmlhYmxlcwBTZXR0aW5ncwBTeXN0ZW0uV2luZG93cy5Gb3JtcwBNZXNzYWdlQm94QnV0
-dG9ucwBTdWNjZXNzAFByb2Nlc3MAZ2V0X0R0cwBTY3JpcHRSZXN1bHRzAHNldF9Bcmd1bWVudHMA
-RXhpc3RzAENvbmNhdABGb3JtYXQAT2JqZWN0AFdhaXRGb3JFeGl0AGdldF9EZWZhdWx0AERpYWxv
-Z1Jlc3VsdABzZXRfVGFza1Jlc3VsdABTdGFydABDb252ZXJ0AHNldF9SZWRpcmVjdFN0YW5kYXJk
-T3V0cHV0AHNldF9DcmVhdGVOb1dpbmRvdwBTaG93AE1lc3NhZ2VCb3gAZ2V0X1RvZGF5AGdldF9B
-c3NlbWJseQBDb3B5AENyZWF0ZURpcmVjdG9yeQBzZXRfV29ya2luZ0RpcmVjdG9yeQBvcF9FcXVh
-bGl0eQAAAAAAGyQAUABhAGMAawBhAGcAZQA6ADoAQQBuAG8AABskAFAAYQBjAGsAYQBnAGUAOgA6
-AE0AZQBzAAAnUwB5AHMAdABlAG0AOgA6AFAAYQBjAGsAYQBnAGUATgBhAG0AZQAAHyQAUABhAGMA
-awBhAGcAZQA6ADoARQBtAGEAaQBsAAARTQBNAC4AIABNAE0ATQBNAAALcAB0AC0AQgBSAAEbVQBz
-AGUAcgA6ADoAUgBlAHYAZQBuAGQAYQAAAzEAABMyADIAMwA0ADAAMgAgAC0AIAABEzIAMAAxADIA
-MAAxACAALQAgAAFLWQA6AFwAUABVAEIATABJAEMATwBcAEEATgBBAEwASQBTAFQAQQBTAFwAUwBT
-AEkAUwBcAEEAUwBTAEUAUwBTAE0ARQBOAFQAXAAAE1wARwBlAHIAYQBkAG8AcwBcAAALLgB4AGwA
-cwB4AABrWQA6AFwAUABVAEIATABJAEMATwBcAEEATgBBAEwASQBTAFQAQQBTAFwAMAA2ACAAQQBT
-AFMARQBTAFMATQBFAE4AVABcAHsAMAB9AFwAewAxAH0AXAB7ADIAfQBcAHsAMwB9AHsANAB9AACA
-r1oAOgBcAHIAZQBsAGEAdABvAHIAaQBvAHMAXABnAGkAcgBvAF8AcgBlAGYAcgBpAGcAZQByAGEA
-ZABvAHIAZQBzAFwAZwBlAHIAYQBkAG8AcwBcAEEAYwBvAG0AcAAgAFIAZQBmAHIAaQBnAGUAcgBh
-AOcA4wBvACAAdgAyACAALQAgAFAAZQByAGYAbwByAG0AYQBuAGMAZQAgAFYAbwBsAHUAbQBlACAA
-LQAgAAFvTwAgAEEAcgBxAHUAaQB2AG8AIABBAGMAbwBtAHAAIABSAGUAZgByAGkAZwBlAHIAYQDn
-AOMAbwAgAHYAMgAgAC0AIABQAGUAcgBmAG8AcgBtAGEAbgBjAGUAIABWAG8AbAB1AG0AZQAgAC0A
-IAABRSAAZgBvAGkAIABnAGUAcgBhAGQAbwAgAGUAIABhAHQAdQBhAGwAaQB6AGEAZABvACAAbgBh
-ACAAcABhAHMAdABhACAAABdDAG8AbgBmAGkAcgBtAGEA5wDjAG8AAVtBAGMAbwBtAHAAIABSAGUA
-ZgByAGkAZwBlAHIAYQDnAOMAbwAgAHYAMgAgAC0AIABQAGUAcgBmAG8AcgBtAGEAbgBjAGUAIABW
-AG8AbAB1AG0AZQAgAC0AIAABUVkAOgBcAFAAVQBCAEwASQBDAE8AXABBAE4AQQBMAEkAUwBUAEEA
-UwBcADAANgAgAEEAUwBTAEUAUwBTAE0ARQBOAFQAXAAyADAAMgA1AFwAAANcAACAmU4AZQBjAGUA
-cwBzAGEAcgBpAG8AIABBAHQAdQBhAGwAaQB6AGEAcgAgAG8AIABhAHIAcQB1AGkAdgBvACAAQQBj
-AG8AbQBwACAAUgBlAGYAcgBpAGcAZQByAGEA5wDjAG8AIAB2ADIAIAAtACAAUABlAHIAZgBvAHIA
-bQBhAG4AYwBlACAAVgBvAGwAdQBtAGUAIAAtACAAASdFAHIAcgBvACAAYQBvACAAcAByAG8AYwBl
-AHMAcwBhAHIAOgAgAAAJLgByAGEAcgAARUMAOgBcAFAAcgBvAGcAcgBhAG0AIABGAGkAbABlAHMA
-XABXAGkAbgBSAEEAUgBcAFcAaQBuAFIAQQBSAC4AZQB4AGUAADtBACAAcABhAHMAdABhACAAZABl
-ACAAbwByAGkAZwBlAG0AIABuAOMAbwAgAGUAeABpAHMAdABlAC4AAVdXAGkAbgBSAEEAUgAgAG4A
-4wBvACAAZQBuAGMAbwBuAHQAcgBhAGQAbwAuACAAVgBlAHIAaQBmAGkAcQB1AGUAIABvACAAYwBh
-AG0AaQBuAGgAbwAuAAENYQAgAC0AcgAgACIAAQciACAAIgAAB1wAKgAiAABxUwBUAF8ANgBjAGEA
-OAAzAGMAOAA4AGUANwBhADUANAAwADUANwA5ADMAYQA0AGUAZAAzAGUANABjADAAYgAxADgAYwA4
-AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAABHoiuj1fo0atEG3k
-pw50aQAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERXRIHDAgIDhE9Dg4ODg4RPRE9EkEEIAASbQQg
-ABJxBSABEnUcAyAAHAQAAQgcAyAADgYgAwEICAgGIAIODhJ9BQACAg4OBQABDh0OBgACDg4dHAYA
-Aw4ODg4FAAIODg4EAAECDgYAARKAkQ4GAAMBDg4CBwAEDg4ODg4NAAQRgJ0ODhGAoRGApQUAARE9
-DgQgABE9BAAAET0HAAICET0RPQYAARGAnQ4JBwYODg4ODhJFBCABAQIHAAESRRKAqQgAARKAsRGA
-tQUgABKAuQcgAgEOEoC5CLd6XFYZNOCJCImEXc2AgMyRBAAAAAAEAQAAAAMGElUDBhJZAwYSEAIG
-CAMGERQFIAIBDg4EAAASVQQAABJZBQABARJZBAAAEhADAAABBAgAElUECAASWQQIABIQCAEACAAA
-AAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTVF82Y2E4M2M4
-OGU3YTU0MDU3OTNhNGVkM2U0YzBiMThjOAAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDI0AABJ
-AQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5O
-RVQgRnJhbWV3b3JrIDQuNwAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNv
-dXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQ
-dWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJl
-c291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAADIOgAAAAAAAAAAAADiOgAAACAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAA1DoAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA
-/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AQwHlAApARABogB5ALoBqAB5ABwHrQB5AF0HsgABAY4GugABAYcGcwAxAQwHwgCBALAARwBRATwF
+BgBRAfoAEABRAXIGEABRAUgHEABRAd4G0wBRAXED0wBRAfkG0wCJANAG2ACJAJwGBgBZAbIBBgBx
+ADwFBgChADwFBgBhAeMA4ABhASYH6QCpADwF7wDJADwFBgAIABQACQEIABgADgEpAHMAfAEuAAsA
+VAEuABMAXQEuABsAfAEuACMAhQEuACsArgEuADMArgEuADsArgEuAEMAhQEuAEsAtAEuAFMArgEu
+AFsAywFDAGMADgFJAHMAfAFhAHsADgFjAGsADgEbAMkAAwABAAQAAwAAACQFRQEAAHYBSgEAAKwG
+TwECAAUAAwACAAYABQABAAcABQACAAgABwAEgAAAAQAAAD0ltz4AAAAAAAAJAAAABAAAAAAAAAAA
+AAAA9wCXAAAAAAAQAAAAAAAAAAAAAAAAAb0DAAAAAAQAAAAAAAAAAAAAAPcAZQQAAAAAEAAAAAAA
+AAAAAAAAAAFwAAAAAAAEAAAAAAAAAAAAAAD3ACUGAAAAAAAAAAABAAAAjQUAAAUAAgAAAAAAAFRv
+SW50MzIAU1RfYjQxMjNkNzBlZWQ3NGI2MGJiMzAxMDIzY2M1NjAwZjYAU1RfNmNhODNjODhlN2E1
+NDA1NzkzYTRlZDNlNGMwYjE4YzgAPE1vZHVsZT4AU3lzdGVtLklPAGNvbXBhY3RhUkFSAE1pY3Jv
+c29mdC5TcWxTZXJ2ZXIuTWFuYWdlZERUUwB2YWx1ZV9fAG1zY29ybGliAGRlZmF1bHRJbnN0YW5j
+ZQBnZXRfTWVzc2FnZQBWYXJpYWJsZQBJRGlzcG9zYWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRU
+eXBlRnJvbUhhbmRsZQBGaWxlAHNldF9GaWxlTmFtZQBEYXRlVGltZQBHZXRMYXN0V3JpdGVUaW1l
+AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAQ29tYmluZQBUeXBlAEZhaWx1cmUAZ2V0
+X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1v
+ZGVsQmFzZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBEaXNwb3NlAGdldF9EYXRlAEVkaXRvckJy
+b3dzYWJsZVN0YXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNv
+ZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUA
+QXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRG
+cmFtZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5
+RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3Nl
+bWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1Njcmlw
+dFRhc2tFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1l
+Q29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBzZXRfVXNlU2hlbGxFeGVjdXRlAGdldF9WYWx1ZQB2YWx1
+ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAFBhdGgATWljcm9zb2Z0LlNxbFNl
+cnZlci5TY3JpcHRUYXNrAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlRhc2tzLlNjcmlwdFRhc2sA
+U2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNUX2I0MTIzZDcwZWVkNzRi
+NjBiYjMwMTAyM2NjNTYwMGY2LmRsbABvcmlnZW0AZ2V0X0l0ZW0AU3lzdGVtAEVudW0AcmVzb3Vy
+Y2VNYW4AU2NyaXB0TWFpbgBNZXNzYWdlQm94SWNvbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0
+ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBFeGNlcHRpb24AQ3VsdHVyZUluZm8A
+UHJvY2Vzc1N0YXJ0SW5mbwBEaXJlY3RvcnlJbmZvAGRlc3Rpbm8ASUZvcm1hdFByb3ZpZGVyAGdl
+dF9SZXNvdXJjZU1hbmFnZXIAVG9VcHBlcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNz
+AFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTVF82Y2E4
+M2M4OGU3YTU0MDU3OTNhNGVkM2U0YzBiMThjOC5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJj
+ZXMARGVidWdnaW5nTW9kZXMAU1RfNmNhODNjODhlN2E1NDA1NzkzYTRlZDNlNGMwYjE4YzguUHJv
+cGVydGllcwBnZXRfVmFyaWFibGVzAFNldHRpbmdzAFN5c3RlbS5XaW5kb3dzLkZvcm1zAE1lc3Nh
+Z2VCb3hCdXR0b25zAFN1Y2Nlc3MAUHJvY2VzcwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMAc2V0X0Fy
+Z3VtZW50cwBFeGlzdHMAQ29uY2F0AEZvcm1hdABPYmplY3QAV2FpdEZvckV4aXQAZ2V0X0RlZmF1
+bHQARGlhbG9nUmVzdWx0AHNldF9UYXNrUmVzdWx0AFN0YXJ0AENvbnZlcnQAc2V0X1JlZGlyZWN0
+U3RhbmRhcmRPdXRwdXQAc2V0X0NyZWF0ZU5vV2luZG93AFNob3cATWVzc2FnZUJveABnZXRfVG9k
+YXkAZ2V0X0Fzc2VtYmx5AENvcHkAQ3JlYXRlRGlyZWN0b3J5AHNldF9Xb3JraW5nRGlyZWN0b3J5
+AG9wX0VxdWFsaXR5AAAAAAAbJABQAGEAYwBrAGEAZwBlADoAOgBBAG4AbwAAGyQAUABhAGMAawBh
+AGcAZQA6ADoATQBlAHMAACdTAHkAcwB0AGUAbQA6ADoAUABhAGMAawBhAGcAZQBOAGEAbQBlAAAf
+JABQAGEAYwBrAGEAZwBlADoAOgBFAG0AYQBpAGwAABFNAE0ALgAgAE0ATQBNAE0AAAtwAHQALQBC
+AFIAARtVAHMAZQByADoAOgBSAGUAdgBlAG4AZABhAAADMQAAEzIAMgAzADQAMAAyACAALQAgAAET
+MgAwADEAMgAwADEAIAAtACAAAUtZADoAXABQAFUAQgBMAEkAQwBPAFwAQQBOAEEATABJAFMAVABB
+AFMAXABTAFMASQBTAFwAQQBTAFMARQBTAFMATQBFAE4AVABcAAATXABHAGUAcgBhAGQAbwBzAFwA
+AAsuAHgAbABzAHgAAGtZADoAXABQAFUAQgBMAEkAQwBPAFwAQQBOAEEATABJAFMAVABBAFMAXAAw
+ADYAIABBAFMAUwBFAFMAUwBNAEUATgBUAFwAewAwAH0AXAB7ADEAfQBcAHsAMgB9AFwAewAzAH0A
+ewA0AH0AAICvWgA6AFwAcgBlAGwAYQB0AG8AcgBpAG8AcwBcAGcAaQByAG8AXwByAGUAZgByAGkA
+ZwBlAHIAYQBkAG8AcgBlAHMAXABnAGUAcgBhAGQAbwBzAFwAQQBjAG8AbQBwACAAUgBlAGYAcgBp
+AGcAZQByAGEA5wDjAG8AIAB2ADIAIAAtACAAUABlAHIAZgBvAHIAbQBhAG4AYwBlACAAVgBvAGwA
+dQBtAGUAIAAtACAAAW9PACAAQQByAHEAdQBpAHYAbwAgAEEAYwBvAG0AcAAgAFIAZQBmAHIAaQBn
+AGUAcgBhAOcA4wBvACAAdgAyACAALQAgAFAAZQByAGYAbwByAG0AYQBuAGMAZQAgAFYAbwBsAHUA
+bQBlACAALQAgAAFFIABmAG8AaQAgAGcAZQByAGEAZABvACAAZQAgAGEAdAB1AGEAbABpAHoAYQBk
+AG8AIABuAGEAIABwAGEAcwB0AGEAIAAAF0MAbwBuAGYAaQByAG0AYQDnAOMAbwABW0EAYwBvAG0A
+cAAgAFIAZQBmAHIAaQBnAGUAcgBhAOcA4wBvACAAdgAyACAALQAgAFAAZQByAGYAbwByAG0AYQBu
+AGMAZQAgAFYAbwBsAHUAbQBlACAALQAgAAFdWQA6AFwAUABVAEIATABJAEMATwBcAEEATgBBAEwA
+SQBTAFQAQQBTAFwAMAA2ACAAQQBTAFMARQBTAFMATQBFAE4AVABcAHsAMAB9AFwAewAxAH0AXAB7
+ADIAfQAAgJlOAGUAYwBlAHMAcwBhAHIAaQBvACAAQQB0AHUAYQBsAGkAegBhAHIAIABvACAAYQBy
+AHEAdQBpAHYAbwAgAEEAYwBvAG0AcAAgAFIAZQBmAHIAaQBnAGUAcgBhAOcA4wBvACAAdgAyACAA
+LQAgAFAAZQByAGYAbwByAG0AYQBuAGMAZQAgAFYAbwBsAHUAbQBlACAALQAgAAEnRQByAHIAbwAg
+AGEAbwAgAHAAcgBvAGMAZQBzAHMAYQByADoAIAAACS4AcgBhAHIAAEVDADoAXABQAHIAbwBnAHIA
+YQBtACAARgBpAGwAZQBzAFwAVwBpAG4AUgBBAFIAXABXAGkAbgBSAEEAUgAuAGUAeABlAAA7QQAg
+AHAAYQBzAHQAYQAgAGQAZQAgAG8AcgBpAGcAZQBtACAAbgDjAG8AIABlAHgAaQBzAHQAZQAuAAFX
+VwBpAG4AUgBBAFIAIABuAOMAbwAgAGUAbgBjAG8AbgB0AHIAYQBkAG8ALgAgAFYAZQByAGkAZgBp
+AHEAdQBlACAAbwAgAGMAYQBtAGkAbgBoAG8ALgABDWEAIAAtAHIAIAAiAAEHIgAgACIAAAdcACoA
+IgAAcVMAVABfADYAYwBhADgAMwBjADgAOABlADcAYQA1ADQAMAA1ADcAOQAzAGEANABlAGQAMwBl
+ADQAYwAwAGIAMQA4AGMAOAAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUA
+cwAAAGR7YQohPQ5PqgCA6DSlaEkABCABAQgDIAABBSABARERBCABAQ4FIAEBEV0SBwwICA4RPQ4O
+Dg4OET0RPRJBBCAAEm0EIAAScQUgARJ1HAMgABwEAAEIHAMgAA4GIAMBCAgIBiACDg4SfQUAAgIO
+DgUAAQ4dDgYAAg4OHRwGAAMODg4OBQACDg4OBAABAg4GAAESgJEOBgADAQ4OAgcABA4ODg4ODQAE
+EYCdDg4RgKERgKUFAAERPQ4EIAARPQQAABE9BwACAhE9ET0HAAQODhwcHAYAARGAnQ4JBwYODg4O
+DhJFBCABAQIHAAESRRKAqQgAARKAsRGAtQUgABKAuQcgAgEOEoC5CLd6XFYZNOCJCImEXc2AgMyR
+BAAAAAAEAQAAAAMGElUDBhJZAwYSEAIGCAMGERQFIAIBDg4EAAASVQQAABJZBQABARJZBAAAEhAD
+AAABBAgAElUECAASWQQIABIQCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dz
+AQgBAAIAAAAAACgBACNTVF82Y2E4M2M4OGU3YTU0MDU3OTNhNGVkM2U0YzBiMThjOAAABQEAAAAA
+FgEAEUNvcHlyaWdodCBAICAyMDI0AABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQO
+FEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwAAALQAAADOyu++AQAAAJEA
+AABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4w
+LjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5
+c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAADg
+OgAAAAAAAAAAAAD6OgAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7DoAAAAAAAAAAAAAAABfQ29y
+RGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB
 ABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAA
 WEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9
-BO/+AAABAAAAAQAUeKMkAAABABR4oyQ/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEA
+BO/+AAABAAAAAQC3Pj0lAAABALc+PSU/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEA
 VgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAA
 AAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAAMAAwADAA
 NABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBO
 AGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMA
 VABfADYAYwBhADgAMwBjADgAOABlADcAYQA1ADQAMAA1ADcAOQAzAGEANABlAGQAMwBlADQAYwAw
-AGIAMQA4AGMAOAAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA5ADMA
-NwA5AC4AMwAwADcANAAwAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABf
+AGIAMQA4AGMAOAAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA5ADUA
+MwAzAC4AMQA2ADAANQA1AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABf
 AGIANAAxADIAMwBkADcAMABlAGUAZAA3ADQAYgA2ADAAYgBiADMAMAAxADAAMgAzAGMAYwA1ADYA
 MAAwAGYANgAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBv
 AHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgA0AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQA
@@ -5390,15 +5390,15 @@ AAAAUwBUAF8AYgA0ADEAMgAzAGQANwAwAGUAZQBkADcANABiADYAMABiAGIAMwAwADEAMAAyADMA
 YwBjADUANgAwADAAZgA2AC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAA
 AFMAVABfADYAYwBhADgAMwBjADgAOABlADcAYQA1ADQAMAA1ADcAOQAzAGEANABlAGQAMwBlADQA
 YwAwAGIAMQA4AGMAOAAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAw
-AC4AOQAzADcAOQAuADMAMAA3ADQAMAAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIA
-cwBpAG8AbgAAADEALgAwAC4AOQAzADcAOQAuADMAMAA3ADQAMAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AC4AOQA1ADMAMwAuADEANgAwADUANQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIA
+cwBpAG8AbgAAADEALgAwAC4AOQA1ADMAMwAuADEANgAwADUANQAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAAD0OgAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAAAMOwAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -5473,7 +5473,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="230.4,41.6"
           Id="Package\Contêiner do Loop Foreach\REVENDA\ENVIAR EMAIL"
-          TopLeft="54.2457147291673,313.427450632732" />
+          TopLeft="56.3885718765861,313.427450632732" />
         <NodeLayout
           Size="230.4,41.6"
           Id="Package\Contêiner do Loop Foreach\REVENDA\MOVE ARQUIVO"
@@ -5524,18 +5524,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Contêiner do Loop Foreach\REVENDA.PrecedenceConstraints[Restrição 3]"
-          TopLeft="169.445714729167,272.409150153935">
+          TopLeft="170.517143302877,272.409150153935">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.0183004787968"
+              EndConnector="0,41.018300478797"
               Start="0,0"
-              End="0,33.5183004787968">
+              End="0,33.518300478797">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5183004787968" />
+                    End="0,33.518300478797" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
