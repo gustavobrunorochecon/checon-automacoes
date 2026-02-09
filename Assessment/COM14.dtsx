@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-3G838JT"
   DTS:CreatorName="DESKTOP-3G838JT\Checon"
-  DTS:DTSID="{B2698284-AC69-44B7-9A72-EFD3E62D4A44}"
+  DTS:DTSID="{9ED84E6A-845C-46CB-8365-E24153903E06}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1046"
-  DTS:ObjectName="COM23"
+  DTS:ObjectName="COM14"
   DTS:PackageType="5"
-  DTS:VersionBuild="219"
-  DTS:VersionGUID="{C6A5DBEA-7390-4996-BC54-690F10CBF369}">
+  DTS:VersionBuild="217"
+  DTS:VersionGUID="{45EE6A6A-CF3B-4289-951B-4EDD813DD52D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[PRODUCAO]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{9A8E7220-030F-4CDC-8342-55F2B9CBB24E}"
+      DTS:DTSID="{4A2B77AE-ADFD-4A37-8A02-6B79B2125658}"
       DTS:ObjectName="PRODUCAO">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -31,7 +31,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{0A322EA4-D749-4A4E-869E-829DCED8AC05}"
+      DTS:DTSID="{1B4DE8A7-327B-46C7-9B28-058176049BED}"
       DTS:ObjectName="Ano">
       <DTS:Property
         DTS:DataType="3"
@@ -40,27 +40,26 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{3C55DED7-1E89-45AB-AAB5-037CF5AA2EDF}"
+      DTS:DTSID="{3996B594-535D-4939-9A34-D9566ED5A692}"
       DTS:ObjectName="Email">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue"
-        xml:space="preserve"></DTS:Property>
+        DTS:Name="ParameterValue">P</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{2BCE258E-183B-4B3C-9D36-C30030E9129A}"
+      DTS:DTSID="{8421A430-CBC0-4AE9-AD22-06EEEF3869CE}"
       DTS:ObjectName="Mes">
       <DTS:Property
         DTS:DataType="3"
-        DTS:Name="ParameterValue">10</DTS:Property>
+        DTS:Name="ParameterValue">9</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{908299AE-E18B-41A6-93DF-60DE3CFD8B5C}"
+      DTS:DTSID="{7A56011C-9A45-4407-A494-B4B5ED11DA57}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Revenda">
@@ -73,14 +72,14 @@
       DTS:refId="Package\Contêiner do Loop Foreach"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Contêiner do Loop Foreach"
-      DTS:DTSID="{CAE7963B-FB22-4CCD-B90C-6B99D4C6D899}"
+      DTS:DTSID="{4515FDB4-BABA-4F5A-94A7-4E59B0BDB11F}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Contêiner do Loop Foreach">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachItemEnumerator"
-        DTS:DTSID="{5A3021E2-43EF-4B42-AA5A-51C956B58064}"
-        DTS:ObjectName="{5A3021E2-43EF-4B42-AA5A-51C956B58064}">
+        DTS:DTSID="{6E95C1DD-FDA5-4221-A589-4882D6A3A076}"
+        DTS:ObjectName="{6E95C1DD-FDA5-4221-A589-4882D6A3A076}">
         <DTS:PropertyExpression
           DTS:Name="Items">1</DTS:PropertyExpression>
         <DTS:ObjectData>
@@ -104,7 +103,7 @@
           DTS:refId="Package\Contêiner do Loop Foreach\REVENDA"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Contêiner da Sequência"
-          DTS:DTSID="{F50B957E-9806-46BB-972F-E49A7FED36EF}"
+          DTS:DTSID="{E00399D0-344A-401D-BC63-D932EE7E3AB2}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="REVENDA">
@@ -114,7 +113,7 @@
               DTS:refId="Package\Contêiner do Loop Foreach\REVENDA\BUSCAR DADOS"
               DTS:CreationName="Microsoft.ScriptTask"
               DTS:Description="Tarefa Script"
-              DTS:DTSID="{5D7901E2-3FB7-43EA-896B-115C37CFEDA0}"
+              DTS:DTSID="{B7CA1153-2EA2-4056-B705-16324190598E}"
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="BUSCAR DADOS"
@@ -162,7 +161,7 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>.\bin\Debug\</OutputPath>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -210,7 +209,7 @@
       <HintPath>C:\Users\Checon\AppData\Local\Temp\Vsta\SSIS_ST160\Vsta__iU0JS9LtkeSo_wbCCwiiA\packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <HintPath>C:\Users\GustavoBrunoro\AppData\Local\Temp\Vsta\SSIS_ST160\VstaDy__JZkVi__kWZA7AJwP_V3Q\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <HintPath>C:\Users\GustavoBrunoro\AppData\Local\Temp\Vsta\SSIS_ST160\VstaAID0gnh1bk__1Jd181oQD__A\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="MySql.Data, Version=8.4.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
@@ -273,7 +272,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
     <None Include="packages.config" />
@@ -284,7 +282,6 @@
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ScriptMain.cs">
       <SubType>Code</SubType>
@@ -424,12 +421,6 @@
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
-                    Name="packages.config"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="BouncyCastle.Cryptography" version="2.2.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
-                  <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -474,13 +465,13 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
             string filePath = $@"Y:\PUBLICO\ANALISTAS\SSIS\ASSESSMENT\{packageName}\dados\";
             string file = "dados_" + revenda + ".xlsx";
 
-            bd_Dados(Dts, filePath, file, "dados");           
-            dados_relatorios(Dts, filePath, file, "dados_relatorios");
+            File.Delete(filePath + file);
 
-            ExecutarMacroExcel($@"Y:\PUBLICO\ANALISTAS\SSIS\ASSESSMENT\{packageName}\vba.xlsm", "build.formataArquivo", revenda);
+            bd_Dados(Dts, filePath, file, "dados");           
+
+            ExecutarMacroExcel($@"Y:\PUBLICO\ANALISTAS\SSIS\ASSESSMENT\{packageName}\vba.xlsm", "build.formataArquivo", revenda );
 
             Dts.TaskResult = (int)ScriptResults.Success;
-     
         }
 
         #region Métodos auxiliares
@@ -498,31 +489,70 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
                 accessDataMySql.addParameters("@Mes", Dts.Variables["$Package::Mes"].Value);
                 accessDataMySql.addParameters("@Data", Dts.Variables["$Package::Ano"].Value.ToString() + Dts.Variables["$Package::Mes"].Value.ToString().PadLeft(2, '0') + "01");
 
-                string query = @"  SELECT  CASE WHEN cl.gv IN (1, 4) THEN '201201' ELSE '223402' END AS COD_REVENDA,
-    	                                   en.municipio,   
-	                                       COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(@Data, '%Y-%m'), cl.cod_cliente, NULL)) AS MES_0,   
-                                           COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(DATE_SUB(@Data, INTERVAL 1 MONTH), '%Y-%m'), cl.cod_cliente, NULL)) AS MES_1,
-                                           COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(DATE_SUB(@Data, INTERVAL 2 MONTH), '%Y-%m'), cl.cod_cliente, NULL)) AS MES_2,
-                                           COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(DATE_SUB(@Data, INTERVAL 3 MONTH), '%Y-%m'), cl.cod_cliente, NULL)) AS MES_3,
-                                           COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(DATE_SUB(@Data, INTERVAL 4 MONTH), '%Y-%m'), cl.cod_cliente, NULL)) AS MES_4,
-                                           COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(DATE_SUB(@Data, INTERVAL 5 MONTH), '%Y-%m'), cl.cod_cliente, NULL)) AS MES_5,
-                                           COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(DATE_SUB(@Data, INTERVAL 6 MONTH), '%Y-%m'), cl.cod_cliente, NULL)) AS MES_6,
-                                           COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(DATE_SUB(@Data, INTERVAL 7 MONTH), '%Y-%m'), cl.cod_cliente, NULL)) AS MES_7,
-                                           COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(DATE_SUB(@Data, INTERVAL 8 MONTH), '%Y-%m'), cl.cod_cliente, NULL)) AS MES_8,
-                                           COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(DATE_SUB(@Data, INTERVAL 9 MONTH), '%Y-%m'), cl.cod_cliente, NULL)) AS MES_9,
-                                           COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(DATE_SUB(@Data, INTERVAL 10 MONTH), '%Y-%m'), cl.cod_cliente, NULL)) AS MES_10,
-                                           COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(DATE_SUB(@Data, INTERVAL 11 MONTH), '%Y-%m'), cl.cod_cliente, NULL)) AS MES_11,
-                                           COUNT(DISTINCT IF(DATE_FORMAT(pd.data_pedido, '%Y-%m') = DATE_FORMAT(DATE_SUB(@Data, INTERVAL 12 MONTH), '%Y-%m'), cl.cod_cliente, NULL)) AS MES_12
-                                    FROM   vw_pedidos pd
-                                           INNER JOIN tbl_clientes cl ON pd.cod_cliente = cl.cod_cliente
-                                                                     AND pd.cod_revenda = cl.cod_revenda 
-                                           INNER JOIN tbl_enderecos en ON cl.cod_cliente = en.cod_cliente
-                                                                      AND cl.cod_revenda = en.cod_revenda
-                                    WHERE  pd.data_pedido BETWEEN DATE_SUB( @Data, INTERVAL 12 MONTH) AND LAST_DAY( @Data )
-                                           AND cl.gv IN (1, 4, 6) 
-                                           AND pd.cod_revenda IN ( @cod_revenda )
-                                    GROUP BY  en.municipio
-                                    ORDER BY  COD_REVENDA";
+                string query = @"SELECT   cl.cod_cliente
+                                        , cl.vd as setor
+		                                , cl.razao_social
+		                                , cl.nome_fantasia
+		                                , IF(mp.segmentacao IS NULL, ""BRONZE"", mp.segmentacao) AS segmentacao
+		                                , CASE WHEN cl.categoria = 'OUTROS' THEN  'Bar C/D' ELSE cl.categoria END AS categoria
+		                                , IF( cl.dia_semana IN ('SAB', 'DOM') , 'SEG' , cl.dia_semana ) AS dia_visita
+		                                , CASE WHEN cl.dia_semana LIKE ""%,%"" AND cl.ciclo = ""1234"" THEN ""BIPASSE""
+			                                   WHEN cl.dia_semana NOT LIKE ""%,%"" AND cl.ciclo = ""1234"" THEN ""MONOPASSE""
+			                                   WHEN cl.ciclo = ""1 3"" OR cl.ciclo = ""2 4"" THEN ""QUINZENAL""
+			                                   ELSE ""MENSAL"" END AS frequencia_visita
+		                                , IF( fnDiaEntrega(dia_semana) IS NULL OR fnDiaEntrega(dia_semana) = '' , 'SEG' , fnDiaEntrega(dia_semana) ) AS dia_entrega
+	                                    , IF( cl.cpf_cnpj = ""CPF"", fnMascara( '###.###.###-##' , cl.numero_cpf_cnpj ), fnMascara( '##.###.###/####-##' , cl.numero_cpf_cnpj)  ) AS numero_cpf_cnpj	
+		
+		                                -- Formata o Telefone, caso não tenha e criado um telefone aleatoriamente
+		                                , CONCAT( IF ( fnPegaTelefone( cl.codigo_bw, 1) IS NOT NULL, fnPegaTelefone( cl.codigo_bw, 1), fnGeraTelefone() ), IF( fnPegaTelefone(cl.codigo_bw, 2 ) IS NOT NULL, CONCAT( ', ', fnPegaTelefone(cl.codigo_bw, 2 ) )  , '' ) ) AS TELEFONE
+		                                , UPPER(CASE WHEN cl.email = '' OR cl.email IS NULL OR cl.email LIKE '%checon%' THEN CONCAT(REPLACE(cl.razao_social,' ',''), LPAD(FLOOR(RAND() * 1000), 3, '0'), '@GMAIL.COM') ELSE cl.email END ) AS EMAIL	
+		                                , edr.municipio
+		                                , edr.bairro
+		                                , CONCAT(edr.tipo, '. ', edr.logradouro) AS endereco
+		                                , SUBSTRING( IF( cl.latitude IS NULL OR cl.latitude = '' OR CHAR_LENGTH(cl.latitude) < 11, fnGeraLatitude(-16.3750795,100), cl.latitude ), 1, 11) latitude
+	                                    , SUBSTRING( IF( cl.longitude IS NULL OR cl.latitude = '' OR CHAR_LENGTH(cl.latitude) < 11, fnGeraLongitude(-39.5881317,100), cl.latitude ), 1, 11) longitude	
+                                        -- , IFNULL( credito.limite_liberado, 300 ) AS limite_credito
+                                        , REPLACE(CASE 
+		                                                 -- BAR/ESPECIAIS OU RESTAURANTES
+					                                     WHEN cl.categoria IN ( 'Bar A/B', 'Bar C/D', 'Entretenimento Espec', 'Restaurante A/B', 'Restaurante C/D', 'Lanchonete', 'Outros', 'Padaria/confeitaria' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'BRONZE'   AND credito.limite_liberado < 300.00  THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		                                                 WHEN cl.categoria IN ( 'Bar A/B', 'Bar C/D', 'Entretenimento Espec', 'Restaurante A/B', 'Restaurante C/D', 'Lanchonete', 'Outros', 'Padaria/confeitaria' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'PRATA'    AND credito.limite_liberado < 600.00  THEN 'PDV COM RESTRIÇÃO DE CRÉDITO' 
+		                                                 WHEN cl.categoria IN ( 'Bar A/B', 'Bar C/D', 'Entretenimento Espec', 'Restaurante A/B', 'Restaurante C/D', 'Lanchonete', 'Outros', 'Padaria/confeitaria' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'OURO'     AND credito.limite_liberado < 1500.00 THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		                                                 WHEN cl.categoria IN ( 'Bar A/B', 'Bar C/D', 'Entretenimento Espec', 'Restaurante A/B', 'Restaurante C/D', 'Lanchonete', 'Outros', 'Padaria/confeitaria' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'DIAMANTE' AND credito.limite_liberado < 3000.00 THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		  			
+		  			                                     -- CASH & CARRY
+		  			                                     WHEN cl.categoria IN ( 'Cash Carry' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'BRONZE'   AND credito.limite_liberado < 200.00 THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		                                                 WHEN cl.categoria IN ( 'Cash Carry' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'PRATA'    AND credito.limite_liberado < 400.00 THEN 'PDV COM RESTRIÇÃO DE CRÉDITO' 
+		                                                 WHEN cl.categoria IN ( 'Cash Carry' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'OURO'     AND credito.limite_liberado < 600.00 THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		                                                 WHEN cl.categoria IN ( 'Cash Carry' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'DIAMANTE' AND credito.limite_liberado < 800.00 THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		        
+		                                                 -- TRAD, MERCEARIA
+		                                                 WHEN cl.categoria IN ( 'Armazém/mercearia' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'BRONZE'   AND credito.limite_liberado < 400.00  THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		                                                 WHEN cl.categoria IN ( 'Armazém/mercearia' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'PRATA'    AND credito.limite_liberado < 800.00  THEN 'PDV COM RESTRIÇÃO DE CRÉDITO' 
+		                                                 WHEN cl.categoria IN ( 'Armazém/mercearia' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'OURO'     AND credito.limite_liberado < 1500.00 THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		                                                 WHEN cl.categoria IN ( 'Armazém/mercearia' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'DIAMANTE' AND credito.limite_liberado < 3000.00 THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		         
+		                                                 -- ASI E AUTO SERV.
+		                                                 WHEN cl.categoria IN ( 'Hipermercado', 'Loja de Conveniência', 'Mini A/B', 'Mini C/D', 'Super A/B', 'Super C/D' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'BRONZE'   AND credito.limite_liberado < 1000.00  THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		                                                 WHEN cl.categoria IN ( 'Hipermercado', 'Loja de Conveniência', 'Mini A/B', 'Mini C/D', 'Super A/B', 'Super C/D' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'PRATA'    AND credito.limite_liberado < 3000.00  THEN 'PDV COM RESTRIÇÃO DE CRÉDITO' 
+		                                                 WHEN cl.categoria IN ( 'Hipermercado', 'Loja de Conveniência', 'Mini A/B', 'Mini C/D', 'Super A/B', 'Super C/D' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'OURO'     AND credito.limite_liberado < 5000.00  THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		                                                 WHEN cl.categoria IN ( 'Hipermercado', 'Loja de Conveniência', 'Mini A/B', 'Mini C/D', 'Super A/B', 'Super C/D' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'DIAMANTE' AND credito.limite_liberado < 10000.00 THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		         
+		                                                 -- ADEGA
+		                                                 WHEN cl.categoria IN ( 'Adega' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'BRONZE'   AND credito.limite_liberado < 1500.00  THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		                                                 WHEN cl.categoria IN ( 'Adega' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'PRATA'    AND credito.limite_liberado < 3000.00  THEN 'PDV COM RESTRIÇÃO DE CRÉDITO' 
+		                                                 WHEN cl.categoria IN ( 'Adega' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'OURO'     AND credito.limite_liberado < 5000.00  THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		                                                 WHEN cl.categoria IN ( 'Adega' ) AND IF(mp.segmentacao IS NULL, 'BRONZE', mp.segmentacao) = 'DIAMANTE' AND credito.limite_liberado < 10000.00 THEN 'PDV COM RESTRIÇÃO DE CRÉDITO'
+		         
+		                                                 ELSE IFNULL( credito.limite_liberado, null ) END, '.',',') AS limite_credito
+                                FROM   tbl_clientes AS cl
+	                                   LEFT JOIN tbl_matriz_potencial AS mp ON (cl.cod_cliente = mp.cod_cliente AND cl.cod_revenda = mp.cod_revenda)
+	                                   LEFT JOIN tbl_enderecos AS edr ON (cl.cod_cliente = edr.cod_cliente AND cl.cod_revenda = edr.cod_revenda)
+                                       LEFT JOIN tbl_limite_credito credito ON credito.cod_cliente = cl.cod_cliente
+	   												                       AND credito.cod_revenda = cl.cod_revenda
+                                WHERE  cl.status IN (""A"")
+	                                   AND cl.gv IN (1, 4, 6)
+	                                   AND cl.cod_revenda = @cod_revenda
+	                                   AND cl.data_cadastro < LAST_DAY(@Data)";
 
                 using (MySqlDataReader line = accessDataMySql.executeSelect(query))
                 {
@@ -538,81 +568,9 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
                 Dts.TaskResult = (int)ScriptResults.Failure;
             }
         }
-
-        private void dados_relatorios(ScriptObjectModel dts, string filePath, string file, string planilha)
-        {
-
-            AccessDataMySql accessDataMySql = new AccessDataMySql();
-
-            try
-            {
-                accessDataMySql.parameterClear();
-                accessDataMySql.addParameters("@cod_revenda", Dts.Variables["User::Revenda"].Value);
-                accessDataMySql.addParameters("@Ano", Dts.Variables["$Package::Ano"].Value);
-                accessDataMySql.addParameters("@Mes", Dts.Variables["$Package::Mes"].Value);
-                accessDataMySql.addParameters("@Data", Dts.Variables["$Package::Ano"].Value.ToString() + Dts.Variables["$Package::Mes"].Value.ToString().PadLeft(2, '0') + "01");
-
-                string query = @"
-                                    WITH calendario AS (
-                                                          SELECT  DATE_FORMAT(@Data, '%Y-%m-01') AS data_inicial, -- Primeiro dia do mês
-                                                                  LAST_DAY(@Data) AS data_final, -- Último dia do mês
-                                                                  DATE_FORMAT(@Data, '%Y-%m-%d') AS data_emissao -- Data atual
-                                                       )
-                                    SELECT    c.data_inicial,
-		                                      c.data_final,
-		                                      c.data_emissao,
-		                                      -- Contagem de dias úteis no mês (segunda a sexta),
-		                                      (	   SELECT COUNT(*) 
-					                               FROM (
-					                                        SELECT DATE_ADD(c.data_inicial, INTERVAL seq DAY) AS data_dia
-					                                        FROM (SELECT 0 seq UNION 
-					                                                ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 
-					                                                UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 
-					                                                UNION ALL SELECT 9 UNION ALL SELECT 10 UNION ALL SELECT 11 UNION ALL SELECT 12 
-					                                                UNION ALL SELECT 13 UNION ALL SELECT 14 UNION ALL SELECT 15 UNION ALL SELECT 16 
-					                                                UNION ALL SELECT 17 UNION ALL SELECT 18 UNION ALL SELECT 19 UNION ALL SELECT 20 
-					                                                UNION ALL SELECT 21 UNION ALL SELECT 22 UNION ALL SELECT 23 UNION ALL SELECT 24 
-					                                                UNION ALL SELECT 25 UNION ALL SELECT 26 UNION ALL SELECT 27 UNION ALL SELECT 28 
-					                                                UNION ALL SELECT 29 UNION ALL SELECT 30) AS numeros
-					                                        JOIN calendario c ON 1 = 1 -- Substitua ""sua_tabela"" pelo nome correto da tabela
-					                                    ) AS dias
-					                                    WHERE data_dia BETWEEN c.data_inicial AND c.data_final
-					                                        AND WEEKDAY(data_dia) NOT IN (5,6) -- Exclui sábados (5) e domingos (6)
-		                                        ) AS dias_uteis,
-		                                        -- Dias decorridos até a data_emissao
-		                                        DATEDIFF(c.data_emissao, c.data_inicial) AS dias_decorridos,
-		                                        -- Dias restantes até o final do mês
-		                                        DATEDIFF(c.data_final, c.data_emissao) + 1 AS dias_restantes,
-		                                        -- Dia anterior à data_emissao
-		                                        DATE_SUB(c.data_emissao, INTERVAL 1 DAY) AS dia_anterior,
-                                                -- Mês atual
-		                                        MONTH(c.data_emissao) AS mes_atual,
-		                                        -- Ano Atual
-		                                        YEAR(c.data_emissao) AS ano_atual,
-		                                        -- Mês anterior
-		                                        MONTH(DATE_SUB(c.data_emissao, INTERVAL 1 MONTH)) AS mes_anterior,
-		                                        -- Ano anterior
-		                                        YEAR(DATE_SUB(c.data_emissao, INTERVAL 1 YEAR)) AS ano_anterior
-                                    FROM calendario c ";
-
-                using (MySqlDataReader line = accessDataMySql.executeSelect(query))
-                {
-                    if (line.HasRows)
-                    {
-                        exportaExcel(line, filePath, file, planilha);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Dts.Events.FireError(0, "Erro ao consulta no MYSQL - " + planilha, ex.Message, string.Empty, 0);
-                Dts.TaskResult = (int)ScriptResults.Failure;
-            }
-        }
-
+               
         private void exportaExcel(DbDataReader line, string filePath, string file, string planilha, int row = 2)
-        {
-
+        {            
             try
             {
 
@@ -704,10 +662,7 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
 
                 // Executa a macro especificada
                 excelApp.Run(macro, parametros); // Passando os parâmetros como objetos
-
-                // Salva o arquivo (se necessário)
-                workbook.Save();
-
+               
                 // Fecha o Excel e o workbook
                 workbook.Close(true);
                 excelApp.Quit(); // Força o fechamento do Excel
@@ -749,46 +704,6 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
 
 	}
 }]]></ProjectItem>
-                  <ProjectItem
-                    Name="app.config"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <runtime>
-    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
-      <dependentAssembly>
-        <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
-      </dependentAssembly>
-      <dependentAssembly>
-        <assemblyIdentity name="System.Memory" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-4.0.1.2" newVersion="4.0.1.2" />
-      </dependentAssembly>
-    </assemblyBinding>
-  </runtime>
-</configuration>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Project"
-                    Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_051717c4acac47e7a21e4ecb9cdb439d</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_051717c4acac47e7a21e4ecb9cdb439d</msb:DisplayName>
-    <msb:ProjectId>{01AB0A72-A1E8-4171-8FD2-4EFE7ACFC234}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_051717c4acac47e7a21e4ecb9cdb439d.csproj" />
-    <msb:File Include="AccessDataMySql.cs" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:File Include="packages.config" />
-    <msb:File Include="app.config" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="ScriptMain.cs" />
-  </msb:ItemGroup>
-</c:Project>]]></ProjectItem>
                   <ProjectItem
                     Name="AccessDataMySql.cs"
                     Encoding="UTF8"><![CDATA[//using MySql.Data.MySqlClient;
@@ -892,6 +807,52 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
 
     }
 }]]></ProjectItem>
+                  <ProjectItem
+                    Name="app.config"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Memory" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.1.2" newVersion="4.0.1.2" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Project"
+                    Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_051717c4acac47e7a21e4ecb9cdb439d</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_051717c4acac47e7a21e4ecb9cdb439d</msb:DisplayName>
+    <msb:ProjectId>{E61BE092-BDC3-403B-82BF-C3B2CA113492}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_051717c4acac47e7a21e4ecb9cdb439d.csproj" />
+    <msb:File Include="AccessDataMySql.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="packages.config" />
+    <msb:File Include="app.config" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+                  <ProjectItem
+                    Name="packages.config"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="BouncyCastle.Cryptography" version="2.2.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1022,509 +983,580 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
                   <BinaryItem
                     Name="ST_051717c4acac47e7a21e4ecb9cdb439d.dll">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
-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
+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
-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
+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
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAoGgAAAAgAAAAagAAAAIA
-AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAoAAAAAYAAABsAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAMAAAAACAAAAcgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAB8
-iAAAAAAAAEgAAAACAAUAECoAAIBdAAABAAAAAAAAAJCHAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+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
-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
+AAAAAAAAAACWlgAZEAAAAV4Ccy0AAAooJwAACn0BAAAEAiguAAAKKhMwBQAQAQAAAwAAEQIoLwAA
 Cm8wAAAKcv8AAHBvMQAACm8yAAAKKDMAAAomAigvAAAKbzAAAApyGwEAcG8xAAAKbzIAAAooMwAA
 CiYCKC8AAApvMAAACnI3AQBwbzEAAApvMgAACigzAAAKCgIoLwAACm8wAAAKclMBAHBvMQAACm8y
 AAAKbzQAAAoLAigvAAAKbzAAAApyewEAcG8xAAAKbzIAAApvNAAACiZymwEAcAdy5wEAcCg1AAAK
-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
-AApvUgAACghvRQAACt4KCCwGCG8rAAAK3N47EwYCKC8AAApvOgAAChZyiTsAcA4EKBsAAAoRBm8a
-AAAKfjsAAAoWbzwAAAomAigvAAAKF283AAAK3gAqQWQAAAIAAAAsAAAAGwAAAEcAAAAKAAAAAAAA
-AAIAAABYAAAALwAAAIcAAAAKAAAAAAAAAAIAAACdAAAAqwAAAEgBAAAKAAAAAAAAAAAAAAAAAAAA
-VAEAAFQBAAA7AAAAEAAAARswIgCMAQAABgAAERQKcrk7AHBzUwAACihUAAAKKFUAAAp0CAAAAgoG
-Fm8fAAAGBm8YAAAGJQN+VgAAChaMRAAAAX5WAAAKflYAAAp+VgAACheMRAAAAX5WAAAKflYAAAp+
-VgAACn5WAAAKflYAAAp+VgAACn5WAAAKflYAAApvFAAABgYEBYw2AAABflYAAAp+VgAACn5WAAAK
-flYAAAp+VgAACn5WAAAKflYAAAp+VgAACn5WAAAKflYAAAp+VgAACn5WAAAKflYAAAp+VgAACn5W
-AAAKflYAAAp+VgAACn5WAAAKflYAAAp+VgAACn5WAAAKflYAAAp+VgAACn5WAAAKflYAAAp+VgAA
-Cn5WAAAKflYAAAp+VgAACm8WAAAGJiVvIwAABiUXjEQAAAF+VgAACn5WAAAKbyEAAAYGbxwAAAYo
-VwAACiYoVwAACiYGKFcAAAom3j0LAigvAAAKbzoAAAoWcgM8AHAHbxoAAApyNTwAcBZvPAAACiYC
-KC8AAAoXbzcAAAreCyhYAAAKKFkAAArcKkE0AAAAAAAAAgAAAEwBAABOAQAAMgAAABAAAAECAAAA
-AgAAAH4BAACAAQAACwAAAAAAAAAeAihaAAAKKh4CKC4AAAoqrn4CAAAELR5yNzwAcNAEAAACKFsA
-AApvXAAACnNdAAAKgAIAAAR+AgAABCoafgMAAAQqHgKAAwAABCoafgQAAAQqHgIoXgAACioucxEA
-AAaABAAABCoAAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAJQMAAAjfgAAAA0A
-AJwNAAAjU3RyaW5ncwAAAACcGgAArDwAACNVUwBIVwAAEAAAACNHVUlEAAAAWFcAACgGAAAjQmxv
-YgAAAAAAAAACAAABVz+iAQkDAAAA+gEzABYAAAEAAABHAAAADwAAAAcAAAAjAAAASgAAAAUAAABe
-AAAAAwAAAEIAAAA1AAAABgAAAAMAAAAGAAAACAAAAAEAAAAHAAAAAQAAAAEAAAAAAGUHAQAAAAAA
-BgBuBVAKBgAOBlAKBgBcBB4KDwDECgAABgCJBDAIBgAiBTAIBgADBTAIBgD1BTAIBgCfBTAIBgC4
-BTAIBgC3BDAIBgDSBEsGBgBtDLQHCgBYCM4MCgC1CM4MBgDFCLQHCgBRCc4MCgArAs4MBgDtCVgL
-CgDACc4MBgChArQHDgDTBccGDgCDA8cGDgA9B8cGEgBECc8IFgBoAo0HFgCKDI0HBgC7B7QHBgA/
-BB4KBgBzCXAKBgDvCBsIGgDWA08HGgBwBE8HGgCfAwYIBgD7A1AKBgCgBDEKBgAWBDEKBgBWBTEK
-BgA/A7QHBgAkBDEKBgCOBTEKBgA/BTAIBgCVAlgLBgDrAzEKBgDrBDEKBgBnBrQHEgBCCM8IEgCX
-CM8IEgATAs8IEgCXCc8IHgASCxoDHgCMAhoDBgAlDbQHBgBmALQHDgCDCccGBgCJDTkBBgAKCTkB
-BgDmCDkBBgD7CDkBFgCaBo0HFgD1C40HFgCBAo0HFgB0A40HFgC3A40HBgAOArQHBgD2BjEKBgAH
-CrQHBgDMB7QHBgAlAbQHBgDOArQHBgBxDTAIAAAAABwBAAAAAAEAAQAAABAAmweXATUAAQABAAEA
-EADZB5cBXQACAAYAAAAQAHcK3wo1AAIADAAAARAAHAvfCokABAAQAKEQAAAtDP4GAAAFABMAoRAA
-AAYN/gYAAAUAEwChEAAA+gf+BgAABQATAKEQAACfBv4GAAAFABMAoRAAAB4M/gYAAAUAEwChEAAA
-8Qz+BgAABQATAKEQAAA1C/4GAAAFABMAoRAAAPkH/gYAAAUAFQChEAAAggb+BgAABQAgAAMBAAAF
-DAAAcQAFACQAAQBxCKABEQDAB6QBEQBkA6gBEQBYAqwBBgZmAbABVoDGC7MBVoBEA7MBUCAAAAAA
-gQCkCLcBAQCUIAAAAACGADUJBgABAKEgAAAAAIYAnwtJAAEAuCAAAAAAhgB0DLwBAwCgIQAAAACG
-GBEKBgAEALghAAAAAIYA3wcGAAQA3CIAAAAAgQBrC8IBBABcJAAAAACBAHQLwgEIANwlAAAAAIEA
-HQfLAQwA3CcAAAAAhgAqB9UBEQCoKQAAAACGGBEKBgAUALApAAAAAIMYEQoGABQAuCkAAAAAkwhv
-CdwBFADkKQAAAACTCEwD4QEUAOspAAAAAJMIWAPmARQA8ykAAAAAlgizDOwBFQD6KQAAAACGGBEK
-BgAVAAIqAAAAAJEYFwpMARUAAAAAAAMABhhLAAYAFQAAAAAAAxDGBdQH8QEVAAAAAAADAAYYrAAG
-ACUAAAAAAAMQxgXiCAUCJQAAAAAAAwAGGAsBBgBFAAAAAAADEMYNMQsoAkUAAAAAAAMABhggAAYA
-RgAAAAAAAxDGDaYMPwBGAAAAAAADAAYYvgAGAEcAAAAAAAMQxgWhDAYARwAAAAAAAwAGGDkABgBH
-AAAAAAADEMYNtgKAAEcAAAAAAAMQxg3CAi0CRwAAAAAAAwAGGAcABgBIAAAAAAADEMYFyAMyAkgA
-AAAAAAMABhiOAAYASwAAAAAAAxDGBUYGBgBLAAAAAQCjCQAAAgCxCQAAAQAkCQAAAQDiCwAAAgB2
-BgAAAwDyAgAABABuAQAAAQDiCwAAAgB2BgAAAwDyAgAABABuAQAAAQA6AwAAAgB2BgAAAwDyAgAA
-BABuARAQBQBiDQAAAQAtCQAAAgAeCQAAAwCFCwAAAQBABgAgAAAAAAEgAQARAxEgAgAlCxEgAwB6
-DREgBABcDBEgBQBAAhEgBgA4AhEgBwD0AREgCADkBxEgCQDPCREgCgCtAhEgCwBmDREgDADZCREg
-DQBZDREgDgDwBhEgDwDkAQAgAAAAABEgAQAYCREgAgBGABEgAwBsABEgBAB9ABEgBQCbABEgBgC5
-ABEgBwDYABEgCADpABEgCQD6ABEgCgAXAREgCwABABEgDAAtABEgDQBYABEgDgBxABEgDwCCABEg
-EACgABEgEQDMABEgEgDdABEgEwDuABEgFAD/ABEgFQAUABEgFgAzABEgFwBeABEgGAB3ABEgGQCI
-ABEgGgCmABEgGwDSABEgHADjABEgHQD0ABEgHgAFAREgHwAaAAAgAAAAAAAgAAAAAAEAAQBDAREg
-AQDTChEgAgARAxEgAwCMBggANAAIABwACQA4AAkALAAMAK0ACQARCgEAEQARCgYAGQARCgoAKQAR
-ChAAMQARChAAOQARChAAQQARChAASQARChAAUQARChAAWQARChAAYQARChAAsQARCgYA6QARCgYA
-CQERChUAGQERCgYAIQERChwAKQERChAAMQERCgYAQQERCiEAMQERCisASQERCjEAUQERChAAYQER
-CgEAaQERCgEAeQARChAAgQB1Aj8AcQFVDEMAgQARChAAeQE+CQYAoQARCkkAcQDwAU8AgQHUBwYA
-eQAdAmcAiQFJDRAAiQEtDQEAkQCICGwAeQH5CXIAmQDlDHcAkQCQC3sAkQH3Aj8AkQEsBncAmQBA
-DYAAqQDOAwYAkQBhCYQAkQARCgYAaQARCgYAuQDaC5AAwQAOC5UAmQGrB5sAoQEsBncAqQFkAKIA
-aQBlBj8AcQFVDKcAsQFlBj8AwQC/DAEAcQGZDLgAyQBJDIAAwQATDL4AcQGTDcQAuQHjCccAwQE7
-DN8AwQGDDeQA0QERChAA2QE3DIAA0QARChAA0QB/BusA4QHmC/EA6QHwAfcA0QBGBgYA6QGrB/cA
-0QARCv0A2QA/CwQB8QGrBwoByQAJAxIB+QE2BhcByQAWDRwByQCrByAByQDfAYAA2QDrByUBAQLO
-Cz8A8QGrBysB+QFJCwYACQIRChAAEQIoATkBGQJJAkIBOQFuBkkBEQJjDKIAKQKCDEwBKQKtC0wB
-uQARCgYAOQHgAlABOQFtDVkB8QARCl8BEQERCgYACAAYAIsBCAAcAJABCABBAJUBKQBzAH0CLgAL
-AFUCLgATAF4CLgAbAH0CLgAjAIYCLgArAK8CLgAzAK8CLgA7AK8CLgBDAIYCLgBLALUCLgBTAK8C
-LgBbAMwCSQBzAH0CYwBjAJABgQB7AJABgwBrAJABiQC7ADEDqQC7ADoDwwB7AJABwwCDAHADwwCL
-AHcDwwCTAJAByQC7AEwD4wB7AJAB4wCbAKED4wCjAPgDAwF7AJABAwGLAFEEAwGrAHsEAwGTAJAB
-IwF7AJABIwGLANsEIwGrAHsEIwGTAJABQwF7AJABQwGLAAUFQwGDAHADQwGTAJABYwF7AJABYwGb
-AC8FYwGjAJAFgwF7AJABgwGLAO4FgwGzABgGgwGTAJABowF7AJABowGzABgGowGLAFEEowGTAJAB
-wwF7AJABwwGLANsEwwGTAJABgAK7ABYDgALDAB8DwAK7ACgDAAO7ADEDQAO7ADoDgAO7AEMDwAPD
-ADoDwAO7AEwD4APDADoD4AO7AEwDIATDAFUDIAS7AF4DYAS7AGcDYATDADoDKwCaAS0AnAEvAJ4B
-MQCeATMAngE1AJ4BNwCeATkAngE7AJ4BPQCeAT8AngFBAJ4BQwCeAUUAngFHAJ4BSQCeAUsAngFN
-AJ4BTwCeAVEAngFTAJ4BVQCeAVcAngFZAJ4BWwCeAV0AngFfAJ4BYQCeAWMAngFlAJ4BZwCeAWkA
-ngFrAJ4BbQCeAW8AngFxAJ4BcwCeAXUAngF3AJ4BeQCeAXsAngF9AJ4BfwCeAYEAngGDAJ4BhQCe
-AYcAngGJAJ4BiwCaAY0AnAGRAJ4BkwCeAZUAngE4AFYAiQCuANAAMgEEAAEABQADAA0ABAAAAHMJ
-OQIAAGwDPgIAALcMQwIAADULSAIAALYMTQIAAMYCUQICAA0AAwACAA4ABQABAA8ABQACABAABwAC
-ABgACQACABoACwACAB4ADQABAB8ADQAEgAAAAQAAACIk72UAAAAAAAC7AQAABAAAAAAAAAAAAAAA
-ZwGOAQAAAAAIAAQAAAAAAAAAAABwAXcBAAAAABAAAAAAAAAAAAAAAHkBqAYAAAAABAAAAAAAAAAA
-AAAAZwGCAQAAAAAHAAEAAgAAAAAAAACCAUIMAAAAAAQAAAAAAAAAAAAAAGcBtAcAAAAAEAAAAAAA
-AAAAAAAAeQFHAQAAAAAAAAAAAQAAAIEKAAAPAAMAAAAAQXJnMTAAX1Z0YmxHYXAxXzIwAEFyZzIw
-AEFyZzMwAF9WdGJsR2FwM182MABBcmcxMQBBcmcyMQBfVnRibEdhcDVfNTEAQXJnMQBfVnRibEdh
-cDFfMTIAQXJnMTIAQXJnMjIAVG9JbnQzMgBBcmcyAEFyZzEzAEFyZzIzAEFyZzMAQXJnMTQAQXJn
-MjQAX1Z0YmxHYXAyXzc0AEFyZzQAQXJnMTUAQXJnMjUAX1Z0YmxHYXAxXzM1AEFyZzUAX1Z0YmxH
-YXA0XzExNgBBcmcxNgBBcmcyNgBBcmc2AEFyZzE3AEFyZzI3AEFyZzcAQXJnMTgAQXJnMjgAQXJn
-OABBcmcxOQBBcmcyOQBfVnRibEdhcDJfOQBBcmc5ADxNb2R1bGU+AEdDAEdldFR5cGVGcm9tQ0xT
-SUQAU3lzdGVtLklPAFJIUwBNaWNyb3NvZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAdmFsdWVfXwBw
-bGFuaWxoYQBNeVNxbC5EYXRhAFN5c3RlbS5EYXRhAG1zY29ybGliAFNUXzFkNTM0OGIzZjYyYzRm
-YTI5ZWRmMDg1Y2FmZjg0ZDFkAFNUXzA1MTcxN2M0YWNhYzQ3ZTdhMjFlNGVjYjljZGI0MzlkAFJl
-YWQAQ29ycnVwdExvYWQAQWRkAElnbm9yZVJlYWRPbmx5UmVjb21tZW5kZWQAR3VpZABEYkNvbW1h
-bmQAQ3JlYXRlQ29tbWFuZABNeVNxbENvbW1hbmQAV3JpdGVSZXNQYXNzd29yZABDcmVhdGVJbnN0
-YW5jZQBkZWZhdWx0SW5zdGFuY2UARXhjZWxQYWNrYWdlAGdldF9NZXNzYWdlAEV4Y2VsUmFuZ2UA
-VmFyaWFibGUASUVudW1lcmFibGUASURpc3Bvc2FibGUARWRpdGFibGUAZ2V0X1Zpc2libGUAc2V0
-X1Zpc2libGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUAZmlsZQBnZXRfUGFy
-YW1ldGVyTmFtZQBHZXROYW1lAEZpbGVuYW1lAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRp
-bWUAbGluZQBUeXBlAEZhaWx1cmUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0
-dXJlAEV4Y2VsUmFuZ2VCYXNlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNhdGlv
-blNldHRpbmdzQmFzZQBFeGNlbEFkZHJlc3NCYXNlAENsb3NlAERpc3Bvc2UARWRpdG9yQnJvd3Nh
-YmxlU3RhdGUARGlzcElkQXR0cmlidXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAEd1aWRB
-dHRyaWJ1dGUAQ29tRXZlbnRJbnRlcmZhY2VBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0
-dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3Nl
-bWJseVRpdGxlQXR0cmlidXRlAEludGVyZmFjZVR5cGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1h
-cmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAExDSURDb252ZXJzaW9uQXR0cmli
-dXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0
-cmlidXRlAERlZmF1bHRNZW1iZXJBdHRyaWJ1dGUAVHlwZUlkZW50aWZpZXJBdHRyaWJ1dGUAQ29t
-cGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBDb0NsYXNzQXR0cmlidXRlAEFzc2VtYmx5UHJv
-ZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0Vu
-dHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRp
-YmlsaXR5QXR0cmlidXRlAGdldF9WYWx1ZQBzZXRfVmFsdWUAdmFsdWUAU2F2ZQBTeXN0ZW0uUnVu
-dGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAE1pc3NpbmcAZmlsZVBhdGgAZ2V0X1dvcmtib29rAFJv
-dXRlV29ya2Jvb2sARXhjZWxXb3JrYm9vawBNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRhc2sA
-TWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBMb2NhbABNYXJzaGFsAE1p
-Y3Jvc29mdC5PZmZpY2UuSW50ZXJvcC5FeGNlbABleHBvcnRhRXhjZWwARXhlY3V0YXJNYWNyb0V4
-Y2VsAFNjcmlwdE9iamVjdE1vZGVsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTVF8wNTE3MTdjNGFj
-YWM0N2U3YTIxZTRlY2I5Y2RiNDM5ZC5kbGwAT2ZmaWNlT3BlblhtbABBY2Nlc3NEYXRhTXlTcWwA
-Z2V0X0l0ZW0AU3lzdGVtAEVudW0AcmVzb3VyY2VNYW4AQm9vbGVhbgBPcGVuAFNjcmlwdE1haW4A
-T3JpZ2luAGdldF9EaW1lbnNpb24AX0FwcGxpY2F0aW9uAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5
-c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAERiUGFyYW1ldGVyQ29sbGVjdGlv
-bgBNeVNxbFBhcmFtZXRlckNvbGxlY3Rpb24Ac3FsUGFyYW1ldGVyQ29sbGVjdGlvbgBzZXRfQ29u
-bmVjdGlvbgBEYkNvbm5lY3Rpb24AY3JlYXRlQ29ubmVjdGlvbgBNeVNxbENvbm5lY3Rpb24ARXhj
-ZXB0aW9uAFN5c3RlbS5EYXRhLkNvbW1vbgBSdW4ARmlsZUluZm8AQ3VsdHVyZUluZm8ARmlsZVN5
-c3RlbUluZm8ARGlyZWN0b3J5SW5mbwBNYWNybwBtYWNybwBzcWxUZXh0bwBhcnF1aXZvAHBhcmFt
-ZXRlckNsZWFyAERiRGF0YVJlYWRlcgBNeVNxbERhdGFSZWFkZXIARXhlY3V0ZVJlYWRlcgBnZXRf
-UmVzb3VyY2VNYW5hZ2VyAEV2ZW50c09iamVjdFdyYXBwZXIARGJQYXJhbWV0ZXIAbmFtZVBhcmFt
-ZXRlcgB2YWx1ZVBhcmFtZXRlcgBNeVNxbFBhcmFtZXRlcgBEZWxpbWl0ZXIAQ29udmVydGVyAEZp
-cmVFcnJvcgBJRW51bWVyYXRvcgBHZXRFbnVtZXJhdG9yAEFjdGl2YXRvcgAuY3RvcgAuY2N0b3IA
-U3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkludGVyb3BTZXJ2aWNlcwBTeXN0ZW0u
-UnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfMWQ1MzQ4YjNmNjJj
-NGZhMjllZGYwODVjYWZmODRkMWQuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERlYnVn
-Z2luZ01vZGVzAFNhdmVDaGFuZ2VzAFNUXzFkNTM0OGIzZjYyYzRmYTI5ZWRmMDg1Y2FmZjg0ZDFk
-LlByb3BlcnRpZXMAZ2V0X1ZhcmlhYmxlcwBTZXR0aW5ncwBVcGRhdGVMaW5rcwBnZXRfV29ya2Jv
-b2tzAGdldF9DZWxscwBBdXRvRml0Q29sdW1ucwBTeXN0ZW0uQ29sbGVjdGlvbnMAYmRfRGFkb3MA
-ZGFkb3NfcmVsYXRvcmlvcwBwYXJhbWV0cm9zAGdldF9QYXJhbWV0ZXJzAGFkZFBhcmFtZXRlcnMA
-V2FpdEZvclBlbmRpbmdGaW5hbGl6ZXJzAFN1Y2Nlc3MAZ2V0X0FkZHJlc3MAZ2V0X0R0cwBkdHMA
-Z2V0X1dvcmtzaGVldHMARXhjZWxXb3Jrc2hlZXRzAFNjcmlwdFJlc3VsdHMAZ2V0X0V2ZW50cwBX
-b3JrYm9va0V2ZW50cwBBcHBFdmVudHMAZ2V0X0V4aXN0cwBFUFBsdXMAZ2V0X0hhc1Jvd3MAQ29u
-Y2F0AEZvcm1hdABSZWxlYXNlQ29tT2JqZWN0AGV4ZWN1dGVTZWxlY3QAQ29sbGVjdABFeGNlbFdv
-cmtzaGVldABQYWRMZWZ0AFF1aXQAZ2V0X19EZWZhdWx0AGdldF9EZWZhdWx0AHNldF9UYXNrUmVz
-dWx0AE15U3FsLkRhdGEuTXlTcWxDbGllbnQAZ2V0X0N1cnJlbnQAV29ya2Jvb2tFdmVudHNfRXZl
-bnQAQXBwRXZlbnRzX0V2ZW50AGdldF9GaWVsZENvdW50AENvbnZlcnQAc2V0X0NvbW1hbmRUaW1l
-b3V0AE1vdmVOZXh0AHNldF9Db21tYW5kVGV4dABBZGRUb01ydQByb3cATm90aWZ5AGdldF9Bc3Nl
-bWJseQBSZWFkT25seQBDcmVhdGVEaXJlY3RvcnkARW1wdHkAAAAAAGlTAGUAcgB2AGUAcgA9ADEA
-OQAyAC4AMQA2ADgALgAwAC4AOAA7AEQAYQB0AGEAYgBhAHMAZQA9AHAAcgBvAGQAdQBjAGEAbwA7
-AFUAaQBkAD0AZQB0AGwAOwBQAHcAZAA9AGUAdABsAABfRQByAHIAbwAgAG4AYQAgAGMAbwBuAGUA
-eADjAG8AIABjAG8AbQAgAG8AIABCAGEAbgBjAG8AIABkAGUAIABkAGEAZABvAHMALgAgAEQAZQB0
-AGEAbABoAGUAcwA6AAEzRQByAHIAbwAgAG4AbwAgAHMAZQBsAGUAYwB0AC4AIABEAGUAdABhAGwA
-aABlAHMAOgAAGyQAUABhAGMAawBhAGcAZQA6ADoAQQBuAG8AABskAFAAYQBjAGsAYQBnAGUAOgA6
-AE0AZQBzAAAbVQBzAGUAcgA6ADoAUgBlAHYAZQBuAGQAYQAAJ1MAeQBzAHQAZQBtADoAOgBQAGEA
-YwBrAGEAZwBlAE4AYQBtAGUAAB8kAFAAYQBjAGsAYQBnAGUAOgA6AEUAbQBhAGkAbAAAS1kAOgBc
-AFAAVQBCAEwASQBDAE8AXABBAE4AQQBMAEkAUwBUAEEAUwBcAFMAUwBJAFMAXABBAFMAUwBFAFMA
-UwBNAEUATgBUAFwAAA9cAGQAYQBkAG8AcwBcAAANZABhAGQAbwBzAF8AAAsuAHgAbABzAHgAAAtk
-AGEAZABvAHMAACFkAGEAZABvAHMAXwByAGUAbABhAHQAbwByAGkAbwBzAAATXAB2AGIAYQAuAHgA
-bABzAG0AACliAHUAaQBsAGQALgBmAG8AcgBtAGEAdABhAEEAcgBxAHUAaQB2AG8AABlAAGMAbwBk
-AF8AcgBlAHYAZQBuAGQAYQAACUAAQQBuAG8AAAlAAE0AZQBzAAALQABEAGEAdABhAAAFMAAxAACb
-MyAAIABTAEUATABFAEMAVAAgACAAQwBBAFMARQAgAFcASABFAE4AIABjAGwALgBnAHYAIABJAE4A
-IAAoADEALAAgADQAKQAgAFQASABFAE4AIAAnADIAMAAxADIAMAAxACcAIABFAEwAUwBFACAAJwAy
-ADIAMwA0ADAAMgAnACAARQBOAEQAIABBAFMAIABDAE8ARABfAFIARQBWAEUATgBEAEEALAANAAoA
-IAAgACAAIAAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIABlAG4ALgBtAHUAbgBpAGMAaQBwAGkAbwAsACAAIAAgAA0A
-CgAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgAEMATwBVAE4AVAAoAEQASQBTAFQASQBOAEMAVAAgAEkA
-RgAoAEQAQQBUAEUAXwBGAE8AUgBNAEEAVAAoAHAAZAAuAGQAYQB0AGEAXwBwAGUAZABpAGQAbwAs
-ACAAJwAlAFkALQAlAG0AJwApACAAPQAgAEQAQQBUAEUAXwBGAE8AUgBNAEEAVAAoAEAARABhAHQA
-YQAsACAAJwAlAFkALQAlAG0AJwApACwAIABjAGwALgBjAG8AZABfAGMAbABpAGUAbgB0AGUALAAg
-AE4AVQBMAEwAKQApACAAQQBTACAATQBFAFMAXwAwACwAIAAgACAADQAKACAAIAAgACAAIAAgACAA
+DHL3AQBwEgAoNgAACnIFAgBwKDUAAAoNCAkoGwAACig3AAAKAgIoLwAACggJchECAHAoBwAABgJy
+mwEAcAdyHQIAcCg1AAAKcjECAHAGKAkAAAYCKC8AAAoWbzgAAAoqGzAGAEABAAAEAAARcwUAAAYK
+Bm8CAAAGBnJbAgBwAigvAAAKbzAAAApyNwEAcG8xAAAKbzIAAApvAwAABgZydQIAcAIoLwAACm8w
+AAAKcv8AAHBvMQAACm8yAAAKbwMAAAYGcn8CAHACKC8AAApvMAAACnIbAQBwbzEAAApvMgAACm8D
+AAAGBnKJAgBwAigvAAAKbzAAAApy/wAAcG8xAAAKbzIAAApvNAAACgIoLwAACm8wAAAKchsBAHBv
+MQAACm8yAAAKbzQAAAoYHzBvOQAACnKVAgBwKDUAAApvAwAABnKbAgBwCwYHbwQAAAYMCG86AAAK
+LAwCCAQFDgQYKAgAAAbeCggsBghvKwAACtzeOQ0CKC8AAApvOwAAChZyYkwAcA4EKBsAAAoJbxoA
+AAp+PAAAChZvPQAACiYCKC8AAAoXbzgAAAreACpBNAAAAgAAAOQAAAAWAAAA+gAAAAoAAAAAAAAA
+AAAAAAYAAAAAAQAABgEAADkAAAAQAAABGzAGAJABAAAFAAARBCg+AAAKLQcEKD8AAAomBAUoGwAA
+ChACBHNAAAAKb0EAAAotLARzQgAACgoGb0MAAApvRAAACg4Eb0UAAAomBm9GAAAK3koGLAYGbysA
+AArcBHNCAAAKCwdvQwAACm9EAAAKDgRvRwAACi0ZB29DAAAKb0QAAAoOBG9FAAAKJgdvRgAACt4K
+BywGB28rAAAK3ARzQAAACnNIAAAKDAhvQwAACm9EAAAKDgRvRwAACg0WEwQrIwlvSQAAChcRBBdY
+b0oAAAoDEQRvSwAACm9MAAAKEQQXWBMEEQQDb00AAAoy0ys5FhMFKyQJb0kAAAoOBREFF1hvSgAA
+CgMRBW9OAAAKb0wAAAoRBRdYEwURBQNvTQAACjLSDgUXWBAFA29PAAAKLb8Jb0kAAAoJb1AAAApv
+UQAACm9SAAAKb1MAAAoIb0YAAAreCggsBghvKwAACtzeOxMGAigvAAAKbzsAAAoWcpxMAHAOBCgb
+AAAKEQZvGgAACn48AAAKFm89AAAKJgIoLwAAChdvOAAACt4AKkFkAAACAAAALAAAABsAAABHAAAA
+CgAAAAAAAAACAAAAWAAAAC8AAACHAAAACgAAAAAAAAACAAAAnQAAAKsAAABIAQAACgAAAAAAAAAA
+AAAAAAAAAFQBAABUAQAAOwAAABAAAAEbMCIAhgEAAAYAABEUCnLMTABwc1QAAAooVQAACihWAAAK
+dAgAAAIKBhZvHgAABgZvFwAABiUDflcAAAoWjEUAAAF+VwAACn5XAAAKflcAAAoXjEUAAAF+VwAA
+Cn5XAAAKflcAAAp+VwAACn5XAAAKflcAAAp+VwAACn5XAAAKbxMAAAYGBAWMNgAAAX5XAAAKflcA
+AAp+VwAACn5XAAAKflcAAAp+VwAACn5XAAAKflcAAAp+VwAACn5XAAAKflcAAAp+VwAACn5XAAAK
+flcAAAp+VwAACn5XAAAKflcAAAp+VwAACn5XAAAKflcAAAp+VwAACn5XAAAKflcAAAp+VwAACn5X
+AAAKflcAAAp+VwAACn5XAAAKflcAAApvFQAABiYlF4xFAAABflcAAAp+VwAACm8gAAAGBm8bAAAG
+KFgAAAomKFgAAAomBihYAAAKJt49CwIoLwAACm87AAAKFnIWTQBwB28aAAAKckhNAHAWbz0AAAom
+AigvAAAKF284AAAK3gsoWQAACihaAAAK3CoAAEE0AAAAAAAAAgAAAEYBAABIAQAAMgAAABAAAAEC
+AAAAAgAAAHgBAAB6AQAACwAAAAAAAAAeAihbAAAKKh4CKC4AAAoqrn4CAAAELR5ySk0AcNAEAAAC
+KFwAAApvXQAACnNeAAAKgAIAAAR+AgAABCoafgMAAAQqHgKAAwAABCoafgQAAAQqHgIoXwAACiou
+cxAAAAaABAAABCoAAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAFQMAAAjfgAA
+wAwAAIgNAAAjU3RyaW5ncwAAAABIGgAAvE0AACNVUwAEaAAAEAAAACNHVUlEAAAAFGgAACQGAAAj
+QmxvYgAAAAAAAAACAAABVz+iAQkDAAAA+gEzABYAAAEAAABIAAAADwAAAAcAAAAgAAAARgAAAAUA
+AABfAAAAAwAAAEAAAAA1AAAABgAAAAMAAAAGAAAACAAAAAEAAAAHAAAAAQAAAAEAAAAAAGQHAQAA
+AAAABgBtBU8KBgANBk8KBgBbBB0KDwDDCgAABgCIBC8IBgAhBS8IBgACBS8IBgD0BS8IBgCeBS8I
+BgC3BS8IBgC2BC8IBgDRBEoGBgBbDLMHCgBXCLwMCgC0CLwMBgDECLMHCgBQCbwMCgAeArwMBgDs
+CVcLCgC/CbwMBgCUArMHDgDSBcYGDgB7A8YGDgA8B8YGEgBDCc4IFgBbAowHFgB4DIwHBgC6B7MH
+BgA+BB0KBgByCW8KBgDuCBoIGgDOA04HGgBvBE4HGgCXAwUIBgD6A08KBgCfBDAKBgAVBDAKBgBV
+BTAKBgA3A7MHBgAjBDAKBgCNBTAKBgA+BS8IBgCIAlcLBgDqAzAKBgDqBDAKBgBmBrMHEgBBCM4I
+EgCWCM4IEgAGAs4IEgCWCc4IHgARCxIDHgB/AhIDBgATDbMHBgBmALMHBgDlAiwBDgCCCcYGBgB3
+DSwBBgAJCSwBBgDlCCwBBgD6CCwBFgCZBowHFgDjC4wHFgB0AowHFgBsA4wHFgCvA4wHBgABArMH
+BgD1BjAKBgAGCrMHBgDLB7MHBgAYAbMHBgDBArMHBgBfDS8IAAAAAA8BAAAAAAEAAQAAABAAmgeK
+ATUAAQABAAEAEADYB4oBXQACAAYAAAAQAHYK3go1AAIACwAAARAAGwveCokABAAPAKEQAAAbDP0G
+AAAFABIAoRAAAPQM/QYAAAUAEgChEAAA+Qf9BgAABQASAKEQAACeBv0GAAAFABIAoRAAAAwM/QYA
+AAUAEgChEAAA3wz9BgAABQASAKEQAAA0C/0GAAAFABIAoRAAAPgH/QYAAAUAFAChEAAAgQb9BgAA
+BQAfAAMBAADzCwAAcQAFACEAAQBwCKUBEQC/B6kBEQBcA60BEQBLArEBBgZZAbUBVoC0C7gBVoA8
+A7gBUCAAAAAAgQCjCLwBAQCUIAAAAACGADQJBgABAKEgAAAAAIYAjQtJAAEAuCAAAAAAhgBiDMEB
+AwCgIQAAAACGGBAKBgAEALghAAAAAIYA3gcGAAQA1CIAAAAAgQBqC8cBBABUJAAAAACBABwH0AEI
+AFQmAAAAAIYAKQfaAQ0AHCgAAAAAhhgQCgYAEAAkKAAAAACDGBAKBgAQACwoAAAAAJMIbgnhARAA
+WCgAAAAAkwhEA+YBEABfKAAAAACTCFAD6wEQAGcoAAAAAJYIoQzxAREAbigAAAAAhhgQCgYAEQB2
+KAAAAACRGBYKUQERAAAAAAADAAYYSwAGABEAAAAAAAMQxgXTB/YBEQAAAAAAAwAGGJ8ABgAhAAAA
+AAADEMYF4QgKAiEAAAAAAAMABhj+AAYAQQAAAAAAAxDGDTALLQJBAAAAAAADAAYYIAAGAEIAAAAA
+AAMQxg2UDD8AQgAAAAAAAwAGGLEABgBDAAAAAAADEMYFjwwGAEMAAAAAAAMABhg5AAYAQwAAAAAA
+AxDGDakCgABDAAAAAAADEMYNtQIyAkMAAAAAAAMABhgHAAYARAAAAAAAAxDGBcADNwJEAAAAAQCi
+CQAAAgCwCQAAAQAjCQAAAQDQCwAAAgB1BgAAAwDqAgAABABhAQAAAQAyAwAAAgB1BgAAAwDqAgAA
+BABhARAQBQBQDQAAAQAsCQAAAgAdCQAAAwBzCwAAAQA/BgAgAAAAAAEgAQAJAxEgAgAkCxEgAwBo
+DREgBABKDBEgBQAzAhEgBgArAhEgBwDnAREgCADjBxEgCQDOCREgCgCgAhEgCwBUDREgDADYCREg
+DQBHDREgDgDvBhEgDwDXAQAgAAAAABEgAQAXCREgAgBGABEgAwBsABEgBAB9ABEgBQCOABEgBgCs
+ABEgBwDLABEgCADcABEgCQDtABEgCgAKAREgCwABABEgDAAtABEgDQBYABEgDgBxABEgDwCCABEg
+EACTABEgEQC/ABEgEgDQABEgEwDhABEgFADyABEgFQAUABEgFgAzABEgFwBeABEgGAB3ABEgGQCI
+ABEgGgCZABEgGwDFABEgHADWABEgHQDnABEgHgD4ABEgHwAaAAAgAAAAAAAgAAAAAAEAAQA2AREg
+AQDSChEgAgAJAxEgAwCLBggANAAIABwACQA4AAkALAAMAK0ACQAQCgEAEQAQCgYAGQAQCgoAKQAQ
+ChAAMQAQChAAOQAQChAAQQAQChAASQAQChAAUQAQChAAWQAQChAAYQAQChAAsQAQCgYA6QAQCgYA
+CQEQChUAGQEQCgYAIQEQChwAKQEQChAAMQEQCgYAQQEQCiEAMQEQCisASQEQCjEAUQEQChAAYQEQ
+CgEAaQEQCgEAeQAQChAAgQBoAj8AcQFDDEMAgQAQChAAeQE9CQYAoQAQCkkAcQDjAU8AgQHTBwYA
+eQAQAmcAiQE3DRAAiQEbDQEAkQCHCGwAeQH4CXIAmQDTDHcAkQB+C3sAkQHvAj8AkQErBncAmQAu
+DYAAqQDGAwYAkQBgCYQAkQAQCgYAaQAQCgYAuQDIC5AAwQANC5UAmQGqB5sAoQErBncAqQFkAKIA
+aQBkBj8AcQFDDKcAsQFkBj8AuQHjA64AwQCtDAEAcQGHDL0AyQA3DIAAwQABDMMAcQGBDckAwQHi
+CcwAyQEpDOQAyQFxDekA2QEQChAA4QElDIAA0QAQChAA0QB+BvAA6QHUC/YA8QHjAfwA0QBFBgYA
+8QGqB/wA0QAQCgIB2QA+CwkB+QGqBw8ByQABAxcBAQI1BhwByQAEDSEByQCqByUByQDSAYAA2QDq
+ByoBCQK8Cz8A+QGqBzABAQJICwYAEQIQChAAGQIbAT4BIQI8AkcBOQFtBk4BGQJRDKIAMQJwDFEB
+MQKbC1EBuQAQCgYAOQHTAlUBOQFbDV4B8QAQCmQBEQEQCgYACAAYAJABCAAcAJUBCAAxAJoBKQBz
+AIICLgALAFoCLgATAGMCLgAbAIICLgAjAIsCLgArALQCLgAzALQCLgA7ALQCLgBDAIsCLgBLALoC
+LgBTALQCLgBbANECSQBzAIICYwBjAJUBgQB7AJUBgwBrAJUBiQC7ADYDqQC7AD8DwwB7AJUBwwCD
+AGwDwwCLAHMDwwCTAJUByQC7AFED4wB7AJUB4wCbAJ0D4wCjAPQDAwF7AJUBAwGLAE0EAwGrAHcE
+AwGTAJUBIwF7AJUBIwGLANcEIwGrAHcEIwGTAJUBQwF7AJUBQwGLAAEFQwGDAGwDQwGTAJUBYwF7
+AJUBYwGbACsFYwGjAIwFgwF7AJUBgwGLAOoFgwGzABQGgwGTAJUBowF7AJUBowGzABQGowGLAE0E
+owGTAJUBwwF7AJUBwwGLANcEwwGTAJUBYAK7ABsDYALDACQDoAK7AC0D4AK7ADYDIAO7AD8DYAO7
+AEgDoAPDAD8DoAO7AFEDwAPDAD8DwAO7AFEDAATDAFoDAAS7AGMDIwCfASUAoQEnAKMBKQCjASsA
+owEtAKMBLwCjATEAowEzAKMBNQCjATcAowE5AKMBOwCjAT0AowE/AKMBQQCjAUMAowFFAKMBRwCj
+AUkAowFLAKMBTQCjAU8AowFRAKMBUwCjAVUAowFXAKMBWQCjAVsAowFdAKMBXwCjAWEAowFjAKMB
+ZQCjAWcAowFpAKMBawCjAW0AowFvAKMBcQCjAXMAowF1AKMBdwCjAXkAowF7AKMBfQCjAX8AowGB
+AKMBgwCfAYUAoQGJAKMBiwCjAY0AowE4AFYAiQCzANUANwEEAAEABQADAA0ABAAAAHIJPgIAAGQD
+QwIAAKUMSAIAADQLTQIAAKQMUgIAALkCVgICAAwAAwACAA0ABQABAA4ABQACAA8ABwACABcACQAC
+ABkACwACAB0ADQABAB4ADQAEgAAAAQAAAKkk8TgAAAAAAACuAQAABAAAAAAAAAAAAAAAbAGBAQAA
+AAAIAAQAAAAAAAAAAAB1AWoBAAAAABAAAAAAAAAAAAAAAH4BpwYAAAAABAAAAAAAAAAAAAAAbAF1
+AQAAAAAHAAEAAgAAAAAAAACHATAMAAAAAAQAAAAAAAAAAAAAAGwBswcAAAAAEAAAAAAAAAAAAAAA
+fgE6AQAAAAAAAAAAAQAAAIAKAAAPAAMAAAAAAABBcmcxMABfVnRibEdhcDFfMjAAQXJnMjAAQXJn
+MzAAX1Z0YmxHYXAzXzYwAEFyZzExAEFyZzIxAF9WdGJsR2FwNV81MQBBcmcxAF9WdGJsR2FwMV8x
+MgBBcmcxMgBBcmcyMgBUb0ludDMyAEFyZzIAQXJnMTMAQXJnMjMAQXJnMwBBcmcxNABBcmcyNABB
+cmc0AEFyZzE1AEFyZzI1AF9WdGJsR2FwMV8zNQBBcmc1AF9WdGJsR2FwNF8xMTYAQXJnMTYAQXJn
+MjYAQXJnNgBBcmcxNwBBcmcyNwBBcmc3AEFyZzE4AEFyZzI4AEFyZzgAQXJnMTkAQXJnMjkAX1Z0
+YmxHYXAyXzkAQXJnOQA8TW9kdWxlPgBHQwBHZXRUeXBlRnJvbUNMU0lEAFN5c3RlbS5JTwBSSFMA
+TWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAHZhbHVlX18AcGxhbmlsaGEATXlTcWwuRGF0
+YQBTeXN0ZW0uRGF0YQBtc2NvcmxpYgBTVF8xZDUzNDhiM2Y2MmM0ZmEyOWVkZjA4NWNhZmY4NGQx
+ZABTVF8wNTE3MTdjNGFjYWM0N2U3YTIxZTRlY2I5Y2RiNDM5ZABSZWFkAENvcnJ1cHRMb2FkAEFk
+ZABJZ25vcmVSZWFkT25seVJlY29tbWVuZGVkAEd1aWQARGJDb21tYW5kAENyZWF0ZUNvbW1hbmQA
+TXlTcWxDb21tYW5kAFdyaXRlUmVzUGFzc3dvcmQAQ3JlYXRlSW5zdGFuY2UAZGVmYXVsdEluc3Rh
+bmNlAEV4Y2VsUGFja2FnZQBnZXRfTWVzc2FnZQBFeGNlbFJhbmdlAFZhcmlhYmxlAElFbnVtZXJh
+YmxlAElEaXNwb3NhYmxlAEVkaXRhYmxlAGdldF9WaXNpYmxlAHNldF9WaXNpYmxlAFJ1bnRpbWVU
+eXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAEZpbGUAZmlsZQBnZXRfUGFyYW1ldGVyTmFtZQBH
+ZXROYW1lAEZpbGVuYW1lAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAbGluZQBUeXBl
+AEZhaWx1cmUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0dXJlAEV4Y2VsUmFu
+Z2VCYXNlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNhdGlvblNldHRpbmdzQmFz
+ZQBFeGNlbEFkZHJlc3NCYXNlAENsb3NlAERpc3Bvc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUARGVs
+ZXRlAERpc3BJZEF0dHJpYnV0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQBHdWlkQXR0cmli
+dXRlAENvbUV2ZW50SW50ZXJmYWNlQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1
+dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQXNzZW1ibHlU
+aXRsZUF0dHJpYnV0ZQBJbnRlcmZhY2VUeXBlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0
+cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBMQ0lEQ29udmVyc2lvbkF0dHJpYnV0ZQBB
+c3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0
+ZQBEZWZhdWx0TWVtYmVyQXR0cmlidXRlAFR5cGVJZGVudGlmaWVyQXR0cmlidXRlAENvbXBpbGF0
+aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQ29DbGFzc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RB
+dHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1NjcmlwdFRhc2tFbnRyeVBv
+aW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0
+eUF0dHJpYnV0ZQBnZXRfVmFsdWUAc2V0X1ZhbHVlAHZhbHVlAFNhdmUAU3lzdGVtLlJ1bnRpbWUu
+VmVyc2lvbmluZwBUb1N0cmluZwBNaXNzaW5nAGZpbGVQYXRoAGdldF9Xb3JrYm9vawBSb3V0ZVdv
+cmtib29rAEV4Y2VsV29ya2Jvb2sATWljcm9zb2Z0LlNxbFNlcnZlci5TY3JpcHRUYXNrAE1pY3Jv
+c29mdC5TcWxTZXJ2ZXIuRHRzLlRhc2tzLlNjcmlwdFRhc2sATG9jYWwATWFyc2hhbABNaWNyb3Nv
+ZnQuT2ZmaWNlLkludGVyb3AuRXhjZWwAZXhwb3J0YUV4Y2VsAEV4ZWN1dGFyTWFjcm9FeGNlbABT
+Y3JpcHRPYmplY3RNb2RlbABTeXN0ZW0uQ29tcG9uZW50TW9kZWwAU1RfMDUxNzE3YzRhY2FjNDdl
+N2EyMWU0ZWNiOWNkYjQzOWQuZGxsAE9mZmljZU9wZW5YbWwAQWNjZXNzRGF0YU15U3FsAGdldF9J
+dGVtAFN5c3RlbQBFbnVtAHJlc291cmNlTWFuAEJvb2xlYW4AT3BlbgBTY3JpcHRNYWluAE9yaWdp
+bgBnZXRfRGltZW5zaW9uAF9BcHBsaWNhdGlvbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0u
+R2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBEYlBhcmFtZXRlckNvbGxlY3Rpb24ATXlT
+cWxQYXJhbWV0ZXJDb2xsZWN0aW9uAHNxbFBhcmFtZXRlckNvbGxlY3Rpb24Ac2V0X0Nvbm5lY3Rp
+b24ARGJDb25uZWN0aW9uAGNyZWF0ZUNvbm5lY3Rpb24ATXlTcWxDb25uZWN0aW9uAEV4Y2VwdGlv
+bgBTeXN0ZW0uRGF0YS5Db21tb24AUnVuAEZpbGVJbmZvAEN1bHR1cmVJbmZvAEZpbGVTeXN0ZW1J
+bmZvAERpcmVjdG9yeUluZm8ATWFjcm8AbWFjcm8Ac3FsVGV4dG8AYXJxdWl2bwBwYXJhbWV0ZXJD
+bGVhcgBEYkRhdGFSZWFkZXIATXlTcWxEYXRhUmVhZGVyAEV4ZWN1dGVSZWFkZXIAZ2V0X1Jlc291
+cmNlTWFuYWdlcgBFdmVudHNPYmplY3RXcmFwcGVyAERiUGFyYW1ldGVyAG5hbWVQYXJhbWV0ZXIA
+dmFsdWVQYXJhbWV0ZXIATXlTcWxQYXJhbWV0ZXIARGVsaW1pdGVyAENvbnZlcnRlcgBGaXJlRXJy
+b3IASUVudW1lcmF0b3IAR2V0RW51bWVyYXRvcgBBY3RpdmF0b3IALmN0b3IALmNjdG9yAFN5c3Rl
+bS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5JbnRlcm9wU2VydmljZXMAU3lzdGVtLlJ1bnRp
+bWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUmVzb3VyY2VzAFNUXzFkNTM0OGIzZjYyYzRmYTI5
+ZWRmMDg1Y2FmZjg0ZDFkLlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdN
+b2RlcwBTYXZlQ2hhbmdlcwBTVF8xZDUzNDhiM2Y2MmM0ZmEyOWVkZjA4NWNhZmY4NGQxZC5Qcm9w
+ZXJ0aWVzAGdldF9WYXJpYWJsZXMAU2V0dGluZ3MAVXBkYXRlTGlua3MAZ2V0X1dvcmtib29rcwBn
+ZXRfQ2VsbHMAQXV0b0ZpdENvbHVtbnMAU3lzdGVtLkNvbGxlY3Rpb25zAGJkX0RhZG9zAHBhcmFt
+ZXRyb3MAZ2V0X1BhcmFtZXRlcnMAYWRkUGFyYW1ldGVycwBXYWl0Rm9yUGVuZGluZ0ZpbmFsaXpl
+cnMAU3VjY2VzcwBnZXRfQWRkcmVzcwBnZXRfRHRzAGR0cwBnZXRfV29ya3NoZWV0cwBFeGNlbFdv
+cmtzaGVldHMAU2NyaXB0UmVzdWx0cwBnZXRfRXZlbnRzAFdvcmtib29rRXZlbnRzAEFwcEV2ZW50
+cwBnZXRfRXhpc3RzAEVQUGx1cwBnZXRfSGFzUm93cwBDb25jYXQARm9ybWF0AFJlbGVhc2VDb21P
+YmplY3QAZXhlY3V0ZVNlbGVjdABDb2xsZWN0AEV4Y2VsV29ya3NoZWV0AFBhZExlZnQAUXVpdABn
+ZXRfX0RlZmF1bHQAZ2V0X0RlZmF1bHQAc2V0X1Rhc2tSZXN1bHQATXlTcWwuRGF0YS5NeVNxbENs
+aWVudABnZXRfQ3VycmVudABXb3JrYm9va0V2ZW50c19FdmVudABBcHBFdmVudHNfRXZlbnQAZ2V0
+X0ZpZWxkQ291bnQAQ29udmVydABzZXRfQ29tbWFuZFRpbWVvdXQATW92ZU5leHQAc2V0X0NvbW1h
+bmRUZXh0AEFkZFRvTXJ1AHJvdwBOb3RpZnkAZ2V0X0Fzc2VtYmx5AFJlYWRPbmx5AENyZWF0ZURp
+cmVjdG9yeQBFbXB0eQAAAGlTAGUAcgB2AGUAcgA9ADEAOQAyAC4AMQA2ADgALgAwAC4AOAA7AEQA
+YQB0AGEAYgBhAHMAZQA9AHAAcgBvAGQAdQBjAGEAbwA7AFUAaQBkAD0AZQB0AGwAOwBQAHcAZAA9
+AGUAdABsAABfRQByAHIAbwAgAG4AYQAgAGMAbwBuAGUAeADjAG8AIABjAG8AbQAgAG8AIABCAGEA
+bgBjAG8AIABkAGUAIABkAGEAZABvAHMALgAgAEQAZQB0AGEAbABoAGUAcwA6AAEzRQByAHIAbwAg
+AG4AbwAgAHMAZQBsAGUAYwB0AC4AIABEAGUAdABhAGwAaABlAHMAOgAAGyQAUABhAGMAawBhAGcA
+ZQA6ADoAQQBuAG8AABskAFAAYQBjAGsAYQBnAGUAOgA6AE0AZQBzAAAbVQBzAGUAcgA6ADoAUgBl
+AHYAZQBuAGQAYQAAJ1MAeQBzAHQAZQBtADoAOgBQAGEAYwBrAGEAZwBlAE4AYQBtAGUAAB8kAFAA
+YQBjAGsAYQBnAGUAOgA6AEUAbQBhAGkAbAAAS1kAOgBcAFAAVQBCAEwASQBDAE8AXABBAE4AQQBM
+AEkAUwBUAEEAUwBcAFMAUwBJAFMAXABBAFMAUwBFAFMAUwBNAEUATgBUAFwAAA9cAGQAYQBkAG8A
+cwBcAAANZABhAGQAbwBzAF8AAAsuAHgAbABzAHgAAAtkAGEAZABvAHMAABNcAHYAYgBhAC4AeABs
+AHMAbQAAKWIAdQBpAGwAZAAuAGYAbwByAG0AYQB0AGEAQQByAHEAdQBpAHYAbwAAGUAAYwBvAGQA
+XwByAGUAdgBlAG4AZABhAAAJQABBAG4AbwAACUAATQBlAHMAAAtAAEQAYQB0AGEAAAUwADEAAMAA
+ScNTAEUATABFAEMAVAAgACAAIABjAGwALgBjAG8AZABfAGMAbABpAGUAbgB0AGUADQAKACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAALAAgAGMAbAAuAHYAZAAgAGEAcwAgAHMAZQB0AG8AcgANAAoACQAJ
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAsACAAYwBsAC4AcgBhAHoAYQBvAF8AcwBvAGMAaQBhAGwADQAKAAkACQAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+LAAgAGMAbAAuAG4AbwBtAGUAXwBmAGEAbgB0AGEAcwBpAGEADQAKAAkACQAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAALAAgAEkA
+RgAoAG0AcAAuAHMAZQBnAG0AZQBuAHQAYQBjAGEAbwAgAEkAUwAgAE4AVQBMAEwALAAgACIAQgBS
+AE8ATgBaAEUAIgAsACAAbQBwAC4AcwBlAGcAbQBlAG4AdABhAGMAYQBvACkAIABBAFMAIABzAGUA
+ZwBtAGUAbgB0AGEAYwBhAG8ADQAKAAkACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAALAAgAEMAQQBTAEUAIABXAEgARQBOACAA
+YwBsAC4AYwBhAHQAZQBnAG8AcgBpAGEAIAA9ACAAJwBPAFUAVABSAE8AUwAnACAAVABIAEUATgAg
+ACAAJwBCAGEAcgAgAEMALwBEACcAIABFAEwAUwBFACAAYwBsAC4AYwBhAHQAZQBnAG8AcgBpAGEA
+IABFAE4ARAAgAEEAUwAgAGMAYQB0AGUAZwBvAHIAaQBhAA0ACgAJAAkAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACwAIABJAEYA
+KAAgAGMAbAAuAGQAaQBhAF8AcwBlAG0AYQBuAGEAIABJAE4AIAAoACcAUwBBAEIAJwAsACAAJwBE
+AE8ATQAnACkAIAAsACAAJwBTAEUARwAnACAALAAgAGMAbAAuAGQAaQBhAF8AcwBlAG0AYQBuAGEA
+IAApACAAQQBTACAAZABpAGEAXwB2AGkAcwBpAHQAYQANAAoACQAJACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAsACAAQwBBAFMA
+RQAgAFcASABFAE4AIABjAGwALgBkAGkAYQBfAHMAZQBtAGEAbgBhACAATABJAEsARQAgACIAJQAs
+ACUAIgAgAEEATgBEACAAYwBsAC4AYwBpAGMAbABvACAAPQAgACIAMQAyADMANAAiACAAVABIAEUA
+TgAgACIAQgBJAFAAQQBTAFMARQAiAA0ACgAJAAkACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAVwBIAEUATgAgAGMA
+bAAuAGQAaQBhAF8AcwBlAG0AYQBuAGEAIABOAE8AVAAgAEwASQBLAEUAIAAiACUALAAlACIAIABB
+AE4ARAAgAGMAbAAuAGMAaQBjAGwAbwAgAD0AIAAiADEAMgAzADQAIgAgAFQASABFAE4AIAAiAE0A
+TwBOAE8AUABBAFMAUwBFACIADQAKAAkACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABXAEgARQBOACAAYwBsAC4A
+YwBpAGMAbABvACAAPQAgACIAMQAgADMAIgAgAE8AUgAgAGMAbAAuAGMAaQBjAGwAbwAgAD0AIAAi
+ADIAIAA0ACIAIABUAEgARQBOACAAIgBRAFUASQBOAFoARQBOAEEATAAiAA0ACgAJAAkACQAgACAA
 IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAQwBPAFUATgBUACgARABJAFMAVABJAE4AQwBUACAASQBGACgARABBAFQA
-RQBfAEYATwBSAE0AQQBUACgAcABkAC4AZABhAHQAYQBfAHAAZQBkAGkAZABvACwAIAAnACUAWQAt
-ACUAbQAnACkAIAA9ACAARABBAFQARQBfAEYATwBSAE0AQQBUACgARABBAFQARQBfAFMAVQBCACgA
-QABEAGEAdABhACwAIABJAE4AVABFAFIAVgBBAEwAIAAxACAATQBPAE4AVABIACkALAAgACcAJQBZ
-AC0AJQBtACcAKQAsACAAYwBsAC4AYwBvAGQAXwBjAGwAaQBlAG4AdABlACwAIABOAFUATABMACkA
-KQAgAEEAUwAgAE0ARQBTAF8AMQAsAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAEMA
-TwBVAE4AVAAoAEQASQBTAFQASQBOAEMAVAAgAEkARgAoAEQAQQBUAEUAXwBGAE8AUgBNAEEAVAAo
-AHAAZAAuAGQAYQB0AGEAXwBwAGUAZABpAGQAbwAsACAAJwAlAFkALQAlAG0AJwApACAAPQAgAEQA
-QQBUAEUAXwBGAE8AUgBNAEEAVAAoAEQAQQBUAEUAXwBTAFUAQgAoAEAARABhAHQAYQAsACAASQBO
-AFQARQBSAFYAQQBMACAAMgAgAE0ATwBOAFQASAApACwAIAAnACUAWQAtACUAbQAnACkALAAgAGMA
-bAAuAGMAbwBkAF8AYwBsAGkAZQBuAHQAZQAsACAATgBVAEwATAApACkAIABBAFMAIABNAEUAUwBf
-ADIALAANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABDAE8AVQBOAFQAKABEAEkAUwBU
-AEkATgBDAFQAIABJAEYAKABEAEEAVABFAF8ARgBPAFIATQBBAFQAKABwAGQALgBkAGEAdABhAF8A
-cABlAGQAaQBkAG8ALAAgACcAJQBZAC0AJQBtACcAKQAgAD0AIABEAEEAVABFAF8ARgBPAFIATQBB
-AFQAKABEAEEAVABFAF8AUwBVAEIAKABAAEQAYQB0AGEALAAgAEkATgBUAEUAUgBWAEEATAAgADMA
-IABNAE8ATgBUAEgAKQAsACAAJwAlAFkALQAlAG0AJwApACwAIABjAGwALgBjAG8AZABfAGMAbABp
-AGUAbgB0AGUALAAgAE4AVQBMAEwAKQApACAAQQBTACAATQBFAFMAXwAzACwADQAKACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAQwBPAFUATgBUACgARABJAFMAVABJAE4AQwBUACAASQBGACgA
-RABBAFQARQBfAEYATwBSAE0AQQBUACgAcABkAC4AZABhAHQAYQBfAHAAZQBkAGkAZABvACwAIAAn
-ACUAWQAtACUAbQAnACkAIAA9ACAARABBAFQARQBfAEYATwBSAE0AQQBUACgARABBAFQARQBfAFMA
-VQBCACgAQABEAGEAdABhACwAIABJAE4AVABFAFIAVgBBAEwAIAA0ACAATQBPAE4AVABIACkALAAg
-ACcAJQBZAC0AJQBtACcAKQAsACAAYwBsAC4AYwBvAGQAXwBjAGwAaQBlAG4AdABlACwAIABOAFUA
-TABMACkAKQAgAEEAUwAgAE0ARQBTAF8ANAAsAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgAEMATwBVAE4AVAAoAEQASQBTAFQASQBOAEMAVAAgAEkARgAoAEQAQQBUAEUAXwBGAE8AUgBN
-AEEAVAAoAHAAZAAuAGQAYQB0AGEAXwBwAGUAZABpAGQAbwAsACAAJwAlAFkALQAlAG0AJwApACAA
-PQAgAEQAQQBUAEUAXwBGAE8AUgBNAEEAVAAoAEQAQQBUAEUAXwBTAFUAQgAoAEAARABhAHQAYQAs
-ACAASQBOAFQARQBSAFYAQQBMACAANQAgAE0ATwBOAFQASAApACwAIAAnACUAWQAtACUAbQAnACkA
-LAAgAGMAbAAuAGMAbwBkAF8AYwBsAGkAZQBuAHQAZQAsACAATgBVAEwATAApACkAIABBAFMAIABN
-AEUAUwBfADUALAANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABDAE8AVQBOAFQAKABE
-AEkAUwBUAEkATgBDAFQAIABJAEYAKABEAEEAVABFAF8ARgBPAFIATQBBAFQAKABwAGQALgBkAGEA
-dABhAF8AcABlAGQAaQBkAG8ALAAgACcAJQBZAC0AJQBtACcAKQAgAD0AIABEAEEAVABFAF8ARgBP
-AFIATQBBAFQAKABEAEEAVABFAF8AUwBVAEIAKABAAEQAYQB0AGEALAAgAEkATgBUAEUAUgBWAEEA
-TAAgADYAIABNAE8ATgBUAEgAKQAsACAAJwAlAFkALQAlAG0AJwApACwAIABjAGwALgBjAG8AZABf
-AGMAbABpAGUAbgB0AGUALAAgAE4AVQBMAEwAKQApACAAQQBTACAATQBFAFMAXwA2ACwADQAKACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAQwBPAFUATgBUACgARABJAFMAVABJAE4AQwBUACAA
-SQBGACgARABBAFQARQBfAEYATwBSAE0AQQBUACgAcABkAC4AZABhAHQAYQBfAHAAZQBkAGkAZABv
-ACwAIAAnACUAWQAtACUAbQAnACkAIAA9ACAARABBAFQARQBfAEYATwBSAE0AQQBUACgARABBAFQA
-RQBfAFMAVQBCACgAQABEAGEAdABhACwAIABJAE4AVABFAFIAVgBBAEwAIAA3ACAATQBPAE4AVABI
-ACkALAAgACcAJQBZAC0AJQBtACcAKQAsACAAYwBsAC4AYwBvAGQAXwBjAGwAaQBlAG4AdABlACwA
-IABOAFUATABMACkAKQAgAEEAUwAgAE0ARQBTAF8ANwAsAA0ACgAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgAEMATwBVAE4AVAAoAEQASQBTAFQASQBOAEMAVAAgAEkARgAoAEQAQQBUAEUAXwBG
-AE8AUgBNAEEAVAAoAHAAZAAuAGQAYQB0AGEAXwBwAGUAZABpAGQAbwAsACAAJwAlAFkALQAlAG0A
-JwApACAAPQAgAEQAQQBUAEUAXwBGAE8AUgBNAEEAVAAoAEQAQQBUAEUAXwBTAFUAQgAoAEAARABh
-AHQAYQAsACAASQBOAFQARQBSAFYAQQBMACAAOAAgAE0ATwBOAFQASAApACwAIAAnACUAWQAtACUA
-bQAnACkALAAgAGMAbAAuAGMAbwBkAF8AYwBsAGkAZQBuAHQAZQAsACAATgBVAEwATAApACkAIABB
-AFMAIABNAEUAUwBfADgALAANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABDAE8AVQBO
-AFQAKABEAEkAUwBUAEkATgBDAFQAIABJAEYAKABEAEEAVABFAF8ARgBPAFIATQBBAFQAKABwAGQA
-LgBkAGEAdABhAF8AcABlAGQAaQBkAG8ALAAgACcAJQBZAC0AJQBtACcAKQAgAD0AIABEAEEAVABF
-AF8ARgBPAFIATQBBAFQAKABEAEEAVABFAF8AUwBVAEIAKABAAEQAYQB0AGEALAAgAEkATgBUAEUA
-UgBWAEEATAAgADkAIABNAE8ATgBUAEgAKQAsACAAJwAlAFkALQAlAG0AJwApACwAIABjAGwALgBj
-AG8AZABfAGMAbABpAGUAbgB0AGUALAAgAE4AVQBMAEwAKQApACAAQQBTACAATQBFAFMAXwA5ACwA
-DQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAQwBPAFUATgBUACgARABJAFMAVABJAE4A
-QwBUACAASQBGACgARABBAFQARQBfAEYATwBSAE0AQQBUACgAcABkAC4AZABhAHQAYQBfAHAAZQBk
-AGkAZABvACwAIAAnACUAWQAtACUAbQAnACkAIAA9ACAARABBAFQARQBfAEYATwBSAE0AQQBUACgA
-RABBAFQARQBfAFMAVQBCACgAQABEAGEAdABhACwAIABJAE4AVABFAFIAVgBBAEwAIAAxADAAIABN
-AE8ATgBUAEgAKQAsACAAJwAlAFkALQAlAG0AJwApACwAIABjAGwALgBjAG8AZABfAGMAbABpAGUA
-bgB0AGUALAAgAE4AVQBMAEwAKQApACAAQQBTACAATQBFAFMAXwAxADAALAANAAoAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIABDAE8AVQBOAFQAKABEAEkAUwBUAEkATgBDAFQAIABJAEYAKABE
-AEEAVABFAF8ARgBPAFIATQBBAFQAKABwAGQALgBkAGEAdABhAF8AcABlAGQAaQBkAG8ALAAgACcA
-JQBZAC0AJQBtACcAKQAgAD0AIABEAEEAVABFAF8ARgBPAFIATQBBAFQAKABEAEEAVABFAF8AUwBV
-AEIAKABAAEQAYQB0AGEALAAgAEkATgBUAEUAUgBWAEEATAAgADEAMQAgAE0ATwBOAFQASAApACwA
-IAAnACUAWQAtACUAbQAnACkALAAgAGMAbAAuAGMAbwBkAF8AYwBsAGkAZQBuAHQAZQAsACAATgBV
-AEwATAApACkAIABBAFMAIABNAEUAUwBfADEAMQAsAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgAEMATwBVAE4AVAAoAEQASQBTAFQASQBOAEMAVAAgAEkARgAoAEQAQQBUAEUAXwBGAE8A
-UgBNAEEAVAAoAHAAZAAuAGQAYQB0AGEAXwBwAGUAZABpAGQAbwAsACAAJwAlAFkALQAlAG0AJwAp
-ACAAPQAgAEQAQQBUAEUAXwBGAE8AUgBNAEEAVAAoAEQAQQBUAEUAXwBTAFUAQgAoAEAARABhAHQA
-YQAsACAASQBOAFQARQBSAFYAQQBMACAAMQAyACAATQBPAE4AVABIACkALAAgACcAJQBZAC0AJQBt
-ACcAKQAsACAAYwBsAC4AYwBvAGQAXwBjAGwAaQBlAG4AdABlACwAIABOAFUATABMACkAKQAgAEEA
-UwAgAE0ARQBTAF8AMQAyAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABGAFIATwBNACAAIAAgAHYAdwBfAHAA
-ZQBkAGkAZABvAHMAIABwAGQADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAASQBOAE4A
-RQBSACAASgBPAEkATgAgAHQAYgBsAF8AYwBsAGkAZQBuAHQAZQBzACAAYwBsACAATwBOACAAcABk
-AC4AYwBvAGQAXwBjAGwAaQBlAG4AdABlACAAPQAgAGMAbAAuAGMAbwBkAF8AYwBsAGkAZQBuAHQA
-ZQANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAQQBOAEQAIABwAGQALgBjAG8AZABfAHIAZQB2
-AGUAbgBkAGEAIAA9ACAAYwBsAC4AYwBvAGQAXwByAGUAdgBlAG4AZABhACAADQAKACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAASQBOAE4ARQBSACAASgBPAEkATgAgAHQAYgBsAF8AZQBuAGQA
-ZQByAGUAYwBvAHMAIABlAG4AIABPAE4AIABjAGwALgBjAG8AZABfAGMAbABpAGUAbgB0AGUAIAA9
-ACAAZQBuAC4AYwBvAGQAXwBjAGwAaQBlAG4AdABlAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgAEEATgBEACAAYwBsAC4AYwBvAGQAXwByAGUAdgBlAG4AZABhACAAPQAgAGUAbgAuAGMAbwBk
-AF8AcgBlAHYAZQBuAGQAYQANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAVwBIAEUAUgBFACAAIABwAGQALgBk
-AGEAdABhAF8AcABlAGQAaQBkAG8AIABCAEUAVABXAEUARQBOACAARABBAFQARQBfAFMAVQBCACgA
-IABAAEQAYQB0AGEALAAgAEkATgBUAEUAUgBWAEEATAAgADEAMgAgAE0ATwBOAFQASAApACAAQQBO
-AEQAIABMAEEAUwBUAF8ARABBAFkAKAAgAEAARABhAHQAYQAgACkADQAKACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAQQBOAEQAIABjAGwALgBnAHYAIABJAE4AIAAoADEALAAgADQALAAgADYA
-KQAgAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAEEATgBEACAAcABkAC4AYwBvAGQA
-XwByAGUAdgBlAG4AZABhACAASQBOACAAKAAgAEAAYwBvAGQAXwByAGUAdgBlAG4AZABhACAAKQAN
-AAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAARwBSAE8AVQBQACAAQgBZACAAIABlAG4ALgBtAHUAbgBpAGMAaQBw
-AGkAbwANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAATwBSAEQARQBSACAAQgBZACAAIABDAE8ARABfAFIARQBW
-AEUATgBEAEEAATlFAHIAcgBvACAAYQBvACAAYwBvAG4AcwB1AGwAdABhACAAbgBvACAATQBZAFMA
-UQBMACAALQAgAAGdWw0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABXAEkAVABIACAAYwBhAGwAZQBuAGQAYQBy
-AGkAbwAgAEEAUwAgACgADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAUwBFAEwARQBDAFQAIAAgAEQAQQBUAEUAXwBGAE8AUgBNAEEA
-VAAoAEAARABhAHQAYQAsACAAJwAlAFkALQAlAG0ALQAwADEAJwApACAAQQBTACAAZABhAHQAYQBf
-AGkAbgBpAGMAaQBhAGwALAAgAC0ALQAgAFAAcgBpAG0AZQBpAHIAbwAgAGQAaQBhACAAZABvACAA
-bQDqAHMADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAEwAQQBTAFQAXwBEAEEAWQAoAEAARABhAHQAYQAp
-ACAAQQBTACAAZABhAHQAYQBfAGYAaQBuAGEAbAAsACAALQAtACAA2gBsAHQAaQBtAG8AIABkAGkA
-YQAgAGQAbwAgAG0A6gBzAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABEAEEAVABFAF8ARgBPAFIATQBB
-AFQAKABAAEQAYQB0AGEALAAgACcAJQBZAC0AJQBtAC0AJQBkACcAKQAgAEEAUwAgAGQAYQB0AGEA
-XwBlAG0AaQBzAHMAYQBvACAALQAtACAARABhAHQAYQAgAGEAdAB1AGEAbAANAAoAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAApAA0ACgAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIABTAEUATABFAEMAVAAgACAAIAAgAGMALgBkAGEAdABhAF8AaQBuAGkAYwBpAGEAbAAs
+ACAAIAAgACAARQBMAFMARQAgACIATQBFAE4AUwBBAEwAIgAgAEUATgBEACAAQQBTACAAZgByAGUA
+cQB1AGUAbgBjAGkAYQBfAHYAaQBzAGkAdABhAA0ACgAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACwAIABJAEYAKAAgAGYA
+bgBEAGkAYQBFAG4AdAByAGUAZwBhACgAZABpAGEAXwBzAGUAbQBhAG4AYQApACAASQBTACAATgBV
+AEwATAAgAE8AUgAgAGYAbgBEAGkAYQBFAG4AdAByAGUAZwBhACgAZABpAGEAXwBzAGUAbQBhAG4A
+YQApACAAPQAgACcAJwAgACwAIAAnAFMARQBHACcAIAAsACAAZgBuAEQAaQBhAEUAbgB0AHIAZQBn
+AGEAKABkAGkAYQBfAHMAZQBtAGEAbgBhACkAIAApACAAQQBTACAAZABpAGEAXwBlAG4AdAByAGUA
+ZwBhAA0ACgAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACwAIABJAEYAKAAgAGMAbAAuAGMAcABmAF8AYwBuAHAA
+agAgAD0AIAAiAEMAUABGACIALAAgAGYAbgBNAGEAcwBjAGEAcgBhACgAIAAnACMAIwAjAC4AIwAj
+ACMALgAjACMAIwAtACMAIwAnACAALAAgAGMAbAAuAG4AdQBtAGUAcgBvAF8AYwBwAGYAXwBjAG4A
+cABqACAAKQAsACAAZgBuAE0AYQBzAGMAYQByAGEAKAAgACcAIwAjAC4AIwAjACMALgAjACMAIwAv
+ACMAIwAjACMALQAjACMAJwAgACwAIABjAGwALgBuAHUAbQBlAHIAbwBfAGMAcABmAF8AYwBuAHAA
+agApACAAIAApACAAQQBTACAAbgB1AG0AZQByAG8AXwBjAHAAZgBfAGMAbgBwAGoACQANAAoACQAJ
 AA0ACgAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAGMALgBkAGEAdABhAF8AZgBpAG4AYQBsACwADQAK
-AAkACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAYwAuAGQAYQB0AGEAXwBlAG0AaQBzAHMAYQBvACwADQAK
-AAkACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAALQAtACAAQwBvAG4AdABhAGcAZQBtACAAZABlACAAZABp
-AGEAcwAgAPoAdABlAGkAcwAgAG4AbwAgAG0A6gBzACAAKABzAGUAZwB1AG4AZABhACAAYQAgAHMA
-ZQB4AHQAYQApACwADQAKAAkACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAKAAJACAAIAAgAFMARQBMAEUA
-QwBUACAAQwBPAFUATgBUACgAKgApACAADQAKAAkACQAJAAkACQAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAEYAUgBPAE0AIAAoAA0A
-CgAJAAkACQAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABTAEUATABFAEMAVAAgAEQAQQBUAEUA
-XwBBAEQARAAoAGMALgBkAGEAdABhAF8AaQBuAGkAYwBpAGEAbAAsACAASQBOAFQARQBSAFYAQQBM
-ACAAcwBlAHEAIABEAEEAWQApACAAQQBTACAAZABhAHQAYQBfAGQAaQBhAA0ACgAJAAkACQAJAAkA
+IAAgACAAIAAgACAAIAAgAC0ALQAgAEYAbwByAG0AYQB0AGEAIABvACAAVABlAGwAZQBmAG8AbgBl
+ACwAIABjAGEAcwBvACAAbgDjAG8AIAB0AGUAbgBoAGEAIABlACAAYwByAGkAYQBkAG8AIAB1AG0A
+IAB0AGUAbABlAGYAbwBuAGUAIABhAGwAZQBhAHQAbwByAGkAYQBtAGUAbgB0AGUADQAKAAkACQAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAALAAgAEMATwBOAEMAQQBUACgAIABJAEYAIAAoACAAZgBuAFAAZQBnAGEAVABlAGwAZQBm
+AG8AbgBlACgAIABjAGwALgBjAG8AZABpAGcAbwBfAGIAdwAsACAAMQApACAASQBTACAATgBPAFQA
+IABOAFUATABMACwAIABmAG4AUABlAGcAYQBUAGUAbABlAGYAbwBuAGUAKAAgAGMAbAAuAGMAbwBk
+AGkAZwBvAF8AYgB3ACwAIAAxACkALAAgAGYAbgBHAGUAcgBhAFQAZQBsAGUAZgBvAG4AZQAoACkA
+IAApACwAIABJAEYAKAAgAGYAbgBQAGUAZwBhAFQAZQBsAGUAZgBvAG4AZQAoAGMAbAAuAGMAbwBk
+AGkAZwBvAF8AYgB3ACwAIAAyACAAKQAgAEkAUwAgAE4ATwBUACAATgBVAEwATAAsACAAQwBPAE4A
+QwBBAFQAKAAgACcALAAgACcALAAgAGYAbgBQAGUAZwBhAFQAZQBsAGUAZgBvAG4AZQAoAGMAbAAu
+AGMAbwBkAGkAZwBvAF8AYgB3ACwAIAAyACAAKQAgACkAIAAgACwAIAAnACcAIAApACAAKQAgAEEA
+UwAgAFQARQBMAEUARgBPAE4ARQANAAoACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAsACAAVQBQAFAARQBSACgAQwBBAFMA
+RQAgAFcASABFAE4AIABjAGwALgBlAG0AYQBpAGwAIAA9ACAAJwAnACAATwBSACAAYwBsAC4AZQBt
+AGEAaQBsACAASQBTACAATgBVAEwATAAgAE8AUgAgAGMAbAAuAGUAbQBhAGkAbAAgAEwASQBLAEUA
+IAAnACUAYwBoAGUAYwBvAG4AJQAnACAAVABIAEUATgAgAEMATwBOAEMAQQBUACgAUgBFAFAATABB
+AEMARQAoAGMAbAAuAHIAYQB6AGEAbwBfAHMAbwBjAGkAYQBsACwAJwAgACcALAAnACcAKQAsACAA
+TABQAEEARAAoAEYATABPAE8AUgAoAFIAQQBOAEQAKAApACAAKgAgADEAMAAwADAAKQAsACAAMwAs
+ACAAJwAwACcAKQAsACAAJwBAAEcATQBBAEkATAAuAEMATwBNACcAKQAgAEUATABTAEUAIABjAGwA
+LgBlAG0AYQBpAGwAIABFAE4ARAAgACkAIABBAFMAIABFAE0AQQBJAEwACQANAAoACQAJACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAsACAAZQBkAHIALgBtAHUAbgBpAGMAaQBwAGkAbwANAAoACQAJACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAsACAAZQBkAHIA
+LgBiAGEAaQByAHIAbwANAAoACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAsACAAQwBPAE4AQwBBAFQAKABlAGQAcgAuAHQA
+aQBwAG8ALAAgACcALgAgACcALAAgAGUAZAByAC4AbABvAGcAcgBhAGQAbwB1AHIAbwApACAAQQBT
+ACAAZQBuAGQAZQByAGUAYwBvAA0ACgAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACwAIABTAFUAQgBTAFQAUgBJAE4ARwAo
+ACAASQBGACgAIABjAGwALgBsAGEAdABpAHQAdQBkAGUAIABJAFMAIABOAFUATABMACAATwBSACAA
+YwBsAC4AbABhAHQAaQB0AHUAZABlACAAPQAgACcAJwAgAE8AUgAgAEMASABBAFIAXwBMAEUATgBH
+AFQASAAoAGMAbAAuAGwAYQB0AGkAdAB1AGQAZQApACAAPAAgADEAMQAsACAAZgBuAEcAZQByAGEA
+TABhAHQAaQB0AHUAZABlACgALQAxADYALgAzADcANQAwADcAOQA1ACwAMQAwADAAKQAsACAAYwBs
+AC4AbABhAHQAaQB0AHUAZABlACAAKQAsACAAMQAsACAAMQAxACkAIABsAGEAdABpAHQAdQBkAGUA
+DQAKAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAALAAgAFMAVQBCAFMAVABSAEkATgBHACgAIABJAEYAKAAgAGMA
+bAAuAGwAbwBuAGcAaQB0AHUAZABlACAASQBTACAATgBVAEwATAAgAE8AUgAgAGMAbAAuAGwAYQB0
+AGkAdAB1AGQAZQAgAD0AIAAnACcAIABPAFIAIABDAEgAQQBSAF8ATABFAE4ARwBUAEgAKABjAGwA
+LgBsAGEAdABpAHQAdQBkAGUAKQAgADwAIAAxADEALAAgAGYAbgBHAGUAcgBhAEwAbwBuAGcAaQB0
+AHUAZABlACgALQAzADkALgA1ADgAOAAxADMAMQA3ACwAMQAwADAAKQAsACAAYwBsAC4AbABhAHQA
+aQB0AHUAZABlACAAKQAsACAAMQAsACAAMQAxACkAIABsAG8AbgBnAGkAdAB1AGQAZQAJAA0ACgAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgAC0ALQAgACwAIABJAEYATgBVAEwATAAoACAAYwByAGUAZABp
+AHQAbwAuAGwAaQBtAGkAdABlAF8AbABpAGIAZQByAGEAZABvACwAIAAzADAAMAAgACkAIABBAFMA
+IABsAGkAbQBpAHQAZQBfAGMAcgBlAGQAaQB0AG8ADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+LAAgAFIARQBQAEwAQQBDAEUAKABDAEEAUwBFACAADQAKAAkACQAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgAC0ALQAgAEIAQQBSAC8ARQBTAFAARQBDAEkAQQBJAFMAIABP
+AFUAIABSAEUAUwBUAEEAVQBSAEEATgBUAEUAUwANAAoACQAJAAkACQAJACAAIAAgACAAIAAgACAA
 IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIABGAFIATwBNACAAKABTAEUATABFAEMAVAAgADAAIABzAGUA
-cQAgAFUATgBJAE8ATgAgAA0ACgAJAAkACQAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAQQBMAEwAIABTAEUATABFAEMAVAAgADEAIABVAE4ASQBPAE4AIABBAEwATAAg
-AFMARQBMAEUAQwBUACAAMgAgAFUATgBJAE8ATgAgAEEATABMACAAUwBFAEwARQBDAFQAIAAzACAA
-VQBOAEkATwBOACAAQQBMAEwAIABTAEUATABFAEMAVAAgADQAIAANAAoACQAJAAkACQAJACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAFUATgBJAE8ATgAgAEEATABMACAAUwBF
-AEwARQBDAFQAIAA1ACAAVQBOAEkATwBOACAAQQBMAEwAIABTAEUATABFAEMAVAAgADYAIABVAE4A
-SQBPAE4AIABBAEwATAAgAFMARQBMAEUAQwBUACAANwAgAFUATgBJAE8ATgAgAEEATABMACAAUwBF
-AEwARQBDAFQAIAA4ACAADQAKAAkACQAJAAkACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+ACAAVwBIAEUATgAgAGMAbAAuAGMAYQB0AGUAZwBvAHIAaQBhACAASQBOACAAKAAgACcAQgBhAHIA
+IABBAC8AQgAnACwAIAAnAEIAYQByACAAQwAvAEQAJwAsACAAJwBFAG4AdAByAGUAdABlAG4AaQBt
+AGUAbgB0AG8AIABFAHMAcABlAGMAJwAsACAAJwBSAGUAcwB0AGEAdQByAGEAbgB0AGUAIABBAC8A
+QgAnACwAIAAnAFIAZQBzAHQAYQB1AHIAYQBuAHQAZQAgAEMALwBEACcALAAgACcATABhAG4AYwBo
+AG8AbgBlAHQAZQAnACwAIAAnAE8AdQB0AHIAbwBzACcALAAgACcAUABhAGQAYQByAGkAYQAvAGMA
+bwBuAGYAZQBpAHQAYQByAGkAYQAnACAAKQAgAEEATgBEACAASQBGACgAbQBwAC4AcwBlAGcAbQBl
+AG4AdABhAGMAYQBvACAASQBTACAATgBVAEwATAAsACAAJwBCAFIATwBOAFoARQAnACwAIABtAHAA
+LgBzAGUAZwBtAGUAbgB0AGEAYwBhAG8AKQAgAD0AIAAnAEIAUgBPAE4AWgBFACcAIAAgACAAQQBO
+AEQAIABjAHIAZQBkAGkAdABvAC4AbABpAG0AaQB0AGUAXwBsAGkAYgBlAHIAYQBkAG8AIAA8ACAA
+MwAwADAALgAwADAAIAAgAFQASABFAE4AIAAnAFAARABWACAAQwBPAE0AIABSAEUAUwBUAFIASQDH
+AMMATwAgAEQARQAgAEMAUgDJAEQASQBUAE8AJwANAAoACQAJACAAIAAgACAAIAAgACAAIAAgACAA
 IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIABVAE4ASQBPAE4AIABBAEwATAAgAFMARQBMAEUAQwBUACAAOQAgAFUATgBJAE8A
-TgAgAEEATABMACAAUwBFAEwARQBDAFQAIAAxADAAIABVAE4ASQBPAE4AIABBAEwATAAgAFMARQBM
-AEUAQwBUACAAMQAxACAAVQBOAEkATwBOACAAQQBMAEwAIABTAEUATABFAEMAVAAgADEAMgAgAA0A
-CgAJAAkACQAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAVQBOAEkA
-TwBOACAAQQBMAEwAIABTAEUATABFAEMAVAAgADEAMwAgAFUATgBJAE8ATgAgAEEATABMACAAUwBF
-AEwARQBDAFQAIAAxADQAIABVAE4ASQBPAE4AIABBAEwATAAgAFMARQBMAEUAQwBUACAAMQA1ACAA
-VQBOAEkATwBOACAAQQBMAEwAIABTAEUATABFAEMAVAAgADEANgAgAA0ACgAJAAkACQAJAAkAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAVQBOAEkATwBOACAAQQBMAEwAIABT
-AEUATABFAEMAVAAgADEANwAgAFUATgBJAE8ATgAgAEEATABMACAAUwBFAEwARQBDAFQAIAAxADgA
-IABVAE4ASQBPAE4AIABBAEwATAAgAFMARQBMAEUAQwBUACAAMQA5ACAAVQBOAEkATwBOACAAQQBM
-AEwAIABTAEUATABFAEMAVAAgADIAMAAgAA0ACgAJAAkACQAJAAkAIAAgACAAIAAgACAAIAAgACAA
+ACAAIAAgACAAIAAgACAAIAAgACAAVwBIAEUATgAgAGMAbAAuAGMAYQB0AGUAZwBvAHIAaQBhACAA
+SQBOACAAKAAgACcAQgBhAHIAIABBAC8AQgAnACwAIAAnAEIAYQByACAAQwAvAEQAJwAsACAAJwBF
+AG4AdAByAGUAdABlAG4AaQBtAGUAbgB0AG8AIABFAHMAcABlAGMAJwAsACAAJwBSAGUAcwB0AGEA
+dQByAGEAbgB0AGUAIABBAC8AQgAnACwAIAAnAFIAZQBzAHQAYQB1AHIAYQBuAHQAZQAgAEMALwBE
+ACcALAAgACcATABhAG4AYwBoAG8AbgBlAHQAZQAnACwAIAAnAE8AdQB0AHIAbwBzACcALAAgACcA
+UABhAGQAYQByAGkAYQAvAGMAbwBuAGYAZQBpAHQAYQByAGkAYQAnACAAKQAgAEEATgBEACAASQBG
+ACgAbQBwAC4AcwBlAGcAbQBlAG4AdABhAGMAYQBvACAASQBTACAATgBVAEwATAAsACAAJwBCAFIA
+TwBOAFoARQAnACwAIABtAHAALgBzAGUAZwBtAGUAbgB0AGEAYwBhAG8AKQAgAD0AIAAnAFAAUgBB
+AFQAQQAnACAAIAAgACAAQQBOAEQAIABjAHIAZQBkAGkAdABvAC4AbABpAG0AaQB0AGUAXwBsAGkA
+YgBlAHIAYQBkAG8AIAA8ACAANgAwADAALgAwADAAIAAgAFQASABFAE4AIAAnAFAARABWACAAQwBP
+AE0AIABSAEUAUwBUAFIASQDHAMMATwAgAEQARQAgAEMAUgDJAEQASQBUAE8AJwAgAA0ACgAJAAkA
 IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAVQBOAEkATwBOACAAQQBMAEwAIABTAEUATABFAEMAVAAgADIA
-MQAgAFUATgBJAE8ATgAgAEEATABMACAAUwBFAEwARQBDAFQAIAAyADIAIABVAE4ASQBPAE4AIABB
-AEwATAAgAFMARQBMAEUAQwBUACAAMgAzACAAVQBOAEkATwBOACAAQQBMAEwAIABTAEUATABFAEMA
-VAAgADIANAAgAA0ACgAJAAkACQAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABXAEgARQBOACAAYwBsAC4A
+YwBhAHQAZQBnAG8AcgBpAGEAIABJAE4AIAAoACAAJwBCAGEAcgAgAEEALwBCACcALAAgACcAQgBh
+AHIAIABDAC8ARAAnACwAIAAnAEUAbgB0AHIAZQB0AGUAbgBpAG0AZQBuAHQAbwAgAEUAcwBwAGUA
+YwAnACwAIAAnAFIAZQBzAHQAYQB1AHIAYQBuAHQAZQAgAEEALwBCACcALAAgACcAUgBlAHMAdABh
+AHUAcgBhAG4AdABlACAAQwAvAEQAJwAsACAAJwBMAGEAbgBjAGgAbwBuAGUAdABlACcALAAgACcA
+TwB1AHQAcgBvAHMAJwAsACAAJwBQAGEAZABhAHIAaQBhAC8AYwBvAG4AZgBlAGkAdABhAHIAaQBh
+ACcAIAApACAAQQBOAEQAIABJAEYAKABtAHAALgBzAGUAZwBtAGUAbgB0AGEAYwBhAG8AIABJAFMA
+IABOAFUATABMACwAIAAnAEIAUgBPAE4AWgBFACcALAAgAG0AcAAuAHMAZQBnAG0AZQBuAHQAYQBj
+AGEAbwApACAAPQAgACcATwBVAFIATwAnACAAIAAgACAAIABBAE4ARAAgAGMAcgBlAGQAaQB0AG8A
+LgBsAGkAbQBpAHQAZQBfAGwAaQBiAGUAcgBhAGQAbwAgADwAIAAxADUAMAAwAC4AMAAwACAAVABI
+AEUATgAgACcAUABEAFYAIABDAE8ATQAgAFIARQBTAFQAUgBJAMcAwwBPACAARABFACAAQwBSAMkA
+RABJAFQATwAnAA0ACgAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
 ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAVQBOAEkATwBOACAAQQBMAEwAIABTAEUATABFAEMAVAAgADIANQAgAFUATgBJAE8ATgAg
-AEEATABMACAAUwBFAEwARQBDAFQAIAAyADYAIABVAE4ASQBPAE4AIABBAEwATAAgAFMARQBMAEUA
-QwBUACAAMgA3ACAAVQBOAEkATwBOACAAQQBMAEwAIABTAEUATABFAEMAVAAgADIAOAAgAA0ACgAJ
-AAkACQAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAVQBOAEkATwBO
-ACAAQQBMAEwAIABTAEUATABFAEMAVAAgADIAOQAgAFUATgBJAE8ATgAgAEEATABMACAAUwBFAEwA
-RQBDAFQAIAAzADAAKQAgAEEAUwAgAG4AdQBtAGUAcgBvAHMADQAKAAkACQAJAAkACQAgACAAIAAg
+IABXAEgARQBOACAAYwBsAC4AYwBhAHQAZQBnAG8AcgBpAGEAIABJAE4AIAAoACAAJwBCAGEAcgAg
+AEEALwBCACcALAAgACcAQgBhAHIAIABDAC8ARAAnACwAIAAnAEUAbgB0AHIAZQB0AGUAbgBpAG0A
+ZQBuAHQAbwAgAEUAcwBwAGUAYwAnACwAIAAnAFIAZQBzAHQAYQB1AHIAYQBuAHQAZQAgAEEALwBC
+ACcALAAgACcAUgBlAHMAdABhAHUAcgBhAG4AdABlACAAQwAvAEQAJwAsACAAJwBMAGEAbgBjAGgA
+bwBuAGUAdABlACcALAAgACcATwB1AHQAcgBvAHMAJwAsACAAJwBQAGEAZABhAHIAaQBhAC8AYwBv
+AG4AZgBlAGkAdABhAHIAaQBhACcAIAApACAAQQBOAEQAIABJAEYAKABtAHAALgBzAGUAZwBtAGUA
+bgB0AGEAYwBhAG8AIABJAFMAIABOAFUATABMACwAIAAnAEIAUgBPAE4AWgBFACcALAAgAG0AcAAu
+AHMAZQBnAG0AZQBuAHQAYQBjAGEAbwApACAAPQAgACcARABJAEEATQBBAE4AVABFACcAIABBAE4A
+RAAgAGMAcgBlAGQAaQB0AG8ALgBsAGkAbQBpAHQAZQBfAGwAaQBiAGUAcgBhAGQAbwAgADwAIAAz
+ADAAMAAwAC4AMAAwACAAVABIAEUATgAgACcAUABEAFYAIABDAE8ATQAgAFIARQBTAFQAUgBJAMcA
+wwBPACAARABFACAAQwBSAMkARABJAFQATwAnAA0ACgAJAAkAIAAgAAkACQAJAA0ACgAJAAkAIAAg
+AAkACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAALQAtACAAQwBBAFMASAAgACYAIABDAEEAUgBSAFkADQAK
+AAkACQAgACAACQAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABXAEgARQBOACAAYwBsAC4AYwBhAHQAZQBn
+AG8AcgBpAGEAIABJAE4AIAAoACAAJwBDAGEAcwBoACAAQwBhAHIAcgB5ACcAIAApACAAQQBOAEQA
+IABJAEYAKABtAHAALgBzAGUAZwBtAGUAbgB0AGEAYwBhAG8AIABJAFMAIABOAFUATABMACwAIAAn
+AEIAUgBPAE4AWgBFACcALAAgAG0AcAAuAHMAZQBnAG0AZQBuAHQAYQBjAGEAbwApACAAPQAgACcA
+QgBSAE8ATgBaAEUAJwAgACAAIABBAE4ARAAgAGMAcgBlAGQAaQB0AG8ALgBsAGkAbQBpAHQAZQBf
+AGwAaQBiAGUAcgBhAGQAbwAgADwAIAAyADAAMAAuADAAMAAgAFQASABFAE4AIAAnAFAARABWACAA
+QwBPAE0AIABSAEUAUwBUAFIASQDHAMMATwAgAEQARQAgAEMAUgDJAEQASQBUAE8AJwANAAoACQAJ
 ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgAEoATwBJAE4AIABjAGEAbABlAG4AZABhAHIAaQBvACAAYwAgAE8ATgAg
-ADEAIAA9ACAAMQAgAC0ALQAgAFMAdQBiAHMAdABpAHQAdQBhACAAIgBzAHUAYQBfAHQAYQBiAGUA
-bABhACIAIABwAGUAbABvACAAbgBvAG0AZQAgAGMAbwByAHIAZQB0AG8AIABkAGEAIAB0AGEAYgBl
-AGwAYQANAAoACQAJAAkACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACkAIABBAFMAIABkAGkAYQBzAA0ACgAJ
-AAkACQAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAVwBIAEUAUgBFACAAZABhAHQAYQBfAGQAaQBhACAAQgBF
-AFQAVwBFAEUATgAgAGMALgBkAGEAdABhAF8AaQBuAGkAYwBpAGEAbAAgAEEATgBEACAAYwAuAGQA
-YQB0AGEAXwBmAGkAbgBhAGwADQAKAAkACQAJAAkACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAVwBIAEUATgAgAGMAbAAu
+AGMAYQB0AGUAZwBvAHIAaQBhACAASQBOACAAKAAgACcAQwBhAHMAaAAgAEMAYQByAHIAeQAnACAA
+KQAgAEEATgBEACAASQBGACgAbQBwAC4AcwBlAGcAbQBlAG4AdABhAGMAYQBvACAASQBTACAATgBV
+AEwATAAsACAAJwBCAFIATwBOAFoARQAnACwAIABtAHAALgBzAGUAZwBtAGUAbgB0AGEAYwBhAG8A
+KQAgAD0AIAAnAFAAUgBBAFQAQQAnACAAIAAgACAAQQBOAEQAIABjAHIAZQBkAGkAdABvAC4AbABp
+AG0AaQB0AGUAXwBsAGkAYgBlAHIAYQBkAG8AIAA8ACAANAAwADAALgAwADAAIABUAEgARQBOACAA
+JwBQAEQAVgAgAEMATwBNACAAUgBFAFMAVABSAEkAxwDDAE8AIABEAEUAIABDAFIAyQBEAEkAVABP
+ACcAIAANAAoACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAVwBI
+AEUATgAgAGMAbAAuAGMAYQB0AGUAZwBvAHIAaQBhACAASQBOACAAKAAgACcAQwBhAHMAaAAgAEMA
+YQByAHIAeQAnACAAKQAgAEEATgBEACAASQBGACgAbQBwAC4AcwBlAGcAbQBlAG4AdABhAGMAYQBv
+ACAASQBTACAATgBVAEwATAAsACAAJwBCAFIATwBOAFoARQAnACwAIABtAHAALgBzAGUAZwBtAGUA
+bgB0AGEAYwBhAG8AKQAgAD0AIAAnAE8AVQBSAE8AJwAgACAAIAAgACAAQQBOAEQAIABjAHIAZQBk
+AGkAdABvAC4AbABpAG0AaQB0AGUAXwBsAGkAYgBlAHIAYQBkAG8AIAA8ACAANgAwADAALgAwADAA
+IABUAEgARQBOACAAJwBQAEQAVgAgAEMATwBNACAAUgBFAFMAVABSAEkAxwDDAE8AIABEAEUAIABD
+AFIAyQBEAEkAVABPACcADQAKAAkACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgAFcASABFAE4AIABjAGwALgBjAGEAdABlAGcAbwByAGkAYQAgAEkATgAgACgAIAAnAEMA
+YQBzAGgAIABDAGEAcgByAHkAJwAgACkAIABBAE4ARAAgAEkARgAoAG0AcAAuAHMAZQBnAG0AZQBu
+AHQAYQBjAGEAbwAgAEkAUwAgAE4AVQBMAEwALAAgACcAQgBSAE8ATgBaAEUAJwAsACAAbQBwAC4A
+cwBlAGcAbQBlAG4AdABhAGMAYQBvACkAIAA9ACAAJwBEAEkAQQBNAEEATgBUAEUAJwAgAEEATgBE
+ACAAYwByAGUAZABpAHQAbwAuAGwAaQBtAGkAdABlAF8AbABpAGIAZQByAGEAZABvACAAPAAgADgA
+MAAwAC4AMAAwACAAVABIAEUATgAgACcAUABEAFYAIABDAE8ATQAgAFIARQBTAFQAUgBJAMcAwwBP
+ACAARABFACAAQwBSAMkARABJAFQATwAnAA0ACgAJAAkAIAAgACAAIAAgACAAIAAgAA0ACgAJAAkA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAtAC0AIABUAFIAQQBEACwA
+IABNAEUAUgBDAEUAQQBSAEkAQQANAAoACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAVwBIAEUATgAgAGMAbAAuAGMAYQB0AGUAZwBvAHIAaQBhACAASQBOACAAKAAg
+ACcAQQByAG0AYQB6AOkAbQAvAG0AZQByAGMAZQBhAHIAaQBhACcAIAApACAAQQBOAEQAIABJAEYA
+KABtAHAALgBzAGUAZwBtAGUAbgB0AGEAYwBhAG8AIABJAFMAIABOAFUATABMACwAIAAnAEIAUgBP
+AE4AWgBFACcALAAgAG0AcAAuAHMAZQBnAG0AZQBuAHQAYQBjAGEAbwApACAAPQAgACcAQgBSAE8A
+TgBaAEUAJwAgACAAIABBAE4ARAAgAGMAcgBlAGQAaQB0AG8ALgBsAGkAbQBpAHQAZQBfAGwAaQBi
+AGUAcgBhAGQAbwAgADwAIAA0ADAAMAAuADAAMAAgACAAVABIAEUATgAgACcAUABEAFYAIABDAE8A
+TQAgAFIARQBTAFQAUgBJAMcAwwBPACAARABFACAAQwBSAMkARABJAFQATwAnAA0ACgAJAAkAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABXAEgARQBOACAAYwBsAC4AYwBh
+AHQAZQBnAG8AcgBpAGEAIABJAE4AIAAoACAAJwBBAHIAbQBhAHoA6QBtAC8AbQBlAHIAYwBlAGEA
+cgBpAGEAJwAgACkAIABBAE4ARAAgAEkARgAoAG0AcAAuAHMAZQBnAG0AZQBuAHQAYQBjAGEAbwAg
+AEkAUwAgAE4AVQBMAEwALAAgACcAQgBSAE8ATgBaAEUAJwAsACAAbQBwAC4AcwBlAGcAbQBlAG4A
+dABhAGMAYQBvACkAIAA9ACAAJwBQAFIAQQBUAEEAJwAgACAAIAAgAEEATgBEACAAYwByAGUAZABp
+AHQAbwAuAGwAaQBtAGkAdABlAF8AbABpAGIAZQByAGEAZABvACAAPAAgADgAMAAwAC4AMAAwACAA
+IABUAEgARQBOACAAJwBQAEQAVgAgAEMATwBNACAAUgBFAFMAVABSAEkAxwDDAE8AIABEAEUAIABD
+AFIAyQBEAEkAVABPACcAIAANAAoACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAVwBIAEUATgAgAGMAbAAuAGMAYQB0AGUAZwBvAHIAaQBhACAASQBOACAAKAAgACcA
+QQByAG0AYQB6AOkAbQAvAG0AZQByAGMAZQBhAHIAaQBhACcAIAApACAAQQBOAEQAIABJAEYAKABt
+AHAALgBzAGUAZwBtAGUAbgB0AGEAYwBhAG8AIABJAFMAIABOAFUATABMACwAIAAnAEIAUgBPAE4A
+WgBFACcALAAgAG0AcAAuAHMAZQBnAG0AZQBuAHQAYQBjAGEAbwApACAAPQAgACcATwBVAFIATwAn
+ACAAIAAgACAAIABBAE4ARAAgAGMAcgBlAGQAaQB0AG8ALgBsAGkAbQBpAHQAZQBfAGwAaQBiAGUA
+cgBhAGQAbwAgADwAIAAxADUAMAAwAC4AMAAwACAAVABIAEUATgAgACcAUABEAFYAIABDAE8ATQAg
+AFIARQBTAFQAUgBJAMcAwwBPACAARABFACAAQwBSAMkARABJAFQATwAnAA0ACgAJAAkAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABXAEgARQBOACAAYwBsAC4AYwBhAHQA
+ZQBnAG8AcgBpAGEAIABJAE4AIAAoACAAJwBBAHIAbQBhAHoA6QBtAC8AbQBlAHIAYwBlAGEAcgBp
+AGEAJwAgACkAIABBAE4ARAAgAEkARgAoAG0AcAAuAHMAZQBnAG0AZQBuAHQAYQBjAGEAbwAgAEkA
+UwAgAE4AVQBMAEwALAAgACcAQgBSAE8ATgBaAEUAJwAsACAAbQBwAC4AcwBlAGcAbQBlAG4AdABh
+AGMAYQBvACkAIAA9ACAAJwBEAEkAQQBNAEEATgBUAEUAJwAgAEEATgBEACAAYwByAGUAZABpAHQA
+bwAuAGwAaQBtAGkAdABlAF8AbABpAGIAZQByAGEAZABvACAAPAAgADMAMAAwADAALgAwADAAIABU
+AEgARQBOACAAJwBQAEQAVgAgAEMATwBNACAAUgBFAFMAVABSAEkAxwDDAE8AIABEAEUAIABDAFIA
+yQBEAEkAVABPACcADQAKAAkACQAgACAAIAAgACAAIAAgACAAIAANAAoACQAJACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAALQAtACAAQQBTAEkAIABFACAAQQBVAFQATwAg
+AFMARQBSAFYALgANAAoACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAVwBIAEUATgAgAGMAbAAuAGMAYQB0AGUAZwBvAHIAaQBhACAASQBOACAAKAAgACcASABpAHAA
+ZQByAG0AZQByAGMAYQBkAG8AJwAsACAAJwBMAG8AagBhACAAZABlACAAQwBvAG4AdgBlAG4AaQDq
+AG4AYwBpAGEAJwAsACAAJwBNAGkAbgBpACAAQQAvAEIAJwAsACAAJwBNAGkAbgBpACAAQwAvAEQA
+JwAsACAAJwBTAHUAcABlAHIAIABBAC8AQgAnACwAIAAnAFMAdQBwAGUAcgAgAEMALwBEACcAIAAp
+ACAAQQBOAEQAIABJAEYAKABtAHAALgBzAGUAZwBtAGUAbgB0AGEAYwBhAG8AIABJAFMAIABOAFUA
+TABMACwAIAAnAEIAUgBPAE4AWgBFACcALAAgAG0AcAAuAHMAZQBnAG0AZQBuAHQAYQBjAGEAbwAp
+ACAAPQAgACcAQgBSAE8ATgBaAEUAJwAgACAAIABBAE4ARAAgAGMAcgBlAGQAaQB0AG8ALgBsAGkA
+bQBpAHQAZQBfAGwAaQBiAGUAcgBhAGQAbwAgADwAIAAxADAAMAAwAC4AMAAwACAAIABUAEgARQBO
+ACAAJwBQAEQAVgAgAEMATwBNACAAUgBFAFMAVABSAEkAxwDDAE8AIABEAEUAIABDAFIAyQBEAEkA
+VABPACcADQAKAAkACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAFcA
+SABFAE4AIABjAGwALgBjAGEAdABlAGcAbwByAGkAYQAgAEkATgAgACgAIAAnAEgAaQBwAGUAcgBt
+AGUAcgBjAGEAZABvACcALAAgACcATABvAGoAYQAgAGQAZQAgAEMAbwBuAHYAZQBuAGkA6gBuAGMA
+aQBhACcALAAgACcATQBpAG4AaQAgAEEALwBCACcALAAgACcATQBpAG4AaQAgAEMALwBEACcALAAg
+ACcAUwB1AHAAZQByACAAQQAvAEIAJwAsACAAJwBTAHUAcABlAHIAIABDAC8ARAAnACAAKQAgAEEA
+TgBEACAASQBGACgAbQBwAC4AcwBlAGcAbQBlAG4AdABhAGMAYQBvACAASQBTACAATgBVAEwATAAs
+ACAAJwBCAFIATwBOAFoARQAnACwAIABtAHAALgBzAGUAZwBtAGUAbgB0AGEAYwBhAG8AKQAgAD0A
+IAAnAFAAUgBBAFQAQQAnACAAIAAgACAAQQBOAEQAIABjAHIAZQBkAGkAdABvAC4AbABpAG0AaQB0
+AGUAXwBsAGkAYgBlAHIAYQBkAG8AIAA8ACAAMwAwADAAMAAuADAAMAAgACAAVABIAEUATgAgACcA
+UABEAFYAIABDAE8ATQAgAFIARQBTAFQAUgBJAMcAwwBPACAARABFACAAQwBSAMkARABJAFQATwAn
+ACAADQAKAAkACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAFcASABF
+AE4AIABjAGwALgBjAGEAdABlAGcAbwByAGkAYQAgAEkATgAgACgAIAAnAEgAaQBwAGUAcgBtAGUA
+cgBjAGEAZABvACcALAAgACcATABvAGoAYQAgAGQAZQAgAEMAbwBuAHYAZQBuAGkA6gBuAGMAaQBh
+ACcALAAgACcATQBpAG4AaQAgAEEALwBCACcALAAgACcATQBpAG4AaQAgAEMALwBEACcALAAgACcA
+UwB1AHAAZQByACAAQQAvAEIAJwAsACAAJwBTAHUAcABlAHIAIABDAC8ARAAnACAAKQAgAEEATgBE
+ACAASQBGACgAbQBwAC4AcwBlAGcAbQBlAG4AdABhAGMAYQBvACAASQBTACAATgBVAEwATAAsACAA
+JwBCAFIATwBOAFoARQAnACwAIABtAHAALgBzAGUAZwBtAGUAbgB0AGEAYwBhAG8AKQAgAD0AIAAn
+AE8AVQBSAE8AJwAgACAAIAAgACAAQQBOAEQAIABjAHIAZQBkAGkAdABvAC4AbABpAG0AaQB0AGUA
+XwBsAGkAYgBlAHIAYQBkAG8AIAA8ACAANQAwADAAMAAuADAAMAAgACAAVABIAEUATgAgACcAUABE
+AFYAIABDAE8ATQAgAFIARQBTAFQAUgBJAMcAwwBPACAARABFACAAQwBSAMkARABJAFQATwAnAA0A
+CgAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABXAEgARQBOACAA
+YwBsAC4AYwBhAHQAZQBnAG8AcgBpAGEAIABJAE4AIAAoACAAJwBIAGkAcABlAHIAbQBlAHIAYwBh
+AGQAbwAnACwAIAAnAEwAbwBqAGEAIABkAGUAIABDAG8AbgB2AGUAbgBpAOoAbgBjAGkAYQAnACwA
+IAAnAE0AaQBuAGkAIABBAC8AQgAnACwAIAAnAE0AaQBuAGkAIABDAC8ARAAnACwAIAAnAFMAdQBw
+AGUAcgAgAEEALwBCACcALAAgACcAUwB1AHAAZQByACAAQwAvAEQAJwAgACkAIABBAE4ARAAgAEkA
+RgAoAG0AcAAuAHMAZQBnAG0AZQBuAHQAYQBjAGEAbwAgAEkAUwAgAE4AVQBMAEwALAAgACcAQgBS
+AE8ATgBaAEUAJwAsACAAbQBwAC4AcwBlAGcAbQBlAG4AdABhAGMAYQBvACkAIAA9ACAAJwBEAEkA
+QQBNAEEATgBUAEUAJwAgAEEATgBEACAAYwByAGUAZABpAHQAbwAuAGwAaQBtAGkAdABlAF8AbABp
+AGIAZQByAGEAZABvACAAPAAgADEAMAAwADAAMAAuADAAMAAgAFQASABFAE4AIAAnAFAARABWACAA
+QwBPAE0AIABSAEUAUwBUAFIASQDHAMMATwAgAEQARQAgAEMAUgDJAEQASQBUAE8AJwANAAoACQAJ
+ACAAIAAgACAAIAAgACAAIAAgAA0ACgAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAtAC0AIABBAEQARQBHAEEADQAKAAkACQAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgAFcASABFAE4AIABjAGwALgBjAGEAdABlAGcAbwByAGkAYQAgAEkA
+TgAgACgAIAAnAEEAZABlAGcAYQAnACAAKQAgAEEATgBEACAASQBGACgAbQBwAC4AcwBlAGcAbQBl
+AG4AdABhAGMAYQBvACAASQBTACAATgBVAEwATAAsACAAJwBCAFIATwBOAFoARQAnACwAIABtAHAA
+LgBzAGUAZwBtAGUAbgB0AGEAYwBhAG8AKQAgAD0AIAAnAEIAUgBPAE4AWgBFACcAIAAgACAAQQBO
+AEQAIABjAHIAZQBkAGkAdABvAC4AbABpAG0AaQB0AGUAXwBsAGkAYgBlAHIAYQBkAG8AIAA8ACAA
+MQA1ADAAMAAuADAAMAAgACAAVABIAEUATgAgACcAUABEAFYAIABDAE8ATQAgAFIARQBTAFQAUgBJ
+AMcAwwBPACAARABFACAAQwBSAMkARABJAFQATwAnAA0ACgAJAAkAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIABXAEgARQBOACAAYwBsAC4AYwBhAHQAZQBnAG8AcgBpAGEA
+IABJAE4AIAAoACAAJwBBAGQAZQBnAGEAJwAgACkAIABBAE4ARAAgAEkARgAoAG0AcAAuAHMAZQBn
+AG0AZQBuAHQAYQBjAGEAbwAgAEkAUwAgAE4AVQBMAEwALAAgACcAQgBSAE8ATgBaAEUAJwAsACAA
+bQBwAC4AcwBlAGcAbQBlAG4AdABhAGMAYQBvACkAIAA9ACAAJwBQAFIAQQBUAEEAJwAgACAAIAAg
+AEEATgBEACAAYwByAGUAZABpAHQAbwAuAGwAaQBtAGkAdABlAF8AbABpAGIAZQByAGEAZABvACAA
+PAAgADMAMAAwADAALgAwADAAIAAgAFQASABFAE4AIAAnAFAARABWACAAQwBPAE0AIABSAEUAUwBU
+AFIASQDHAMMATwAgAEQARQAgAEMAUgDJAEQASQBUAE8AJwAgAA0ACgAJAAkAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABXAEgARQBOACAAYwBsAC4AYwBhAHQAZQBnAG8A
+cgBpAGEAIABJAE4AIAAoACAAJwBBAGQAZQBnAGEAJwAgACkAIABBAE4ARAAgAEkARgAoAG0AcAAu
+AHMAZQBnAG0AZQBuAHQAYQBjAGEAbwAgAEkAUwAgAE4AVQBMAEwALAAgACcAQgBSAE8ATgBaAEUA
+JwAsACAAbQBwAC4AcwBlAGcAbQBlAG4AdABhAGMAYQBvACkAIAA9ACAAJwBPAFUAUgBPACcAIAAg
+ACAAIAAgAEEATgBEACAAYwByAGUAZABpAHQAbwAuAGwAaQBtAGkAdABlAF8AbABpAGIAZQByAGEA
+ZABvACAAPAAgADUAMAAwADAALgAwADAAIAAgAFQASABFAE4AIAAnAFAARABWACAAQwBPAE0AIABS
+AEUAUwBUAFIASQDHAMMATwAgAEQARQAgAEMAUgDJAEQASQBUAE8AJwANAAoACQAJACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAVwBIAEUATgAgAGMAbAAuAGMAYQB0AGUA
+ZwBvAHIAaQBhACAASQBOACAAKAAgACcAQQBkAGUAZwBhACcAIAApACAAQQBOAEQAIABJAEYAKABt
+AHAALgBzAGUAZwBtAGUAbgB0AGEAYwBhAG8AIABJAFMAIABOAFUATABMACwAIAAnAEIAUgBPAE4A
+WgBFACcALAAgAG0AcAAuAHMAZQBnAG0AZQBuAHQAYQBjAGEAbwApACAAPQAgACcARABJAEEATQBB
+AE4AVABFACcAIABBAE4ARAAgAGMAcgBlAGQAaQB0AG8ALgBsAGkAbQBpAHQAZQBfAGwAaQBiAGUA
+cgBhAGQAbwAgADwAIAAxADAAMAAwADAALgAwADAAIABUAEgARQBOACAAJwBQAEQAVgAgAEMATwBN
+ACAAUgBFAFMAVABSAEkAxwDDAE8AIABEAEUAIABDAFIAyQBEAEkAVABPACcADQAKAAkACQAgACAA
+IAAgACAAIAAgACAAIAANAAoACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAARQBMAFMARQAgAEkARgBOAFUATABMACgAIABjAHIAZQBkAGkAdABvAC4AbABpAG0AaQB0
+AGUAXwBsAGkAYgBlAHIAYQBkAG8ALAAgAG4AdQBsAGwAIAApACAARQBOAEQALAAgACcALgAnACwA
+JwAsACcAKQAgAEEAUwAgAGwAaQBtAGkAdABlAF8AYwByAGUAZABpAHQAbwANAAoAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAEYA
+UgBPAE0AIAAgACAAdABiAGwAXwBjAGwAaQBlAG4AdABlAHMAIABBAFMAIABjAGwADQAKAAkAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgAEwARQBGAFQAIABKAE8ASQBOACAAdABiAGwAXwBtAGEAdAByAGkAegBfAHAAbwB0
+AGUAbgBjAGkAYQBsACAAQQBTACAAbQBwACAATwBOACAAKABjAGwALgBjAG8AZABfAGMAbABpAGUA
+bgB0AGUAIAA9ACAAbQBwAC4AYwBvAGQAXwBjAGwAaQBlAG4AdABlACAAQQBOAEQAIABjAGwALgBj
+AG8AZABfAHIAZQB2AGUAbgBkAGEAIAA9ACAAbQBwAC4AYwBvAGQAXwByAGUAdgBlAG4AZABhACkA
+DQAKAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgAEwARQBGAFQAIABKAE8ASQBOACAAdABiAGwAXwBlAG4AZABlAHIA
+ZQBjAG8AcwAgAEEAUwAgAGUAZAByACAATwBOACAAKABjAGwALgBjAG8AZABfAGMAbABpAGUAbgB0
+AGUAIAA9ACAAZQBkAHIALgBjAG8AZABfAGMAbABpAGUAbgB0AGUAIABBAE4ARAAgAGMAbAAuAGMA
+bwBkAF8AcgBlAHYAZQBuAGQAYQAgAD0AIABlAGQAcgAuAGMAbwBkAF8AcgBlAHYAZQBuAGQAYQAp
+AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIABMAEUARgBUACAASgBPAEkATgAgAHQAYgBsAF8AbABp
+AG0AaQB0AGUAXwBjAHIAZQBkAGkAdABvACAAYwByAGUAZABpAHQAbwAgAE8ATgAgAGMAcgBlAGQA
+aQB0AG8ALgBjAG8AZABfAGMAbABpAGUAbgB0AGUAIAA9ACAAYwBsAC4AYwBvAGQAXwBjAGwAaQBl
+AG4AdABlAA0ACgAJACAAIAAgAAkACQAJAAkACQAJAAkACQAJAAkACQAJACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABBAE4ARAAgAGMAcgBlAGQAaQB0AG8ALgBj
+AG8AZABfAHIAZQB2AGUAbgBkAGEAIAA9ACAAYwBsAC4AYwBvAGQAXwByAGUAdgBlAG4AZABhAA0A
+CgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAVwBIAEUAUgBFACAAIABjAGwALgBzAHQAYQB0AHUAcwAgAEkATgAgACgAIgBBACIA
+KQANAAoACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAQQBOAEQAIABjAGwALgBnAHYAIABJAE4AIAAoADEALAAgADQA
+LAAgADYAKQANAAoACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAQQBOAEQAIABjAGwALgBjAG8AZABfAHIAZQB2AGUA
+bgBkAGEAIAA9ACAAQABjAG8AZABfAHIAZQB2AGUAbgBkAGEADQAKAAkAIAAgACAAIAAgACAAIAAg
 ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAEEA
-TgBEACAAVwBFAEUASwBEAEEAWQAoAGQAYQB0AGEAXwBkAGkAYQApACAATgBPAFQAIABJAE4AIAAo
-ADUALAA2ACkAIAAtAC0AIABFAHgAYwBsAHUAaQAgAHMA4QBiAGEAZABvAHMAIAAoADUAKQAgAGUA
-IABkAG8AbQBpAG4AZwBvAHMAIAAoADYAKQANAAoACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-KQAgAEEAUwAgAGQAaQBhAHMAXwB1AHQAZQBpAHMALAANAAoACQAJACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAALQAtACAARABpAGEAcwAgAGQAZQBjAG8AcgByAGkAZABvAHMAIABhAHQA6QAgAGEAIABk
-AGEAdABhAF8AZQBtAGkAcwBzAGEAbwANAAoACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAARABB
-AFQARQBEAEkARgBGACgAYwAuAGQAYQB0AGEAXwBlAG0AaQBzAHMAYQBvACwAIABjAC4AZABhAHQA
-YQBfAGkAbgBpAGMAaQBhAGwAKQAgAEEAUwAgAGQAaQBhAHMAXwBkAGUAYwBvAHIAcgBpAGQAbwBz
-ACwADQAKAAkACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAC0ALQAgAEQAaQBhAHMAIAByAGUAcwB0
-AGEAbgB0AGUAcwAgAGEAdADpACAAbwAgAGYAaQBuAGEAbAAgAGQAbwAgAG0A6gBzAA0ACgAJAAkA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIABEAEEAVABFAEQASQBGAEYAKABjAC4AZABhAHQAYQBfAGYA
-aQBuAGEAbAAsACAAYwAuAGQAYQB0AGEAXwBlAG0AaQBzAHMAYQBvACkAIAArACAAMQAgAEEAUwAg
-AGQAaQBhAHMAXwByAGUAcwB0AGEAbgB0AGUAcwAsAA0ACgAJAAkAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAtAC0AIABEAGkAYQAgAGEAbgB0AGUAcgBpAG8AcgAgAOAAIABkAGEAdABhAF8AZQBtAGkA
-cwBzAGEAbwANAAoACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAARABBAFQARQBfAFMAVQBCACgA
-YwAuAGQAYQB0AGEAXwBlAG0AaQBzAHMAYQBvACwAIABJAE4AVABFAFIAVgBBAEwAIAAxACAARABB
-AFkAKQAgAEEAUwAgAGQAaQBhAF8AYQBuAHQAZQByAGkAbwByACwADQAKACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgAC0ALQAgAE0A6gBzACAAYQB0AHUAYQBsAA0ACgAJAAkA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIABNAE8ATgBUAEgAKABjAC4AZABhAHQAYQBfAGUAbQBpAHMA
-cwBhAG8AKQAgAEEAUwAgAG0AZQBzAF8AYQB0AHUAYQBsACwADQAKAAkACQAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgAC0ALQAgAEEAbgBvACAAQQB0AHUAYQBsAA0ACgAJAAkAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIABZAEUAQQBSACgAYwAuAGQAYQB0AGEAXwBlAG0AaQBzAHMAYQBvACkAIABBAFMAIABh
-AG4AbwBfAGEAdAB1AGEAbAAsAA0ACgAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAtAC0AIABN
-AOoAcwAgAGEAbgB0AGUAcgBpAG8AcgANAAoACQAJACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAATQBP
-AE4AVABIACgARABBAFQARQBfAFMAVQBCACgAYwAuAGQAYQB0AGEAXwBlAG0AaQBzAHMAYQBvACwA
-IABJAE4AVABFAFIAVgBBAEwAIAAxACAATQBPAE4AVABIACkAKQAgAEEAUwAgAG0AZQBzAF8AYQBu
-AHQAZQByAGkAbwByACwADQAKAAkACQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAC0ALQAgAEEAbgBv
-ACAAYQBuAHQAZQByAGkAbwByAA0ACgAJAAkAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABZAEUAQQBS
-ACgARABBAFQARQBfAFMAVQBCACgAYwAuAGQAYQB0AGEAXwBlAG0AaQBzAHMAYQBvACwAIABJAE4A
-VABFAFIAVgBBAEwAIAAxACAAWQBFAEEAUgApACkAIABBAFMAIABhAG4AbwBfAGEAbgB0AGUAcgBp
-AG8AcgANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAARgBSAE8ATQAgAGMAYQBsAGUAbgBkAGEAcgBpAG8AIABj
-ACAAAS9FAHIAcgBvACAAYQBvACAAcwBhAGwAdgBhACAAcABsAGEAbgBpAGwAaABhACAAAEkwADAA
-MAAyADQANQAwADAALQAwADAAMAAwAC0AMAAwADAAMAAtAEMAMAAwADAALQAwADAAMAAwADAAMAAw
-ADAAMAAwADQANgABMUUAcgByAG8AIABhAG8AIABlAHgAZQBjAHUAdABhAHIAIABhACAAbQBhAGMA
-cgBvAAABAHFTAFQAXwAxAGQANQAzADQAOABiADMAZgA2ADIAYwA0AGYAYQAyADkAZQBkAGYAMAA4
-ADUAYwBhAGYAZgA4ADQAZAAxAGQALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIA
-YwBlAHMAAAAAAHqan0hAnsZJmE8ixJcUTjcABCABAQgDIAABBSABARERBCABAQ4GIAEBEYCBBCAB
-AQYJIAIBEoCdEoCdBSACAQ4OBiABARKAnQYHAhI9EkEDIAAOBQACDg4OBSACAQ4cBiABElESURAH
-BxI9EkkSTRJRElUSRRJBBCAAEkkFIAEBEj0EIAASTQMgABwEIAASOQMgAAIEIAASRQYHBAgODg4E
-IAASYQUgABKAzQYgARKA0RwEAAEIHAYAAw4ODg4JBwQSCA4SRRJBBSACDggDBSAAEoDdAgYOCCAF
-AggODg4IDgcHEmkSaRJpEm0ICBJBBAABAg4GAAESgOUOBSAAEoDxBSAAEoD1BSABEm0OBiABARKA
-6QUgABKA+QcgAhKA+QgIBCABDggEIAEBHAMgAAgEIAEcCAUgABKBAQYgARKA+Q4GBwISIBJBCAAB
-EoCdEYEFBgABHBKAnQIGHAMAAAEIAAESgJ0RgRkFIAASgR0HIAIBDhKBHQi3elxWGTTgiQjFaH/I
-iWnETQiJhF3NgIDMkQjqFZ/ap4FZoQQAAAAABAEAAAAEAgAAAAEcARMBGwMGEjkDBhJ5AwYSfQMG
-EhQCBggDBhE8BCAAEj0FIAESRQ4IIAQBEmEODg4JIAUBEmUODg4IBiADAQ4OCAQAABJ5BAAAEn0F
-AAEBEn0EAAASFBMgDxIkDhwcHBwcHBwcHBwcHBwcIiAfHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwc
-HBwcHBwcHBwEIAASMAQgAQECBiADARwcHAQIABJ5BAgAEn0ECAASFAQIABIwAwgADgMIAAIIAQAI
-AAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAAKAEAI1NUXzFkNTM0
-OGIzZjYyYzRmYTI5ZWRmMDg1Y2FmZjg0ZDFkAAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMjQA
-AEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNwEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUS
-Lk5FVCBGcmFtZXdvcmsgNC43CAEAgwcAAAAACAEADwAAAAAACAEAAwEAAAAACAEAPAIAAAAACAEA
-AAAAAAAACAEALgEAAAAACAEALgIAAAAACAEAAwAAAAAACAEAFQEAAAAACAEAGwEAAAAABgEAAgAA
-ACkBACQwMDAyNDQxMy0wMDAwLTAwMDAtQzAwMC0wMDAwMDAwMDAwNDYAAFYBAChNaWNyb3NvZnQu
-T2ZmaWNlLkludGVyb3AuRXhjZWwuQXBwRXZlbnRzKE1pY3Jvc29mdC5PZmZpY2UuSW50ZXJvcC5F
-eGNlbC5BcHBFdmVudHMAAFgBACQwMDAyMDgxMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwNDYu
-TWljcm9zb2Z0Lk9mZmljZS5JbnRlcm9wLkV4Y2VsLkFwcEV2ZW50c19FdmVudAAAKQEAJDAwMDIw
-OEQ1LTAwMDAtMDAwMC1DMDAwLTAwMDAwMDAwMDA0NgAAXwEAWlN5c3RlbS5PYmplY3QsIG1zY29y
-bGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3
-YTVjNTYxOTM0ZTA4OQAAKQEAJDAwMDIwOERBLTAwMDAtMDAwMC1DMDAwLTAwMDAwMDAwMDA0NgAA
-KQEAJDAwMDI0NDEyLTAwMDAtMDAwMC1DMDAwLTAwMDAwMDAwMDA0NgAAYAEALU1pY3Jvc29mdC5P
-ZmZpY2UuSW50ZXJvcC5FeGNlbC5Xb3JrYm9va0V2ZW50cy1NaWNyb3NvZnQuT2ZmaWNlLkludGVy
-b3AuRXhjZWwuV29ya2Jvb2tFdmVudHMAAF0BACQwMDAyMDgxMy0wMDAwLTAwMDAtYzAwMC0wMDAw
-MDAwMDAwNDYzTWljcm9zb2Z0Lk9mZmljZS5JbnRlcm9wLkV4Y2VsLldvcmtib29rRXZlbnRzX0V2
-ZW50AAApAQAkMDAwMjA4REItMDAwMC0wMDAwLUMwMDAtMDAwMDAwMDAwMDQ2AAANAQAIX0RlZmF1
-bHQAAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBt
-c2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2Vu
-PWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAA
-AAAAAAAAAABQQURQQURQtAAAAHCIAAAAAAAAAAAAAIqIAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAB8iAAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAA
+TgBEACAAYwBsAC4AZABhAHQAYQBfAGMAYQBkAGEAcwB0AHIAbwAgADwAIABMAEEAUwBUAF8ARABB
+AFkAKABAAEQAYQB0AGEAKQABOUUAcgByAG8AIABhAG8AIABjAG8AbgBzAHUAbAB0AGEAIABuAG8A
+IABNAFkAUwBRAEwAIAAtACAAAS9FAHIAcgBvACAAYQBvACAAcwBhAGwAdgBhACAAcABsAGEAbgBp
+AGwAaABhACAAAEkwADAAMAAyADQANQAwADAALQAwADAAMAAwAC0AMAAwADAAMAAtAEMAMAAwADAA
+LQAwADAAMAAwADAAMAAwADAAMAAwADQANgABMUUAcgByAG8AIABhAG8AIABlAHgAZQBjAHUAdABh
+AHIAIABhACAAbQBhAGMAcgBvAAABAHFTAFQAXwAxAGQANQAzADQAOABiADMAZgA2ADIAYwA0AGYA
+YQAyADkAZQBkAGYAMAA4ADUAYwBhAGYAZgA4ADQAZAAxAGQALgBQAHIAbwBwAGUAcgB0AGkAZQBz
+AC4AUgBlAHMAbwB1AHIAYwBlAHMAAHodiaVWgFZAu7R3a2/elJ4ABCABAQgDIAABBSABARERBCAB
+AQ4GIAEBEYCBBCABAQYJIAIBEoCdEoCdBSACAQ4OBiABARKAnQYHAhI9EkEDIAAOBQACDg4OBSAC
+AQ4cBiABElESURAHBxI9EkkSTRJRElUSRRJBBCAAEkkFIAEBEj0EIAASTQMgABwEIAASOQMgAAIE
+IAASRQYHBAgODg4EIAASYQUgABKAzQYgARKA0RwEAAEIHAYAAw4ODg4EAAEBDgkHBBIIDhJFEkEF
+IAIOCAMFIAASgOECBg4IIAUCCA4ODggOBwcSaRJpEmkSbQgIEkEEAAECDgYAARKA6Q4FIAASgPUF
+IAASgPkFIAESbQ4GIAEBEoDtBSAAEoD9ByACEoD9CAgEIAEOCAQgAQEcAyAACAQgARwIBSAAEoEF
+BiABEoD9DgYHAhIgEkEIAAESgJ0RgQkGAAEcEoCdAgYcAwAAAQgAARKAnRGBHQUgABKBIQcgAgEO
+EoEhCLd6XFYZNOCJCMVof8iJacRNCImEXc2AgMyRCOoVn9qngVmhBAAAAAAEAQAAAAQCAAAAARwB
+EwEbAwYSOQMGEnkDBhJ9AwYSFAIGCAMGETwEIAASPQUgARJFDgggBAESYQ4ODgkgBQESZQ4ODggG
+IAMBDg4IBAAAEnkEAAASfQUAAQESfQQAABIUEyAPEiQOHBwcHBwcHBwcHBwcHBwiIB8cHBwcHBwc
+HBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHAQgABIwBCABAQIGIAMBHBwcBAgAEnkECAASfQQIABIU
+BAgAEjADCAAOAwgAAggBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQAC
+AAAAAAAoAQAjU1RfMWQ1MzQ4YjNmNjJjNGZhMjllZGYwODVjYWZmODRkMWQAAAUBAAAAABYBABFD
+b3B5cmlnaHQgQCAgMjAyNAAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFt
+ZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjcIAQCDBwAAAAAIAQAPAAAAAAAIAQAD
+AQAAAAAIAQA8AgAAAAAIAQAAAAAAAAAIAQAuAQAAAAAIAQAuAgAAAAAIAQADAAAAAAAIAQAVAQAA
+AAAGAQACAAAAKQEAJDAwMDI0NDEzLTAwMDAtMDAwMC1DMDAwLTAwMDAwMDAwMDA0NgAAVgEAKE1p
+Y3Jvc29mdC5PZmZpY2UuSW50ZXJvcC5FeGNlbC5BcHBFdmVudHMoTWljcm9zb2Z0Lk9mZmljZS5J
+bnRlcm9wLkV4Y2VsLkFwcEV2ZW50cwAAWAEAJDAwMDIwODEzLTAwMDAtMDAwMC1jMDAwLTAwMDAw
+MDAwMDA0Ni5NaWNyb3NvZnQuT2ZmaWNlLkludGVyb3AuRXhjZWwuQXBwRXZlbnRzX0V2ZW50AAAp
+AQAkMDAwMjA4RDUtMDAwMC0wMDAwLUMwMDAtMDAwMDAwMDAwMDQ2AABfAQBaU3lzdGVtLk9iamVj
+dCwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlU
+b2tlbj1iNzdhNWM1NjE5MzRlMDg5AAApAQAkMDAwMjA4REEtMDAwMC0wMDAwLUMwMDAtMDAwMDAw
+MDAwMDQ2AAApAQAkMDAwMjQ0MTItMDAwMC0wMDAwLUMwMDAtMDAwMDAwMDAwMDQ2AABgAQAtTWlj
+cm9zb2Z0Lk9mZmljZS5JbnRlcm9wLkV4Y2VsLldvcmtib29rRXZlbnRzLU1pY3Jvc29mdC5PZmZp
+Y2UuSW50ZXJvcC5FeGNlbC5Xb3JrYm9va0V2ZW50cwAAXQEAJDAwMDIwODEzLTAwMDAtMDAwMC1j
+MDAwLTAwMDAwMDAwMDA0NjNNaWNyb3NvZnQuT2ZmaWNlLkludGVyb3AuRXhjZWwuV29ya2Jvb2tF
+dmVudHNfRXZlbnQAACkBACQwMDAyMDhEQi0wMDAwLTAwMDAtQzAwMC0wMDAwMDAwMDAwNDYAAA0B
+AAhfRGVmYXVsdAAAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VS
+ZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGlj
+S2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJj
+ZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAnJcAAAAAAAAAAAAAtpcAAAAgAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAKiXAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAA
+EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAA
+AAEAAAAAAEgAAABYoAAAGgQAAAAAAAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkA
+TgBGAE8AAAAAAL0E7/4AAAEAAAABAPE4qSQAAAEA8TipJD8AAAAAAAAABAAAAAIAAAAAAAAAAAAA
+AAAAAABEAAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEA
+dABpAG8AbgAAAAAAAACwBHoDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAAB
+ADAAMAAwADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8A
+bQBwAGEAbgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABp
+AG8AbgAAAAAAUwBUAF8AMQBkADUAMwA0ADgAYgAzAGYANgAyAGMANABmAGEAMgA5AGUAZABmADAA
+OAA1AGMAYQBmAGYAOAA0AGQAMQBkAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAx
+AC4AMAAuADkAMwA4ADUALgAxADQANQA3ADcAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEA
+bQBlAAAAUwBUAF8AMAA1ADEANwAxADcAYwA0AGEAYwBhAGMANAA3AGUANwBhADIAMQBlADQAZQBj
+AGIAOQBjAGQAYgA0ADMAOQBkAC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkA
+ZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAyADQAAAAqAAEAAQBMAGUAZwBh
+AGwAVAByAGEAZABlAG0AYQByAGsAcwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkA
+bABlAG4AYQBtAGUAAABTAFQAXwAwADUAMQA3ADEANwBjADQAYQBjAGEAYwA0ADcAZQA3AGEAMgAx
+AGUANABlAGMAYgA5AGMAZABiADQAMwA5AGQALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQA
+TgBhAG0AZQAAAAAAUwBUAF8AMQBkADUAMwA0ADgAYgAzAGYANgAyAGMANABmAGEAMgA5AGUAZABm
+ADAAOAA1AGMAYQBmAGYAOAA0AGQAMQBkAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkA
+bwBuAAAAMQAuADAALgA5ADMAOAA1AC4AMQA0ADUANwA3AAAAAABGAA8AAQBBAHMAcwBlAG0AYgBs
+AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA5ADMAOAA1AC4AMQA0ADUANwA3AAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAA
-AAAAAAAAAAABAAAAAABIAAAAWKAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBP
-AE4AXwBJAE4ARgBPAAAAAAC9BO/+AAABAAAAAQDvZSIkAAABAO9lIiQ/AAAAAAAAAAQAAAACAAAA
-AAAAAAAAAAAAAAAARAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBu
-AHMAbABhAHQAaQBvAG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8A
-AABWAwAAAQAwADAAMAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgAB
-AAEAQwBvAG0AcABhAG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIA
-aQBwAHQAaQBvAG4AAAAAAFMAVABfADEAZAA1ADMANAA4AGIAMwBmADYAMgBjADQAZgBhADIAOQBl
-AGQAZgAwADgANQBjAGEAZgBmADgANABkADEAZAAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8A
-bgAAAAAAMQAuADAALgA5ADIANQAwAC4AMgA2ADAAOQA1AAAAAABwACgAAQBJAG4AdABlAHIAbgBh
-AGwATgBhAG0AZQAAAFMAVABfADAANQAxADcAMQA3AGMANABhAGMAYQBjADQANwBlADcAYQAyADEA
-ZQA0AGUAYwBiADkAYwBkAGIANAAzADkAZAAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBw
-AHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgA0AAAAKgABAAEA
-TABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBh
-AGwARgBpAGwAZQBuAGEAbQBlAAAAUwBUAF8AMAA1ADEANwAxADcAYwA0AGEAYwBhAGMANAA3AGUA
-NwBhADIAMQBlADQAZQBjAGIAOQBjAGQAYgA0ADMAOQBkAC4AZABsAGwAAABoACQAAQBQAHIAbwBk
-AHUAYwB0AE4AYQBtAGUAAAAAAFMAVABfADEAZAA1ADMANAA4AGIAMwBmADYAMgBjADQAZgBhADIA
-OQBlAGQAZgAwADgANQBjAGEAZgBmADgANABkADEAZAAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBl
-AHIAcwBpAG8AbgAAADEALgAwAC4AOQAyADUAMAAuADIANgAwADkANQAAAAAARgAPAAEAQQBzAHMA
-ZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOQAyADUAMAAuADIANgAwADkANQAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAADAAA
+AMg3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1532,15 +1564,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AIAAAAwAAACcOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                 </ScriptProject>
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1548,8 +1572,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</Bi
               DTS:refId="Package\Contêiner do Loop Foreach\REVENDA\ENVIAR EMAIL"
               DTS:CreationName="Microsoft.ScriptTask"
               DTS:Description="Tarefa Script"
-              DTS:Disabled="True"
-              DTS:DTSID="{0F9F27BB-DB95-45AE-AC61-973364C3B8CB}"
+              DTS:DTSID="{aa7a8f13-4431-4e7c-99db-d50f98aa9366}"
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ENVIAR EMAIL"
@@ -1557,42 +1580,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</Bi
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
-                  Name="ST_38fc918b02664c3885bb73fc51fd0b35"
+                  Name="ST_bc3962b41cde43a09fb413840d83814a"
                   VSTAMajorVersion="16"
                   VSTAMinorVersion="0"
                   Language="CSharp"
                   ReadOnlyVariables="System::PackageName,$Package::Ano,$Package::Email,$Package::Mes"
                   ReadWriteVariables="User::Revenda">
-                  <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_00387ddfa53f4a61a67305738af9ad71")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_00387ddfa53f4a61a67305738af9ad71")]
-[assembly: AssemblyCopyright("Copyright @  2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1713,6 +1706,35 @@ using System.Runtime.CompilerServices;
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_00387ddfa53f4a61a67305738af9ad71.Properties.Settings.get_Default():ST_00387ddfa53f4a61a67305738af9ad71.Properties.Sett" +
+    "ings")]
+
+namespace ST_00387ddfa53f4a61a67305738af9ad71.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -1730,8 +1752,8 @@ using MailKit.Security;
 using MailKit.Net.Smtp;
 using MySql.Data.MySqlClient;
 using System.Globalization;
-using Mysqlx.Datatypes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Windows.Forms;
 
 #endregion
 
@@ -1755,12 +1777,13 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
                 string packageName = Dts.Variables["System::PackageName"].Value.ToString();
                 string Email = Dts.Variables["$Package::Email"].Value.ToString();
 
-
                 DateTime mesAnterior = new DateTime(ano, mes, 1);
                 string mesFormatado = mesAnterior.ToString("MM. MMMM", new CultureInfo("pt-BR")).ToUpper();
 
-                string destino = $@"Y:\PUBLICO\ANALISTAS\06 ASSESSMENT\{ano}\{mesFormatado}\{packageName}"
-                                + @"\" + (revenda == 1 ? "201201 - " : "223402 - ") + packageName + ".xlsx";
+                string destino = $@"Y:\PUBLICO\ANALISTAS\06 ASSESSMENT\{ano}\"
+                             + mesFormatado
+                             + @"\" + packageName
+                             + @"\" + ( revenda == 1 ? "201201 - " : "223402 - ") + packageName + ".xlsx";
 
                 string attachmentPath = destino;
 
@@ -1780,7 +1803,7 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
                                                  <br>
                                                  <br>
                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Segue em anexo o arquivo <strong>" +
-                                                  ( revenda == 1 ? "201201 - " : "223401 - ") +
+                                                  ( revenda  == 1 ? "201201 - " : "223401 - ") +
                                                   packageName +
                                                   "</strong>, referente ao item <strong>" + packageName + " do ASSESSMENT</strong> com o fechamento de " + mesAnterior.ToString("MMMM 'DE' yyyy", new CultureInfo("pt-BR")).ToUpper() + ", em questão, para que seja preenchido com as devidas informações. " +
                                                   "Ressalto que o preenchimento das informações deve ser realizado até o <strong>dia 10</strong> deste mês. " +
@@ -1813,34 +1836,26 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
 
                 var message = new MimeMessage();
                 message.From.Add(new MailboxAddress(null, "gustavo.brunoro@checon.com.br"));                
-               
+                
                 // Definindo a prioridade como alta
                 message.Priority = MessagePriority.Urgent;  // Define o e-mail como urgente
                 message.Headers.Add("X-Priority", "1");  // Definindo a prioridade do cabeçalho
 
-                string[] destinatarios;
+                string[] destinatarios;               
 
-                if (Email == "P")
+                if ( Email == "P")
                 {
 
-                    if ( revenda == 1)
-                    {
-                        destinatarios = new string[] {
-                                                     "henrique.dantas@checon.com.br",
-                                                     "uelvis.cordeiro@checon.com.br"
-                                                 };
-                    }
-                    else
-                    {
-                        destinatarios = new string[] {
-                                                     "gevaldo.junior@checon.com.br"
+                    destinatarios = new string[] {
+                                                     "gustavo.brunoro@checon.com.br",
+                                                     "Rosimaria.bomfim@checon.com.br"                                                    
                                                   };
-                    }
 
                     string[] destinatariosCc = {
-
-                                             "ednelson.pinto@checon.com.br"
+                                              "maicon.costa@checon.com.br",
+                                              "ednelson.pinto@checon.com.br"
                                            };
+
 
                     // Adiciona cada destinatário ao campo To
                     foreach (var email in destinatarios)
@@ -1848,7 +1863,7 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
                         message.To.Add(new MailboxAddress(null, email));
                     }
 
-                    //// Adiciona cada destinatário ao campo Cc
+                    // Adiciona cada destinatário ao campo Cc
                     foreach (var email in destinatariosCc)
                     {
                         message.Cc.Add(new MailboxAddress(null, email));
@@ -1858,7 +1873,7 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
                     message.To.Add(new MailboxAddress(null, "gustavo.brunoro@checon.com.br"));
                 }
 
-                message.Subject = (revenda == 1 ? "201201 - " : "223401 - ") + packageName + " (ASSESSMENT)";
+                message.Subject = (revenda == 1 ? "201201 - " : "223402 - ") + packageName + " (ASSESSMENT)";
 
                 message.Body = bodyBuilder.ToMessageBody();
 
@@ -1942,7 +1957,7 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="ST_38fc918b02664c3885bb73fc51fd0b35.csproj"
+                    Name="ST_bc3962b41cde43a09fb413840d83814a.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
@@ -1955,7 +1970,7 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ST_00387ddfa53f4a61a67305738af9ad71</RootNamespace>
-    <AssemblyName>ST_38fc918b02664c3885bb73fc51fd0b35</AssemblyName>
+    <AssemblyName>ST_bc3962b41cde43a09fb413840d83814a</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
@@ -2122,21 +2137,21 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
                     Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
   <msb:PropertyGroup>
-    <msb:CodeName>ST_38fc918b02664c3885bb73fc51fd0b35</msb:CodeName>
+    <msb:CodeName>ST_bc3962b41cde43a09fb413840d83814a</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_38fc918b02664c3885bb73fc51fd0b35</msb:DisplayName>
-    <msb:ProjectId>{9C665B59-E31F-454A-9696-0446F43BBC78}</msb:ProjectId>
+    <msb:DisplayName>ST_bc3962b41cde43a09fb413840d83814a</msb:DisplayName>
+    <msb:ProjectId>{A09C69C4-4404-4AB0-9727-726378EC4087}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
-    <msb:Project Include="ST_38fc918b02664c3885bb73fc51fd0b35.csproj" />
-    <msb:File Include="ScriptMain.cs" />
+    <msb:Project Include="ST_bc3962b41cde43a09fb413840d83814a.csproj" />
+    <msb:File Include="Properties\Resources.resx" />
     <msb:File Include="Properties\Settings.settings" />
     <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
     <msb:File Include="Properties\Resources.Designer.cs" />
     <msb:File Include="Properties\Settings.Designer.cs" />
     <msb:File Include="packages.config" />
     <msb:File Include="app.config" />
+    <msb:File Include="ScriptMain.cs" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
@@ -2146,34 +2161,35 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
   <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
 </packages>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_00387ddfa53f4a61a67305738af9ad71")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_00387ddfa53f4a61a67305738af9ad71")]
+[assembly: AssemblyCopyright("Copyright @  2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_00387ddfa53f4a61a67305738af9ad71.Properties.Settings.get_Default():ST_00387ddfa53f4a61a67305738af9ad71.Properties.Sett" +
-    "ings")]
-
-namespace ST_00387ddfa53f4a61a67305738af9ad71.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -2252,44 +2268,44 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71.Properties {
     }
 }]]></ProjectItem>
                   <BinaryItem
-                    Name="ST_38fc918b02664c3885bb73fc51fd0b35.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                    Name="ST_bc3962b41cde43a09fb413840d83814a.dll">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
-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
+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
-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
+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
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAYC8AAAAgAAAAMAAAAAIA
+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
-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
+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
-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
+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
-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
+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
-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
+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
-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
+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
-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
+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
@@ -2297,27 +2313,27 @@ AZsEDgCJBcEHDgDJCMEHDgDbAMEHBgDUBJ0DEgDsB2gFBgBCBZsEFgD3B8MGWwA/CAAABgCrBJsE
 BgAPAtwFBgCbB5sEBgCZBQ8GBgBcBQYFGgDfAVQEGgBAAlQEGgCsAfEEBgD0Ae8FCgBCBPADHgC5
 BjEBHgDnADEBBgAKCJsEBgB5BZsEBgDKA5sEBgAnAJsEDgAtBcEHDgArCMEHDgA7B8EHDgArB8EH
 DgCoCMEHDgAgCMEHEgCzAMkHEgADB7gIEgASCMkHEgBKB8kHBgAgAZsEBgDwAJsECgCxBfADBgDL
-BJsEBgBbAZsEBgD8AJsEBgCGCBsFAAAAAFEAAAAAAAEAAQABABAA5gQBADkAAQABAAAAEAAqBoYG
-aQABAAUAAAEQAOUGhgZ9AAMACQADAQAAZAcAAGEABAAMABEAsARrAREAgAFvAREAvwBzAQYGeQB3
-AVaAIwd6AVaAYAF6AVAgAAAAAIYA7AQGAAEABCUAAAAAhgBTBVwAAQCIJQAAAACGAIEAXAABAI8l
-AAAAAIYYzwUGAAEAlyUAAAAAgxjPBQYAAQCfJQAAAACTCJUFfgEBAMslAAAAAJMIaAGDAQEA0iUA
-AAAAkwh0AYgBAQDaJQAAAACWCNEHjgECAOElAAAAAIYYzwUGAAIA6SUAAAAAkRjVBZMBAgAAAAEA
+BJsEBgBbAZsEBgD8AJsEBgCGCBsFAAAAAC0AAAAAAAEAAQABABAA5gQBADkAAQABAAAAEAAqBoYG
+aQABAAUAAAEQAOUGhgZ9AAMACQADAQAAZAcAAGEABAAMABEAsARpAREAgAFtAREAvwBxAQYGVQB1
+AVaAIwd4AVaAYAF4AVAgAAAAAIYA7AQGAAEABCUAAAAAhgBTBVwAAQCIJQAAAACGAIEAXAABAI8l
+AAAAAIYYzwUGAAEAlyUAAAAAgxjPBQYAAQCfJQAAAACTCJUFfAEBAMslAAAAAJMIaAGBAQEA0iUA
+AAAAkwh0AYYBAQDaJQAAAACWCNEHjAECAOElAAAAAIYYzwUGAAIA6SUAAAAAkRjVBZEBAgAAAAEA
 lwMJAM8FAQARAM8FBgAZAM8FCgApAM8FEAAxAM8FEAA5AM8FEABBAM8FEABJAM8FEABRAM8FEABZ
 AM8FEABhAM8FEABpAM8FBgDJAM8FBgDxAM8FFQABAc8FBgBxAFwHQAAJAbUGRgARAZIETAAZAY0D
-UwAhASUAVwDRAMgDXAB5AM8FYADhAM8FEAB5AMgDZwAxAakFXAAxAZQHbwAxAY0HdwAxAY0HfQCB
-AM8FBgCBAHUIEACBACAGhABBAaoAigCJAJwAEACBAHIHhACRAM8FBgCRAKIEkgBRAc8FmABJAaoA
-ngCRAJsIpQCRABcHrABpAaoAmAAxAY8IsgCRAEwFkgCRAJUAkgCRAKIHEACBAGcIuACRAF4IvQCh
-AM8FBgBxAa4HwwBxAdIBzgCBAa4A1gCRAVEB4QCpAM8AXAAxAY0H5gBxAbYH7ABxAcQBBgCZAcQB
-BgAJAd0HAQAJAYIH8wAxAdQI+QChAcUF/AB5AEgICgF5AFAIDwGpAcwBFQGpARkEHAGpAS8EHAGp
-AbwEHAFxAM8FBgDRAM8FBgCxAQ4BJgGxAYIILwHZAM8FNQH5AM8FBgAIABQAYQEIABgAZgEpAHMA
-zgEuAAsApgEuABMArwEuABsAzgEuACMA1wEuACsAAAIuADMAAAIuADsAAAIuAEMA1wEuAEsABgIu
-AFMAAAIuAFsAHQJDAGMAZgFJAHMAzgFhAHsAZgFjAGsAZgEbAAUBAwABAAQAAwAAAJkFlwEAAIgB
-nAEAANUHoQECAAYAAwACAAcABQABAAgABQACAAkABwAEgAAAAQAAAIwkIncAAAAAAAAtAAAABAAA
-AAAAAAAAAAAAPQGMAAAAAAAQAAAAAAAAAAAAAABGAdEDAAAAAAQABgAAAAAAAAAAAE8BwQcAAAAA
-BAAGAAAAAAAAAAAAWAHJBwAAAAAEAAAAAAAAAAAAAAA9Ae4GAAAAAAQAAAAAAAAAAAAAAD0BmwQA
-AAAAEAAAAAAAAAAAAAAARgFaAAAAAAAAAAAAAQAAADQGAAAFAAIAAAAAU1RfMDAzODdkZGZhNTNm
-NGE2MWE2NzMwNTczOGFmOWFkNzEAVG9JbnQzMgBTVF8zOGZjOTE4YjAyNjY0YzM4ODViYjczZmM1
-MWZkMGIzNQA8TW9kdWxlPgBNaWNyb3NvZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAdmFsdWVfXwBh
+UwAhASUAVwDRAMgDXAB5AM8FYADhAM8FEAB5AMgDZwAxAakFXAAxAZQHbwAxAY0HdQAxAY0HewCB
+AM8FBgCBAHUIEACBACAGggBBAaoAiACJAJwAEACBAHIHggCRAM8FBgCRAKIEkABRAc8FlgBJAaoA
+nACRAJsIowCRABcHqgBpAaoAlgAxAY8IsACRAEwFkACRAJUAkACRAKIHEACBAGcItgCRAF4IuwCh
+AM8FBgBxAa4HwQBxAdIBzACBAa4A1ACRAVEB3wCpAM8AXAAxAY0H5ABxAbYH6gBxAcQBBgCZAcQB
+BgAJAd0HAQAJAYIH8QAxAdQI9wChAcUF+gB5AEgICAF5AFAIDQGpAcwBEwGpARkEGgGpAS8EGgGp
+AbwEGgFxAM8FBgDRAM8FBgCxAQ4BJAGxAYIILQHZAM8FMwH5AM8FBgAIABQAXwEIABgAZAEpAHMA
+zAEuAAsApAEuABMArQEuABsAzAEuACMA1QEuACsA/gEuADMA/gEuADsA/gEuAEMA1QEuAEsABAIu
+AFMA/gEuAFsAGwJDAGMAZAFJAHMAzAFhAHsAZAFjAGsAZAEbAAMBAwABAAQAAwAAAJkFlQEAAIgB
+mgEAANUHnwECAAYAAwACAAcABQABAAgABQACAAkABwAEgAAAAQAAAMUk/EsAAAAAAABdAAAABAAA
+AAAAAAAAAAAAOwGMAAAAAAAQAAAAAAAAAAAAAABEAdEDAAAAAAQABgAAAAAAAAAAAE0BwQcAAAAA
+BAAGAAAAAAAAAAAAVgHJBwAAAAAEAAAAAAAAAAAAAAA7Ae4GAAAAAAQAAAAAAAAAAAAAADsBmwQA
+AAAAEAAAAAAAAAAAAAAARAE2AAAAAAAAAAAAAQAAADQGAAAFAAIAAAAAU1RfMDAzODdkZGZhNTNm
+NGE2MWE2NzMwNTczOGFmOWFkNzEAVG9JbnQzMgA8TW9kdWxlPgBNaWNyb3NvZnQuU3FsU2VydmVy
+Lk1hbmFnZWREVFMAdmFsdWVfXwBTVF9iYzM5NjJiNDFjZGU0M2EwOWZiNDEzODQwZDgzODE0YQBh
 c3NpbmF0dXJhAG1zY29ybGliAGdldF9DYwBzZXRfQ29udGVudElkAEFkZABTZW5kAE1haWxTZXJ2
 aWNlAGRlZmF1bHRJbnN0YW5jZQBnZXRfTWVzc2FnZQBNaW1lTWVzc2FnZQBWYXJpYWJsZQBJRGlz
 cG9zYWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBDb25zb2xlAERhdGVU
@@ -2335,8 +2351,8 @@ dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBnZXRfVmFsdWUAdmFsdWUAU3lz
 dGVtLlRocmVhZGluZwBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAE1pY3Jvc29m
 dC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5TY3Jp
 cHRUYXNrAG9wX0dyZWF0ZXJUaGFuT3JFcXVhbABvcF9MZXNzVGhhbk9yRXF1YWwAU2NyaXB0T2Jq
-ZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNUXzM4ZmM5MThiMDI2NjRjMzg4NWJiNzNm
-YzUxZmQwYjM1LmRsbABnZXRfSXRlbQBTeXN0ZW0AZ2V0X0Zyb20ARW51bQByZXNvdXJjZU1hbgBv
+ZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNUX2JjMzk2MmI0MWNkZTQzYTA5ZmI0MTM4
+NDBkODM4MTRhLmRsbABnZXRfSXRlbQBTeXN0ZW0AZ2V0X0Zyb20ARW51bQByZXNvdXJjZU1hbgBv
 cF9HcmVhdGVyVGhhbgBUaW1lU3BhbgBDYW5jZWxsYXRpb25Ub2tlbgBTY3JpcHRNYWluAFN5c3Rl
 bS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAEF0
 dGFjaG1lbnRDb2xsZWN0aW9uAEV4Y2VwdGlvbgBnZXRfVG8Ac2F1ZGFjYW8AQ3VsdHVyZUluZm8A
@@ -2358,152 +2374,152 @@ QXNzZW1ibHkAb3BfRXF1YWxpdHkAc2V0X1ByaW9yaXR5AE1lc3NhZ2VQcmlvcml0eQBNYWlsS2l0
 LlNlY3VyaXR5AE1pbWVFbnRpdHkARW1wdHkAAAAAGyQAUABhAGMAawBhAGcAZQA6ADoAQQBuAG8A
 ABskAFAAYQBjAGsAYQBnAGUAOgA6AE0AZQBzAAAbVQBzAGUAcgA6ADoAUgBlAHYAZQBuAGQAYQAA
 J1MAeQBzAHQAZQBtADoAOgBQAGEAYwBrAGEAZwBlAE4AYQBtAGUAAB8kAFAAYQBjAGsAYQBnAGUA
-OgA6AEUAbQBhAGkAbAAAEU0ATQAuACAATQBNAE0ATQAAC3AAdAAtAEIAUgABXVkAOgBcAFAAVQBC
+OgA6AEUAbQBhAGkAbAAAEU0ATQAuACAATQBNAE0ATQAAC3AAdAAtAEIAUgABT1kAOgBcAFAAVQBC
 AEwASQBDAE8AXABBAE4AQQBMAEkAUwBUAEEAUwBcADAANgAgAEEAUwBTAEUAUwBTAE0ARQBOAFQA
-XAB7ADAAfQBcAHsAMQB9AFwAewAyAH0AAANcAAATMgAyADMANAAwADIAIAAtACAAARMyADAAMQAy
-ADAAMQAgAC0AIAABCy4AeABsAHMAeAAARVkAOgBcAFAAVQBCAEwASQBDAE8AXABBAE4AQQBMAEkA
-UwBUAEEAUwBcAFMAUwBJAFMAXABsAG8AZwBvAC4AcABuAGcAAEtZADoAXABQAFUAQgBMAEkAQwBP
-AFwAQQBOAEEATABJAFMAVABBAFMAXABTAFMASQBTAFwAQQBTAFMARQBTAFMATQBFAE4AVABcAAAT
-XABpAHQAZQBtAC4AcABuAGcAAIIXPABoAHQAbQBsAD4ADQAKACAAIAAgACAAIAAgACAAIAAgACAA
+XAB7ADAAfQBcAAADXAAAEzIAMgAzADQAMAAyACAALQAgAAETMgAwADEAMgAwADEAIAAtACAAAQsu
+AHgAbABzAHgAAEVZADoAXABQAFUAQgBMAEkAQwBPAFwAQQBOAEEATABJAFMAVABBAFMAXABTAFMA
+SQBTAFwAbABvAGcAbwAuAHAAbgBnAABLWQA6AFwAUABVAEIATABJAEMATwBcAEEATgBBAEwASQBT
+AFQAQQBTAFwAUwBTAEkAUwBcAEEAUwBTAEUAUwBTAE0ARQBOAFQAXAAAE1wAaQB0AGUAbQAuAHAA
+bgBnAACCFzwAaAB0AG0AbAA+AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAA8
+AGgAZQBhAGQAPgA8AC8AaABlAGEAZAA+AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
 IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgADwAaABlAGEAZAA+ADwALwBoAGUAYQBkAD4ADQAKACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgADwAYgBvAGQAeQA+AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgADwAYgByAD4ADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAJgBuAGIAcwBwADsAJgBuAGIAcwBwADsAJgBuAGIAcwBwADsAJgBuAGIA
-cwBwADsAJgBuAGIAcwBwADsAUAByAGUAegBhAGQAbwAoAGEAKQAsACAAAIOFDQAKACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAPABiAHIAPgANAAoAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAA8AGIAcgA+AA0ACgAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACYAbgBiAHMAcAA7ACYAbgBiAHMAcAA7ACYAbgBiAHMA
-cAA7ACYAbgBiAHMAcAA7ACYAbgBiAHMAcAA7AEUAcwBwAGUAcgBvACAAcQB1AGUAIABlAHMAdABl
-AGoAYQAgAGIAZQBtAC4AIAANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+ACAAIAA8AGIAbwBkAHkAPgANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
 IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
 ACAAIAA8AGIAcgA+AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
 IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ADwAYgByAD4ADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAJgBu
-AGIAcwBwADsAJgBuAGIAcwBwADsAJgBuAGIAcwBwADsAJgBuAGIAcwBwADsAJgBuAGIAcwBwADsA
-JgBuAGIAcwBwADsAJgBuAGIAcwBwADsAUwBlAGcAdQBlACAAZQBtACAAYQBuAGUAeABvACAAbwAg
-AGEAcgBxAHUAaQB2AG8AIAA8AHMAdAByAG8AbgBnAD4AABMyADIAMwA0ADAAMQAgAC0AIAABSzwA
-LwBzAHQAcgBvAG4AZwA+ACwAIAByAGUAZgBlAHIAZQBuAHQAZQAgAGEAbwAgAGkAdABlAG0AIAA8
-AHMAdAByAG8AbgBnAD4AAFkgAGQAbwAgAEEAUwBTAEUAUwBTAE0ARQBOAFQAPAAvAHMAdAByAG8A
-bgBnAD4AIABjAG8AbQAgAG8AIABmAGUAYwBoAGEAbQBlAG4AdABvACAAZABlACAAAB1NAE0ATQBN
-ACAAJwBEAEUAJwAgAHkAeQB5AHkAAYc/LAAgAGUAbQAgAHEAdQBlAHMAdADjAG8ALAAgAHAAYQBy
-AGEAIABxAHUAZQAgAHMAZQBqAGEAIABwAHIAZQBlAG4AYwBoAGkAZABvACAAYwBvAG0AIABhAHMA
-IABkAGUAdgBpAGQAYQBzACAAaQBuAGYAbwByAG0AYQDnAPUAZQBzAC4AIABSAGUAcwBzAGEAbAB0
-AG8AIABxAHUAZQAgAG8AIABwAHIAZQBlAG4AYwBoAGkAbQBlAG4AdABvACAAZABhAHMAIABpAG4A
-ZgBvAHIAbQBhAOcA9QBlAHMAIABkAGUAdgBlACAAcwBlAHIAIAByAGUAYQBsAGkAegBhAGQAbwAg
-AGEAdADpACAAbwAgADwAcwB0AHIAbwBuAGcAPgBkAGkAYQAgADEAMAA8AC8AcwB0AHIAbwBuAGcA
-PgAgAGQAZQBzAHQAZQAgAG0A6gBzAC4AIADJACAAZQBzAHMAZQBuAGMAaQBhAGwAIABxAHUAZQAg
-AG8AIABpAHQAZQBtACAAcwBlAGoAYQAgAGUAdgBpAGQAZQBuAGMAaQBhAGQAbwAgAG4AbwAgAHAA
-bwByAHQAYQBsACAAZQAgAG4AYQAgAHAAYQBzAHQAYQAgAGQAZQBzAGkAZwBuAGEAZABhACAAPABz
-AHQAcgBvAG4AZwA+AGEAbgB0AGUAcwAgAGQAZQBzAHQAZQAgAHAAcgBhAHoAbwA8AC8AcwB0AHIA
-bwBuAGcAPgAsACAAcABhAHIAYQAgAHEAdQBlACAAcABvAHMAcwBhACAAcwBlAHIAIAByAGUAYQBs
-AGkAegBhAGQAYQBzACAAYQBzACAAZABlAHYAaQBkAGEAcwAgAGEAbgDhAGwAaQBzAGUAcwAgAGUA
-IABjAG8AcgByAGUA5wD1AGUAcwAsACAAYwBhAHMAbwAgAG4AZQBjAGUAcwBzAOEAcgBpAG8ALgAg
-ADwAYgByAD4APABiAHIAPgA8AHMAdAByAG8AbgBnAD4AJgBuAGIAcwBwADsAJgBuAGIAcwBwADsA
-JgBuAGIAcwBwADsAJgBuAGIAcwBwADsAJgBuAGIAcwBwADsAJgBuAGIAcwBwADsAJgBuAGIAcwBw
-ADsAQwBhAHMAbwAgAG8AIABpAHQAZQBtACAAbgDjAG8AIABzAGUAagBhACAAZQB2AGkAZABlAG4A
-YwBpAGEAZABvACAAYwBvAHIAcgBlAHQAYQBtAGUAbgB0AGUALAAgAG8AIABtAGUAcwBtAG8AIABz
-AGUAcgDhACAAZABlAHMAcABvAG4AdAB1AGEAZABvAC4APAAvAHMAdAByAG8AbgBnAD4AIABQAG8A
-cgB0AGEAbgB0AG8ALAAgAOkAIABkAGUAIABlAHgAdAByAGUAbQBhACAAaQBtAHAAbwByAHQA4gBu
-AGMAaQBhACAAcQB1AGUAIABhACAAZQB2AGkAZADqAG4AYwBpAGEAIABzAGUAagBhACAAZgBlAGkA
-dABhACAAYwBvAHIAcgBlAHQAYQBtAGUAbgB0AGUAIABlACAAZABlAG4AdAByAG8AIABkAG8AIABw
-AHIAYQB6AG8AIABlAHMAdABhAGIAZQBsAGUAYwBpAGQAbwAuADwAYgByAD4APABiAHIAPgA8AGQA
-aQB2ACAAcwB0AHkAbABlAD0AJwB0AGUAeAB0AC0AYQBsAGkAZwBuADoAIABjAGUAbgB0AGUAcgA7
-ACcAPgA8AGkAbQBnACAAcwByAGMAPQAiAGMAaQBkADoAaQB0AGUAbQAuAHAAbgBnACIAIABhAGwA
-dAA9ACIASQB0AGUAbQAiACAAcwB0AHkAbABlAD0AJwBkAGkAcwBwAGwAYQB5ADoAIABiAGwAbwBj
-AGsAOwAgAG0AYQByAGcAaQBuADoAIAAwACAAYQB1AHQAbwA7ACcAIAAvAD4APAAvAGQAaQB2AD4A
-PABiAHIAPgAmAG4AYgBzAHAAOwBPACAAcABvAHIAdABhAGwAIABwAGEAcgBhACAAYQAgAGUAdgBp
-AGQA6gBuAGMAaQBhACAAZQBzAHQA4QAgAGQAaQBzAHAAbwBuAO0AdgBlAGwAIABlAG0AOgAgADwA
-YQAgAGgAcgBlAGYAPQAnAGgAdAB0AHAAcwA6AC8ALwB3AHcAdwAuAG0AdQBuAGQAbwBoAG4AawAu
-AGMAbwBtAC4AYgByAC8AbABvAGcAaQBuACcAIAB0AGEAcgBnAGUAdAA9ACcAXwBiAGwAYQBuAGsA
-JwA+AHcAdwB3AC4AbQB1AG4AZABvAGgAbgBrAC4AYwBvAG0ALgBiAHIAPAAvAGEAPgA8AGIAcgA+
-AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgADwAYgByAD4AAYDR
-DQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgADwALwBiAG8AZAB5AD4ADQAKACAA
+ACYAbgBiAHMAcAA7ACYAbgBiAHMAcAA7ACYAbgBiAHMAcAA7ACYAbgBiAHMAcAA7ACYAbgBiAHMA
+cAA7AFAAcgBlAHoAYQBkAG8AKABhACkALAAgAACDhQ0ACgAgACAAIAAgACAAIAAgACAAIAAgACAA
 IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAA8AC8AaAB0AG0AbAA+AAARbABvAGcAbwAuAHAAbgBnAAAR
-aQB0AGUAbQAuAHAAbgBnAAA7ZwB1AHMAdABhAHYAbwAuAGIAcgB1AG4AbwByAG8AQABjAGgAZQBj
-AG8AbgAuAGMAbwBtAC4AYgByAAAVWAAtAFAAcgBpAG8AcgBpAHQAeQABAzEAAANQAAA7aABlAG4A
-cgBpAHEAdQBlAC4AZABhAG4AdABhAHMAQABjAGgAZQBjAG8AbgAuAGMAbwBtAC4AYgByAAA7dQBl
-AGwAdgBpAHMALgBjAG8AcgBkAGUAaQByAG8AQABjAGgAZQBjAG8AbgAuAGMAbwBtAC4AYgByAAA5
-ZwBlAHYAYQBsAGQAbwAuAGoAdQBuAGkAbwByAEAAYwBoAGUAYwBvAG4ALgBjAG8AbQAuAGIAcgAA
-OWUAZABuAGUAbABzAG8AbgAuAHAAaQBuAHQAbwBAAGMAaABlAGMAbwBuAC4AYwBvAG0ALgBiAHIA
-ABsgACgAQQBTAFMARQBTAFMATQBFAE4AVAApAAAlcwBtAHQAcAAuAG8AZgBmAGkAYwBlADMANgA1
-AC4AYwBvAG0AABFYAGEAcAA0ADEANgA5ADcAADdFAC0AbQBhAGkAbAAgAGUAbgB2AGkAYQBkAG8A
-IABjAG8AbQAgAHMAdQBjAGUAcwBzAG8AIQABL0UAcgByAG8AIABhAG8AIABlAG4AdgBpAGEAcgAg
-AGUALQBtAGEAaQBsADoAIAABL0UAcgByAG8AIABhAG8AIABlAG4AdgBpAGEAcgAgAG8AIABlAC0A
-bQBhAGkAbAABCzAANgA6ADAAMAAACzEAMgA6ADAAMAAAFUIAbwBtACAARABpAGEAIQAsACAAAAsy
-ADAAOgAwADAAABlCAG8AYQAgAFQAYQByAGQAZQAhACwAIAAAGUIAbwBhACAATgBvAGkAdABlACEA
-LAAgAACDETwAcAA+AEEAdAB0AC4ALAA8AC8AcAA+AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgADwAYgByAD4ADQAK
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAPABwAD4ARwB1AHMAdABhAHYAbwAgAEIAcgB1AG4AbwByAG8APABiAHIAPgAN
+ACAAIAAgACAAIAAgACAAIAAgADwAYgByAD4ADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAPABiAHIAPgANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAmAG4AYgBzAHAAOwAmAG4AYgBzAHAAOwAmAG4AYgBzAHAAOwAmAG4AYgBzAHAA
+OwAmAG4AYgBzAHAAOwBFAHMAcABlAHIAbwAgAHEAdQBlACAAZQBzAHQAZQBqAGEAIABiAGUAbQAu
+ACAADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAPABiAHIAPgAN
 AAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIABBAG4AYQBsAGkAcwB0AGEAIABkAGUAIABWAGUAbgBkAGEAcwA8AGIAcgA+
-AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACgANwAzACkAIAA5ACAAOQA5ADYAMwAtADYAMwAyADgAIAA8AGIAcgA+
-AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgAEUAdQBuAOEAcABvAGwAaQBzACAALQAgAEIAYQA8AC8AcAA+AA0ACgAg
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAA8AGIAcgA+AA0ACgAg
 ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgADwAYgByAD4ADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAPABpAG0AZwAgAHMAcgBjAD0AIgBjAGkA
-ZAA6AGwAbwBnAG8ALgBwAG4AZwAiACAAYQBsAHQAPQAiAEwAbwBnAG8AIgAgAC8APgABcVMAVABf
-ADAAMAAzADgANwBkAGQAZgBhADUAMwBmADQAYQA2ADEAYQA2ADcAMwAwADUANwAzADgAYQBmADkA
-YQBkADcAMQAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAgqjVHmZH
-L0uuMQKfnRdz6QAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERdSQHFwgICA4OET0ODg4OEkESRRJJ
-HQ4RTR0OHQ4IDg4SURJVElUFIAASgIUFIAASgIkGIAESgI0cAyAAHAQAAQgcAyAADgYgAwEICAgH
-IAIODhKAlQcABA4OHBwcBQABDh0OBgADDg4ODgUgABKAoQcgAhJFDhFNBSAAEoClBSACAQ4OBiAB
-ARKArQYgAQERgLEFIAASgLUFAAICDg4EIAASRQUgAQESRQogBAEOCBGAvRFNByADAQ4OEU0KIAMO
-EkkRTRKAxQQAAQEOBQACDg4OBiACAQIRTQUgABKA0QIGDgggBQIIDg4OCAQHARE9BAAAET0FIAAR
-gNUGAAERgNUOCQACAhGA1RGA1QgAARKA2RGA3QUgABKA4QcgAgEOEoDhCLd6XFYZNOCJCImEXc2A
-gMyRCL7eHIpGxmgUCE4GT+fESo8bBAAAAAAEAQAAAAMGEm0DBhJxAwYSEAIGCAMGERQEAAASbQQA
-ABJxBQABARJxBAAAEhADAAABBAgAEm0ECAAScQQIABIQCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9u
-RXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTVF8wMDM4N2RkZmE1M2Y0YTYxYTY3MzA1NzM4
-YWY5YWQ3MQAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDI0AABJAQAaLk5FVEZyYW1ld29yayxW
-ZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwC0
-AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGli
-LCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVj
-NTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAA
-AFBBRFBBRFC0AAAAME8AAAAAAAAAAAAASk8AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAADxPAAAA
-AAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACYAbgBiAHMAcAA7ACYAbgBi
+AHMAcAA7ACYAbgBiAHMAcAA7ACYAbgBiAHMAcAA7ACYAbgBiAHMAcAA7ACYAbgBiAHMAcAA7ACYA
+bgBiAHMAcAA7AFMAZQBnAHUAZQAgAGUAbQAgAGEAbgBlAHgAbwAgAG8AIABhAHIAcQB1AGkAdgBv
+ACAAPABzAHQAcgBvAG4AZwA+AAATMgAyADMANAAwADEAIAAtACAAAUs8AC8AcwB0AHIAbwBuAGcA
+PgAsACAAcgBlAGYAZQByAGUAbgB0AGUAIABhAG8AIABpAHQAZQBtACAAPABzAHQAcgBvAG4AZwA+
+AABZIABkAG8AIABBAFMAUwBFAFMAUwBNAEUATgBUADwALwBzAHQAcgBvAG4AZwA+ACAAYwBvAG0A
+IABvACAAZgBlAGMAaABhAG0AZQBuAHQAbwAgAGQAZQAgAAAdTQBNAE0ATQAgACcARABFACcAIAB5
+AHkAeQB5AAGHPywAIABlAG0AIABxAHUAZQBzAHQA4wBvACwAIABwAGEAcgBhACAAcQB1AGUAIABz
+AGUAagBhACAAcAByAGUAZQBuAGMAaABpAGQAbwAgAGMAbwBtACAAYQBzACAAZABlAHYAaQBkAGEA
+cwAgAGkAbgBmAG8AcgBtAGEA5wD1AGUAcwAuACAAUgBlAHMAcwBhAGwAdABvACAAcQB1AGUAIABv
+ACAAcAByAGUAZQBuAGMAaABpAG0AZQBuAHQAbwAgAGQAYQBzACAAaQBuAGYAbwByAG0AYQDnAPUA
+ZQBzACAAZABlAHYAZQAgAHMAZQByACAAcgBlAGEAbABpAHoAYQBkAG8AIABhAHQA6QAgAG8AIAA8
+AHMAdAByAG8AbgBnAD4AZABpAGEAIAAxADAAPAAvAHMAdAByAG8AbgBnAD4AIABkAGUAcwB0AGUA
+IABtAOoAcwAuACAAyQAgAGUAcwBzAGUAbgBjAGkAYQBsACAAcQB1AGUAIABvACAAaQB0AGUAbQAg
+AHMAZQBqAGEAIABlAHYAaQBkAGUAbgBjAGkAYQBkAG8AIABuAG8AIABwAG8AcgB0AGEAbAAgAGUA
+IABuAGEAIABwAGEAcwB0AGEAIABkAGUAcwBpAGcAbgBhAGQAYQAgADwAcwB0AHIAbwBuAGcAPgBh
+AG4AdABlAHMAIABkAGUAcwB0AGUAIABwAHIAYQB6AG8APAAvAHMAdAByAG8AbgBnAD4ALAAgAHAA
+YQByAGEAIABxAHUAZQAgAHAAbwBzAHMAYQAgAHMAZQByACAAcgBlAGEAbABpAHoAYQBkAGEAcwAg
+AGEAcwAgAGQAZQB2AGkAZABhAHMAIABhAG4A4QBsAGkAcwBlAHMAIABlACAAYwBvAHIAcgBlAOcA
+9QBlAHMALAAgAGMAYQBzAG8AIABuAGUAYwBlAHMAcwDhAHIAaQBvAC4AIAA8AGIAcgA+ADwAYgBy
+AD4APABzAHQAcgBvAG4AZwA+ACYAbgBiAHMAcAA7ACYAbgBiAHMAcAA7ACYAbgBiAHMAcAA7ACYA
+bgBiAHMAcAA7ACYAbgBiAHMAcAA7ACYAbgBiAHMAcAA7ACYAbgBiAHMAcAA7AEMAYQBzAG8AIABv
+ACAAaQB0AGUAbQAgAG4A4wBvACAAcwBlAGoAYQAgAGUAdgBpAGQAZQBuAGMAaQBhAGQAbwAgAGMA
+bwByAHIAZQB0AGEAbQBlAG4AdABlACwAIABvACAAbQBlAHMAbQBvACAAcwBlAHIA4QAgAGQAZQBz
+AHAAbwBuAHQAdQBhAGQAbwAuADwALwBzAHQAcgBvAG4AZwA+ACAAUABvAHIAdABhAG4AdABvACwA
+IADpACAAZABlACAAZQB4AHQAcgBlAG0AYQAgAGkAbQBwAG8AcgB0AOIAbgBjAGkAYQAgAHEAdQBl
+ACAAYQAgAGUAdgBpAGQA6gBuAGMAaQBhACAAcwBlAGoAYQAgAGYAZQBpAHQAYQAgAGMAbwByAHIA
+ZQB0AGEAbQBlAG4AdABlACAAZQAgAGQAZQBuAHQAcgBvACAAZABvACAAcAByAGEAegBvACAAZQBz
+AHQAYQBiAGUAbABlAGMAaQBkAG8ALgA8AGIAcgA+ADwAYgByAD4APABkAGkAdgAgAHMAdAB5AGwA
+ZQA9ACcAdABlAHgAdAAtAGEAbABpAGcAbgA6ACAAYwBlAG4AdABlAHIAOwAnAD4APABpAG0AZwAg
+AHMAcgBjAD0AIgBjAGkAZAA6AGkAdABlAG0ALgBwAG4AZwAiACAAYQBsAHQAPQAiAEkAdABlAG0A
+IgAgAHMAdAB5AGwAZQA9ACcAZABpAHMAcABsAGEAeQA6ACAAYgBsAG8AYwBrADsAIABtAGEAcgBn
+AGkAbgA6ACAAMAAgAGEAdQB0AG8AOwAnACAALwA+ADwALwBkAGkAdgA+ADwAYgByAD4AJgBuAGIA
+cwBwADsATwAgAHAAbwByAHQAYQBsACAAcABhAHIAYQAgAGEAIABlAHYAaQBkAOoAbgBjAGkAYQAg
+AGUAcwB0AOEAIABkAGkAcwBwAG8AbgDtAHYAZQBsACAAZQBtADoAIAA8AGEAIABoAHIAZQBmAD0A
+JwBoAHQAdABwAHMAOgAvAC8AdwB3AHcALgBtAHUAbgBkAG8AaABuAGsALgBjAG8AbQAuAGIAcgAv
+AGwAbwBnAGkAbgAnACAAdABhAHIAZwBlAHQAPQAnAF8AYgBsAGEAbgBrACcAPgB3AHcAdwAuAG0A
+dQBuAGQAbwBoAG4AawAuAGMAbwBtAC4AYgByADwALwBhAD4APABiAHIAPgANAAoAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAA8AGIAcgA+AAGA0Q0ACgAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAA8AC8AYgBvAGQAeQA+AA0ACgAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAPAAvAGgAdABtAGwAPgAAEWwAbwBnAG8ALgBwAG4AZwAAEWkAdABlAG0ALgBwAG4A
+ZwAAO2cAdQBzAHQAYQB2AG8ALgBiAHIAdQBuAG8AcgBvAEAAYwBoAGUAYwBvAG4ALgBjAG8AbQAu
+AGIAcgAAFVgALQBQAHIAaQBvAHIAaQB0AHkAAQMxAAADUAAAPVIAbwBzAGkAbQBhAHIAaQBhAC4A
+YgBvAG0AZgBpAG0AQABjAGgAZQBjAG8AbgAuAGMAbwBtAC4AYgByAAA1bQBhAGkAYwBvAG4ALgBj
+AG8AcwB0AGEAQABjAGgAZQBjAG8AbgAuAGMAbwBtAC4AYgByAAA5ZQBkAG4AZQBsAHMAbwBuAC4A
+cABpAG4AdABvAEAAYwBoAGUAYwBvAG4ALgBjAG8AbQAuAGIAcgAAGyAAKABBAFMAUwBFAFMAUwBN
+AEUATgBUACkAACVzAG0AdABwAC4AbwBmAGYAaQBjAGUAMwA2ADUALgBjAG8AbQAAEVgAYQBwADQA
+MQA2ADkANwAAN0UALQBtAGEAaQBsACAAZQBuAHYAaQBhAGQAbwAgAGMAbwBtACAAcwB1AGMAZQBz
+AHMAbwAhAAEvRQByAHIAbwAgAGEAbwAgAGUAbgB2AGkAYQByACAAZQAtAG0AYQBpAGwAOgAgAAEv
+RQByAHIAbwAgAGEAbwAgAGUAbgB2AGkAYQByACAAbwAgAGUALQBtAGEAaQBsAAELMAA2ADoAMAAw
+AAALMQAyADoAMAAwAAAVQgBvAG0AIABEAGkAYQAhACwAIAAACzIAMAA6ADAAMAAAGUIAbwBhACAA
+VABhAHIAZABlACEALAAgAAAZQgBvAGEAIABOAG8AaQB0AGUAIQAsACAAAIMRPABwAD4AQQB0AHQA
+LgAsADwALwBwAD4ADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAPABiAHIAPgANAAoAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAA8AHAAPgBH
+AHUAcwB0AGEAdgBvACAAQgByAHUAbgBvAHIAbwA8AGIAcgA+AA0ACgAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAEEAbgBh
+AGwAaQBzAHQAYQAgAGQAZQAgAFYAZQBuAGQAYQBzADwAYgByAD4ADQAKACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAKAA3
+ADMAKQAgADkAIAA5ADkANgAzAC0ANgAzADIAOAAgADwAYgByAD4ADQAKACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAARQB1
+AG4A4QBwAG8AbABpAHMAIAAtACAAQgBhADwALwBwAD4ADQAKACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAPABiAHIAPgAN
+AAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAA8AGkAbQBnACAAcwByAGMAPQAiAGMAaQBkADoAbABvAGcAbwAuAHAAbgBn
+ACIAIABhAGwAdAA9ACIATABvAGcAbwAiACAALwA+AAFxUwBUAF8AMAAwADMAOAA3AGQAZABmAGEA
+NQAzAGYANABhADYAMQBhADYANwAzADAANQA3ADMAOABhAGYAOQBhAGQANwAxAC4AUAByAG8AcABl
+AHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAADd26Qwgi96RIRLwX3ys2pvAAQgAQEIAyAA
+AQUgAQEREQQgAQEOBSABARF1JAcXCAgIDg4RPQ4ODg4SQRJFEkkdDhFNHQ4dDggODhJRElUSVQUg
+ABKAhQUgABKAiQYgARKAjRwDIAAcBAABCBwDIAAOBiADAQgICAcgAg4OEoCVBQACDg4cBQABDh0O
+BgADDg4ODgUgABKAoQcgAhJFDhFNBSAAEoClBSACAQ4OBiABARKArQYgAQERgLEFIAASgLUFAAIC
+Dg4EIAASRQUgAQESRQogBAEOCBGAvRFNByADAQ4OEU0KIAMOEkkRTRKAxQQAAQEOBQACDg4OBiAC
+AQIRTQUgABKA0QIGDgggBQIIDg4OCAQHARE9BAAAET0FIAARgNUGAAERgNUOCQACAhGA1RGA1QgA
+ARKA2RGA3QUgABKA4QcgAgEOEoDhCLd6XFYZNOCJCImEXc2AgMyRCL7eHIpGxmgUCE4GT+fESo8b
+BAAAAAAEAQAAAAMGEm0DBhJxAwYSEAIGCAMGERQEAAASbQQAABJxBQABARJxBAAAEhADAAABBAgA
+Em0ECAAScQQIABIQCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIA
+AAAAACgBACNTVF8wMDM4N2RkZmE1M2Y0YTYxYTY3MzA1NzM4YWY5YWQ3MQAABQEAAAAAFgEAEUNv
+cHlyaWdodCBAICAyMDI0AABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1l
+d29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwAAALQAAADOyu++AQAAAJEAAABsU3lz
+dGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwg
+Q3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5S
+ZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAADkTgAAAAAA
+AAAAAAD+TgAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8E4AAAAAAAAAAAAAAABfQ29yRGxsTWFp
+bgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAABgAAIAA
 AAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgAAABYYAAAGgQAAAAA
 AAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAAAL0E7/4AAAEAAAAB
-ACJ3jCQAAAEAIneMJD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBWAGEAcgBGAGkA
+APxLxSQAAAEA/EvFJD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBWAGEAcgBGAGkA
 bABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAAAAAAAACwBHoDAAAB
 AFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAABADAAMAAwADAAMAA0AGIAMAAAABoA
 AQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEAbgB5AE4AYQBtAGUAAAAA
 AAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAAUwBUAF8AMAAwADMA
 OAA3AGQAZABmAGEANQAzAGYANABhADYAMQBhADYANwAzADAANQA3ADMAOABhAGYAOQBhAGQANwAx
-AAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADkAMwA1ADYALgAzADAA
-NAA5ADgAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBUAF8AMwA4AGYAYwA5
-ADEAOABiADAAMgA2ADYANABjADMAOAA4ADUAYgBiADcAMwBmAGMANQAxAGYAZAAwAGIAMwA1AC4A
+AAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADkANAAxADMALgAxADkA
+NAA1ADIAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBUAF8AYgBjADMAOQA2
+ADIAYgA0ADEAYwBkAGUANAAzAGEAMAA5AGYAYgA0ADEAMwA4ADQAMABkADgAMwA4ADEANABhAC4A
 ZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBn
 AGgAdAAgAEAAIAAgADIAMAAyADQAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsA
-cwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAFQAXwAz
-ADgAZgBjADkAMQA4AGIAMAAyADYANgA0AGMAMwA4ADgANQBiAGIANwAzAGYAYwA1ADEAZgBkADAA
-YgAzADUALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBUAF8AMAAw
+cwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAFQAXwBi
+AGMAMwA5ADYAMgBiADQAMQBjAGQAZQA0ADMAYQAwADkAZgBiADQAMQAzADgANAAwAGQAOAAzADgA
+MQA0AGEALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBUAF8AMAAw
 ADMAOAA3AGQAZABmAGEANQAzAGYANABhADYAMQBhADYANwAzADAANQA3ADMAOABhAGYAOQBhAGQA
-NwAxAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA5ADMANQA2
-AC4AMwAwADQAOQA4AAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAA
-MQAuADAALgA5ADMANQA2AC4AMwAwADQAOQA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+NwAxAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA5ADQAMQAz
+AC4AMQA5ADQANQAyAAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAA
+MQAuADAALgA5ADQAMQAzAC4AMQA5ADQANQAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAADAAAAFw/AAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAADAAAABA/AAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2520,7 +2536,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
               DTS:refId="Package\Contêiner do Loop Foreach\REVENDA\MOVE ARQUIVO"
               DTS:CreationName="Microsoft.ScriptTask"
               DTS:Description="Tarefa Script"
-              DTS:DTSID="{3C5711CF-DCEE-41F2-B1DC-3142918474E4}"
+              DTS:DTSID="{70915129-11ED-4506-A4B7-E2653592C409}"
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="MOVE ARQUIVO"
@@ -2535,14 +2551,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                   ReadOnlyVariables="System::PackageName,$Package::Ano,$Package::Email,$Package::Mes"
                   ReadWriteVariables="User::Revenda">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6ca83c88e7a5405793a4ed3e4c0b18c8")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_6ca83c88e7a5405793a4ed3e4c0b18c8")]
+[assembly: AssemblyCopyright("Copyright @  2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2696,13 +2733,11 @@ namespace ST_6ca83c88e7a5405793a4ed3e4c0b18c8
             {
                 int ano = Convert.ToInt32(Dts.Variables["$Package::Ano"].Value);
                 int mes = Convert.ToInt32(Dts.Variables["$Package::Mes"].Value);
-                string packageName = Dts.Variables["System::PackageName"].Value.ToString();
-                string Email = Dts.Variables["$Package::Email"].Value.ToString();
-
 
                 DateTime mesAnterior = new DateTime(ano, mes, 1);
                 string mesFormatado = mesAnterior.ToString("MM. MMMM", new CultureInfo("pt-BR")).ToUpper();
 
+                string packageName = Dts.Variables["System::PackageName"].Value.ToString();
                 string revenda = Dts.Variables["User::Revenda"].Value.ToString() == "1" ? "201201 - " : "223402 - ";
 
                 string origem = $@"Y:\PUBLICO\ANALISTAS\SSIS\ASSESSMENT\{packageName}\Gerados\{revenda}{packageName}.xlsx";
@@ -2720,7 +2755,7 @@ namespace ST_6ca83c88e7a5405793a4ed3e4c0b18c8
                 // 🔹 Verifica se o arquivo de origem existe antes de tentar copiar
                 if (File.Exists(origem))
                 {
-                    File.Copy(origem, destinoArquivo, true);
+                    File.Copy(origem, destinoArquivo, true);                    
                 }
                 else
                 {
@@ -2849,7 +2884,7 @@ namespace ST_6ca83c88e7a5405793a4ed3e4c0b18c8
     <msb:CodeName>ST_b4123d70eed74b60bb301023cc5600f6</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_b4123d70eed74b60bb301023cc5600f6</msb:DisplayName>
-    <msb:ProjectId>{843381FD-A8A2-42FD-88C0-44A5636874E5}</msb:ProjectId>
+    <msb:ProjectId>{176B67D1-6BEC-431E-BCFE-F84606F1D748}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_b4123d70eed74b60bb301023cc5600f6.csproj" />
@@ -2891,35 +2926,14 @@ namespace ST_6ca83c88e7a5405793a4ed3e4c0b18c8.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6ca83c88e7a5405793a4ed3e4c0b18c8")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_6ca83c88e7a5405793a4ed3e4c0b18c8")]
-[assembly: AssemblyCopyright("Copyright @  2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2991,113 +3005,113 @@ namespace ST_6ca83c88e7a5405793a4ed3e4c0b18c8.Properties {
                   <BinaryItem
                     Name="ST_b4123d70eed74b60bb301023cc5600f6.dll">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
-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
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAFXShWkAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAtjIA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-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
+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
-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
+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
-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
-AAEAAwAAARAAkgVVBWEAAwAHAAMBAADABQAARQAEAAoAEQAPBMMAEQA4AccAEQCUAMsABgaDAM8A
-VoCwBdIAVoAYAdIAUCAAAAAAhgAhBAYAAQAgIgAAAACGGLIEBgABACgiAAAAAIMYsgQGAAEAMCIA
-AAAAkwiWBNYAAQBcIgAAAACTCCAB2wABAGMiAAAAAJMILAHgAAEAayIAAAAAlgjqBeYAAgByIgAA
-AACGGLIEBgACAHoiAAAAAJEYuATrAAIAAAABADQDCQCyBAEAEQCyBAYAGQCyBAoAKQCyBBAAMQCy
-BBAAOQCyBBAAQQCyBBAASQCyBBAAUQCyBBAAWQCyBBAAYQCyBBAAaQCyBAYAkQCyBAYAuQCyBBUA
-yQCyBAYAcQC4BSoA0QCEBS8A2QD6AzQA4QAqAzoA6QABAD4AmQBUA0MAeQCyBEcAqQCyBBAAeQBU
-A04A+QCqBEMA+QBMBlUA+QDVBVsA+QDcBWEA+QDVBWkACQELAXAAEQHOBXYAEQE8BnsAIQHOBXYA
-IQE3BoIA0QADBgEAgQCkAEMA+QDVBXAAKQEaBokAcQCyBAYAmQCyBAYAOQHLAJAAOQEqBpkAoQCy
-BJ8AwQCyBAYACAAUALkACAAYAL4AKQBzACYBLgALAP4ALgATAAcBLgAbACYBLgAjAC8BLgArAFgB
-LgAzAFgBLgA7AFgBLgBDAC8BLgBLAF4BLgBTAFgBLgBbAHUBQwBjAL4ASQBzACYBYQB7AL4AYwBr
-AL4AGwADAAEABAADAAAAmgTvAAAAQAH0AAAA7gX5AAIABAADAAIABQAFAAEABgAFAAIABwAHAASA
-AAABAAAAIiQaZgAAAAAAAAkAAAAEAAAAAAAAAAAAAACnAIsAAAAAABAAAAAAAAAAAAAAALAAYgMA
-AAAABAAAAAAAAAAAAAAApwADBAAAAAAQAAAAAAAAAAAAAACwAGQAAAAAAAQAAAAAAAAAAAAAAKcA
-mwUAAAAAAAAAAAEAAAADBQAABQACAAAAAAAAVG9JbnQzMgBTVF9iNDEyM2Q3MGVlZDc0YjYwYmIz
-MDEwMjNjYzU2MDBmNgBTVF82Y2E4M2M4OGU3YTU0MDU3OTNhNGVkM2U0YzBiMThjOAA8TW9kdWxl
-PgBTeXN0ZW0uSU8ATWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAHZhbHVlX18AbXNjb3Js
-aWIAZGVmYXVsdEluc3RhbmNlAGdldF9NZXNzYWdlAFZhcmlhYmxlAFJ1bnRpbWVUeXBlSGFuZGxl
-AEdldFR5cGVGcm9tSGFuZGxlAEZpbGUARGF0ZVRpbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMu
-UnVudGltZQBDb21iaW5lAFR5cGUARmFpbHVyZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNv
-dXJjZUN1bHR1cmUAVlNUQVJUU2NyaXB0T2JqZWN0TW9kZWxCYXNlAEFwcGxpY2F0aW9uU2V0dGlu
-Z3NCYXNlAEVkaXRvckJyb3dzYWJsZVN0YXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERl
-YnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93
-c2FibGVBdHRyaWJ1dGUAQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0
-dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0
-cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9u
-c0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRy
-aWJ1dGUAU1NJU1NjcmlwdFRhc2tFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0
-dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBnZXRfVmFsdWUAdmFsdWUAU3lz
-dGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUb1N0cmluZwBQYXRoAE1pY3Jvc29mdC5TcWxTZXJ2ZXIu
-U2NyaXB0VGFzawBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5TY3JpcHRUYXNrAFNjcmlw
-dE9iamVjdE1vZGVsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTVF9iNDEyM2Q3MGVlZDc0YjYwYmIz
-MDEwMjNjYzU2MDBmNi5kbGwAZ2V0X0l0ZW0AU3lzdGVtAEVudW0AcmVzb3VyY2VNYW4AU2NyaXB0
-TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVm
-bGVjdGlvbgBFeGNlcHRpb24AQ3VsdHVyZUluZm8ARGlyZWN0b3J5SW5mbwBJRm9ybWF0UHJvdmlk
-ZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgBUb1VwcGVyAC5jdG9yAC5jY3RvcgBTeXN0ZW0uRGlhZ25v
-c3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUmVzb3VyY2VzAFNU
-XzZjYTgzYzg4ZTdhNTQwNTc5M2E0ZWQzZTRjMGIxOGM4LlByb3BlcnRpZXMuUmVzb3VyY2VzLnJl
-c291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTVF82Y2E4M2M4OGU3YTU0MDU3OTNhNGVkM2U0YzBiMThj
-OC5Qcm9wZXJ0aWVzAGdldF9WYXJpYWJsZXMAU2V0dGluZ3MAU3lzdGVtLldpbmRvd3MuRm9ybXMA
-U3VjY2VzcwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMARXhpc3RzAENvbmNhdABGb3JtYXQAT2JqZWN0
-AGdldF9EZWZhdWx0AERpYWxvZ1Jlc3VsdABzZXRfVGFza1Jlc3VsdABDb252ZXJ0AFNob3cATWVz
-c2FnZUJveABnZXRfQXNzZW1ibHkAQ29weQBDcmVhdGVEaXJlY3RvcnkAb3BfRXF1YWxpdHkAABsk
-AFAAYQBjAGsAYQBnAGUAOgA6AEEAbgBvAAAbJABQAGEAYwBrAGEAZwBlADoAOgBNAGUAcwAAJ1MA
-eQBzAHQAZQBtADoAOgBQAGEAYwBrAGEAZwBlAE4AYQBtAGUAAB8kAFAAYQBjAGsAYQBnAGUAOgA6
-AEUAbQBhAGkAbAAAEU0ATQAuACAATQBNAE0ATQAAC3AAdAAtAEIAUgABG1UAcwBlAHIAOgA6AFIA
-ZQB2AGUAbgBkAGEAAAMxAAATMgAyADMANAAwADIAIAAtACAAARMyADAAMQAyADAAMQAgAC0AIAAB
-S1kAOgBcAFAAVQBCAEwASQBDAE8AXABBAE4AQQBMAEkAUwBUAEEAUwBcAFMAUwBJAFMAXABBAFMA
-UwBFAFMAUwBNAEUATgBUAFwAABNcAEcAZQByAGEAZABvAHMAXAAACy4AeABsAHMAeAAAXVkAOgBc
-AFAAVQBCAEwASQBDAE8AXABBAE4AQQBMAEkAUwBUAEEAUwBcADAANgAgAEEAUwBTAEUAUwBTAE0A
-RQBOAFQAXAB7ADAAfQBcAHsAMQB9AFwAewAyAH0AACdFAHIAcgBvACAAYQBvACAAcAByAG8AYwBl
-AHMAcwBhAHIAOgAgAABxUwBUAF8ANgBjAGEAOAAzAGMAOAA4AGUANwBhADUANAAwADUANwA5ADMA
-YQA0AGUAZAAzAGUANABjADAAYgAxADgAYwA4AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBz
-AG8AdQByAGMAZQBzAAAAQ19rGoDcCk2limMoq7seZQAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQER
-WQ4HCggIDhE9Dg4ODg4SQQQgABJpBCAAEm0FIAEScRwDIAAcBAABCBwDIAAOBiADAQgICAYgAg4O
-EnkFAAICDg4FAAEOHQ4HAAQODhwcHAYAAw4ODg4FAAIODg4EAAECDgYAARKAjQ4GAAMBDg4CBgAB
-EYCZDggAARKAnRGAoQUgABKApQcgAgEOEoClCLd6XFYZNOCJCImEXc2AgMyRBAAAAAAEAQAAAAMG
-ElEDBhJVAwYSEAIGCAMGERQEAAASUQQAABJVBQABARJVBAAAEhADAAABBAgAElEECAASVQQIABIQ
-CAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTVF82
-Y2E4M2M4OGU3YTU0MDU3OTNhNGVkM2U0YzBiMThjOAAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAy
-MDI0AABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlO
-YW1lEi5ORVQgRnJhbWV3b3JrIDQuNwC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMu
-UmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJh
-bCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRp
-bWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAyDIAAAAAAAAAAAAA4jIAAAAgAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAANQyAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwA
-AAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACY
+MgAAAAAAAEgAAAACAAUAbCIAAEAPAAABAAAAAAAAAKwxAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswBACKAQAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKKBQAAAoKAigQAAAKbxEAAApyHQAAcG8SAAAKbxMAAAooFAAACgsSAgYHFygVAAAKEgJyOQAA
+cHJLAABwcxYAAAooFwAACm8YAAAKDQIoEAAACm8RAAAKclcAAHBvEgAACm8TAAAKbxkAAAoTBAIo
+EAAACm8RAAAKcn8AAHBvEgAACm8TAAAKbxkAAApymwAAcCgaAAAKLQdynwAAcCsFcrMAAHATBRyN
+HwAAASUWcscAAHCiJRcRBKIlGHITAQBwoiUZEQWiJRoRBKIlG3InAQBwoigbAAAKEwZyMwEAcAaM
+IAAAAQkRBCgcAAAKEwcRBxEFEQRyJwEAcCgdAAAKKB4AAAoTCBEHKB8AAAotCBEHKCAAAAomEQYo
+IQAACiwMEQYRCBcoIgAACisOAigQAAAKF28jAAAK3jUCKBAAAAoWbyMAAAreJxMJcpEBAHARCW8k
+AAAKKCUAAAooJgAACiYCKBAAAAoXbyMAAAr+GioAAEEcAAAAAAAAAAAAAGIBAABiAQAAJwAAABAA
+AAEeAignAAAKKh4CKCgAAAoqrn4BAAAELR5yuQEAcNADAAACKCkAAApvKgAACnMrAAAKgAEAAAR+
+AQAABCoafgIAAAQqHgKAAgAABCoafgMAAAQqHgIoLAAACioucwgAAAaAAwAABCoAAEJTSkIBAAEA
+AAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAIAEAAAjfgAA7AQAAFgGAAAjU3RyaW5ncwAAAABE
+CwAALAIAACNVUwBwDQAAEAAAACNHVUlEAAAAgA0AAMABAAAjQmxvYgAAAAAAAAACAAABVx2iAQkD
+AAAA+gEzABYAAAEAAAApAAAABQAAAAYAAAAJAAAAAQAAACwAAAACAAAAEAAAAAEAAAACAAAAAwAA
+AAQAAAABAAAABQAAAAEAAAABAAAAAADSAwEAAAAAAAYAfQLSBAYADAPSBAYAyQG/BA8ARgUAAAYA
+9gFQBAYAYAJQBAYAQQJQBAYA8wJQBAYAnQJQBAYAtgJQBAYADQJQBAYAKAI6AwoA0QKBAwoASAGB
+AwYA4gADBAYAYgQDBAYACgQDBAYArAG/BAYA4wUDBAYAmgTyBAYAbAQ7BA4AfAG8Aw4A3QG8Aw4A
+ZAEmBAYAkQHSBAoAqgOBAxIAiAXrABIAsADrAAYAEgYDBAYAhgQDBAYAVgMDBAYAAwADBAYAXQNa
+AAYAQgZaAAYAeARaAAYA3QBaABYAHwabBRYA9gWbBQYAEwEDBAYAuQADBAYALgZQBAAAAABRAAAA
+AAABAAEAAQAQABsELQA5AAEAAQAAABAA+QRVBU0AAQADAAABEACSBVUFYQADAAcAAwEAAMAFAABF
+AAQACgARAA8EwwARADgBxwARAJQAywAGBoMAzwBWgLAF0gBWgBgB0gBQIAAAAACGACEEBgABAAQi
+AAAAAIYYsgQGAAEADCIAAAAAgxiyBAYAAQAUIgAAAACTCJYE1gABAEAiAAAAAJMIIAHbAAEARyIA
+AAAAkwgsAeAAAQBPIgAAAACWCOoF5gACAFYiAAAAAIYYsgQGAAIAXiIAAAAAkRi4BOsAAgAAAAEA
+NAMJALIEAQARALIEBgAZALIECgApALIEEAAxALIEEAA5ALIEEABBALIEEABJALIEEABRALIEEABZ
+ALIEEABhALIEEABpALIEBgCRALIEBgC5ALIEFQDJALIEBgBxALgFKgDRAIQFLwDZAPoDNADhACoD
+OgDpAAEAPgB5ALIEQwCpALIEEAB5AFQDSgD5AKoEUQCZAFQDUQD5AEwGVQD5ANUFWwD5ANwFYQD5
+ANUFaQAJAQsBcAARAc4FdgARATwGewAhAc4FdgAhATcGggDRAAMGAQCBAKQAUQD5ANUFcAApARoG
+iQBxALIEBgCZALIEBgA5AcsAkAA5ASoGmQChALIEnwDBALIEBgAIABQAuQAIABgAvgApAHMAJgEu
+AAsA/gAuABMABwEuABsAJgEuACMALwEuACsAWAEuADMAWAEuADsAWAEuAEMALwEuAEsAXgEuAFMA
+WAEuAFsAdQFDAGMAvgBJAHMAJgFhAHsAvgBjAGsAvgAbAAMAAQAEAAMAAACaBO8AAABAAfQAAADu
+BfkAAgAEAAMAAgAFAAUAAQAGAAUAAgAHAAcABIAAAAEAAAA9JZI8AAAAAAAACQAAAAQAAAAAAAAA
+AAAAAKcAiwAAAAAAEAAAAAAAAAAAAAAAsABiAwAAAAAEAAAAAAAAAAAAAACnAAMEAAAAABAAAAAA
+AAAAAAAAALAAZAAAAAAABAAAAAAAAAAAAAAApwCbBQAAAAAAAAAAAQAAAAMFAAAFAAIAAAAAAABU
+b0ludDMyAFNUX2I0MTIzZDcwZWVkNzRiNjBiYjMwMTAyM2NjNTYwMGY2AFNUXzZjYTgzYzg4ZTdh
+NTQwNTc5M2E0ZWQzZTRjMGIxOGM4ADxNb2R1bGU+AFN5c3RlbS5JTwBNaWNyb3NvZnQuU3FsU2Vy
+dmVyLk1hbmFnZWREVFMAdmFsdWVfXwBtc2NvcmxpYgBkZWZhdWx0SW5zdGFuY2UAZ2V0X01lc3Nh
+Z2UAVmFyaWFibGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUARmlsZQBEYXRl
+VGltZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5SdW50aW1lAENvbWJpbmUAVHlwZQBGYWlsdXJl
+AGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBWU1RBUlRTY3JpcHRPYmpl
+Y3RNb2RlbEJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUA
+Q29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBE
+ZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxl
+QXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJp
+YnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0
+dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0
+dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0VudHJ5UG9p
+bnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5
+QXR0cmlidXRlAGdldF9WYWx1ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3Ry
+aW5nAFBhdGgATWljcm9zb2Z0LlNxbFNlcnZlci5TY3JpcHRUYXNrAE1pY3Jvc29mdC5TcWxTZXJ2
+ZXIuRHRzLlRhc2tzLlNjcmlwdFRhc2sAU2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVu
+dE1vZGVsAFNUX2I0MTIzZDcwZWVkNzRiNjBiYjMwMTAyM2NjNTYwMGY2LmRsbABnZXRfSXRlbQBT
+eXN0ZW0ARW51bQByZXNvdXJjZU1hbgBTY3JpcHRNYWluAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5
+c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAEV4Y2VwdGlvbgBDdWx0dXJlSW5m
+bwBEaXJlY3RvcnlJbmZvAElGb3JtYXRQcm92aWRlcgBnZXRfUmVzb3VyY2VNYW5hZ2VyAFRvVXBw
+ZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxl
+clNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfNmNhODNjODhlN2E1NDA1NzkzYTRlZDNlNGMw
+YjE4YzguUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFNUXzZj
+YTgzYzg4ZTdhNTQwNTc5M2E0ZWQzZTRjMGIxOGM4LlByb3BlcnRpZXMAZ2V0X1ZhcmlhYmxlcwBT
+ZXR0aW5ncwBTeXN0ZW0uV2luZG93cy5Gb3JtcwBTdWNjZXNzAGdldF9EdHMAU2NyaXB0UmVzdWx0
+cwBFeGlzdHMAQ29uY2F0AEZvcm1hdABPYmplY3QAZ2V0X0RlZmF1bHQARGlhbG9nUmVzdWx0AHNl
+dF9UYXNrUmVzdWx0AENvbnZlcnQAU2hvdwBNZXNzYWdlQm94AGdldF9Bc3NlbWJseQBDb3B5AENy
+ZWF0ZURpcmVjdG9yeQBvcF9FcXVhbGl0eQAAGyQAUABhAGMAawBhAGcAZQA6ADoAQQBuAG8AABsk
+AFAAYQBjAGsAYQBnAGUAOgA6AE0AZQBzAAARTQBNAC4AIABNAE0ATQBNAAALcAB0AC0AQgBSAAEn
+UwB5AHMAdABlAG0AOgA6AFAAYQBjAGsAYQBnAGUATgBhAG0AZQAAG1UAcwBlAHIAOgA6AFIAZQB2
+AGUAbgBkAGEAAAMxAAATMgAyADMANAAwADIAIAAtACAAARMyADAAMQAyADAAMQAgAC0AIAABS1kA
+OgBcAFAAVQBCAEwASQBDAE8AXABBAE4AQQBMAEkAUwBUAEEAUwBcAFMAUwBJAFMAXABBAFMAUwBF
+AFMAUwBNAEUATgBUAFwAABNcAEcAZQByAGEAZABvAHMAXAAACy4AeABsAHMAeAAAXVkAOgBcAFAA
+VQBCAEwASQBDAE8AXABBAE4AQQBMAEkAUwBUAEEAUwBcADAANgAgAEEAUwBTAEUAUwBTAE0ARQBO
+AFQAXAB7ADAAfQBcAHsAMQB9AFwAewAyAH0AACdFAHIAcgBvACAAYQBvACAAcAByAG8AYwBlAHMA
+cwBhAHIAOgAgAABxUwBUAF8ANgBjAGEAOAAzAGMAOAA4AGUANwBhADUANAAwADUANwA5ADMAYQA0
+AGUAZAAzAGUANABjADAAYgAxADgAYwA4AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8A
+dQByAGMAZQBzAAAAkg/f5ho5y0GC9LbfVAn8rwAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERWQ4H
+CggIET0ODg4ODg4SQQQgABJpBCAAEm0FIAEScRwDIAAcBAABCBwGIAMBCAgIBiACDg4SeQMgAA4F
+AAICDg4FAAEOHQ4HAAQODhwcHAYAAw4ODg4FAAIODg4EAAECDgYAARKAjQ4GAAMBDg4CBgABEYCZ
+DggAARKAnRGAoQUgABKApQcgAgEOEoClCLd6XFYZNOCJCImEXc2AgMyRBAAAAAAEAQAAAAMGElED
+BhJVAwYSEAIGCAMGERQEAAASUQQAABJVBQABARJVBAAAEhADAAABBAgAElEECAASVQQIABIQCAEA
+CAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTVF82Y2E4
+M2M4OGU3YTU0MDU3OTNhNGVkM2U0YzBiMThjOAAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDI0
+AABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1l
+Ei5ORVQgRnJhbWV3b3JrIDQuNwC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVz
+b3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwg
+UHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVS
+ZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAjDIAAAAAAAAAAAAApjIAAAAgAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAJgyAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAA
+AP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
 SAAAAFhAAAAaBAAAAAAAAAAAAAAaBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
-AAAAvQTv/gAAAQAAAAEAGmYiJAAAAQAaZiIkPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+AAAAvQTv/gAAAQAAAAEAkjw9JQAAAQCSPD0lPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
 AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
 AAAAAAAAALAEegMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAVgMAAAEAMAAwADAA
 MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
 AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
 AABTAFQAXwA2AGMAYQA4ADMAYwA4ADgAZQA3AGEANQA0ADAANQA3ADkAMwBhADQAZQBkADMAZQA0
 AGMAMABiADEAOABjADgAAAA+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
-OQAyADUAMAAuADIANgAxADMAOAAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABT
+OQA1ADMAMwAuADEANQA1ADAANgAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABT
 AFQAXwBiADQAMQAyADMAZAA3ADAAZQBlAGQANwA0AGIANgAwAGIAYgAzADAAMQAwADIAMwBjAGMA
 NQA2ADAAMABmADYALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAA
 AEMAbwBwAHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADIANAAAACoAAQABAEwAZQBnAGEAbABUAHIA
@@ -3106,15 +3120,15 @@ AG0AZQAAAFMAVABfAGIANAAxADIAMwBkADcAMABlAGUAZAA3ADQAYgA2ADAAYgBiADMAMAAxADAA
 MgAzAGMAYwA1ADYAMAAwAGYANgAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBl
 AAAAAABTAFQAXwA2AGMAYQA4ADMAYwA4ADgAZQA3AGEANQA0ADAANQA3ADkAMwBhADQAZQBkADMA
 ZQA0AGMAMABiADEAOABjADgAAABCAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAx
-AC4AMAAuADkAMgA1ADAALgAyADYAMQAzADgAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYA
-ZQByAHMAaQBvAG4AAAAxAC4AMAAuADkAMgA1ADAALgAyADYAMQAzADgAAAAAAAAAAAAAAAAAAAAA
+AC4AMAAuADkANQAzADMALgAxADUANQAwADYAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYA
+ZQByAHMAaQBvAG4AAAAxAC4AMAAuADkANQAzADMALgAxADUANQAwADYAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAA9DIAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAuDIAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -3132,18 +3146,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <DTS:PrecedenceConstraint
               DTS:refId="Package\Contêiner do Loop Foreach\REVENDA.PrecedenceConstraints[Restrição]"
               DTS:CreationName=""
-              DTS:DTSID="{E3EC64DE-673C-4510-93FE-E9E786EB7400}"
+              DTS:DTSID="{F0219B9D-4986-447F-B1CA-55F1505EA15A}"
               DTS:From="Package\Contêiner do Loop Foreach\REVENDA\BUSCAR DADOS"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Restrição"
               DTS:To="Package\Contêiner do Loop Foreach\REVENDA\MOVE ARQUIVO" />
             <DTS:PrecedenceConstraint
-              DTS:refId="Package\Contêiner do Loop Foreach\REVENDA.PrecedenceConstraints[Restrição 3]"
+              DTS:refId="Package\Contêiner do Loop Foreach\REVENDA.PrecedenceConstraints[Restrição 1]"
               DTS:CreationName=""
-              DTS:DTSID="{085A059A-EAED-44BC-A1C8-34DD24E030BB}"
+              DTS:DTSID="{438337E4-0E05-4045-832E-D8623F23C501}"
               DTS:From="Package\Contêiner do Loop Foreach\REVENDA\MOVE ARQUIVO"
               DTS:LogicalAnd="True"
-              DTS:ObjectName="Restrição 3"
+              DTS:ObjectName="Restrição 1"
               DTS:To="Package\Contêiner do Loop Foreach\REVENDA\ENVIAR EMAIL" />
           </DTS:PrecedenceConstraints>
         </DTS:Executable>
@@ -3151,8 +3165,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{AAF73AA1-A9DB-4330-9345-F514750C118B}"
-          DTS:ObjectName="{AAF73AA1-A9DB-4330-9345-F514750C118B}"
+          DTS:DTSID="{6E26D59C-5AC4-4419-BE05-A482DAF7A47D}"
+          DTS:ObjectName="{6E26D59C-5AC4-4419-BE05-A482DAF7A47D}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::Revenda" />
       </DTS:ForEachVariableMappings>
@@ -3173,29 +3187,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="230.4,41.6"
           Id="Package\Contêiner do Loop Foreach\REVENDA\BUSCAR DADOS"
-          TopLeft="59.9400003002533,23.0753501698841" />
+          TopLeft="52.1494184301115,43.7224089753156" />
         <NodeLayout
           Size="230.4,41.6"
           Id="Package\Contêiner do Loop Foreach\REVENDA\ENVIAR EMAIL"
-          TopLeft="59.2257145844471,177.564705653782" />
+          TopLeft="52.1494184301115,208.928104753164" />
         <NodeLayout
           Size="230.4,41.6"
           Id="Package\Contêiner do Loop Foreach\REVENDA\MOVE ARQUIVO"
-          TopLeft="59.9400003002533,100.702380852674" />
+          TopLeft="52.1494184301115,126.32525686424" />
         <EdgeLayout
           Id="Package\Contêiner do Loop Foreach\REVENDA.PrecedenceConstraints[Restrição]"
-          TopLeft="175.140000300253,64.6753501698841">
+          TopLeft="167.349418430112,85.3224089753156">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.0270306827904"
+              EndConnector="0,41.0028478889241"
               Start="0,0"
-              End="0,28.5270306827904">
+              End="0,33.5028478889241">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5270306827904" />
+                    End="0,33.5028478889241" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3205,19 +3219,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Contêiner do Loop Foreach\REVENDA.PrecedenceConstraints[Restrição 3]"
-          TopLeft="174.78285744235,142.302380852674">
+          Id="Package\Contêiner do Loop Foreach\REVENDA.PrecedenceConstraints[Restrição 1]"
+          TopLeft="167.349418430112,167.92525686424">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.2623248011084"
+              EndConnector="0,41.0028478889241"
               Start="0,0"
-              End="0,27.7623248011084">
+              End="0,33.5028478889241">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.7623248011084" />
+                    End="0,33.5028478889241" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3229,17 +3243,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="True"
-          PanelSize="329.6,274.4"
-          Size="329.6,317.6"
+          PanelSize="329.6,305.6"
+          Size="329.6,348.8"
           Id="Package\Contêiner do Loop Foreach\REVENDA"
-          TopLeft="44.5809526734005,38.6392156389069" />
+          TopLeft="44.5809526734005,37.7895424370373" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="424,411.2"
-          Size="424,454.4"
+          PanelSize="424,441.6"
+          Size="424,484.8"
           Id="Package\Contêiner do Loop Foreach"
-          TopLeft="255.000000542828,202.282352832588" />
+          TopLeft="257.619048167451,3.5084967513902" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
