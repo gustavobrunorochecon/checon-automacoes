@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="COM15"
   DTS:PackageType="5"
-  DTS:VersionBuild="138"
-  DTS:VersionGUID="{DAF5F66F-B9CA-49D3-BFDA-B93FACC027C8}">
+  DTS:VersionBuild="140"
+  DTS:VersionGUID="{9477840B-2C22-401D-AA56-7EE49F37725B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40,6 +40,16 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
+      DTS:DTSID="{6F11C2A8-E0D8-4E3D-B4B3-136AEEE22505}"
+      DTS:ObjectName="Destino">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
       DTS:DTSID="{A561A2CD-2EEB-4169-BD88-008D9878D7C6}"
       DTS:ObjectName="Email">
       <DTS:Property
@@ -57,17 +67,7 @@
         DTS:Name="ParameterValue">0</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
-  <DTS:Variables>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{3E015277-E8D9-42FC-BFD0-5157B8A693D0}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="Revenda">
-      <DTS:VariableValue
-        DTS:DataType="3">1</DTS:VariableValue>
-    </DTS:Variable>
-  </DTS:Variables>
+  <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\ENVIAR EMAIL"
@@ -85,38 +85,16 @@
           VSTAMajorVersion="16"
           VSTAMinorVersion="0"
           Language="CSharp"
-          ReadOnlyVariables="System::PackageName,$Package::Ano,$Package::Email,$Package::Mes"
-          ReadWriteVariables="User::Revenda">
+          ReadOnlyVariables="System::PackageName,$Package::Ano,$Package::Email,$Package::Mes">
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_00387ddfa53f4a61a67305738af9ad71")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_00387ddfa53f4a61a67305738af9ad71")]
-[assembly: AssemblyCopyright("Copyright @  2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="ST_7135f0d7b5cd43d6a91d24f7ef9223b1.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -400,12 +378,6 @@ using System.Runtime.CompilerServices;
   </resheader>
 </root>]]></ProjectItem>
           <ProjectItem
-            Name="packages.config"
-            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
-          <ProjectItem
             Name="ScriptMain.cs"
             Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -582,7 +554,7 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
     <msb:CodeName>ST_7135f0d7b5cd43d6a91d24f7ef9223b1</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_7135f0d7b5cd43d6a91d24f7ef9223b1</msb:DisplayName>
-    <msb:ProjectId>{654961C2-EAE9-476F-B84E-CBE0218FC209}</msb:ProjectId>
+    <msb:ProjectId>{685BD71E-8469-40F5-A855-C38F3D63D903}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_7135f0d7b5cd43d6a91d24f7ef9223b1.csproj" />
@@ -596,6 +568,12 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
     <msb:File Include="ScriptMain.cs" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="packages.config"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Settings.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -626,14 +604,35 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_00387ddfa53f4a61a67305738af9ad71")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_00387ddfa53f4a61a67305738af9ad71")]
+[assembly: AssemblyCopyright("Copyright @  2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -705,7 +704,7 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71.Properties {
           <BinaryItem
             Name="ST_7135f0d7b5cd43d6a91d24f7ef9223b1.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDADfwnGgAAAAAAAAAAOAAIiALATAAACAAAAAIAAAAAAAASj8A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAL66iWkAAAAAAAAAAOAAIiALATAAACAAAAAIAAAAAAAASj8A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAPg+AABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -751,7 +750,7 @@ tgBJAbUBBgBxAbUBBgDxAGgHAQDxABQHvQAJATsIwwB5AZ4FxgChAK8H1AChALcH2QCBAb0B3wCB
 AQoE5gCBASAE5gCBAa0E5gBxAKgFBgC5AKgFBgCJAf8A8ACJAekH+QDBAKgF/wDhAKgFBgAIABQA
 KwEIABgAMAEpAHMAmAEuAAsAcAEuABMAeQEuABsAmAEuACMAoQEuACsAygEuADMAygEuADsAygEu
 AEMAoQEuAEsA0AEuAFMAygEuAFsA5wFDAGMAMAFJAHMAmAFhAHsAMAFjAGsAMAEbAM8AAwABAAQA
-AwAAAHoFYQEAAHkBZgEAAGAHawECAAYAAwACAAcABQABAAgABQACAAkABwAEgAAAAQAAAIwkQ3gA
+AwAAAHoFYQEAAHkBZgEAAGAHawECAAYAAwACAAcABQABAAgABQACAAkABwAEgAAAAQAAAEAlhzYA
 AAAAAAAlAAAABAAAAAAAAAAAAAAABwGEAAAAAAAQAAAAAAAAAAAAAAAQAcIDAAAAAAQABgAAAAAA
 AAAAABkBTAcAAAAABAAGAAAAAAAAAAAAIgFUBwAAAAAEAAAAAAAAAAAAAAAHAYwEAAAAABAAAAAA
 AAAAAAAAABABUgAAAAAAAAAAAAEAAAANBgAABQACAAAAAFNUXzAwMzg3ZGRmYTUzZjRhNjFhNjcz
@@ -837,7 +836,7 @@ PgANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
 ACAAIAAgACAAIAAgACAAIAA8AGkAbQBnACAAcwByAGMAPQAiAGMAaQBkADoAbABvAGcAbwAuAHAA
 bgBnACIAIABhAGwAdAA9ACIATABvAGcAbwAiACAALwA+AAFxUwBUAF8AMAAwADMAOAA3AGQAZABm
 AGEANQAzAGYANABhADYAMQBhADYANwAzADAANQA3ADMAOABhAGYAOQBhAGQANwAxAC4AUAByAG8A
-cABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAACIQPDdeFGVRaTMLtv8de3sAAQg
+cABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAADxIIiGtrOgS4IsN1yNvh32AAQg
 AQEIAyAAAQUgAQEREQQgAQEOBSABARFpEAcIDg4SPRJBEUUSSRJNEk0EIAASeQQgABJ9BiABEoCB
 HAMgABwDIAAOBQABDh0OBSAAEoCJCCACEoCNDhFFBSAAEoCRBSACAQ4OBiABARKAmQUAAgIODgYg
 AQERgJ0FIAASgKEFIAASgI0GIAEBEoCNCiAEAQ4IEYCpEUUHIAMBDg4RRQogAw4SQRFFEoCxBAAB
@@ -858,14 +857,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQ
 AAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAAAFhA
 AAAaBAAAAAAAAAAAAAAaBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAAvQTv
-/gAAAQAAAAEAQ3iMJAAAAQBDeIwkPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYA
+/gAAAQAAAAEAhzZAJQAAAQCHNkAlPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYA
 YQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAAAAAA
 ALAEegMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAVgMAAAEAMAAwADAAMAAwADQA
 YgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBuAHkATgBh
 AG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAFQA
 XwAwADAAMwA4ADcAZABkAGYAYQA1ADMAZgA0AGEANgAxAGEANgA3ADMAMAA1ADcAMwA4AGEAZgA5
-AGEAZAA3ADEAAAA+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AOQAzADUA
-NgAuADMAMAA3ADgANwAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA3
+AGEAZAA3ADEAAAA+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AOQA1ADMA
+NgAuADEAMwA5ADUAOQAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA3
 ADEAMwA1AGYAMABkADcAYgA1AGMAZAA0ADMAZAA2AGEAOQAxAGQAMgA0AGYANwBlAGYAOQAyADIA
 MwBiADEALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBw
 AHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADIANAAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUA
@@ -874,8 +873,8 @@ AFMAVABfADcAMQAzADUAZgAwAGQANwBiADUAYwBkADQAMwBkADYAYQA5ADEAZAAyADQAZgA3AGUA
 ZgA5ADIAMgAzAGIAMQAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABT
 AFQAXwAwADAAMwA4ADcAZABkAGYAYQA1ADMAZgA0AGEANgAxAGEANgA3ADMAMAA1ADcAMwA4AGEA
 ZgA5AGEAZAA3ADEAAABCAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAu
-ADkAMwA1ADYALgAzADAANwA4ADcAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMA
-aQBvAG4AAAAxAC4AMAAuADkAMwA1ADYALgAzADAANwA4ADcAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ADkANQAzADYALgAxADMAOQA1ADkAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMA
+aQBvAG4AAAAxAC4AMAAuADkANQAzADYALgAxADMAOQA1ADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
