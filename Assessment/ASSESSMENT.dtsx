@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="ASSESSMENT"
   DTS:PackageType="5"
-  DTS:VersionBuild="149"
-  DTS:VersionGUID="{9F30EB44-D1C5-41D3-9B08-D981B9623542}">
+  DTS:VersionBuild="167"
+  DTS:VersionGUID="{8482D018-128C-412A-A88D-5C38ECC805CF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -68,6 +68,7 @@
           DTS:refId="Package\1º Semana\COM10"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="RPS EXECUÇÃO DE VENDAS  - LIDERANÇA"
+          DTS:Disabled="True"
           DTS:DTSID="{af51b7ae-4e1e-46e7-8fa2-a587b35c1664}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -123,6 +124,10 @@
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
               </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
+              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -152,6 +157,10 @@
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
               </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
+              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -159,6 +168,7 @@
           DTS:refId="Package\1º Semana\COM15"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="TABELA DE PREÇO"
+          DTS:Disabled="True"
           DTS:DTSID="{7414c296-3a8e-4833-8c21-31e233c97814}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -180,6 +190,10 @@
               <ParameterAssignment>
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
               </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
@@ -210,6 +224,10 @@
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
               </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
+              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -238,6 +256,10 @@
               <ParameterAssignment>
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
               </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
@@ -268,6 +290,10 @@
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
               </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
+              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -296,6 +322,10 @@
               <ParameterAssignment>
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
               </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
@@ -326,6 +356,10 @@
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
               </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
+              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -354,6 +388,10 @@
               <ParameterAssignment>
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
               </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
@@ -384,6 +422,10 @@
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
               </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
+              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -412,6 +454,10 @@
               <ParameterAssignment>
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
               </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
@@ -442,6 +488,10 @@
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
               </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
+              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -470,6 +520,43 @@
               <ParameterAssignment>
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\1º Semana\COM26"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="ROTA SV"
+          DTS:DTSID="{e796a4df-81ae-4ac6-a8b5-de55da20d6eb}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="COM26"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>COM26.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Ano</ParameterName>
+                <BindedVariableOrParameterName>User::Ano</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Mes</ParameterName>
+                <BindedVariableOrParameterName>User::Mes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Email</ParameterName>
+                <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
               </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
@@ -587,6 +674,10 @@
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
               </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
+              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -615,6 +706,10 @@
               <ParameterAssignment>
                 <ParameterName>Email</ParameterName>
                 <BindedVariableOrParameterName>User::Email</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Destino</ParameterName>
+                <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
               </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
@@ -693,11 +788,11 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 13]"
           DTS:CreationName=""
-          DTS:DTSID="{3432DF8D-DD1C-480C-9D28-45BB8A9672F0}"
+          DTS:DTSID="{F13ACF75-1F3F-4B64-8498-0C7C0FAAC978}"
           DTS:From="Package\1º Semana\COM25"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restrição 13"
-          DTS:To="Package\1º Semana\COM29" />
+          DTS:To="Package\1º Semana\COM26" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 14]"
           DTS:CreationName=""
@@ -738,6 +833,14 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restrição 18"
           DTS:To="Package\1º Semana\TRD04" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 19]"
+          DTS:CreationName=""
+          DTS:DTSID="{EDD82779-82DF-4B78-8D91-882995742121}"
+          DTS:From="Package\1º Semana\COM26"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 19"
+          DTS:To="Package\1º Semana\COM29" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\1º Semana.PrecedenceConstraints[Restrição 2]"
           DTS:CreationName=""
@@ -874,21 +977,33 @@
           Id="Package\1º Semana\COM25"
           TopLeft="131.115432273622,873.073109167291" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="181.6,41.6"
+          Id="Package\1º Semana\COM26"
+          TopLeft="131.879366388707,938.898038880763" />
+        <NodeLayout
+          Size="183.2,41.6"
           Id="Package\1º Semana\COM29"
-          TopLeft="131.115432273622,939.032492871581" />
+          TopLeft="131.115432273622,1005.30700261741" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\1º Semana\COM30"
-          TopLeft="131.115432273622,1004.99187657587" />
+          TopLeft="131.115432273622,1071.2663863217" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\1º Semana\RH03"
-          TopLeft="131.115432273622,1070.95126028016" />
+          TopLeft="131.115432273622,1137.22577002599" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\1º Semana\TRD01"
-          TopLeft="131.115432273622,1136.91064398445" />
+          TopLeft="131.115432273622,1203.18515373028" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\TRD03"
+          TopLeft="131.115432273622,1269.14453743457" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\1º Semana\TRD04"
+          TopLeft="131.115432273622,1335.10392113886" />
         <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição]"
           TopLeft="224.715432273622,321.038655828687">
@@ -1001,18 +1116,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição 13]"
-          TopLeft="224.715432273622,914.673109167291">
+          TopLeft="223.697399331165,914.673109167291">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24.3593837042894"
+              EndConnector="0,24.2249297134719"
               Start="0,0"
-              End="0,16.8593837042894">
+              End="0,16.7249297134719">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.8593837042894" />
+                    End="0,16.7249297134719" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1067,18 +1182,84 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição 16]"
-          TopLeft="224.715432273622,980.632492871581">
+          TopLeft="223.715432273622,1046.90700261741">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24.3593837042894"
+              EndConnector="0,24.3593837042902"
               Start="0,0"
-              End="0,16.8593837042894">
+              End="0,16.8593837042902">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.8593837042894" />
+                    End="0,16.8593837042902" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 17]"
+          TopLeft="224.715432273622,1244.78515373028">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.3593837042895"
+              Start="0,0"
+              End="0,16.8593837042895">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.8593837042895" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 18]"
+          TopLeft="224.715432273622,1310.74453743457">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.3593837042895"
+              Start="0,0"
+              End="0,16.8593837042895">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.8593837042895" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 19]"
+          TopLeft="222.697399331164,980.498038880763">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.808963736647"
+              Start="0,0"
+              End="0,17.308963736647">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.308963736647" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1155,7 +1336,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição 5]"
-          TopLeft="224.715432273622,1046.59187657587">
+          TopLeft="224.715432273622,1112.8663863217">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1243,59 +1424,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição 9]"
-          TopLeft="224.715432273622,1112.55126028016">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24.3593837042895"
-              Start="0,0"
-              End="0,16.8593837042895">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.8593837042895" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\1º Semana\TRD03"
-          TopLeft="131.115432273622,1202.87002768874" />
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\1º Semana\TRD04"
-          TopLeft="131.115432273622,1268.82941139303" />
-        <EdgeLayout
-          Id="Package\1º Semana.PrecedenceConstraints[Restrição 17]"
-          TopLeft="224.715432273622,1178.51064398445">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24.3593837042895"
-              Start="0,0"
-              End="0,16.8593837042895">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.8593837042895" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\1º Semana.PrecedenceConstraints[Restrição 18]"
-          TopLeft="224.715432273622,1244.47002768874">
+          TopLeft="224.715432273622,1178.82577002599">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1318,8 +1447,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="436.8,1394.4"
-          Size="436.8,1437.6"
+          PanelSize="436.8,1432"
+          Size="436.8,1475.2"
           Id="Package\1º Semana"
           TopLeft="483.000001016472,771.869607628587" />
       </GraphLayout>

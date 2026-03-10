@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="METAS"
   DTS:PackageType="5"
-  DTS:VersionBuild="180"
-  DTS:VersionGUID="{79F226BF-5D6A-46B9-947C-B2E8FCC9AE00}">
+  DTS:VersionBuild="181"
+  DTS:VersionGUID="{61B432DD-8FA3-4ED1-851E-FF8563239FF8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -41,7 +41,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Mes">
       <DTS:VariableValue
-        DTS:DataType="3">2</DTS:VariableValue>
+        DTS:DataType="3">3</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -58,6 +58,7 @@
       DTS:refId="Package\ATUALIZA FDS"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Tarefa Script"
+      DTS:Disabled="True"
       DTS:DTSID="{68e3d2df-354b-4a8a-bf01-e5ba485fe776}"
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
@@ -73,6 +74,164 @@
           VSTAMinorVersion="0"
           Language="CSharp"
           ReadOnlyVariables="User::Ano,User::Dados,User::Mes">
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using MySql.Data.MySqlClient;
+using System.IO;
+using OfficeOpenXml;
+using Microsoft.SqlServer.Dts.Tasks.ScriptTask;
+using System.Data.Common;
+using System.Runtime.InteropServices;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Globalization;
+using System.Data.SqlClient;
+using System.Data.Odbc;
+using Bibliotecas;
+using System.Collections.Generic;
+using System.Data;
+using MySqlX.XDevAPI;
+using System.Windows.Forms;
+using System.Linq;
+using System.Collections;
+#endregion
+
+namespace ST_1d5348b3f62c4fa29edf085caff84d1d
+{
+    
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+
+        public void Main()
+        {
+           
+            List<string> schemas = new List<string> { "x230", "x690" };
+
+            foreach (string schema in schemas)
+            {
+                atualizar_Metas_FDS(Dts, schema, bd_Dados(Dts, schema, "METAS_FDS" ) );                
+            }
+
+            Dts.TaskResult = (int)ScriptResults.Success;
+        }       
+
+        private DataTable bd_Dados(ScriptObjectModel dts, string schema, string tabela )
+        {
+
+            AccessDataPostgreSQL accessDataPostgree = new AccessDataPostgreSQL(schema);
+            DataTable resultadoFinal = new DataTable();
+
+            try
+            {
+                string Ano = Dts.Variables["User::Ano"].Value.ToString();
+                string Mes = Dts.Variables["User::Mes"].Value.ToString();
+
+                string dataString = $"{Ano}-{Mes.PadLeft(2, '0')}-01";
+                DateTime dt = DateTime.ParseExact(dataString, "yyyy-MM-dd", null).AddMonths(-1);
+                string data = "'" + dt.ToString("yyyy-MM-dd") + "'";
+
+                string query = $@"  SELECT  * 
+                                    FROM    {tabela} 
+                                    WHERE   validade_meta = {data}                                                
+                                 ";
+
+                using (OdbcDataReader reader = accessDataPostgree.executeSelect(query))
+                    {
+                        DataTable tempTable = new DataTable();
+                        tempTable.Load(reader);
+
+                        if (resultadoFinal.Columns.Count == 0)
+                        {
+                            resultadoFinal = tempTable.Clone();
+                        }
+
+                        foreach (DataRow row in tempTable.Rows)
+                        {
+                            resultadoFinal.ImportRow(row);
+                        }
+                    }           
+
+            }
+            catch (Exception ex)
+            {
+                Dts.Events.FireError(0, "Erro ao consulta a tabela - " + tabela, ex.Message, string.Empty, 0);
+                Dts.TaskResult = (int)ScriptResults.Failure;
+            }
+
+            return resultadoFinal;
+
+        }
+
+        private void atualizar_Metas_FDS(ScriptObjectModel dts, string schema, DataTable dataTable)
+        {
+            AccessDataPostgreSQL accessDataPostgreSQL = new AccessDataPostgreSQL(schema);
+
+            string Ano = Dts.Variables["User::Ano"].Value.ToString();
+            string Mes = Dts.Variables["User::Mes"].Value.ToString();
+
+            string data = "'" + Ano + Mes.PadLeft(2, '0') + "01'";
+
+            try
+            {
+                string insertSql = $@" INSERT INTO METAS_FDS (validade_meta,   gv ,  sv ,  vd ,  meta_fds)
+                                       VALUES                (@validade_meta, @gv , @sv , @vd , @meta_fds)";
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    // Limpar parâmetros antes de cada execução
+                    accessDataPostgreSQL.parameterClear();
+
+                    // Adicionar os parâmetros dinamicamente com base nas colunas
+                    accessDataPostgreSQL.addParameter("@validade_meta", data);
+                    accessDataPostgreSQL.addParameter("@gv", row["gv"]);
+                    accessDataPostgreSQL.addParameter("@sv", row["sv"]);
+                    accessDataPostgreSQL.addParameter("@vd", row["vd"]);
+                    accessDataPostgreSQL.addParameter("@meta_fds", row["meta_fds"]);
+
+                    string codition = $" validade_meta = " + data
+                                     + " AND vd = " + row["vd"].ToString();
+                   
+                    if (accessDataPostgreSQL.isExist( schema, "METAS_FDS", codition ) == false )
+                    {                       
+                        int linhasAfetadas = accessDataPostgreSQL.executeInsert(insertSql);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Dts.Events.FireError(0, "Erro no InsertOrUpdate METAS_FDS. Detalhes ", ex.Message, string.Empty, 0);
+                Dts.TaskResult = (int)ScriptResults.Failure;
+            }
+
+        }
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -193,40 +352,14 @@
   </resheader>
 </root>]]></ProjectItem>
           <ProjectItem
-            Name="packages.config"
-            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="BouncyCastle.Cryptography" version="2.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Settings.get_Default():ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Sett" +
-    "ings")]
-
-namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="ST_75b77669ffec47d0a02e11f0180e7676.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -428,164 +561,6 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
           <ProjectItem
-            Name="ScriptMain.cs"
-            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
-/* The Script Task allows you to perform virtually any operation that can be accomplished in
- * a .Net application within the context of an Integration Services control flow. 
- * 
- * Expand the other regions which have "Help" prefixes for examples of specific ways to use
- * Integration Services features within this script task. */
-#endregion
-
-
-#region Namespaces
-using System;
-using MySql.Data.MySqlClient;
-using System.IO;
-using OfficeOpenXml;
-using Microsoft.SqlServer.Dts.Tasks.ScriptTask;
-using System.Data.Common;
-using System.Runtime.InteropServices;
-using Excel = Microsoft.Office.Interop.Excel;
-using System.Globalization;
-using System.Data.SqlClient;
-using System.Data.Odbc;
-using Bibliotecas;
-using System.Collections.Generic;
-using System.Data;
-using MySqlX.XDevAPI;
-using System.Windows.Forms;
-using System.Linq;
-using System.Collections;
-#endregion
-
-namespace ST_1d5348b3f62c4fa29edf085caff84d1d
-{
-    
-	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
-	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
-	{
-
-        public void Main()
-        {
-           
-            List<string> schemas = new List<string> { "x230", "x690" };
-
-            foreach (string schema in schemas)
-            {
-                atualizar_Metas_FDS(Dts, schema, bd_Dados(Dts, schema, "METAS_FDS" ) );                
-            }
-
-            Dts.TaskResult = (int)ScriptResults.Success;
-        }       
-
-        private DataTable bd_Dados(ScriptObjectModel dts, string schema, string tabela )
-        {
-
-            AccessDataPostgreSQL accessDataPostgree = new AccessDataPostgreSQL(schema);
-            DataTable resultadoFinal = new DataTable();
-
-            try
-            {
-                string Ano = Dts.Variables["User::Ano"].Value.ToString();
-                string Mes = Dts.Variables["User::Mes"].Value.ToString();
-
-                string dataString = $"{Ano}-{Mes.PadLeft(2, '0')}-01";
-                DateTime dt = DateTime.ParseExact(dataString, "yyyy-MM-dd", null).AddMonths(-1);
-                string data = "'" + dt.ToString("yyyy-MM-dd") + "'";
-
-                string query = $@"  SELECT  * 
-                                    FROM    {tabela} 
-                                    WHERE   validade_meta = {data}                                                
-                                 ";
-
-                using (OdbcDataReader reader = accessDataPostgree.executeSelect(query))
-                    {
-                        DataTable tempTable = new DataTable();
-                        tempTable.Load(reader);
-
-                        if (resultadoFinal.Columns.Count == 0)
-                        {
-                            resultadoFinal = tempTable.Clone();
-                        }
-
-                        foreach (DataRow row in tempTable.Rows)
-                        {
-                            resultadoFinal.ImportRow(row);
-                        }
-                    }           
-
-            }
-            catch (Exception ex)
-            {
-                Dts.Events.FireError(0, "Erro ao consulta a tabela - " + tabela, ex.Message, string.Empty, 0);
-                Dts.TaskResult = (int)ScriptResults.Failure;
-            }
-
-            return resultadoFinal;
-
-        }
-
-        private void atualizar_Metas_FDS(ScriptObjectModel dts, string schema, DataTable dataTable)
-        {
-            AccessDataPostgreSQL accessDataPostgreSQL = new AccessDataPostgreSQL(schema);
-
-            string Ano = Dts.Variables["User::Ano"].Value.ToString();
-            string Mes = Dts.Variables["User::Mes"].Value.ToString();
-
-            string data = "'" + Ano + Mes.PadLeft(2, '0') + "01'";
-
-            try
-            {
-                string insertSql = $@" INSERT INTO METAS_FDS (validade_meta,   gv ,  sv ,  vd ,  meta_fds)
-                                       VALUES                (@validade_meta, @gv , @sv , @vd , @meta_fds)";
-
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    // Limpar parâmetros antes de cada execução
-                    accessDataPostgreSQL.parameterClear();
-
-                    // Adicionar os parâmetros dinamicamente com base nas colunas
-                    accessDataPostgreSQL.addParameter("@validade_meta", data);
-                    accessDataPostgreSQL.addParameter("@gv", row["gv"]);
-                    accessDataPostgreSQL.addParameter("@sv", row["sv"]);
-                    accessDataPostgreSQL.addParameter("@vd", row["vd"]);
-                    accessDataPostgreSQL.addParameter("@meta_fds", row["meta_fds"]);
-
-                    string codition = $" validade_meta = " + data
-                                     + " AND vd = " + row["vd"].ToString();
-                   
-                    if (accessDataPostgreSQL.isExist( schema, "METAS_FDS", codition ) == false )
-                    {                       
-                        int linhasAfetadas = accessDataPostgreSQL.executeInsert(insertSql);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Dts.Events.FireError(0, "Erro no InsertOrUpdate METAS_FDS. Detalhes ", ex.Message, string.Empty, 0);
-                Dts.TaskResult = (int)ScriptResults.Failure;
-            }
-
-        }
-
-        #region ScriptResults declaration
-        /// <summary>
-        /// This enum provides a convenient shorthand within the scope of this class for setting the
-        /// result of the script.
-        /// 
-        /// This code was generated automatically.
-        /// </summary>
-        enum ScriptResults
-        {
-            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
-            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
-        };
-        #endregion
-
-	}
-}]]></ProjectItem>
-          <ProjectItem
             Name="app.config"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <configuration>
@@ -625,6 +600,41 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
+            Name="packages.config"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="BouncyCastle.Cryptography" version="2.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Settings.get_Default():ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Sett" +
+    "ings")]
+
+namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
             Name="Properties\AssemblyInfo.cs"
             Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -654,15 +664,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -926,6 +927,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Language="CSharp"
           ReadOnlyVariables="User::Ano,User::Dados,User::Mes">
           <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -1044,41 +1054,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-          <ProjectItem
-            Name="packages.config"
-            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="BouncyCastle.Cryptography" version="2.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Settings.get_Default():ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Sett" +
-    "ings")]
-
-namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
           <ProjectItem
             Name="ST_94546c9822d44a9bade2243218a0bcb9.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1525,6 +1500,41 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
+            Name="packages.config"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="BouncyCastle.Cryptography" version="2.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Settings.get_Default():ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Sett" +
+    "ings")]
+
+namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
             Name="Properties\AssemblyInfo.cs"
             Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -1554,15 +1564,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1853,36 +1854,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Language="CSharp"
           ReadOnlyVariables="User::Ano,User::Dados,User::Mes">
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_1d5348b3f62c4fa29edf085caff84d1d")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_1d5348b3f62c4fa29edf085caff84d1d")]
-[assembly: AssemblyCopyright("Copyright @  2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-          <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -2002,7 +1973,13 @@ using System.Runtime.CompilerServices;
   </resheader>
 </root>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Resources.Designer.cs"
+            Name="packages.config"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="BouncyCastle.Cryptography" version="2.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
 //     This code was generated by a tool.
@@ -2012,59 +1989,20 @@ using System.Runtime.CompilerServices;
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
-    "rceManager")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
-    "fo")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
-    "):Void")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Settings.get_Default():ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Sett" +
+    "ings")]
 
 namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
     
     
-    /// <summary>
-    ///   A strongly-typed resource class, for looking up localized strings, etc.
-    /// </summary>
-    // This class was auto-generated by the StronglyTypedResourceBuilder
-    // class via a tool like ResGen or Visual Studio.
-    // To add or remove a member, edit your .ResX file then rerun ResGen
-    // with the /str option, or rebuild your VS project.
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class Resources {
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
-        private static global::System.Resources.ResourceManager resourceMan;
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
         
-        private static global::System.Globalization.CultureInfo resourceCulture;
-        
-        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
-        }
-        
-        /// <summary>
-        ///   Returns the cached ResourceManager instance used by this class.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static Settings Default {
             get {
-                if ((resourceMan == null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Resources", typeof(Resources).Assembly);
-                    resourceMan = temp;
-                }
-                return resourceMan;
-            }
-        }
-        
-        /// <summary>
-        ///   Overrides the current thread's CurrentUICulture property for all
-        ///   resource lookups using this strongly typed resource class.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
-            get {
-                return resourceCulture;
-            }
-            set {
-                resourceCulture = value;
+                return defaultInstance;
             }
         }
     }
@@ -2249,72 +2187,6 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
     </assemblyBinding>
   </runtime>
 </configuration>]]></ProjectItem>
-          <ProjectItem
-            Name="Project"
-            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_a48de6428c5940bf9d817c3b9493bb7b</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_a48de6428c5940bf9d817c3b9493bb7b</msb:DisplayName>
-    <msb:ProjectId>{0797EF5B-CA25-405A-A4CA-EAEBC626B90D}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_a48de6428c5940bf9d817c3b9493bb7b.csproj" />
-    <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="packages.config" />
-    <msb:File Include="app.config" />
-    <msb:File Include="ScriptMain.cs" />
-  </msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-          <ProjectItem
-            Name="packages.config"
-            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="BouncyCastle.Cryptography" version="2.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Settings.get_Default():ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Sett" +
-    "ings")]
-
-namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="ST_a48de6428c5940bf9d817c3b9493bb7b.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2515,6 +2387,135 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
     </VisualStudio>
   </ProjectExtensions>
 </Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_a48de6428c5940bf9d817c3b9493bb7b</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_a48de6428c5940bf9d817c3b9493bb7b</msb:DisplayName>
+    <msb:ProjectId>{0797EF5B-CA25-405A-A4CA-EAEBC626B90D}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_a48de6428c5940bf9d817c3b9493bb7b.csproj" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="packages.config" />
+    <msb:File Include="app.config" />
+    <msb:File Include="ScriptMain.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_1d5348b3f62c4fa29edf085caff84d1d")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_1d5348b3f62c4fa29edf085caff84d1d")]
+[assembly: AssemblyCopyright("Copyright @  2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_1d5348b3f62c4fa29edf085caff84d1d.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
           <BinaryItem
             Name="ST_a48de6428c5940bf9d817c3b9493bb7b.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
@@ -2902,40 +2903,118 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
   </resheader>
 </root>]]></ProjectItem>
               <ProjectItem
-                Name="packages.config"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+                Name="AccessDataMySql.cs"
+                Encoding="UTF8"><![CDATA[
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_00387ddfa53f4a61a67305738af9ad71.Properties.Settings.get_Default():ST_00387ddfa53f4a61a67305738af9ad71.Properties.Sett" +
-    "ings")]
+namespace ST_00387ddfa53f4a61a67305738af9ad71
+{
+    internal class AccessDataMySql
+    {
+              
+        private MySqlConnection createConnection()
+        {
+            try
+            {
+                var connString = "Server=192.168.0.8;Database=producao;Uid=etl;Pwd=etl";
 
-namespace ST_00387ddfa53f4a61a67305738af9ad71.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
+                var connection = new MySqlConnection(connString);
+
+                return connection;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro na conexão com o Banco de dados. Detalhes:" + ex.Message);
             }
         }
+
+        private MySqlParameterCollection sqlParameterCollection = new MySqlCommand().Parameters;
+
+        /// <summary>
+        /// Método responsável por limpar os dados referentes aos parametros
+        /// </summary>
+        public void parameterClear()
+        {
+            sqlParameterCollection.Clear();
+        }
+
+        /// <summary>
+        /// Método responsável por atribuir valores aos parametros
+        /// </summary>
+        /// <param name="nameParameter">Nome do parametro que vai ser usado na query sql ("@valor")</param>
+        /// <param name="valueParameter">Valor que é atribuído ao parametro que vai ser usado na query sql (objeto.valor)</param>
+        public void addParameters(string nameParameter, object valueParameter)
+        {
+            sqlParameterCollection.Add(new MySqlParameter(nameParameter, valueParameter));
+        }
+
+        /// <summary>
+        /// Método responsável pelas consultas na base de dados
+        /// param sqlText uma query sql em forma de string
+        /// return  SqlDataReader
+        /// </summary>
+        /// <param name="sqlTexto">Parametro (sqlText) uma string contendo uma query sql</param>
+        /// <returns>SqlDataReader</returns>
+        public MySqlDataReader executeSelect(string sqlTexto)
+        {
+            try
+            {
+
+                // criar conexao
+                MySqlConnection sqlConnection = createConnection();
+
+                // abrir
+                sqlConnection.Open();
+                // criar o comando
+                using (MySqlCommand sqlCommand = sqlConnection.CreateCommand())
+                {
+
+
+
+                    //sqlCommand.CommandType = commandType;
+                    sqlCommand.CommandText = sqlTexto;
+                    sqlCommand.CommandTimeout = 900;
+                    sqlCommand.Connection = sqlConnection;
+
+
+                    // adicionar os parametros
+
+                    foreach (MySqlParameter sqlParameter in sqlParameterCollection)
+                    {
+                        sqlCommand.Parameters.Add(new MySqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
+                    }
+
+
+                    // buscar os dados
+                    MySqlDataReader data = sqlCommand.ExecuteReader();
+                    return data;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro no select. Detalhes:" + ex.Message);
+            }
+        }       
+
     }
 }]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[ #region Help:  Introduction to the script task
@@ -3132,107 +3211,38 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
-                Name="AccessDataMySql.cs"
-                Encoding="UTF8"><![CDATA[
-using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+                Name="packages.config"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-namespace ST_00387ddfa53f4a61a67305738af9ad71
-{
-    internal class AccessDataMySql
-    {
-              
-        private MySqlConnection createConnection()
-        {
-            try
-            {
-                var connString = "Server=192.168.0.8;Database=producao;Uid=etl;Pwd=etl";
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_00387ddfa53f4a61a67305738af9ad71.Properties.Settings.get_Default():ST_00387ddfa53f4a61a67305738af9ad71.Properties.Sett" +
+    "ings")]
 
-                var connection = new MySqlConnection(connString);
-
-                return connection;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro na conexão com o Banco de dados. Detalhes:" + ex.Message);
+namespace ST_00387ddfa53f4a61a67305738af9ad71.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
             }
         }
-
-        private MySqlParameterCollection sqlParameterCollection = new MySqlCommand().Parameters;
-
-        /// <summary>
-        /// Método responsável por limpar os dados referentes aos parametros
-        /// </summary>
-        public void parameterClear()
-        {
-            sqlParameterCollection.Clear();
-        }
-
-        /// <summary>
-        /// Método responsável por atribuir valores aos parametros
-        /// </summary>
-        /// <param name="nameParameter">Nome do parametro que vai ser usado na query sql ("@valor")</param>
-        /// <param name="valueParameter">Valor que é atribuído ao parametro que vai ser usado na query sql (objeto.valor)</param>
-        public void addParameters(string nameParameter, object valueParameter)
-        {
-            sqlParameterCollection.Add(new MySqlParameter(nameParameter, valueParameter));
-        }
-
-        /// <summary>
-        /// Método responsável pelas consultas na base de dados
-        /// param sqlText uma query sql em forma de string
-        /// return  SqlDataReader
-        /// </summary>
-        /// <param name="sqlTexto">Parametro (sqlText) uma string contendo uma query sql</param>
-        /// <returns>SqlDataReader</returns>
-        public MySqlDataReader executeSelect(string sqlTexto)
-        {
-            try
-            {
-
-                // criar conexao
-                MySqlConnection sqlConnection = createConnection();
-
-                // abrir
-                sqlConnection.Open();
-                // criar o comando
-                using (MySqlCommand sqlCommand = sqlConnection.CreateCommand())
-                {
-
-
-
-                    //sqlCommand.CommandType = commandType;
-                    sqlCommand.CommandText = sqlTexto;
-                    sqlCommand.CommandTimeout = 900;
-                    sqlCommand.Connection = sqlConnection;
-
-
-                    // adicionar os parametros
-
-                    foreach (MySqlParameter sqlParameter in sqlParameterCollection)
-                    {
-                        sqlCommand.Parameters.Add(new MySqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
-                    }
-
-
-                    // buscar os dados
-                    MySqlDataReader data = sqlCommand.ExecuteReader();
-                    return data;
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro no select. Detalhes:" + ex.Message);
-            }
-        }       
-
     }
 }]]></ProjectItem>
               <ProjectItem
@@ -3265,15 +3275,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
