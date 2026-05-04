@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="ASSESSMENT"
   DTS:PackageType="5"
-  DTS:VersionBuild="173"
-  DTS:VersionGUID="{8628040C-F1D3-40C6-A7F8-A636FA260595}">
+  DTS:VersionBuild="174"
+  DTS:VersionGUID="{041944EE-EDFB-42AC-B5F1-42EFB196D6FB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -50,7 +50,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Mes">
       <DTS:VariableValue
-        DTS:DataType="3">3</DTS:VariableValue>
+        DTS:DataType="3">4</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -962,6 +962,10 @@
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="187.2,41.6"
+          Id="Package\1º Semana\COM07"
+          TopLeft="119.96574094173,17.6647066964274" />
+        <NodeLayout
+          Size="187.2,41.6"
           Id="Package\1º Semana\COM10"
           TopLeft="122.36574094173,83.3130726477153" />
         <NodeLayout
@@ -1331,6 +1335,28 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\1º Semana.PrecedenceConstraints[Restrição 20]"
+          TopLeft="214.76574094173,59.2647066964274">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0483659512879"
+              Start="0,0"
+              End="0,16.5483659512879">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5483659512879" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição 3]"
           TopLeft="212.36574094173,584.451634306731">
           <EdgeLayout.Curve>
@@ -1465,32 +1491,6 @@
         <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição 9]"
           TopLeft="212.36574094173,1240.93529381961">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24.0483659512879"
-              Start="0,0"
-              End="0,16.5483659512879">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5483659512879" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\1º Semana\COM07"
-          TopLeft="119.96574094173,17.6647066964274" />
-        <EdgeLayout
-          Id="Package\1º Semana.PrecedenceConstraints[Restrição 20]"
-          TopLeft="214.76574094173,59.2647066964274">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
