@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="ASSESSMENT"
   DTS:PackageType="5"
-  DTS:VersionBuild="174"
-  DTS:VersionGUID="{041944EE-EDFB-42AC-B5F1-42EFB196D6FB}">
+  DTS:VersionBuild="178"
+  DTS:VersionGUID="{972C7FD6-A165-45AF-BEF3-E207A107DB0C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -101,7 +101,6 @@
           DTS:refId="Package\1º Semana\COM10"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="RPS EXECUÇÃO DE VENDAS  - LIDERANÇA"
-          DTS:Disabled="True"
           DTS:DTSID="{af51b7ae-4e1e-46e7-8fa2-a587b35c1664}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -967,7 +966,7 @@
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\1º Semana\COM10"
-          TopLeft="122.36574094173,83.3130726477153" />
+          TopLeft="121.651455225924,82.5483667660327" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\1º Semana\COM12"
@@ -1094,18 +1093,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição 10]"
-          TopLeft="214.16574094173,124.913072647715">
+          TopLeft="213.808598083827,124.148366766033">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24.0483659512879"
+              EndConnector="0,24.8130718329703"
               Start="0,0"
-              End="0,16.5483659512879">
+              End="0,17.3130718329703">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5483659512879" />
+                    End="0,17.3130718329703" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1336,18 +1335,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1º Semana.PrecedenceConstraints[Restrição 20]"
-          TopLeft="214.76574094173,59.2647066964274">
+          TopLeft="214.408598083827,59.2647066964274">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24.0483659512879"
+              EndConnector="0,23.2836600696053"
               Start="0,0"
-              End="0,16.5483659512879">
+              End="0,15.7836600696053">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5483659512879" />
+                    End="0,15.7836600696053" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
