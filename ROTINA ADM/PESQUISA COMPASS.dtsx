@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="PESQUISA COMPASS"
   DTS:PackageType="5"
-  DTS:VersionBuild="443"
-  DTS:VersionGUID="{D43D4C3A-580B-4EAC-8ED7-04D62F02C609}">
+  DTS:VersionBuild="452"
+  DTS:VersionGUID="{EB0E7F5C-3627-4BF5-8607-D84E8C846D84}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -287,12 +287,6 @@ using System.Runtime.CompilerServices;
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="packages.config"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="BouncyCastle.Cryptography" version="2.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
               <ProjectItem
                 Name="ST_8d57cb46ad86491aa0b5373e182a8841.csproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1226,6 +1220,12 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
     <msb:File Include="ScriptMain.cs" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="packages.config"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="BouncyCastle.Cryptography" version="2.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Settings.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2318,6 +2318,110 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
   </resheader>
 </root>]]></ProjectItem>
               <ProjectItem
+                Name="AccessDataMySql.cs"
+                Encoding="UTF8"><![CDATA[
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ST_00387ddfa53f4a61a67305738af9ad71
+{
+    internal class AccessDataMySql
+    {
+              
+        private MySqlConnection createConnection()
+        {
+            try
+            {
+                var connString = "Server=192.168.0.8;Database=producao;Uid=etl;Pwd=etl";
+
+                var connection = new MySqlConnection(connString);
+
+                return connection;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro na conexão com o Banco de dados. Detalhes:" + ex.Message);
+            }
+        }
+
+        private MySqlParameterCollection sqlParameterCollection = new MySqlCommand().Parameters;
+
+        /// <summary>
+        /// Método responsável por limpar os dados referentes aos parametros
+        /// </summary>
+        public void parameterClear()
+        {
+            sqlParameterCollection.Clear();
+        }
+
+        /// <summary>
+        /// Método responsável por atribuir valores aos parametros
+        /// </summary>
+        /// <param name="nameParameter">Nome do parametro que vai ser usado na query sql ("@valor")</param>
+        /// <param name="valueParameter">Valor que é atribuído ao parametro que vai ser usado na query sql (objeto.valor)</param>
+        public void addParameters(string nameParameter, object valueParameter)
+        {
+            sqlParameterCollection.Add(new MySqlParameter(nameParameter, valueParameter));
+        }
+
+        /// <summary>
+        /// Método responsável pelas consultas na base de dados
+        /// param sqlText uma query sql em forma de string
+        /// return  SqlDataReader
+        /// </summary>
+        /// <param name="sqlTexto">Parametro (sqlText) uma string contendo uma query sql</param>
+        /// <returns>SqlDataReader</returns>
+        public MySqlDataReader executeSelect(string sqlTexto)
+        {
+            try
+            {
+
+                // criar conexao
+                MySqlConnection sqlConnection = createConnection();
+
+                // abrir
+                sqlConnection.Open();
+                // criar o comando
+                using (MySqlCommand sqlCommand = sqlConnection.CreateCommand())
+                {
+
+
+
+                    //sqlCommand.CommandType = commandType;
+                    sqlCommand.CommandText = sqlTexto;
+                    sqlCommand.CommandTimeout = 900;
+                    sqlCommand.Connection = sqlConnection;
+
+
+                    // adicionar os parametros
+
+                    foreach (MySqlParameter sqlParameter in sqlParameterCollection)
+                    {
+                        sqlCommand.Parameters.Add(new MySqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
+                    }
+
+
+                    // buscar os dados
+                    MySqlDataReader data = sqlCommand.ExecuteReader();
+                    return data;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro no select. Detalhes:" + ex.Message);
+            }
+        }       
+
+    }
+}]]></ProjectItem>
+              <ProjectItem
                 Name="ST_4094546a1302495fb62565ad243cc6e3.csproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -2717,6 +2821,25 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
 	}
 }]]></ProjectItem>
               <ProjectItem
+                Name="app.config"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>]]></ProjectItem>
+              <ProjectItem
+                Name="packages.config"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
+              <ProjectItem
                 Name="Project"
                 Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
@@ -2739,129 +2862,6 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
     <msb:File Include="ScriptMain.cs" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
-              <ProjectItem
-                Name="app.config"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <runtime>
-    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
-      <dependentAssembly>
-        <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
-      </dependentAssembly>
-    </assemblyBinding>
-  </runtime>
-</configuration>]]></ProjectItem>
-              <ProjectItem
-                Name="packages.config"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
-              <ProjectItem
-                Name="AccessDataMySql.cs"
-                Encoding="UTF8"><![CDATA[
-using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ST_00387ddfa53f4a61a67305738af9ad71
-{
-    internal class AccessDataMySql
-    {
-              
-        private MySqlConnection createConnection()
-        {
-            try
-            {
-                var connString = "Server=192.168.0.8;Database=producao;Uid=etl;Pwd=etl";
-
-                var connection = new MySqlConnection(connString);
-
-                return connection;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro na conexão com o Banco de dados. Detalhes:" + ex.Message);
-            }
-        }
-
-        private MySqlParameterCollection sqlParameterCollection = new MySqlCommand().Parameters;
-
-        /// <summary>
-        /// Método responsável por limpar os dados referentes aos parametros
-        /// </summary>
-        public void parameterClear()
-        {
-            sqlParameterCollection.Clear();
-        }
-
-        /// <summary>
-        /// Método responsável por atribuir valores aos parametros
-        /// </summary>
-        /// <param name="nameParameter">Nome do parametro que vai ser usado na query sql ("@valor")</param>
-        /// <param name="valueParameter">Valor que é atribuído ao parametro que vai ser usado na query sql (objeto.valor)</param>
-        public void addParameters(string nameParameter, object valueParameter)
-        {
-            sqlParameterCollection.Add(new MySqlParameter(nameParameter, valueParameter));
-        }
-
-        /// <summary>
-        /// Método responsável pelas consultas na base de dados
-        /// param sqlText uma query sql em forma de string
-        /// return  SqlDataReader
-        /// </summary>
-        /// <param name="sqlTexto">Parametro (sqlText) uma string contendo uma query sql</param>
-        /// <returns>SqlDataReader</returns>
-        public MySqlDataReader executeSelect(string sqlTexto)
-        {
-            try
-            {
-
-                // criar conexao
-                MySqlConnection sqlConnection = createConnection();
-
-                // abrir
-                sqlConnection.Open();
-                // criar o comando
-                using (MySqlCommand sqlCommand = sqlConnection.CreateCommand())
-                {
-
-
-
-                    //sqlCommand.CommandType = commandType;
-                    sqlCommand.CommandText = sqlTexto;
-                    sqlCommand.CommandTimeout = 900;
-                    sqlCommand.Connection = sqlConnection;
-
-
-                    // adicionar os parametros
-
-                    foreach (MySqlParameter sqlParameter in sqlParameterCollection)
-                    {
-                        sqlCommand.Parameters.Add(new MySqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
-                    }
-
-
-                    // buscar os dados
-                    MySqlDataReader data = sqlCommand.ExecuteReader();
-                    return data;
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro no select. Detalhes:" + ex.Message);
-            }
-        }       
-
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Settings.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------

@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="ASSESSMENT"
   DTS:PackageType="5"
-  DTS:VersionBuild="178"
-  DTS:VersionGUID="{972C7FD6-A165-45AF-BEF3-E207A107DB0C}">
+  DTS:VersionBuild="179"
+  DTS:VersionGUID="{0EB9F81E-1697-49DA-AC2E-7BC49108F89B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -50,7 +50,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Mes">
       <DTS:VariableValue
-        DTS:DataType="3">4</DTS:VariableValue>
+        DTS:DataType="3">5</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -960,91 +960,91 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM07"
           TopLeft="119.96574094173,17.6647066964274" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM10"
           TopLeft="121.651455225924,82.5483667660327" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM12"
           TopLeft="118.76574094173,148.961438599003" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM14"
           TopLeft="118.76574094173,214.609804550291" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM15"
           TopLeft="118.76574094173,280.258170501579" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM16"
           TopLeft="118.76574094173,345.906536452867" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM17"
           TopLeft="118.76574094173,411.554902404155" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM18"
           TopLeft="118.76574094173,477.203268355443" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM19"
           TopLeft="118.76574094173,542.851634306731" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM20"
           TopLeft="118.76574094173,608.500000258019" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM21"
           TopLeft="118.76574094173,674.148366209307" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM22"
           TopLeft="118.76574094173,739.796732160595" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM23"
           TopLeft="118.76574094173,805.445098111882" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM24"
           TopLeft="118.76574094173,871.09346406317" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM25"
           TopLeft="118.76574094173,936.741830014458" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM26"
           TopLeft="121.56574094173,1002.39019596575" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM29"
           TopLeft="120.76574094173,1068.03856191703" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\COM30"
           TopLeft="118.76574094173,1133.68692786832" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\RH03"
           TopLeft="118.76574094173,1199.33529381961" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\TRD01"
           TopLeft="118.76574094173,1264.9836597709" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\TRD03"
           TopLeft="118.76574094173,1330.63202572219" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\1º Semana\TRD04"
           TopLeft="118.76574094173,1396.28039167347" />
         <EdgeLayout
@@ -1512,8 +1512,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="436.8,1533.6"
-          Size="436.8,1576.8"
+          PanelSize="437,1534"
+          Size="437,1577"
           Id="Package\1º Semana"
           TopLeft="220.142857599775,674.516666593549" />
       </GraphLayout>
