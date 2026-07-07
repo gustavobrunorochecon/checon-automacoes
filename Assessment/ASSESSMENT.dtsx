@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="ASSESSMENT"
   DTS:PackageType="5"
-  DTS:VersionBuild="183"
-  DTS:VersionGUID="{3E41B8A7-7E7B-42D4-B1E0-F99DCDC2BCDC}">
+  DTS:VersionBuild="185"
+  DTS:VersionGUID="{A3132D74-2E4B-4D96-892D-531D70B6B530}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -101,7 +101,6 @@
           DTS:refId="Package\1º Semana\COM10"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="RPS EXECUÇÃO DE VENDAS  - LIDERANÇA"
-          DTS:Disabled="True"
           DTS:DTSID="{af51b7ae-4e1e-46e7-8fa2-a587b35c1664}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -201,6 +200,7 @@
           DTS:refId="Package\1º Semana\COM15"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="TABELA DE PREÇO"
+          DTS:Disabled="True"
           DTS:DTSID="{7414c296-3a8e-4833-8c21-31e233c97814}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
