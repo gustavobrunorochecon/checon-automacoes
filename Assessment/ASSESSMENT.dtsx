@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="ASSESSMENT"
   DTS:PackageType="5"
-  DTS:VersionBuild="185"
-  DTS:VersionGUID="{A3132D74-2E4B-4D96-892D-531D70B6B530}">
+  DTS:VersionBuild="186"
+  DTS:VersionGUID="{C459135D-A643-4138-AFE6-956F2159A635}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -24,6 +24,15 @@
       DTS:ObjectName="Ano">
       <DTS:VariableValue
         DTS:DataType="3">2026</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{031BA6F5-ECA3-4BE0-90CB-19D48750BB3E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Assessment">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -259,6 +268,10 @@
               <ParameterAssignment>
                 <ParameterName>Destino</ParameterName>
                 <BindedVariableOrParameterName>User::Destino</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Assessment</ParameterName>
+                <BindedVariableOrParameterName>User::Assessment</BindedVariableOrParameterName>
               </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>

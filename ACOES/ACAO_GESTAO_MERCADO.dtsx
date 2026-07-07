@@ -11,10 +11,63 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="GESTÃO DE AÇÕES DE MERCADO"
   DTS:PackageType="5"
-  DTS:VersionBuild="805"
-  DTS:VersionGUID="{20F07970-EB7A-42E9-8B82-5F7863978DC5}">
+  DTS:VersionBuild="808"
+  DTS:VersionGUID="{34CDF9B6-A992-49AB-B796-EEBB439DDBF9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{16F611D1-7C5C-4A38-BAE1-D26459FF8D1D}"
+      DTS:ObjectName="Ano"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{38F5AC56-2823-4C48-9CEB-073E331F4A1D}"
+      DTS:ObjectName="Controle"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{E49B132C-5F4F-4FD1-A365-DBA97D2ABD4A}"
+      DTS:ObjectName="Dados"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{88BED0B3-FF08-4FC5-A83F-5E48BF11B903}"
+      DTS:ObjectName="Mes"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{F3147F28-94AD-4B70-BAE3-45DE3FF3EF9D}"
+      DTS:ObjectName="Revenda"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
