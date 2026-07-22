@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="ATUALIZAR METAS FDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="198"
-  DTS:VersionGUID="{EC7CE67D-1FEB-4DF9-870F-822D396BF716}">
+  DTS:VersionBuild="200"
+  DTS:VersionGUID="{2123DF96-3249-4400-8004-3EC50265989A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -174,6 +174,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+          <ProjectItem
+            Name="packages.config"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="BouncyCastle.Cryptography" version="2.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Settings.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -485,6 +491,7 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
                                                         FROM   cobertura_agregado_analitico_ac COB
                                                                INNER JOIN hierarquia_comercial HC ON COB.vd = HC.vd
                                                         WHERE  COB.DATA_MX BETWEEN (DATE {data} - INTERVAL '1 YEAR') AND DATE {data}
+                                                               AND cod_agregador = 'TSCH'
                                                         GROUP BY HC.GV
                                                                , HC.SV
                                                                , HC.VD
@@ -557,7 +564,7 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
     <msb:CodeName>ST_94546c9822d44a9bade2243218a0bcb9</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_94546c9822d44a9bade2243218a0bcb9</msb:DisplayName>
-    <msb:ProjectId>{2BA44598-C3CB-457D-A998-CBDD80C933ED}</msb:ProjectId>
+    <msb:ProjectId>{EC32448C-0878-422F-9CCB-4D5E82982A86}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_94546c9822d44a9bade2243218a0bcb9.csproj" />
@@ -571,12 +578,6 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d
     <msb:File Include="ScriptMain.cs" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
-          <ProjectItem
-            Name="packages.config"
-            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="BouncyCastle.Cryptography" version="2.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
           <ProjectItem
             Name="Properties\AssemblyInfo.cs"
             Encoding="UTF8"><![CDATA[using System.Reflection;
@@ -687,14 +688,14 @@ namespace ST_1d5348b3f62c4fa29edf085caff84d1d.Properties {
           <BinaryItem
             Name="ST_94546c9822d44a9bade2243218a0bcb9.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAOop1mkAAAAAAAAAAOAAIiALATAAACwAAAAIAAAAAAAAFksA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAJTVYGoAAAAAAAAAAOAAIiALATAAACwAAAAIAAAAAAAAyksA
 AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAMRKAABPAAAAAGAAAHgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHhLAABPAAAAAGAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAHCsAAAAgAAAALAAAAAIA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA0CsAAAAgAAAALAAAAAIA
 AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAYAAAAAYAAAAuAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAIAAAAACAAAANAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAD4
-SgAAAAAAAEgAAAACAAUAwCIAAEwnAAABAAAAAAAAAAxKAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+LnJlbG9jAAAMAAAAAIAAAAACAAAANAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACs
+SwAAAAAAAEgAAAACAAUAwCIAAAAoAAABAAAAAAAAAMBKAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswAwBeAAAAAQAAEXMQAAAKJXIBAABwbxEAAAolcgsAAHBv
 EQAACm8SAAAKCisVEgAoEwAACgsCAigUAAAKBygCAAAGEgAoFQAACi3i3g4SAP4WAgAAG28WAAAK
 3AIoFAAAChZvFwAACioAAAEQAAACACEAIkMADgAAAAAbMAYAbgEAAAIAABEEcxgAAAoKAigUAAAK
@@ -702,12 +703,12 @@ bxkAAApyFQAAcG8aAAAKbxsAAApvHAAACgIoFAAACm8ZAAAKcikAAHBvGgAACm8bAAAKbxwAAAoL
 cj0AAHAHGB8wbx0AAApyQQAAcCgeAAAKckkAAHAUKB8AAAoMcl8AAHASAnJJAABwKCAAAApyXwAA
 cCghAAAKDR8XjSEAAAElFnJjAABwoiUXCaIlGHIQAwBwoiUZCaIlGnJ5BABwoiUbCaIlHHL0BQBw
 oiUdCaIlHnJTBwBwoiUfCQmiJR8KcsQIAHCiJR8LCaIlHwxyIQoAcKIlHw0JoiUfDnKSCwBwoiUf
-DwmiJR8QcvMMAHCiJR8RCaIlHxJy5A8AcKIlHxMJoiUfFHIkEABwoiUfFQmiJR8Wcm8TAHCiKCIA
-AAoTBAYRBG8jAAAKJt40EwUCKBQAAApvJAAAChZylBgAcBEFbyUAAAp+JgAAChZvJwAACiYCKBQA
-AAoXbxcAAAreACoAAAEQAAAAAIYAszkBNBQAAAEeAigoAAAKKh4CKCkAAAoqrn4BAAAELR5y7BgA
+DwmiJR8QcvMMAHCiJR8RCaIlHxJy5A8AcKIlHxMJoiUfFHIkEABwoiUfFQmiJR8WciUUAHCiKCIA
+AAoTBAYRBG8jAAAKJt40EwUCKBQAAApvJAAAChZyShkAcBEFbyUAAAp+JgAAChZvJwAACiYCKBQA
+AAoXbxcAAAreACoAAAEQAAAAAIYAszkBNBQAAAEeAigoAAAKKh4CKCkAAAoqrn4BAAAELR5yohkA
 cNADAAACKCoAAApvKwAACnMsAAAKgAEAAAR+AQAABCoafgIAAAQqHgKAAgAABCoafgMAAAQqHgIo
 LQAACioucwkAAAaAAwAABCoAAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAALAE
-AAAjfgAAHAUAANAGAAAjU3RyaW5ncwAAAADsCwAAYBkAACNVUwBMJQAAEAAAACNHVUlEAAAAXCUA
+AAAjfgAAHAUAANAGAAAjU3RyaW5ncwAAAADsCwAAFBoAACNVUwAAJgAAEAAAACNHVUlEAAAAECYA
 APABAAAjQmxvYgAAAAAAAAACAAABVx2iCQkDAAAA+gEzABYAAAEAAAAnAAAABQAAAAYAAAAKAAAA
 AwAAAC0AAAACAAAAEAAAAAIAAAACAAAAAwAAAAQAAAACAAAAAQAAAAYAAAABAAAAAQAAAAAANQQB
 AAAAAAAGAOUCZgUGAHQDZgUGADECUwUPANoFAAAGAF4CswQGAMgCswQGAKkCswQGAFsDswQGAAUD
@@ -726,7 +727,7 @@ AGMGewCZALwDhQAJAVwGigAJAVwGkQCRAHUGlwCJAFEGngChAAUBaQAJAcgGpAAhASIFpwBxADoF
 BgC5ADoFBgApATgBsAApAbsGuQDBADoFvwDhADoFBgAIABQA4gAIABgA5wApAHMAVgEuAAsALgEu
 ABMANwEuABsAVgEuACMAXwEuACsAiAEuADMAiAEuADsAiAEuAEMAXwEuAEsAjgEuAFMAiAEuAFsA
 pQFDAGMA5wBJAHMAVgFhAHsA5wBjAGsA5wAbAE0AAwABAAQAAwAAAP4EHwEAAKABJAEAAI8GKQEC
-AAUAAwACAAYABQABAAcABQACAAgABwAkADkABIAAAAEAAAB6JZ0yAAAAAAAACAAAAAQAAAAAAAAA
+AAUAAwACAAYABQABAAcABQACAAgABwAkADkABIAAAAEAAADjJbJRAAAAAAAACAAAAAQAAAAAAAAA
 AAAAAMcAmAAAAAAAEAAAAAAAAAAAAAAA0ADFAwAAAAABAAAAAAAAAAAAAADZAEcFAAAAAAQAAAAA
 AAAAAAAAAMcAZgQAAAAAEAAAAAAAAAAAAAAA0ABeAAAAAAAEAAAAAAAAAAAAAADHAIwAAAAAAAAA
 AAABAAAAlwUAAAUAAgAAAABMaXN0YDEAU1RfOTQ1NDZjOTgyMmQ0NGE5YmFkZTIyNDMyMThhMGJj
@@ -832,76 +833,76 @@ ZAANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
 ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
 IAAgAFcASABFAFIARQAgACAAQwBPAEIALgBEAEEAVABBAF8ATQBYACAAQgBFAFQAVwBFAEUATgAg
 ACgARABBAFQARQAgAAE/IAAtACAASQBOAFQARQBSAFYAQQBMACAAJwAxACAAWQBFAEEAUgAnACkA
-IABBAE4ARAAgAEQAQQBUAEUAIAABg0kNAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IABBAE4ARAAgAEQAQQBUAEUAIAABg/8NAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
 IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgAEcAUgBPAFUAUAAgAEIAWQAgAEgAQwAuAEcAVgANAAoA
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAQQBOAEQAIABjAG8AZABfAGEA
+ZwByAGUAZwBhAGQAbwByACAAPQAgACcAVABTAEMASAAnAA0ACgAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAARwBSAE8AVQBQACAAQgBZACAASABD
+AC4ARwBWAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
 IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAALAAgAEgAQwAuAFMAVgANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAALAAgAEgAQwAuAFYARAAN
-AAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAApAA0ACgAN
-AAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAASQBOAFMARQBSAFQAIABJAE4AVABPACAATQBFAFQAQQBTAF8ARgBE
-AFMAIAAoAHYAYQBsAGkAZABhAGQAZQBfAG0AZQB0AGEALAAgAGcAdgAsACAAcwB2ACwAIAB2AGQA
-LAAgAG0AZQB0AGEAXwBmAGQAcwApAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABTAEUATABFAEMAVAAgAEQA
-QQBUAEUAIAAAhSMNAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAsACAARwBWAA0ACgAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACwAIABTAFYADQAKACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAALAAgAFYARAANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAsACAASABDAC4AUwBWAA0ACgAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
 ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAsACAA
-UgBPAFUATgBEACgAKAAgAEEATgBPAF8AQQBOAFQARQBSAEkATwBSAF8ANQAwACAAKwAgACgAIAAo
-ACAATQBFAFMAXwAwADMAIAArACAATQBFAFMAXwAwADIAIAArACAATQBFAFMAXwAwADEAIAApACAA
-LwAgADMAIAApACAALwAgADIAIAApACAAKgAgADEAMAAwACwAIAAwACAAKQAgAEEAUwAgAE0ARQBU
-AEEAXwBGAEQAUwANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAARgBSAE8ATQAgACAAIABNAEUARABJAEEAUwAg
-AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIABPAE4AIABDAE8ATgBGAEwASQBDAFQAIAAoAHYAYQBsAGkAZABh
-AGQAZQBfAG0AZQB0AGEALAAgAFYARAApAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABEAE8AIABVAFAARABB
-AFQARQAgAFMARQBUAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
-IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAG0AZQB0AGEAXwBmAGQAcwAg
-AD0AIABFAFgAQwBMAFUARABFAEQALgBtAGUAdABhAF8AZgBkAHMALAANAAoAIAAgACAAIAAgACAA
+SABDAC4AVgBEAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACkADQAKAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABJAE4AUwBFAFIAVAAgAEkATgBUAE8AIABNAEUA
+VABBAFMAXwBGAEQAUwAgACgAdgBhAGwAaQBkAGEAZABlAF8AbQBlAHQAYQAsACAAZwB2ACwAIABz
+AHYALAAgAHYAZAAsACAAbQBlAHQAYQBfAGYAZABzACkADQAKACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAFMARQBM
+AEUAQwBUACAARABBAFQARQAgAAGFIw0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACwA
+IABHAFYADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAALAAgAFMAVgANAAoAIAAgACAA
 IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIABnAHYAIAAgACAAIAAgACAAIAA9ACAARQBYAEMATABVAEQARQBEAC4AZwB2ACwA
-DQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAcwB2ACAAIAAgACAAIAAgACAAPQAgAEUAWABDAEwA
-VQBEAEUARAAuAHMAdgAAV0UAcgByAG8AIABuAG8AIABJAG4AcwBlAHIAdABPAHIAVQBwAGQAYQB0
-AGUAIABNAEUAVABBAFMAXwBGAEQAUwAuACAARABlAHQAYQBsAGgAZQBzACAAAHFTAFQAXwAxAGQA
-NQAzADQAOABiADMAZgA2ADIAYwA0AGYAYQAyADkAZQBkAGYAMAA4ADUAYwBhAGYAZgA4ADQAZAAx
-AGQALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAA0QGAE0wtrEuo
-nsbChPMuAQAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERaQgHAhURQQEODgUVEj0BDgUgAQETAAgg
-ABURQQETAAUVEUEBDgQgABMABCAAEkUDIAACCwcGEkkOEU0ODhJRBCAAEn0GIAESgIEcAyAAHAMg
-AA4FIAIOCAMHAAQODg4ODgkAAxFNDg4SgIkEIAEODgYAAw4ODg4FAAEOHQ4GIAESgI0OBSAAEoCR
-AgYOCCAFAggODg4ICAABEoCVEYCZBSAAEoCdByACAQ4SgJ0It3pcVhk04IkIiYRdzYCAzJEIqfME
-esMly3YEAAAAAAQBAAAAAwYSYQMGEmUDBhIQAgYIAwYRFAYgAgESRQ4EAAASYQQAABJlBQABARJl
-BAAAEhADAAABBAgAEmEECAASZQQIABIQCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9u
-VGhyb3dzAQgBAAIAAAAAACgBACNTVF8xZDUzNDhiM2Y2MmM0ZmEyOWVkZjA4NWNhZmY4NGQxZAAA
-BQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDI0AABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0
-LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwC0AAAAzsrvvgEA
-AACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9u
-PTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4
-OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0
-AAAA7EoAAAAAAAAAAAAABksAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPhKAAAAAAAAAAAAAAAA
-X0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAsACAAVgBEAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACwAIABSAE8AVQBOAEQAKAAoACAAQQBOAE8AXwBBAE4AVABFAFIASQBPAFIAXwA1ADAA
+IAArACAAKAAgACgAIABNAEUAUwBfADAAMwAgACsAIABNAEUAUwBfADAAMgAgACsAIABNAEUAUwBf
+ADAAMQAgACkAIAAvACAAMwAgACkAIAAvACAAMgAgACkAIAAqACAAMQAwADAALAAgADAAIAApACAA
+QQBTACAATQBFAFQAQQBfAEYARABTAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABGAFIATwBNACAAIAAgAE0A
+RQBEAEkAQQBTACAADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAE8ATgAgAEMATwBOAEYATABJAEMAVAAgACgA
+dgBhAGwAaQBkAGEAZABlAF8AbQBlAHQAYQAsACAAVgBEACkADQAKACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAEQA
+TwAgAFUAUABEAEEAVABFACAAUwBFAFQADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAbQBlAHQA
+YQBfAGYAZABzACAAPQAgAEUAWABDAEwAVQBEAEUARAAuAG0AZQB0AGEAXwBmAGQAcwAsAA0ACgAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgAGcAdgAgACAAIAAgACAAIAAgAD0AIABFAFgAQwBMAFUARABF
+AEQALgBnAHYALAANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABzAHYAIAAgACAAIAAgACAAIAA9
+ACAARQBYAEMATABVAEQARQBEAC4AcwB2AABXRQByAHIAbwAgAG4AbwAgAEkAbgBzAGUAcgB0AE8A
+cgBVAHAAZABhAHQAZQAgAE0ARQBUAEEAUwBfAEYARABTAC4AIABEAGUAdABhAGwAaABlAHMAIAAA
+cVMAVABfADEAZAA1ADMANAA4AGIAMwBmADYAMgBjADQAZgBhADIAOQBlAGQAZgAwADgANQBjAGEA
+ZgBmADgANABkADEAZAAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAA
+tyN4Eycetke1SuuoVMBefwAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERaQgHAhURQQEODgUVEj0B
+DgUgAQETAAggABURQQETAAUVEUEBDgQgABMABCAAEkUDIAACCwcGEkkOEU0ODhJRBCAAEn0GIAES
+gIEcAyAAHAMgAA4FIAIOCAMHAAQODg4ODgkAAxFNDg4SgIkEIAEODgYAAw4ODg4FAAEOHQ4GIAES
+gI0OBSAAEoCRAgYOCCAFAggODg4ICAABEoCVEYCZBSAAEoCdByACAQ4SgJ0It3pcVhk04IkIiYRd
+zYCAzJEIqfMEesMly3YEAAAAAAQBAAAAAwYSYQMGEmUDBhIQAgYIAwYRFAYgAgESRQ4EAAASYQQA
+ABJlBQABARJlBAAAEhADAAABBAgAEmEECAASZQQIABIQCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9u
+RXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTVF8xZDUzNDhiM2Y2MmM0ZmEyOWVkZjA4NWNh
+ZmY4NGQxZAAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDI0AABJAQAaLk5FVEZyYW1ld29yayxW
+ZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwC0
+AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGli
+LCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVj
+NTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAA
+AFBBRFBBRFC0AAAAoEsAAAAAAAAAAAAAuksAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKxLAAAA
+AAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQAAAAGAAA
 gAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAAAFhgAAAaBAAA
 AAAAAAAAAAAaBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAAvQTv/gAAAQAA
-AAEAnTJ6JQAAAQCdMnolPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYAYQByAEYA
+AAEAslHjJQAAAQCyUeMlPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYAYQByAEYA
 aQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAAAAAAALAEegMA
 AAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAVgMAAAEAMAAwADAAMAAwADQAYgAwAAAA
 GgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBuAHkATgBhAG0AZQAA
 AAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAFQAXwAxAGQA
 NQAzADQAOABiADMAZgA2ADIAYwA0AGYAYQAyADkAZQBkAGYAMAA4ADUAYwBhAGYAZgA4ADQAZAAx
-AGQAAAA+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AOQA1ADkANAAuADEA
-MgA5ADUANwAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA5ADQANQA0
+AGQAAAA+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AOQA2ADkAOQAuADIA
+MAA5ADEANAAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA5ADQANQA0
 ADYAYwA5ADgAMgAyAGQANAA0AGEAOQBiAGEAZABlADIAMgA0ADMAMgAxADgAYQAwAGIAYwBiADkA
 LgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBp
 AGcAaAB0ACAAQAAgACAAMgAwADIANAAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIA
@@ -909,16 +910,16 @@ awBzAAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAVABf
 ADkANAA1ADQANgBjADkAOAAyADIAZAA0ADQAYQA5AGIAYQBkAGUAMgAyADQAMwAyADEAOABhADAA
 YgBjAGIAOQAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAFQAXwAx
 AGQANQAzADQAOABiADMAZgA2ADIAYwA0AGYAYQAyADkAZQBkAGYAMAA4ADUAYwBhAGYAZgA4ADQA
-ZAAxAGQAAABCAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADkANQA5
-ADQALgAxADIAOQA1ADcAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4A
-AAAxAC4AMAAuADkANQA5ADQALgAxADIAOQA1ADcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ZAAxAGQAAABCAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADkANgA5
+ADkALgAyADAAOQAxADQAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4A
+AAAxAC4AMAAuADkANgA5ADkALgAyADAAOQAxADQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMAAAAGDsAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMAAAAzDsAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1116,20 +1117,139 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
   </resheader>
 </root>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="AccessDataMySql.cs"
+                Encoding="UTF8"><![CDATA[
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ST_00387ddfa53f4a61a67305738af9ad71
+{
+    internal class AccessDataMySql
+    {
+              
+        private MySqlConnection createConnection()
+        {
+            try
+            {
+                var connString = "Server=192.168.0.8;Database=producao;Uid=etl;Pwd=etl";
+
+                var connection = new MySqlConnection(connString);
+
+                return connection;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro na conexão com o Banco de dados. Detalhes:" + ex.Message);
+            }
+        }
+
+        private MySqlParameterCollection sqlParameterCollection = new MySqlCommand().Parameters;
+
+        /// <summary>
+        /// Método responsável por limpar os dados referentes aos parametros
+        /// </summary>
+        public void parameterClear()
+        {
+            sqlParameterCollection.Clear();
+        }
+
+        /// <summary>
+        /// Método responsável por atribuir valores aos parametros
+        /// </summary>
+        /// <param name="nameParameter">Nome do parametro que vai ser usado na query sql ("@valor")</param>
+        /// <param name="valueParameter">Valor que é atribuído ao parametro que vai ser usado na query sql (objeto.valor)</param>
+        public void addParameters(string nameParameter, object valueParameter)
+        {
+            sqlParameterCollection.Add(new MySqlParameter(nameParameter, valueParameter));
+        }
+
+        /// <summary>
+        /// Método responsável pelas consultas na base de dados
+        /// param sqlText uma query sql em forma de string
+        /// return  SqlDataReader
+        /// </summary>
+        /// <param name="sqlTexto">Parametro (sqlText) uma string contendo uma query sql</param>
+        /// <returns>SqlDataReader</returns>
+        public MySqlDataReader executeSelect(string sqlTexto)
+        {
+            try
+            {
+
+                // criar conexao
+                MySqlConnection sqlConnection = createConnection();
+
+                // abrir
+                sqlConnection.Open();
+                // criar o comando
+                using (MySqlCommand sqlCommand = sqlConnection.CreateCommand())
+                {
+
+
+
+                    //sqlCommand.CommandType = commandType;
+                    sqlCommand.CommandText = sqlTexto;
+                    sqlCommand.CommandTimeout = 900;
+                    sqlCommand.Connection = sqlConnection;
+
+
+                    // adicionar os parametros
+
+                    foreach (MySqlParameter sqlParameter in sqlParameterCollection)
+                    {
+                        sqlCommand.Parameters.Add(new MySqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
+                    }
+
+
+                    // buscar os dados
+                    MySqlDataReader data = sqlCommand.ExecuteReader();
+                    return data;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro no select. Detalhes:" + ex.Message);
+            }
+        }       
+
+    }
+}]]></ProjectItem>
               <ProjectItem
-                Name="packages.config"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
-</packages>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_00387ddfa53f4a61a67305738af9ad71")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_00387ddfa53f4a61a67305738af9ad71")]
+[assembly: AssemblyCopyright("Copyright @  2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[ #region Help:  Introduction to the script task
@@ -1326,109 +1446,11 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
-                Name="AccessDataMySql.cs"
-                Encoding="UTF8"><![CDATA[
-using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ST_00387ddfa53f4a61a67305738af9ad71
-{
-    internal class AccessDataMySql
-    {
-              
-        private MySqlConnection createConnection()
-        {
-            try
-            {
-                var connString = "Server=192.168.0.8;Database=producao;Uid=etl;Pwd=etl";
-
-                var connection = new MySqlConnection(connString);
-
-                return connection;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro na conexão com o Banco de dados. Detalhes:" + ex.Message);
-            }
-        }
-
-        private MySqlParameterCollection sqlParameterCollection = new MySqlCommand().Parameters;
-
-        /// <summary>
-        /// Método responsável por limpar os dados referentes aos parametros
-        /// </summary>
-        public void parameterClear()
-        {
-            sqlParameterCollection.Clear();
-        }
-
-        /// <summary>
-        /// Método responsável por atribuir valores aos parametros
-        /// </summary>
-        /// <param name="nameParameter">Nome do parametro que vai ser usado na query sql ("@valor")</param>
-        /// <param name="valueParameter">Valor que é atribuído ao parametro que vai ser usado na query sql (objeto.valor)</param>
-        public void addParameters(string nameParameter, object valueParameter)
-        {
-            sqlParameterCollection.Add(new MySqlParameter(nameParameter, valueParameter));
-        }
-
-        /// <summary>
-        /// Método responsável pelas consultas na base de dados
-        /// param sqlText uma query sql em forma de string
-        /// return  SqlDataReader
-        /// </summary>
-        /// <param name="sqlTexto">Parametro (sqlText) uma string contendo uma query sql</param>
-        /// <returns>SqlDataReader</returns>
-        public MySqlDataReader executeSelect(string sqlTexto)
-        {
-            try
-            {
-
-                // criar conexao
-                MySqlConnection sqlConnection = createConnection();
-
-                // abrir
-                sqlConnection.Open();
-                // criar o comando
-                using (MySqlCommand sqlCommand = sqlConnection.CreateCommand())
-                {
-
-
-
-                    //sqlCommand.CommandType = commandType;
-                    sqlCommand.CommandText = sqlTexto;
-                    sqlCommand.CommandTimeout = 900;
-                    sqlCommand.Connection = sqlConnection;
-
-
-                    // adicionar os parametros
-
-                    foreach (MySqlParameter sqlParameter in sqlParameterCollection)
-                    {
-                        sqlCommand.Parameters.Add(new MySqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
-                    }
-
-
-                    // buscar os dados
-                    MySqlDataReader data = sqlCommand.ExecuteReader();
-                    return data;
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro no select. Detalhes:" + ex.Message);
-            }
-        }       
-
-    }
-}]]></ProjectItem>
+                Name="packages.config"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="System.Buffers" version="4.5.1" targetFramework="net47" />
+</packages>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Settings.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1459,35 +1481,14 @@ namespace ST_00387ddfa53f4a61a67305738af9ad71.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_00387ddfa53f4a61a67305738af9ad71")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_00387ddfa53f4a61a67305738af9ad71")]
-[assembly: AssemblyCopyright("Copyright @  2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
